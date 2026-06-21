@@ -1,0 +1,259 @@
+---
+import InfoLayout from '../../layouts/InfoLayout.astro';
+
+const AREAS = {
+  'weybridge': {
+    name: 'Weybridge',
+    intro: 'Weybridge is one of our most active areas — we\'ve completed numerous garden room projects across KT13 and the surrounding streets. Whether you\'re in St George\'s Hill, near the town centre, or out towards Brooklands, our team covers the whole area with no call-out charge.',
+    nearby: ['Walton-on-Thames', 'Cobham', 'Esher', 'Byfleet'],
+    distance: '8 miles',
+  },
+  'woking': {
+    name: 'Woking',
+    intro: 'Woking and the surrounding villages are well within our core coverage area. We regularly build garden rooms across GU21, GU22 and GU23 — from Horsell and Knaphill to Pyrford and Send. Our showroom in Lyne is an easy drive from Woking town centre.',
+    nearby: ['Byfleet', 'West Byfleet', 'Chobham', 'Guildford'],
+    distance: '9 miles',
+  },
+  'addlestone': {
+    name: 'Addlestone',
+    intro: 'Addlestone is on our doorstep — just a few miles from our showroom in Lyne. We\'ve built garden rooms across KT15 and know the area well. Whether you\'re on a new-build estate or a larger plot in the surrounding countryside, our team can assess what\'s possible in a free site visit.',
+    nearby: ['Weybridge', 'Chertsey', 'Byfleet', 'New Haw'],
+    distance: '3 miles',
+  },
+  'byfleet': {
+    name: 'Byfleet',
+    intro: 'Byfleet and West Byfleet sit right in the heart of our delivery area. With easy access from the M25 and A245, our teams can be on site quickly and efficiently. We\'ve completed garden room projects across KT14 and are familiar with the mix of property types in the area.',
+    nearby: ['Addlestone', 'Weybridge', 'Woking', 'Cobham'],
+    distance: '5 miles',
+  },
+  'chobham': {
+    name: 'Chobham',
+    intro: 'Chobham\'s mix of village character and larger plots makes it an ideal location for a garden room. We regularly work in GU24 and the surrounding common land areas. Many of our Chobham customers opt for bespoke builds that complement their garden\'s natural setting.',
+    nearby: ['Woking', 'Virginia Water', 'Windlesham', 'Bagshot'],
+    distance: '5 miles',
+  },
+  'staines-upon-thames': {
+    name: 'Staines-upon-Thames',
+    intro: 'Staines-upon-Thames and the TW18 and TW19 postcodes are well within our coverage area. Our team regularly works along the Thames corridor from Staines through to Egham and beyond. A free site visit will establish exactly what\'s possible in your garden.',
+    nearby: ['Egham', 'Ashford', 'Sunbury-on-Thames', 'Virginia Water'],
+    distance: '7 miles',
+  },
+  'chertsey': {
+    name: 'Chertsey',
+    intro: 'Our showroom is located just outside Chertsey at The Farm Shop in Lyne, so Chertsey is firmly home territory for us. We\'ve completed more garden room projects in KT16 than any other postcode. Come and visit the showroom — you can walk around a finished build and talk to the team in person.',
+    nearby: ['Addlestone', 'Weybridge', 'Egham', 'Virginia Water'],
+    distance: '2 miles',
+  },
+  'egham': {
+    name: 'Egham',
+    intro: 'Egham and Englefield Green are popular areas for our garden rooms — the mix of semi-detached homes and larger detached properties near Royal Holloway suits a wide range of our standard and bespoke builds. TW20 is well within our core delivery zone.',
+    nearby: ['Virginia Water', 'Chertsey', 'Staines-upon-Thames', 'Windsor'],
+    distance: '4 miles',
+  },
+  'walton-on-thames': {
+    name: 'Walton-on-Thames',
+    intro: 'Walton-on-Thames is one of our busiest areas for enquiries and completed builds. The generous garden sizes common across KT12 lend themselves well to garden rooms, and we\'ve built everything from compact home offices to fully bespoke extended-height structures in the area.',
+    nearby: ['Weybridge', 'Esher', 'Hersham', 'Molesey'],
+    distance: '9 miles',
+  },
+  'virginia-water': {
+    name: 'Virginia Water',
+    intro: 'Virginia Water\'s larger plots and premium homes make it one of our most rewarding areas to work in. Many of our Virginia Water projects are bespoke — designed to sit within mature, landscaped gardens and finished to match the character of the surrounding property.',
+    nearby: ['Chobham', 'Egham', 'Sunningdale', 'Ascot'],
+    distance: '6 miles',
+  },
+  'guildford': {
+    name: 'Guildford',
+    intro: 'Guildford and the villages across GU1, GU2 and GU3 are within comfortable reach of our team in Lyne. We regularly travel to Guildford, Merrow, Burpham and the surrounding areas for site visits and installs. The diversity of property types in Guildford means we build everything from compact offices to large bespoke structures.',
+    nearby: ['Woking', 'Godalming', 'Cranleigh', 'Cobham'],
+    distance: '14 miles',
+  },
+  'esher': {
+    name: 'Esher',
+    intro: 'Esher and the surrounding KT10 postcode — including Claygate, Hinchley Wood and Thames Ditton — are well within our delivery area. Properties in this part of Surrey tend to have generous garden sizes, and we\'ve completed a number of high-specification builds in the area.',
+    nearby: ['Weybridge', 'Walton-on-Thames', 'Cobham', 'Kingston upon Thames'],
+    distance: '11 miles',
+  },
+  'cobham': {
+    name: 'Cobham',
+    intro: 'Cobham is one of Surrey\'s most popular addresses, and we\'ve been building garden rooms here for years. KT11 properties often come with the space to accommodate a proper garden room — we\'ve built everything from discreet home offices to large entertainment spaces with full bifold glazing.',
+    nearby: ['Esher', 'Weybridge', 'Leatherhead', 'Byfleet'],
+    distance: '9 miles',
+  },
+  'kingston-upon-thames': {
+    name: 'Kingston upon Thames',
+    intro: 'Kingston upon Thames and the surrounding KT1, KT2 area are within our delivery zone. We regularly work across this part of south-west London and Surrey — our team is used to the variety of garden sizes and access constraints that come with the territory.',
+    nearby: ['Esher', 'Walton-on-Thames', 'Richmond', 'Surbiton'],
+    distance: '13 miles',
+  },
+  'leatherhead': {
+    name: 'Leatherhead',
+    intro: 'Leatherhead and the KT22 and KT23 postcodes are well within our team\'s regular coverage area. We\'ve built garden rooms across Fetcham, Great Bookham and the surrounding villages, and our free site visit service extends to the whole of this area.',
+    nearby: ['Cobham', 'Epsom', 'Dorking', 'Guildford'],
+    distance: '12 miles',
+  },
+  'surrey': {
+    name: 'Surrey',
+    intro: 'The Green Rooms is based in Lyne, Surrey, and the vast majority of our builds are across the county — from Weybridge and Woking in the north to Guildford and Godalming in the south, and from Staines in the west to Epsom and Leatherhead in the east. If you\'re in Surrey, we cover you.',
+    nearby: ['Weybridge', 'Woking', 'Guildford', 'Chertsey'],
+    distance: 'Based in Surrey',
+  },
+};
+
+export function getStaticPaths() {
+  const areas = {
+    'weybridge': { name: 'Weybridge', nearby: ['Walton-on-Thames', 'Cobham', 'Esher', 'Byfleet'], distance: '8 miles', intro: 'Weybridge is one of our most active areas — we\'ve completed numerous garden room projects across KT13 and the surrounding streets. Whether you\'re in St George\'s Hill, near the town centre, or out towards Brooklands, our team covers the whole area with no call-out charge.' },
+    'woking': { name: 'Woking', nearby: ['Byfleet', 'West Byfleet', 'Chobham', 'Guildford'], distance: '9 miles', intro: 'Woking and the surrounding villages are well within our core coverage area. We regularly build garden rooms across GU21, GU22 and GU23 — from Horsell and Knaphill to Pyrford and Send. Our showroom in Lyne is an easy drive from Woking town centre.' },
+    'addlestone': { name: 'Addlestone', nearby: ['Weybridge', 'Chertsey', 'Byfleet', 'New Haw'], distance: '3 miles', intro: 'Addlestone is on our doorstep — just a few miles from our showroom in Lyne. We\'ve built garden rooms across KT15 and know the area well. Whether you\'re on a new-build estate or a larger plot in the surrounding countryside, our team can assess what\'s possible in a free site visit.' },
+    'byfleet': { name: 'Byfleet', nearby: ['Addlestone', 'Weybridge', 'Woking', 'Cobham'], distance: '5 miles', intro: 'Byfleet and West Byfleet sit right in the heart of our delivery area. With easy access from the M25 and A245, our teams can be on site quickly and efficiently. We\'ve completed garden room projects across KT14 and are familiar with the mix of property types in the area.' },
+    'chobham': { name: 'Chobham', nearby: ['Woking', 'Virginia Water', 'Windlesham', 'Bagshot'], distance: '5 miles', intro: 'Chobham\'s mix of village character and larger plots makes it an ideal location for a garden room. We regularly work in GU24 and the surrounding common land areas. Many of our Chobham customers opt for bespoke builds that complement their garden\'s natural setting.' },
+    'staines-upon-thames': { name: 'Staines-upon-Thames', nearby: ['Egham', 'Ashford', 'Sunbury-on-Thames', 'Virginia Water'], distance: '7 miles', intro: 'Staines-upon-Thames and the TW18 and TW19 postcodes are well within our coverage area. Our team regularly works along the Thames corridor from Staines through to Egham and beyond. A free site visit will establish exactly what\'s possible in your garden.' },
+    'chertsey': { name: 'Chertsey', nearby: ['Addlestone', 'Weybridge', 'Egham', 'Virginia Water'], distance: '2 miles', intro: 'Our showroom is located just outside Chertsey at The Farm Shop in Lyne, so Chertsey is firmly home territory for us. We\'ve completed more garden room projects in KT16 than any other postcode. Come and visit the showroom — you can walk around a finished build and talk to the team in person.' },
+    'egham': { name: 'Egham', nearby: ['Virginia Water', 'Chertsey', 'Staines-upon-Thames', 'Windsor'], distance: '4 miles', intro: 'Egham and Englefield Green are popular areas for our garden rooms — the mix of semi-detached homes and larger detached properties near Royal Holloway suits a wide range of our standard and bespoke builds. TW20 is well within our core delivery zone.' },
+    'walton-on-thames': { name: 'Walton-on-Thames', nearby: ['Weybridge', 'Esher', 'Hersham', 'Molesey'], distance: '9 miles', intro: 'Walton-on-Thames is one of our busiest areas for enquiries and completed builds. The generous garden sizes common across KT12 lend themselves well to garden rooms, and we\'ve built everything from compact home offices to fully bespoke extended-height structures in the area.' },
+    'virginia-water': { name: 'Virginia Water', nearby: ['Chobham', 'Egham', 'Sunningdale', 'Ascot'], distance: '6 miles', intro: 'Virginia Water\'s larger plots and premium homes make it one of our most rewarding areas to work in. Many of our Virginia Water projects are bespoke — designed to sit within mature, landscaped gardens and finished to match the character of the surrounding property.' },
+    'guildford': { name: 'Guildford', nearby: ['Woking', 'Godalming', 'Cranleigh', 'Cobham'], distance: '14 miles', intro: 'Guildford and the villages across GU1, GU2 and GU3 are within comfortable reach of our team in Lyne. We regularly travel to Guildford, Merrow, Burpham and the surrounding areas for site visits and installs.' },
+    'esher': { name: 'Esher', nearby: ['Weybridge', 'Walton-on-Thames', 'Cobham', 'Kingston upon Thames'], distance: '11 miles', intro: 'Esher and the surrounding KT10 postcode — including Claygate, Hinchley Wood and Thames Ditton — are well within our delivery area. Properties in this part of Surrey tend to have generous garden sizes, and we\'ve completed a number of high-specification builds in the area.' },
+    'cobham': { name: 'Cobham', nearby: ['Esher', 'Weybridge', 'Leatherhead', 'Byfleet'], distance: '9 miles', intro: 'Cobham is one of Surrey\'s most popular addresses, and we\'ve been building garden rooms here for years. KT11 properties often come with the space to accommodate a proper garden room — we\'ve built everything from discreet home offices to large entertainment spaces with full bifold glazing.' },
+    'kingston-upon-thames': { name: 'Kingston upon Thames', nearby: ['Esher', 'Walton-on-Thames', 'Richmond', 'Surbiton'], distance: '13 miles', intro: 'Kingston upon Thames and the surrounding KT1, KT2 area are within our delivery zone. We regularly work across this part of south-west London and Surrey — our team is used to the variety of garden sizes and access constraints that come with the territory.' },
+    'leatherhead': { name: 'Leatherhead', nearby: ['Cobham', 'Epsom', 'Dorking', 'Guildford'], distance: '12 miles', intro: 'Leatherhead and the KT22 and KT23 postcodes are well within our team\'s regular coverage area. We\'ve built garden rooms across Fetcham, Great Bookham and the surrounding villages, and our free site visit service extends to the whole of this area.' },
+    'surrey': { name: 'Surrey', nearby: ['Weybridge', 'Woking', 'Guildford', 'Chertsey'], distance: 'Based in Surrey', intro: 'The Green Rooms is based in Lyne, Surrey, and the vast majority of our builds are across the county — from Weybridge and Woking in the north to Guildford and Godalming in the south, and from Staines in the west to Epsom and Leatherhead in the east. If you\'re in Surrey, we cover you.' },
+  };
+  return Object.entries(areas).map(([slug, data]) => ({
+    params: { area: slug },
+    props: { data },
+  }));
+}
+
+const { area } = Astro.params;
+const { data } = Astro.props;
+const { name, intro, nearby, distance } = data;
+const isSurrey = area === 'surrey';
+---
+
+<InfoLayout
+  title={`Garden Rooms ${name} | Bespoke Garden Buildings | The Green Rooms`}
+  description={`Bespoke garden rooms designed and built in ${name}, Surrey. The Green Rooms — local builders with a showroom you can visit. Free site visit, no obligation.`}
+  canonical={`/areas/${area}`}
+  pageTitle={isSurrey ? 'Garden Rooms Across Surrey' : `Garden Rooms in ${name}`}
+  pageSubtitle={isSurrey ? 'Based in Lyne, Surrey — we cover the whole county.' : `Bespoke garden rooms designed and built in ${name} and the surrounding area.`}
+  heroImg="/images/classic GR front on thermo ayous cladding.jpg"
+  heroAlt={`Bespoke garden room built by The Green Rooms, serving ${name}`}
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Areas', href: '/areas/surrey' }, { label: name }]}
+>
+
+  <section style="background:#fff; padding:80px 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px; display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start;">
+
+      <div>
+        <div style="display:inline-block; background:#e7f1e3; color:#257a21; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:5px 14px; border-radius:50px; margin-bottom:20px;">Local Builders</div>
+        <h2 style="font-size:clamp(1.4rem,2.5vw,1.9rem); font-weight:700; color:#2d3841; margin:0 0 20px; line-height:1.25;">Bespoke Garden Rooms in {name}</h2>
+        <p style="font-size:1rem; color:#555; line-height:1.85; margin:0 0 16px;">{intro}</p>
+        <p style="font-size:1rem; color:#555; line-height:1.85; margin:0 0 28px;">Every garden room we build is designed from scratch — we don't sell kit builds or off-the-shelf products. From the initial site visit to handing over the keys, you deal with one team throughout.</p>
+        <a href="/contact-us" class="btn-primary">Book a Free Site Visit</a>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div style="background:#f8faf7; border-radius:16px; padding:28px; border:1px solid #ebeced;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+            {[
+              { label: 'From our showroom', value: distance },
+              { label: 'Build time', value: '2–3 weeks' },
+              { label: 'Site visit', value: 'Free' },
+              { label: 'Guarantee', value: '10 years' },
+            ].map(s => (
+              <div style="text-align:center; background:#fff; border-radius:12px; padding:16px; border:1px solid #e7f1e3;">
+                <p style="font-family:'Poppins',sans-serif; font-size:1.3rem; font-weight:700; color:#34a02e; margin:0 0 4px;">{s.value}</p>
+                <p style="font-size:12px; color:#777; font-weight:600; margin:0;">{s.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div style="background:#f8faf7; border-radius:16px; padding:24px; border:1px solid #ebeced;">
+          <p style="font-size:13px; font-weight:700; color:#2d3841; margin:0 0 12px;">We also cover nearby areas:</p>
+          <div style="display:flex; flex-wrap:wrap; gap:8px;">
+            {nearby.map(n => (
+              <span style="background:#e7f1e3; color:#257a21; font-size:12px; font-weight:600; padding:5px 12px; border-radius:50px;">{n}</span>
+            ))}
+          </div>
+        </div>
+
+        <a href="/showrooms" style="display:flex; align-items:center; gap:16px; background:#2d3841; border-radius:16px; padding:20px 24px; text-decoration:none;">
+          <div>
+            <p style="font-size:13px; font-weight:700; color:#fff; margin:0 0 3px;">Visit Our Showroom</p>
+            <p style="font-size:12px; color:rgba(255,255,255,0.6); margin:0;">The Farm Shop, Lyne, Surrey KT16 0AA</p>
+          </div>
+          <svg style="margin-left:auto; flex-shrink:0;" width="20" height="20" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- What we build -->
+  <section style="background:#f8faf7; padding:80px 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:48px;">
+        <h2 style="font-size:clamp(1.4rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin:0 0 12px;">What We Build in {name}</h2>
+        <p style="font-size:14px; color:#666; max-width:520px; margin:0 auto;">From compact home offices to large bespoke garden rooms — we design and build to suit your garden, your budget, and your plans.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+        {[
+          { title: 'Garden Offices', href: '/garden-rooms/garden-offices', desc: 'Fully insulated, wired, and plastered — ready to work in from day one.', img: '/images/GP%20office%20internal.jpg' },
+          { title: 'Garden Rooms', href: '/garden-rooms/garden-rooms', desc: 'Versatile spaces for living, hobbies, fitness, or entertainment.', img: '/images/Hero%20GR.jpg' },
+          { title: 'Bespoke Builds', href: '/garden-rooms/bespoke', desc: 'Any shape, any size, any specification. We start with a blank page.', img: '/images/HERO%20Bespoke%20build.jpg' },
+          { title: 'Golf Simulators', href: '/garden-rooms/golf-simulator-studios', desc: 'Extended height structures built around your simulator setup.', img: '/images/HERO%20Golf%20sim.jpg' },
+          { title: 'Garden Pods', href: '/garden-rooms/garden-pods', desc: 'Compact, affordable, and ready in as little as two weeks.', img: '/images/Classic%20GP%20upvc%20sliding%20doors%20Hero.jpg' },
+          { title: 'With Storage', href: '/garden-rooms/garden-rooms-with-storage', desc: 'A garden room and a storage room in one seamless structure.', img: '/images/GR%20with%20storage%20cedar%20and%20step.jpg' },
+        ].map(p => (
+          <a href={p.href} style="display:block; background:#fff; border-radius:14px; overflow:hidden; border:1px solid #ebeced; text-decoration:none;">
+            <img src={p.img} alt={p.title} style="width:100%; height:180px; object-fit:cover;" loading="lazy" />
+            <div style="padding:18px 20px;">
+              <p style="font-size:14px; font-weight:700; color:#2d3841; margin:0 0 6px;">{p.title}</p>
+              <p style="font-size:13px; color:#666; line-height:1.6; margin:0;">{p.desc}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why us -->
+  <section style="background:#2d3841; padding:72px 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:40px;">
+        <h2 style="font-size:clamp(1.3rem,2.5vw,1.8rem); font-weight:700; color:#fff; margin:0;">Why {name} Homeowners Choose The Green Rooms</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:40px;">
+        {[
+          { title: 'Local team', desc: 'We\'re based in Lyne, Surrey — not a national franchise. You deal with our own carpenters and our own team throughout.' },
+          { title: 'Showroom you can visit', desc: 'Walk around an actual finished garden room at our Lyne showroom before you commit to anything.' },
+          { title: 'Fully turnkey', desc: 'Foundations, structure, cladding, glazing, electrics, flooring, plastering — all handled. You unlock the door on day one.' },
+          { title: 'SIPs construction', desc: 'Every build uses structural insulated panels — not timber stud. Better insulation, better performance, faster build.' },
+          { title: 'Fixed price', desc: 'Our quotes are itemised and fixed. The price we agree is the price you pay — no surprise extras.' },
+          { title: '10-year guarantee', desc: 'Every garden room comes with a 10-year structural guarantee. We build to last.' },
+        ].map(f => (
+          <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:22px;">
+            <p style="font-size:13px; font-weight:700; color:#fff; margin:0 0 6px;">{f.title}</p>
+            <p style="font-size:13px; color:rgba(255,255,255,0.6); line-height:1.7; margin:0;">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div style="text-align:center;">
+        <a href="/contact-us" class="btn-white" style="font-size:15px; padding:14px 36px;">Book a Free Site Visit in {name}</a>
+      </div>
+    </div>
+  </section>
+
+</InfoLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:1fr 1fr"]:not([style*="repeat"]) { grid-template-columns: 1fr !important; gap: 40px !important; }
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+  }
+  @media (max-width: 600px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"],
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  }
+</style>

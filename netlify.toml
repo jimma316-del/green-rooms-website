@@ -51,61 +51,7 @@
   to = "/garden-rooms/bespoke"
   status = 301
 
-# Area pages → contact us (until individual area pages are built)
-[[redirects]]
-  from = "/areas/weybridge"
-  to = "/contact-us"
-  status = 301
-
-[[redirects]]
-  from = "/areas/woking"
-  to = "/contact-us"
-  status = 301
-
-[[redirects]]
-  from = "/areas/addlestone"
-  to = "/contact-us"
-  status = 301
-
-[[redirects]]
-  from = "/areas/byfleet"
-  to = "/contact-us"
-  status = 301
-
-[[redirects]]
-  from = "/areas/chobham"
-  to = "/contact-us"
-  status = 301
-
-[[redirects]]
-  from = "/areas/staines-upon-thames"
-  to = "/contact-us"
-  status = 301
-
-[[redirects]]
-  from = "/areas/surrey"
-  to = "/contact-us"
-  status = 301
-
-[[redirects]]
-  from = "/areas/chertsey"
-  to = "/contact-us"
-  status = 301
-
-[[redirects]]
-  from = "/areas/egham"
-  to = "/contact-us"
-  status = 301
-
-[[redirects]]
-  from = "/areas/walton-on-thames"
-  to = "/contact-us"
-  status = 301
-
-[[redirects]]
-  from = "/areas/virginia-water"
-  to = "/contact-us"
-  status = 301
+# Area pages now have proper pages — no redirects needed
 
 # Garden room type pages
 [[redirects]]
