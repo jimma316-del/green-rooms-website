@@ -1,3 +1,161 @@
 [build]
   publish = "dist"
   command = "npm run build"
+
+# Redirects for pages that exist on the old site but not yet on the new one.
+# Sends rankings to the closest matching page rather than 404ing.
+
+# Our-work case study pages → our-work index (until individual pages are built)
+[[redirects]]
+  from = "/our-work/garden-room-with-decking-lean-to-shed"
+  to = "/our-work"
+  status = 301
+
+[[redirects]]
+  from = "/our-work/l-shaped-garden-office"
+  to = "/our-work"
+  status = 301
+
+[[redirects]]
+  from = "/our-work/garden-gym-with-hidden-storage"
+  to = "/our-work"
+  status = 301
+
+[[redirects]]
+  from = "/our-work/golf-simulator-garden-room"
+  to = "/garden-rooms/golf-simulator-studios"
+  status = 301
+
+[[redirects]]
+  from = "/our-work/music-studio"
+  to = "/garden-rooms/bespoke"
+  status = 301
+
+[[redirects]]
+  from = "/our-work/bespoke-garden-office-in-east-molesey"
+  to = "/our-work"
+  status = 301
+
+[[redirects]]
+  from = "/our-work/garden-hobby-room"
+  to = "/our-work"
+  status = 301
+
+[[redirects]]
+  from = "/our-work/oak-garden-room"
+  to = "/our-work"
+  status = 301
+
+[[redirects]]
+  from = "/our-work/outdoor-living-space"
+  to = "/garden-rooms/bespoke"
+  status = 301
+
+# Area pages → contact us (until individual area pages are built)
+[[redirects]]
+  from = "/areas/weybridge"
+  to = "/contact-us"
+  status = 301
+
+[[redirects]]
+  from = "/areas/woking"
+  to = "/contact-us"
+  status = 301
+
+[[redirects]]
+  from = "/areas/addlestone"
+  to = "/contact-us"
+  status = 301
+
+[[redirects]]
+  from = "/areas/byfleet"
+  to = "/contact-us"
+  status = 301
+
+[[redirects]]
+  from = "/areas/chobham"
+  to = "/contact-us"
+  status = 301
+
+[[redirects]]
+  from = "/areas/staines-upon-thames"
+  to = "/contact-us"
+  status = 301
+
+[[redirects]]
+  from = "/areas/surrey"
+  to = "/contact-us"
+  status = 301
+
+[[redirects]]
+  from = "/areas/chertsey"
+  to = "/contact-us"
+  status = 301
+
+[[redirects]]
+  from = "/areas/egham"
+  to = "/contact-us"
+  status = 301
+
+[[redirects]]
+  from = "/areas/walton-on-thames"
+  to = "/contact-us"
+  status = 301
+
+[[redirects]]
+  from = "/areas/virginia-water"
+  to = "/contact-us"
+  status = 301
+
+# Garden room type pages
+[[redirects]]
+  from = "/garden-rooms/garden-gym"
+  to = "/garden-rooms/bespoke"
+  status = 301
+
+[[redirects]]
+  from = "/garden-rooms/garden-bar"
+  to = "/garden-rooms/bespoke"
+  status = 301
+
+[[redirects]]
+  from = "/garden-rooms/garden-rooms-inner"
+  to = "/garden-rooms/garden-rooms"
+  status = 301
+
+[[redirects]]
+  from = "/recycle-bin/garden-studios"
+  to = "/garden-rooms/garden-rooms"
+  status = 301
+
+# Your-build pages
+[[redirects]]
+  from = "/your-build/build-process"
+  to = "/your-build/first-steps"
+  status = 301
+
+# Other missing pages
+[[redirects]]
+  from = "/finance"
+  to = "/our-prices"
+  status = 301
+
+[[redirects]]
+  from = "/download-brochure"
+  to = "/contact-us"
+  status = 301
+
+[[redirects]]
+  from = "/site-survey"
+  to = "/contact-us"
+  status = 301
+
+[[redirects]]
+  from = "/privacy-policy"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/terms-conditions"
+  to = "/"
+  status = 301
