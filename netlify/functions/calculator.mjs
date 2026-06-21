@@ -235,11 +235,15 @@ export default async (request) => {
     let c = {}
     try { c = JSON.parse(configRaw) } catch { /* config sent as plain string — use empty object */ }
 
+    console.log('[calculator] received', { firstName, email, price, configKeys: Object.keys(c) })
+
     const apiKey = process.env.RESEND_API_KEY
     if (!apiKey) throw new Error('Missing RESEND_API_KEY')
+    console.log('[calculator] API key present:', !!apiKey)
 
     // Send customer email
     if (email) {
+      console.log('[calculator] sending customer email to', email)
       await sendEmail(
         apiKey,
         email,
@@ -247,9 +251,11 @@ export default async (request) => {
         customerEmail(firstName, price, c),
         TEAM_EMAIL,
       )
+      console.log('[calculator] customer email sent')
     }
 
     // Send team notification
+    console.log('[calculator] sending team email')
     await sendEmail(
       apiKey,
       TEAM_EMAIL,
@@ -257,6 +263,7 @@ export default async (request) => {
       teamEmail(fullName, email, phone, address, price, c),
       email || undefined,
     )
+    console.log('[calculator] team email sent')
 
     // Push to CRM
     await fetch(`${CRM_URL}/api/webhooks/webflow-calculator`, {
