@@ -201,12 +201,18 @@ function teamEmail(fullName, email, phone, address, price, c) {
 }
 
 async function sendEmail(apiKey, to, subject, html, replyTo) {
+  const payload = { from: FROM, to, subject, html }
+  if (replyTo) payload.reply_to = replyTo
   const res = await fetch(RESEND_API, {
     method: 'POST',
     headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ from: FROM, to, subject, html, reply_to: replyTo }),
+    body: JSON.stringify(payload),
   })
-  if (!res.ok) console.error('Resend error:', await res.text())
+  if (!res.ok) {
+    const text = await res.text()
+    console.error('Resend error:', res.status, text)
+    throw new Error(`Resend ${res.status}: ${text}`)
+  }
 }
 
 export default async (request) => {
@@ -226,7 +232,8 @@ export default async (request) => {
     const address = p.get('address') || ''
     const price = p.get('guide-price') || ''
     const configRaw = p.get('configuration') || '{}'
-    const c = JSON.parse(configRaw)
+    let c = {}
+    try { c = JSON.parse(configRaw) } catch { /* config sent as plain string — use empty object */ }
 
     const apiKey = process.env.RESEND_API_KEY
     if (!apiKey) throw new Error('Missing RESEND_API_KEY')
