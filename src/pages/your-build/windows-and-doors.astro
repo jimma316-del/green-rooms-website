@@ -1,0 +1,88 @@
+---
+import InfoLayout from '../../layouts/InfoLayout.astro';
+
+const doors = [
+  { name: 'Aluminium Bifold Doors', desc: 'Our most popular choice for Garden Rooms. Full-width aluminium frames that fold and stack to one side, opening the room completely to the garden. Available in any RAL colour. A-rated glazing as standard.', best: 'Garden Rooms, entertainment spaces, maximum indoor-outdoor connection', img: '/images/GP%203.6m%20Bifolds%20open.jpg' },
+  { name: 'Aluminium Crittall Bifolds', desc: 'Slim steel-look Crittall-style frames with a distinctive industrial aesthetic. Available in 3m, 4m and 5m widths. A bold design statement for contemporary builds.', best: 'Contemporary builds, design-led projects, bold statements', img: '/images/GR%205m%20crittal%20bifolds.jpg' },
+  { name: 'Aluminium Sliding Doors', desc: 'Slim aluminium frames with large glass panes that slide behind each other. A clean, contemporary alternative to bifolds with a slightly smaller opening.', best: 'Modern aesthetics, spaces where bifold stacking isn\'t practical', img: '/images/4m%20sliding%20doors%20internal%20view.jpg' },
+  { name: 'UPVC Sliding Doors', desc: 'Low-profile sliding patio doors in UPVC. Good for medium-sized openings where a sliding action is preferred.', best: 'Garden Pods and offices, moderate budgets', img: '/images/upvc%20sliding%20doors.jpg' },
+  { name: 'Aluminium French Doors', desc: 'Twin inward or outward-opening doors in aluminium with A-rated double glazing. A refined, traditional look with contemporary performance.', best: 'Garden offices, smaller openings, classic aesthetic', img: '/images/ali%20french%20door%20open%20with%20blinds.jpg' },
+];
+
+const windows = [
+  { name: 'Slot Window', desc: 'A narrow horizontal window running along one wall — brings in side light without taking up wall space or compromising privacy.' },
+  { name: 'Casement Window', desc: 'Single or double casement windows in aluminium or UPVC. Open outward for ventilation. Can be positioned anywhere on the build.' },
+  { name: 'Fixed Glazed Panel', desc: 'Non-opening glazed panel for light without ventilation. Popular on side walls where privacy is less of a concern.' },
+  { name: 'Roof Lantern / Rooflight', desc: 'Overhead glazing for dramatic natural light from above. Popular on flat-roof builds where a rear window isn\'t possible.' },
+];
+---
+<InfoLayout
+  title="Windows & Doors | Garden Room Glazing Options | The Green Rooms"
+  description="Everything about garden room doors and windows — bifolds, sliding, French doors, UPVC and aluminium options. What's standard, what's available, and how to choose."
+  canonical="/your-build/windows-and-doors"
+  pageTitle="Windows & Doors"
+  pageSubtitle="Doors and glazing make the biggest visible difference to your garden room. Here's what we offer and how to choose."
+  heroImg="/images/4m%20crittal%20bifold%20doors%20from%20outside.jpg"
+  heroAlt="4m crittal bifold doors on a garden room, Surrey"
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build', href: '/your-build/build-process' }, { label: 'Windows & Doors' }]}
+>
+  <section style="background:#fff; padding:72px 0;">
+    <div style="max-width:900px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-size:1.3rem; font-weight:700; color:#2d3841; margin:0 0 24px;">Door Options</h2>
+      <div style="display:flex; flex-direction:column; gap:16px; margin-bottom:56px;">
+        {doors.map((d, i) => (
+          <div style={`border-radius:16px; overflow:hidden; border:2px solid ${i === 0 ? '#34a02e' : '#ebeced'};`}>
+            <div style="height:240px; overflow:hidden;">
+              <img src={d.img} alt={d.name + ' on a garden room'} style="width:100%; height:100%; object-fit:cover;" loading="lazy" />
+            </div>
+            <div style={`padding:22px 24px; background:${i === 0 ? '#f0faf0' : '#fff'};`}>
+              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:10px;">
+                <h3 style="font-size:1rem; font-weight:700; color:#2d3841; margin:0;">{d.name}</h3>
+                {i === 0 && <span style="background:#34a02e; color:#fff; font-size:11px; font-weight:700; padding:3px 12px; border-radius:50px; white-space:nowrap;">Most Popular</span>}
+              </div>
+              <p style="font-size:13.5px; color:#555; line-height:1.7; margin:0 0 12px;">{d.desc}</p>
+              <div style="display:flex; align-items:center; gap:8px;">
+                <svg width="12" height="12" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span style="font-size:12px; color:#444; font-weight:600;">Best for: {d.best}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <h2 style="font-size:1.3rem; font-weight:700; color:#2d3841; margin:0 0 24px;">Window Options</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:28px;">
+        <div style="border-radius:12px; overflow:hidden; height:200px;"><img src="/images/Slot%20window%20internal%20view.jpg" alt="Slot window inside garden room" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:12px; overflow:hidden; height:200px;"><img src="/images/desk%20window%20top%20hung%20internal%20view.jpg" alt="Top-hung desk window inside garden room" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:12px; overflow:hidden; height:200px;"><img src="/images/triple%20ali%20window%20internal%20view.jpg" alt="Triple aluminium window inside garden room" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:48px;">
+        {windows.map(w => (
+          <div style="background:#f8faf7; border-radius:14px; padding:22px; border:1px solid #ebeced;">
+            <h3 style="font-size:13px; font-weight:700; color:#2d3841; margin:0 0 8px;">{w.name}</h3>
+            <p style="font-size:13px; color:#555; line-height:1.7; margin:0;">{w.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <div style="background:#2d3841; border-radius:16px; padding:28px; margin-bottom:24px;">
+        <h3 style="font-size:1rem; font-weight:700; color:#fff; margin:0 0 10px;">All Glazing is A-Rated as Standard</h3>
+        <p style="font-size:13.5px; color:rgba(255,255,255,0.75); line-height:1.75; margin:0;">Every door and window we install uses A-rated double glazing — not because it's a premium extra, but because it's the minimum we consider acceptable for a year-round garden room. Thermal performance, condensation resistance and acoustic insulation all depend on glazing quality.</p>
+      </div>
+
+      <div style="background:#34a02e; border-radius:20px; padding:32px; text-align:center;">
+        <h3 style="font-size:1.1rem; font-weight:700; color:#fff; margin:0 0 10px;">See the Options in Person</h3>
+        <p style="font-size:13.5px; color:rgba(255,255,255,0.85); margin:0 0 20px;">Visit our Lyne showroom to see the bifold doors, slot windows and glazing quality up close before you decide.</p>
+        <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:10px;">
+          <a href="/showrooms" class="btn-white" style="font-size:14px; padding:12px 24px;">Visit the Showroom</a>
+          <a href="/contact-us" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.5); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:13px; padding:10px 22px; border-radius:50px; text-decoration:none;">Book a Free Site Visit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</InfoLayout>
+<style>
+  @media (max-width: 600px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  }
+</style>

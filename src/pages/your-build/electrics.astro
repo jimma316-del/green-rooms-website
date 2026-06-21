@@ -1,0 +1,87 @@
+---
+import InfoLayout from '../../layouts/InfoLayout.astro';
+---
+<InfoLayout
+  title="Garden Room Electrics | What's Included | The Green Rooms Surrey"
+  description="Every Green Rooms build includes a full mains electrical installation with a dedicated consumer unit, lighting, sockets and a signed BS 7671 certificate."
+  canonical="/your-build/electrics"
+  pageTitle="Electrical Installation"
+  pageSubtitle="Every build includes a full, certified electrical installation — not a basic spur from the house. Here's what that means."
+  heroImg="/images/Dual%20Canopy%20Lighting.jpg"
+  heroAlt="Garden room dual canopy with LED lighting, Surrey"
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build', href: '/your-build/build-process' }, { label: 'Electrics' }]}
+>
+  <section style="background:#fff; padding:72px 0;">
+    <div style="max-width:1000px; margin:0 auto; padding:0 24px;">
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-bottom:48px; align-items:start;">
+        <div>
+          <h2 style="font-size:1.2rem; font-weight:700; color:#2d3841; margin:0 0 16px;">What's Included as Standard</h2>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            {[
+              ['Mains cable run from house', 'A proper armoured mains cable, not an extension lead.'],
+              ['Dedicated consumer unit', 'Your garden room gets its own fuse board — essential for safety and insurance.'],
+              ['RCD protection', 'Residual Current Device protection on all circuits as standard.'],
+              ['Lighting circuit', 'Switched lighting points throughout the room.'],
+              ['LED downlights', 'Warm white LED fittings as standard — you choose the layout.'],
+              ['Double sockets', 'Multiple double socket positions, positioned for your intended use.'],
+              ['Canopy LED lighting', 'External LED downlights in the canopy overhang (where applicable).'],
+              ['Full circuit testing', 'Every circuit is tested to BS 7671 standards.'],
+              ['Electrical Installation Certificate', 'A signed EIC issued by our qualified electricians.'],
+            ].map(([title, desc]) => (
+              <div style="background:#f8faf7; border-radius:10px; padding:14px 16px; border:1px solid #ebeced; display:flex; gap:12px; align-items:flex-start;">
+                <svg width="14" height="14" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:2px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <div>
+                  <p style="font-size:13px; font-weight:700; color:#2d3841; margin:0 0 2px;">{title}</p>
+                  <p style="font-size:12.5px; color:#555; margin:0;">{desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <h2 style="font-size:1.2rem; font-weight:700; color:#2d3841; margin:0 0 16px;">Optional Upgrades</h2>
+          <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:24px;">
+            {[
+              ['Cat 6a Internet Cable', 'Run during the build — hardwired internet connection at your desk position, with additional data points.'],
+              ['Air Conditioning Circuit', 'Dedicated circuit for a split air conditioning unit — heating and cooling for year-round comfort.'],
+              ['USB Sockets', 'Flush-fit USB A and C charging ports built into socket positions.'],
+              ['Smart Lighting Control', 'App or voice-controlled lighting compatible with Apple HomeKit, Google Home and Alexa.'],
+              ['External Security Lighting', 'PIR-triggered security lights on the exterior of the building.'],
+            ].map(([title, desc]) => (
+              <div style="background:#e7f1e3; border-radius:10px; padding:14px 16px; border:1px solid rgba(52,160,46,0.2); display:flex; gap:12px; align-items:flex-start;">
+                <svg width="14" height="14" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:2px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                <div>
+                  <p style="font-size:13px; font-weight:700; color:#2d3841; margin:0 0 2px;">{title}</p>
+                  <p style="font-size:12.5px; color:#444; margin:0;">{desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div style="background:#2d3841; border-radius:14px; padding:20px;">
+            <p style="font-size:13px; font-weight:700; color:#34a02e; margin:0 0 6px;">Why the EIC Matters</p>
+            <p style="font-size:13px; color:rgba(255,255,255,0.75); line-height:1.7; margin:0;">Your Electrical Installation Certificate is required by many home insurers, is essential if you ever sell the property, and confirms the installation meets current UK wiring regulations. We include this on every single build — it's not an optional extra.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:12px; margin-bottom:40px;">
+        <div style="border-radius:12px; overflow:hidden; height:180px;"><img src="/images/Dual%20Canopy%20Lighting.jpg" alt="Dual canopy LED lighting on garden room" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:12px; overflow:hidden; height:180px;"><img src="/images/GR%20with%20cedar%20cladding%20Nordlux%20kyclop%20ripple%20wall%20light.jpg" alt="External wall light on garden room" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:12px; overflow:hidden; height:180px;"><img src="/images/WIFI.jpg" alt="WiFi and Cat6 internet in garden room" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:12px; overflow:hidden; height:180px;"><img src="/images/LED%20strip%20lighting%20gym.jpg" alt="LED strip lighting inside garden gym" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+
+      <div style="background:#34a02e; border-radius:20px; padding:32px; text-align:center;">
+        <h3 style="font-size:1.1rem; font-weight:700; color:#fff; margin:0 0 10px;">Questions About Your Electrical Spec?</h3>
+        <p style="font-size:13.5px; color:rgba(255,255,255,0.85); margin:0 0 20px;">Talk it through during your free site visit — we'll plan the socket positions, circuit layout and any extras based on exactly how you plan to use the room.</p>
+        <a href="/contact-us" class="btn-white" style="font-size:14px; padding:12px 24px;">Book a Free Site Visit</a>
+      </div>
+    </div>
+  </section>
+</InfoLayout>
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 28px !important; }
+  }
+</style>

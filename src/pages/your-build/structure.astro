@@ -1,0 +1,140 @@
+---
+import InfoLayout from '../../layouts/InfoLayout.astro';
+---
+<InfoLayout
+  title="Garden Room Structure | SIPs Construction | The Green Rooms Surrey"
+  description="How we build the structure of every garden room — SIPs panels throughout for the floor, walls and roof. No timber frame."
+  canonical="/your-build/structure"
+  pageTitle="Structure"
+  pageSubtitle="Every Green Rooms build uses Structural Insulated Panels from floor to roof — no timber frame shortcutting."
+  heroImg="/images/SIPS.jpg"
+  heroAlt="SIPs structural insulated panels used in garden room construction"
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build' }, { label: 'Structure' }]}
+>
+
+  <section style="background:#fff; padding:72px 0;">
+    <div style="max-width:1100px; margin:0 auto; padding:0 24px;">
+
+      <!-- Intro -->
+      <div style="max-width:720px; margin:0 auto 72px; text-align:center;">
+        <div style="display:inline-block; background:#e7f1e3; color:#257a21; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:5px 14px; border-radius:50px; margin-bottom:16px;">SIPs Throughout</div>
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:16px;">Why SIPs and Not Timber Frame?</h2>
+        <p style="font-size:1rem; color:#555; line-height:1.85;">A Structural Insulated Panel is a rigid foam insulation core bonded between two structural boards — one component that is simultaneously structure, insulation and vapour barrier. Timber frame buildings need separate layers for each of these functions, which introduces gaps, thermal bridges and long-term performance risks. We use SIPs for every element — floor, walls and roof.</p>
+      </div>
+
+      <!-- Floor -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; margin-bottom:80px;">
+        <div>
+          <div style="display:inline-block; background:#e7f1e3; color:#257a21; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:5px 14px; border-radius:50px; margin-bottom:16px;">01 — Floor</div>
+          <h2 style="font-size:1.5rem; font-weight:700; color:#2d3841; margin-bottom:16px;">A Flat, Warm, Moisture-Resistant Base</h2>
+          <p style="font-size:14.5px; color:#555; line-height:1.85; margin-bottom:14px;">The floor is constructed from SIPs panels laid directly onto the ground screw framework, creating a perfectly level, structurally rigid platform before anything else goes up.</p>
+          <p style="font-size:14.5px; color:#555; line-height:1.85; margin-bottom:24px;">Because the insulation is integral to the panel — not fitted separately — there are no cold bridges, no sagging mineral wool and no gaps for moisture to exploit over time. The floor stays warm in winter and doesn't flex underfoot.</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            {['Integral insulation — no separate layer required', 'Rigid — no bounce or flex underfoot', 'Moisture-resistant OSB facing on both sides', 'Sits level on ground screw framework'].map(point => (
+              <div style="display:flex; align-items:flex-start; gap:10px;">
+                <svg width="14" height="14" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:3px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span style="font-size:13.5px; color:#555;">{point}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div style="border-radius:16px; overflow:hidden; background:#f8faf7; border:1px solid #ebeced;">
+          <img src="/images/Floor%20construction.gif" alt="Floor SIPs construction" style="width:100%; display:block;" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Walls -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; margin-bottom:80px;">
+        <div style="border-radius:16px; overflow:hidden; background:#f8faf7; border:1px solid #ebeced;">
+          <img src="/images/Walls%20construction.gif" alt="Wall SIPs construction" style="width:100%; display:block;" loading="lazy" />
+        </div>
+        <div>
+          <div style="display:inline-block; background:#e7f1e3; color:#257a21; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:5px 14px; border-radius:50px; margin-bottom:16px;">02 — Walls</div>
+          <h2 style="font-size:1.5rem; font-weight:700; color:#2d3841; margin-bottom:16px;">Strong, Quiet and Thermally Efficient</h2>
+          <p style="font-size:14.5px; color:#555; line-height:1.85; margin-bottom:14px;">SIPs wall panels are lifted into position and secured to the floor platform. Vertical timber battens are fixed to the exterior face of the panels, creating a ventilated cavity behind the cladding and a channel for services.</p>
+          <p style="font-size:14.5px; color:#555; line-height:1.85; margin-bottom:24px;">Internally, plasterboard is bonded directly to the panel face, followed by a skim plaster finish. Because the panel is the structural element, there are no internal stud walls consuming floor area — your room dimensions are your usable dimensions.</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            {['SIPs core provides structure and insulation in one', 'No internal studwork eating into floor space', 'Significantly better soundproofing than timber frame', 'Plasterboard bonded directly to panel face'].map(point => (
+              <div style="display:flex; align-items:flex-start; gap:10px;">
+                <svg width="14" height="14" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:3px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span style="font-size:13.5px; color:#555;">{point}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Roof -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; margin-bottom:72px;">
+        <div>
+          <div style="display:inline-block; background:#e7f1e3; color:#257a21; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:5px 14px; border-radius:50px; margin-bottom:16px;">03 — Roof</div>
+          <h2 style="font-size:1.5rem; font-weight:700; color:#2d3841; margin-bottom:16px;">Properly Insulated. Properly Guaranteed.</h2>
+          <p style="font-size:14.5px; color:#555; line-height:1.85; margin-bottom:14px;">The roof uses SIPs panels of at least 5 inches thickness — substantially more insulation than most garden room builders specify. A gentle fall is built in to shed rainwater, and the entire deck is covered with EPDM rubber membrane or metal panel roofing.</p>
+          <p style="font-size:14.5px; color:#555; line-height:1.85; margin-bottom:24px;">Both systems carry a 20-year guarantee as standard. We never use felt — it's the most common failure point in cheap garden rooms, cracking and lifting within a few years. We won't fit it.</p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            {['Minimum 5" SIPs — superior thermal performance', 'EPDM rubber or metal panel — 20-year guarantee', 'Built-in fall for rainwater drainage', 'Felt never used on any Green Rooms build', 'Skylights available as an upgrade'].map(point => (
+              <div style="display:flex; align-items:flex-start; gap:10px;">
+                <svg width="14" height="14" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:3px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span style="font-size:13.5px; color:#555;">{point}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div style="border-radius:16px; overflow:hidden; background:#f8faf7; border:1px solid #ebeced;">
+          <img src="/images/roof%20construction.gif" alt="Roof SIPs construction" style="width:100%; display:block;" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- SIPs vs Timber comparison -->
+      <div style="background:#1a2328; border-radius:20px; padding:40px; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;">
+        <div>
+          <h2 style="font-size:1.4rem; font-weight:700; color:#fff; margin-bottom:24px;">SIPs vs Timber Frame</h2>
+          <div>
+            <div style="display:grid; grid-template-columns:110px 1fr 1fr; gap:10px; padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.08);">
+              <span style="font-size:11px; font-weight:700; color:rgba(255,255,255,0.35); text-transform:uppercase;"></span>
+              <span style="font-size:11px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.05em;">SIPs</span>
+              <span style="font-size:11px; font-weight:700; color:rgba(255,255,255,0.35); text-transform:uppercase; letter-spacing:0.05em;">Timber Frame</span>
+            </div>
+            {[
+              { label:'Insulation', sips:'Integral — no gaps', timber:'Fitted separately' },
+              { label:'Thermal bridges', sips:'None', timber:'At every stud' },
+              { label:'Soundproofing', sips:'Superior', timber:'Poor' },
+              { label:'Floor space', sips:'Full room dimensions', timber:'Lost to studwork' },
+              { label:'Build speed', sips:'Faster', timber:'Slower' },
+              { label:'Long-term', sips:'No settling or gaps', timber:'Can shrink and gap' },
+            ].map((row, i) => (
+              <div style={`display:grid; grid-template-columns:110px 1fr 1fr; gap:10px; padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.08);`}>
+                <span style="font-size:12px; font-weight:600; color:rgba(255,255,255,0.45);">{row.label}</span>
+                <span style="font-size:13px; color:#34a02e; font-weight:600;">{row.sips}</span>
+                <span style="font-size:13px; color:rgba(255,255,255,0.35);">{row.timber}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div style="border-radius:14px; overflow:hidden;">
+          <img src="/images/SIPS.jpg" alt="SIPs panel cross-section" style="width:100%;display:block;object-fit:cover;" loading="lazy" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="background:#34a02e; padding:72px 24px; text-align:center;">
+    <div style="max-width:520px; margin:0 auto;">
+      <h2 style="font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700; color:#fff; margin-bottom:14px;">Want to See a SIPs Build in Person?</h2>
+      <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:28px;">Visit our showroom in Lyne, Surrey — walk around a completed garden room, touch the materials and ask us anything.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+        <a href="/showrooms" class="btn-white" style="font-size:15px; padding:14px 32px;">Visit the Showroom</a>
+        <a href="/contact-us" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.5); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none;">Book a Free Site Visit</a>
+      </div>
+    </div>
+  </section>
+
+</InfoLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 32px !important; }
+    div[style*="grid-template-columns:110px 1fr 1fr"] { grid-template-columns: 90px 1fr 1fr !important; }
+  }
+</style>

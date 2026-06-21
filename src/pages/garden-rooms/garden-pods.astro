@@ -1,0 +1,90 @@
+---
+import ServiceLayout from '../../components/ServiceLayout.astro';
+
+const features = [
+  { icon: 'star', title: 'Budget-Friendly Entry Point', desc: 'Our most affordable structure — starting from £12,750 inc VAT. All the quality of a full garden room, right-sized for smaller gardens and budgets.' },
+  { icon: 'door', title: 'UPVC French or Sliding Doors', desc: 'Smooth, well-insulated access with clean sightlines. French or sliding doors to suit your preference and garden layout.' },
+  { icon: 'layers', title: 'SIPs Construction', desc: 'Same structural insulated panel system used in all our builds. Properly insulated, draught-free and year-round ready.' },
+  { icon: 'layers', title: 'Premium Cladding Option', desc: 'One wall finished in your choice of premium visual cladding. The other three in durable, zero-maintenance metal cladding.' },
+  { icon: 'lightning', title: 'Full Electrics Included', desc: 'Mains connection, consumer unit, sockets, lighting, and a signed electrical certificate — not an optional extra.' },
+  { icon: 'key', title: 'Fully Turnkey', desc: 'Ground screw foundations, structure, cladding, glazing, flooring, plastering, and site clean-up all included.' },
+];
+
+const related = [
+  { label: 'Garden Offices', href: '/garden-rooms/garden-offices', img: '/images/GP%20office%20internal.jpg' },
+  { label: 'Garden Rooms', href: '/garden-rooms/garden-rooms', img: '/images/classic%20GR%20front%20on%20thermo%20ayous%20cladding.jpg' },
+  { label: 'Garden Rooms with Storage', href: '/garden-rooms/garden-rooms-with-storage', img: '/images/GR%20with%20storage%20cedar%20and%20step.jpg' },
+];
+---
+
+<ServiceLayout
+  title="Garden Pods Surrey | Compact Garden Buildings from £12,750 | The Green Rooms"
+  description="Compact, high-quality garden pods built across Surrey from £12,750 inc VAT. SIPs construction, full electrics, premium cladding — turnkey installation. Free site visit."
+  canonical="/garden-rooms/garden-pods"
+  heroImg="/images/Classic%20GP%20upvc%20sliding%20doors%20Hero.jpg"
+  heroAlt="Classic garden pod built by The Green Rooms, Surrey"
+  h1="Garden Pods"
+  tagline="Compact Garden Buildings — Surrey & South East"
+  price="From £12,750 inc VAT"
+  intro="Our Garden Pods are the ideal starting point — compact, well-built, and properly insulated garden buildings that deliver far more than the flat-pack alternatives. They strip away the non-essentials and focus on what matters: a quality structure, a proper electrical installation, and a space you'll actually want to spend time in."
+  features={features}
+  relatedPages={related}
+>
+
+  <!-- Photo gallery -->
+  <section style="background:#f8faf7; padding:72px 0 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.4rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin:0 0 24px;">Garden Pods We've Built</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:12px;">
+        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/Classic%20GP%20Hardie%20plank%20VL%20with%20upvc%20sliding%20doors.jpg" alt="Classic garden pod with Hardie Plank cladding" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/GP%20cedar.jpg" alt="Garden pod with cedar cladding" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/GP%20with%20bifolds%20and%20cedar.jpg" alt="Garden pod with bifold doors and cedar" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:12px;">
+        <div style="border-radius:14px; overflow:hidden; height:220px;"><img src="/images/GP%203.6m%20Bifolds%20open.jpg" alt="Garden pod with 3.6m bifold doors open" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:220px;"><img src="/images/classic%20GP%20with%20larch.jpg" alt="Classic garden pod with larch cladding" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:220px;"><img src="/images/GP%20with%20glass%20corner%20cedar%20cladding.jpg" alt="Garden pod with glass corner and cedar" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:12px; margin-bottom:72px;">
+        <div style="border-radius:14px; overflow:hidden; height:170px;"><img src="/images/Classic%20GP%20larch%20front%20on.jpg" alt="Classic garden pod with larch cladding front on" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:170px;"><img src="/images/GP%203.6m%20bifolds%20closed.jpg" alt="Garden pod with 3.6m bifolds closed" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:170px;"><img src="/images/Classic%20GP%20Hardie%20plank%20VL%20with%20upvc%20sliding%20doors.jpg" alt="Garden pod with Hardie plank cladding" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:170px;"><img src="/images/crittal%20doors%20millboard%20cladding%20in%20burnt%20cedar%20GP.jpg" alt="Garden pod with Crittall doors and millboard cladding" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#fff;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
+        <div>
+          <h2 style="font-size:clamp(1.5rem,2.5vw,2rem); font-weight:700; color:#2d3841; margin-bottom:16px;">Perfect For</h2>
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            {[
+              'A quiet home office for one person',
+              'A creative studio or hobby room',
+              'A reading room or personal retreat',
+              'A compact gym or yoga space',
+              'A children\'s playroom or teenage den',
+              'Additional storage with style',
+            ].map(use => (
+              <div style="display:flex; align-items:center; gap:12px; padding:12px 16px; background:#f8faf7; border-radius:10px; border:1px solid #ebeced;">
+                <svg width="16" height="16" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span style="font-size:14px; font-weight:600; color:#2d3841;">{use}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <img
+            src="/images/Classic%20GP%20larch%20front%20on.jpg"
+            alt="Garden pod by The Green Rooms, Surrey"
+            style="width:100%; border-radius:16px; box-shadow:0 8px 32px rgba(0,0,0,0.1);"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+</ServiceLayout>

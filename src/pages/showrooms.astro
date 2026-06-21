@@ -1,0 +1,114 @@
+---
+import InfoLayout from '../layouts/InfoLayout.astro';
+---
+
+<InfoLayout
+  title="Garden Room Showroom Surrey | Visit Us in Lyne, Chertsey | The Green Rooms"
+  description="Visit The Green Rooms showroom at The Farm Shop, Lyne, Chertsey. Walk through a real finished garden room, see cladding samples, flooring options and talk to the team."
+  canonical="/showrooms"
+  pageTitle="Visit Our Showroom"
+  pageSubtitle="Step inside a real, finished garden room and see the quality for yourself — no glossy brochures, no renders."
+  heroImg="/images/Showroom%20side%20on.jpeg"
+  heroAlt="The Green Rooms showroom in Lyne, Surrey"
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Showroom' }]}
+>
+
+  <!-- Location section -->
+  <section style="background:#fff; padding:80px 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px; display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start;">
+      <div>
+        <h2 style="font-size:clamp(1.3rem,2.5vw,1.75rem); font-weight:700; color:#2d3841; margin-bottom:20px;">Lyne Showroom</h2>
+        <div style="background:#f8faf7; border-radius:16px; padding:28px; border:1px solid #ebeced; margin-bottom:24px;">
+          <div style="display:flex; flex-direction:column; gap:14px;">
+            <div style="display:flex; gap:14px; align-items:flex-start;">
+              <div style="width:32px; height:32px; background:#e7f1e3; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg width="16" height="16" fill="#34a02e" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              </div>
+              <div>
+                <p style="font-size:13px; font-weight:700; color:#2d3841; margin:0 0 2px;">Address</p>
+                <p style="font-size:13px; color:#555; margin:0; line-height:1.6;">The Farm Shop, Hardwick Lane<br />Lyne, Chertsey, Surrey<br />KT16 0AA</p>
+              </div>
+            </div>
+            <div style="display:flex; gap:14px; align-items:flex-start;">
+              <div style="width:32px; height:32px; background:#e7f1e3; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg width="16" height="16" fill="#34a02e" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+              </div>
+              <div>
+                <p style="font-size:13px; font-weight:700; color:#2d3841; margin:0 0 2px;">Opening Hours</p>
+                <p style="font-size:13px; color:#555; margin:0; line-height:1.6;">During The Farm Shop Lyne's opening hours<br /><a href="https://www.thefarmshoplyne.com" target="_blank" rel="noopener" style="color:#34a02e; font-weight:600;">Check The Farm Shop's website for times →</a></p>
+              </div>
+            </div>
+            <div style="display:flex; gap:14px; align-items:flex-start;">
+              <div style="width:32px; height:32px; background:#e7f1e3; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg width="16" height="16" fill="#34a02e" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+              </div>
+              <div>
+                <p style="font-size:13px; font-weight:700; color:#2d3841; margin:0 0 2px;">Phone</p>
+                <a href="tel:01932640242" style="font-size:13px; color:#34a02e; font-weight:600; text-decoration:none;">01932 640242</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:14px; color:#555; line-height:1.75; margin-bottom:20px;">The showroom is unstaffed during regular farm shop hours — you're welcome to walk in and take your time. If you'd like someone from the team there to walk you through everything, book a showroom appointment below.</p>
+        <a href="/contact-us" class="btn-primary">Book a Showroom Appointment</a>
+      </div>
+
+      <div>
+        <h2 style="font-size:clamp(1.3rem,2.5vw,1.75rem); font-weight:700; color:#2d3841; margin-bottom:20px;">What You'll See</h2>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          {[
+            { icon: '🏠', title: 'A Real Finished Garden Room', desc: 'Walk through a full-size, completed garden room — not a show stand or a floor plan. Get a proper feel for the space, the height, the light.' },
+            { icon: '🪵', title: 'Cladding Options on Display', desc: 'Touch and compare our cladding materials side by side — Cedar, Charred Spruce, Thermo Ayous, Hardie Plank, metal cladding and more.' },
+            { icon: '🏗️', title: 'SIPs Panel Samples', desc: 'See a cross-section of our SIPs construction — understand exactly what\'s inside the walls before you commit.' },
+            { icon: '🚪', title: 'Doors, Windows & Glazing', desc: 'Aluminium bifolds, French doors, sliding doors, slot windows — inspect the hardware and glazing quality up close.' },
+            { icon: '🏡', title: 'Flooring & Interior Finish', desc: 'Sample flooring options and see how our plaster finish looks and feels at full scale.' },
+            { icon: '💡', title: 'Lighting & Electrical', desc: 'See LED canopy lighting, internal downlights, and our consumer unit setup in a real installed context.' },
+          ].map(item => (
+            <div style="display:flex; gap:14px; padding:16px; background:#f8faf7; border-radius:12px; border:1px solid #ebeced;">
+              <span style="font-size:18px; flex-shrink:0;">{item.icon}</span>
+              <div>
+                <p style="font-size:13px; font-weight:700; color:#2d3841; margin:0 0 3px;">{item.title}</p>
+                <p style="font-size:12.5px; color:#555; line-height:1.6; margin:0;">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Showroom photos -->
+  <section style="background:#f8faf7; padding:72px 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.3rem,2.5vw,1.7rem); font-weight:700; color:#2d3841; margin:0 0 24px;">The Showroom</h2>
+      <div style="display:grid; grid-template-columns:2fr 1fr 1fr; gap:12px; margin-bottom:12px;">
+        <div style="border-radius:14px; overflow:hidden; height:300px;"><img src="/images/showroom%20end%20of%20garden.jpg" alt="The Green Rooms showroom at The Farm Shop Lyne" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:300px;"><img src="/images/Showroom%20side%20on.jpeg" alt="Side view of The Green Rooms showroom" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:300px;"><img src="/images/showroom%20close%20up%20outside.jpeg" alt="Close up of The Green Rooms showroom exterior" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/showroom%20internal%20panelling%20floor%20samples.jpeg" alt="Inside the showroom — panelling, floor and cladding samples" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/showroom%20internal%20view%20showing%20cladding%20options.jpeg" alt="Cladding options on display inside the showroom" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#34a02e; padding:72px 24px; text-align:center;">
+    <div style="max-width:520px; margin:0 auto;">
+      <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#fff; margin-bottom:14px;">Can't Make It to the Showroom?</h2>
+      <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:28px;">We'll come to you. Book a free site visit and we'll assess your garden, talk through the options, and give you an honest recommendation — no obligation.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+        <a href="/contact-us" class="btn-white" style="font-size:15px; padding:14px 32px;">Book a Free Site Visit</a>
+        <a href="/garden-room-price-calculator" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.5); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none;">Get an Instant Quote</a>
+      </div>
+    </div>
+  </section>
+
+</InfoLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 40px !important; }
+  }
+</style>

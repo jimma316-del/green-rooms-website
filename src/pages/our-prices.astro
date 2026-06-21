@@ -1,0 +1,168 @@
+---
+import InfoLayout from '../layouts/InfoLayout.astro';
+
+const products = [
+  {
+    name: 'Garden Pod',
+    price: 'From £12,750',
+    priceNote: 'inc VAT',
+    desc: 'Our most compact and affordable structure. Ideal for a solo home office, hobby room or retreat. UPVC doors, metal and premium cladding, SIPs insulation.',
+    href: '/garden-rooms/garden-pods',
+    img: '/images/Classic%20GP%20larch%20front%20on.jpg',
+    features: ['Ground screw foundations', 'SIPs construction', 'UPVC French or sliding doors', 'Full electrical installation', 'Plastered interior', 'Fitted flooring'],
+  },
+  {
+    name: 'Garden Office',
+    price: 'From £15,450',
+    priceNote: 'inc VAT',
+    desc: 'Designed specifically for productive home working. Includes Cat 6a internet cable, dedicated sockets, and year-round climate comfort.',
+    href: '/garden-rooms/garden-offices',
+    img: '/images/GP%20office%20internal.jpg',
+    features: ['Everything in Garden Pod', 'Cat 6a internet cable', 'Aluminium doors upgrade', 'Canopy with LED lighting', 'Window positioned for screen work', 'Electrical sign-off certificate'],
+    highlight: true,
+  },
+  {
+    name: 'Garden Room',
+    price: 'From £16,950',
+    priceNote: 'inc VAT',
+    desc: 'Full-width aluminium bifold doors, a canopy with LED downlights and premium cladding as standard. The most versatile structure we build.',
+    href: '/garden-rooms/garden-rooms',
+    img: '/images/GR%204m%20bifolds.jpg',
+    features: ['Everything in Garden Office', 'Aluminium bifold doors', 'Slot window as standard', 'Full-width canopy', 'Premium cladding on feature wall'],
+  },
+  {
+    name: 'Garden Room with Storage',
+    price: 'From £18,900',
+    priceNote: 'inc VAT',
+    desc: 'All the features of our Garden Room plus a fully integrated hidden storage room behind a secret door — flush-clad to match the room.',
+    href: '/garden-rooms/garden-rooms-with-storage',
+    img: '/images/GR%20with%20storage%20cedar%20and%20step.jpg',
+    features: ['Everything in Garden Room', 'Integrated storage room', 'Secret door with matching cladding', 'Minimum footprint: 4m × 2.5m'],
+  },
+];
+
+const included = [
+  'Ground screw foundations',
+  'SIPs construction throughout',
+  'External cladding & finishes',
+  'Doors & windows',
+  'Fully plastered interior',
+  'Fitted flooring',
+  'Complete electrical installation',
+  'Consumer unit & certification',
+  'LED lighting',
+  'Full waste removal & site clean',
+  '10-year structural guarantee',
+  'Electrical sign-off certificate',
+];
+---
+
+<InfoLayout
+  title="Garden Room Prices Surrey | Pricing Guide | The Green Rooms"
+  description="Transparent garden room pricing from £12,750 inc VAT. See what's included as standard, explore our product range, and use our instant calculator for a guide price."
+  canonical="/our-prices"
+  pageTitle="Garden Room Pricing"
+  pageSubtitle="Transparent pricing. Every build is quoted from the ground up — but these are the starting points for each product in our range."
+  heroImg="/images/classic%20GR%20front%20on%20thermo%20ayous%20cladding.jpg"
+  heroAlt="Classic garden room by The Green Rooms, Surrey"
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Our Pricing' }]}
+>
+
+  <!-- What's included banner -->
+  <section style="background:#e7f1e3; padding:48px 24px;">
+    <div style="max-width:1280px; margin:0 auto;">
+      <div style="text-align:center; margin-bottom:28px;">
+        <h2 style="font-size:1.25rem; font-weight:700; color:#2d3841; margin:0;">Everything Below is Included as Standard — in Every Build</h2>
+        <p style="font-size:14px; color:#555; margin:8px 0 0;">No optional extras hidden behind an upgrade. No "call for pricing" on the essentials.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px;">
+        {included.map(item => (
+          <div style="display:flex; align-items:center; gap:8px; background:#fff; padding:10px 14px; border-radius:10px; border:1px solid rgba(52,160,46,0.2);">
+            <svg width="14" height="14" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            <span style="font-size:13px; font-weight:600; color:#2d3841;">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Product cards -->
+  <section style="background:#fff; padding:80px 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:24px;">
+        {products.map(p => (
+          <div style={`border-radius:20px; overflow:hidden; border:2px solid ${p.highlight ? '#34a02e' : '#ebeced'}; position:relative; display:flex; flex-direction:column;`}>
+            {p.highlight && <div style="position:absolute; top:16px; right:16px; background:#34a02e; color:#fff; font-size:11px; font-weight:700; padding:4px 12px; border-radius:50px; z-index:1;">Most Popular</div>}
+            <img src={p.img} alt={p.name + ' by The Green Rooms'} style="width:100%; height:200px; object-fit:cover;" loading="lazy" />
+            <div style="padding:28px; flex:1; display:flex; flex-direction:column;">
+              <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:10px;">
+                <h3 style="font-size:1.15rem; font-weight:700; color:#2d3841; margin:0;">{p.name}</h3>
+                <div style="text-align:right; flex-shrink:0; margin-left:12px;">
+                  <p style="font-family:'Poppins',sans-serif; font-size:1.2rem; font-weight:700; color:#34a02e; margin:0; line-height:1;">{p.price}</p>
+                  <p style="font-size:11px; color:#888; margin:2px 0 0;">{p.priceNote}</p>
+                </div>
+              </div>
+              <p style="font-size:13.5px; color:#555; line-height:1.7; margin:0 0 20px; flex:1;">{p.desc}</p>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-bottom:20px;">
+                {p.features.map(f => (
+                  <div style="display:flex; align-items:center; gap:6px; font-size:12px; color:#555;">
+                    <svg width="12" height="12" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    {f}
+                  </div>
+                ))}
+              </div>
+              <a href={p.href} class="btn-primary" style="font-size:14px; padding:11px 24px; justify-content:center; text-align:center;">Learn More →</a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Bespoke -->
+      <div style="margin-top:24px; background:#2d3841; border-radius:20px; padding:40px; display:grid; grid-template-columns:1.5fr 1fr; gap:48px; align-items:center;">
+        <div>
+          <p style="color:#34a02e; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 8px;">No Two the Same</p>
+          <h3 style="font-size:1.3rem; font-weight:700; color:#fff; margin:0 0 12px;">Bespoke & Custom Builds</h3>
+          <p style="font-size:14px; color:rgba(255,255,255,0.75); line-height:1.75; margin:0 0 20px;">L-shaped structures, music studios, golf simulator rooms, custom layouts, non-standard sizes — all priced on specification. Bespoke projects typically start from £20,000+, with no upper limit. We'll quote precisely for your requirements after a free site visit.</p>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a href="/garden-rooms/bespoke" class="btn-primary" style="font-size:14px; padding:11px 24px;">Explore Bespoke</a>
+            <a href="/contact-us" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.3); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:13px; padding:10px 22px; border-radius:50px; text-decoration:none;">Book a Free Site Visit</a>
+          </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.06); border-radius:14px; padding:24px; border:1px solid rgba(255,255,255,0.1);">
+          <p style="font-size:13px; font-weight:700; color:#fff; margin:0 0 12px;">What affects the price?</p>
+          {['Size (width × depth)', 'Cladding material choice', 'Door type and width', 'Roof style (flat, duo pitch)', 'Air conditioning', 'External decking', 'Smart heating system', 'Cat 6a internet cabling'].map(item => (
+            <div style="display:flex; align-items:center; gap:8px; padding:5px 0; border-bottom:1px solid rgba(255,255,255,0.06);">
+              <div style="width:4px; height:4px; background:#34a02e; border-radius:50%; flex-shrink:0;"></div>
+              <span style="font-size:13px; color:rgba(255,255,255,0.65);">{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator CTA -->
+  <section style="background:#34a02e; padding:72px 24px; text-align:center;">
+    <div style="max-width:520px; margin:0 auto;">
+      <h2 style="font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700; color:#fff; margin-bottom:14px;">Get a Guide Price in 3 Minutes</h2>
+      <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:28px;">Use our instant price calculator to select your size, cladding and extras — and see a guide price immediately. No email required to view your estimate.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+        <a href="/garden-room-price-calculator" class="btn-white" style="font-size:15px; padding:14px 32px;">Use the Calculator →</a>
+        <a href="/contact-us" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.5); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none;">Book a Free Site Visit</a>
+      </div>
+    </div>
+  </section>
+
+</InfoLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
+    div[style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+    div[style*="grid-template-columns:1.5fr 1fr"] { grid-template-columns: 1fr !important; gap: 24px !important; }
+  }
+  @media (max-width: 600px) {
+    div[style*="grid-template-columns:repeat(4,1fr)"],
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  }
+</style>

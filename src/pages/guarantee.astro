@@ -1,0 +1,158 @@
+---
+import InfoLayout from '../layouts/InfoLayout.astro';
+
+const coverages = [
+  {
+    period: '10 Years',
+    title: 'Structural Guarantee',
+    color: '#34a02e',
+    items: [
+      'Full structural integrity of the build',
+      'SIPs panel performance and thermal efficiency',
+      'Roof structure and weatherproofing',
+      'Frame stability and load-bearing components',
+      'Foundation system performance',
+    ],
+  },
+  {
+    period: '3 Years',
+    title: 'Windows, Doors & Glazing',
+    color: '#2d3841',
+    items: [
+      'Double glazing seal integrity (misting)',
+      'Door hardware — hinges, locks, handles',
+      'Frame sealing and weatherstripping',
+      'Glass integrity against manufacturing defects',
+      'External decking (where installed)',
+    ],
+  },
+  {
+    period: '1 Year',
+    title: 'Interior & Electrical',
+    color: '#3a4a55',
+    items: [
+      'Plaster finish and internal wall surfaces',
+      'Fitted flooring and skirting boards',
+      'Roof fascias and soffits',
+      'Electrical components and fittings',
+      'Installed appliances (heating, AC)',
+    ],
+  },
+];
+
+const notCovered = [
+  'Normal wear and tear over time',
+  'Weather-related colour changes to natural timber cladding',
+  'Natural movement or minor cracking in timber',
+  'Glass scratches or imperfections identified after initial inspection',
+  'Damage from severe weather events or flooding',
+  'Modifications made without our approval',
+  'DIY alterations or work by unauthorised trades',
+  'Use as a permanent residence or sleeping accommodation',
+];
+---
+
+<InfoLayout
+  title="Garden Room Guarantee | What's Covered | The Green Rooms Surrey"
+  description="Full details of The Green Rooms guarantee — 10 years structural, 3 years on windows and doors, 1 year on interior finishes and electrics. Surrey garden room builders."
+  canonical="/guarantee"
+  pageTitle="Our Guarantee"
+  pageSubtitle="We build to a standard we're proud to back up in writing. Here's exactly what's covered and for how long."
+  heroImg="/images/GR%20clean%20pic%20portrait.jpg"
+  heroAlt="Garden room by The Green Rooms, Surrey"
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Guarantee' }]}
+>
+
+  <!-- Coverage cards -->
+  <section style="background:#fff; padding:80px 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px; display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+      {coverages.map(c => (
+        <div style={`border-radius:20px; overflow:hidden; border:2px solid ${c.color === '#34a02e' ? '#34a02e' : '#ebeced'};`}>
+          <div style={`background:${c.color}; padding:28px;`}>
+            <p style="font-family:'Poppins',sans-serif; font-size:2rem; font-weight:700; color:#fff; margin:0 0 4px;">{c.period}</p>
+            <p style="font-size:14px; font-weight:600; color:rgba(255,255,255,0.8); margin:0;">{c.title}</p>
+          </div>
+          <div style="padding:24px;">
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              {c.items.map(item => (
+                <div style="display:flex; align-items:flex-start; gap:10px;">
+                  <svg width="14" height="14" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:2px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span style="font-size:13.5px; color:#2d3841; line-height:1.5;">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section style="background:#f8faf7; padding:72px 0;">
+    <div style="max-width:900px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-size:1.5rem; font-weight:700; color:#2d3841; margin:0 0 32px;">How to Make a Claim</h2>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-bottom:48px;">
+        {[
+          { step: '1', title: 'Contact Us First', desc: 'Call 01932 640242 or email info@thegreenrooms.com. Don\'t arrange any repairs until you\'ve spoken to us — unauthorised repairs forfeit coverage.' },
+          { step: '2', title: 'We Assess', desc: 'We\'ll visit to assess the issue, determine whether it\'s covered under the guarantee, and agree next steps with you.' },
+          { step: '3', title: 'We Fix It', desc: 'If it\'s covered, we repair or replace the affected element at no cost to you. Our liability is limited to the original purchase price.' },
+        ].map(s => (
+          <div style="background:#fff; border-radius:16px; padding:24px; border:1px solid #ebeced;">
+            <div style="font-family:'Poppins',sans-serif; font-size:2rem; font-weight:800; color:#e7f1e3; margin-bottom:8px;">{s.step}</div>
+            <p style="font-size:14px; font-weight:700; color:#2d3841; margin:0 0 8px;">{s.title}</p>
+            <p style="font-size:13px; color:#555; line-height:1.65; margin:0;">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Important conditions -->
+      <div style="background:#fff; border-radius:16px; padding:28px; border:1px solid #ebeced; margin-bottom:28px;">
+        <h3 style="font-size:1rem; font-weight:700; color:#2d3841; margin:0 0 16px;">Important Conditions</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px 24px;">
+          {[
+            'Contact us before arranging any repairs',
+            'Keep the building properly ventilated',
+            'Maintain installed systems (AC, heating) per manufacturer guidance',
+            'Do not use the building as a permanent residence',
+            'Do not make structural alterations without our approval',
+          ].map(c => (
+            <div style="display:flex; align-items:flex-start; gap:8px; padding:6px 0; border-bottom:1px solid #f3f4f0;">
+              <svg width="12" height="12" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:3px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span style="font-size:13px; color:#555;">{c}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- What's not covered -->
+      <div style="background:#fff; border-radius:16px; padding:28px; border:1px solid #ebeced;">
+        <h3 style="font-size:1rem; font-weight:700; color:#2d3841; margin:0 0 16px;">What's Not Covered</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px 24px;">
+          {notCovered.map(item => (
+            <div style="display:flex; align-items:flex-start; gap:8px; padding:6px 0; border-bottom:1px solid #f3f4f0;">
+              <svg width="12" height="12" fill="#aaa" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:3px;"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              <span style="font-size:13px; color:#666;">{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#34a02e; padding:72px 24px; text-align:center;">
+    <div style="max-width:480px; margin:0 auto;">
+      <h2 style="font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700; color:#fff; margin-bottom:14px;">Questions About Our Guarantee?</h2>
+      <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:28px;">Call us on 01932 640242 or email info@thegreenrooms.com.</p>
+      <a href="/contact-us" class="btn-white" style="font-size:15px; padding:14px 32px;">Get in Touch</a>
+    </div>
+  </section>
+
+</InfoLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  }
+</style>

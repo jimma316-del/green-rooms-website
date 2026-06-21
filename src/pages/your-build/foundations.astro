@@ -1,0 +1,135 @@
+---
+import InfoLayout from '../../layouts/InfoLayout.astro';
+---
+<InfoLayout
+  title="Garden Room Foundations | Ground Screws | The Green Rooms Surrey"
+  description="How we lay garden room foundations — ground screws as standard, concrete pedestals where needed. No excavation, no concrete, no mess."
+  canonical="/your-build/foundations"
+  pageTitle="Foundations"
+  pageSubtitle="Ground screws as standard. No concrete, no excavation — and they work on slopes too."
+  heroImg="/images/ground%20screw%20machine-portrait.jpeg"
+  heroAlt="Ground screw installation machine on a garden room build in Surrey"
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build' }, { label: 'Foundations' }]}
+>
+
+  <section style="background:#fff; padding:72px 0;">
+    <div style="max-width:1100px; margin:0 auto; padding:0 24px;">
+
+      <!-- Ground screws intro -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; margin-bottom:72px;">
+        <div>
+          <div style="display:inline-block; background:#e7f1e3; color:#257a21; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:5px 14px; border-radius:50px; margin-bottom:20px;">Our Standard Foundation</div>
+          <h2 style="font-size:clamp(1.4rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:20px;">Ground Screws</h2>
+          <p style="font-size:1rem; color:#555; line-height:1.85; margin-bottom:16px;">Ground screws are hot-dipped galvanised steel helical piles driven directly into the ground using a specialist machine. On most builds, a full set is installed in a single day — no concrete, no excavation, no waiting for anything to cure.</p>
+          <p style="font-size:1rem; color:#555; line-height:1.85; margin-bottom:28px;">We use 1.25m ground screws for the vast majority of garden room foundations — proven across hundreds of sites in a full range of ground conditions. Heads are fully adjustable for level, and if the building ever needs to move, the screws come out cleanly without a trace.</p>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+            {[
+              { title:'No Concrete', desc:'Nothing permanent left in the ground.' },
+              { title:'Handles Slopes', desc:'Adjustable heads level the platform on any gradient.' },
+              { title:'One-Day Install', desc:'Full foundation done in a single day on most builds.' },
+              { title:'Consistent Results', desc:'We know our screw range and how each length performs. The right size is selected before we arrive — no on-site guesswork, no surprises.' },
+              { title:'All Ground Conditions', desc:'Clay, loam, sand — our ground screws provide reliable bearing capacity across the full range of soils found in South East England gardens.' },
+              { title:'Right Load for Garden Rooms', desc:'Our 1.25m screws are correctly proportioned for most garden room foundations — strong enough, without over-engineering. Longer lengths available for steeper slopes.' },
+            ].map(f => (
+              <div style="background:#f8faf7; border-radius:12px; padding:16px; border:1px solid #ebeced;">
+                <p style="font-size:13px; font-weight:700; color:#2d3841; margin:0 0 4px;">{f.title}</p>
+                <p style="font-size:12.5px; color:#666; margin:0; line-height:1.6;">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+          <div style="border-radius:14px; overflow:hidden; height:210px;">
+            <img src="/images/ground%20screw%20stock.jpeg" alt="Ground screws ready for installation" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+          </div>
+          <div style="border-radius:14px; overflow:hidden; height:210px;">
+            <img src="/images/ground%20screw%20machine-portrait.jpeg" alt="Ground screw installation machine" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+          </div>
+          <div style="border-radius:14px; overflow:hidden; height:210px;">
+            <img src="/images/ground%20screw%20start%20of%20installation.jpg" alt="Start of ground screw installation" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+          </div>
+          <div style="border-radius:14px; overflow:hidden; height:210px;">
+            <img src="/images/ground%20screw%20installed%20in%20ground.jpeg" alt="Ground screw installed in ground" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Installation process -->
+      <div style="background:#f8faf7; border-radius:20px; padding:48px; margin-bottom:72px; border:1px solid #ebeced;">
+        <h2 style="font-size:1.4rem; font-weight:700; color:#2d3841; margin-bottom:32px; text-align:center;">How the Installation Works</h2>
+        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-bottom:32px;">
+          {[
+            { step:'1', title:'Mark Out', desc:"Screw positions are marked out precisely to the building's footprint." },
+            { step:'2', title:'Drive', desc:'The machine drives each 1.25m screw to its full depth — the right length for the vast majority of garden room foundations.' },
+            { step:'3', title:'Level', desc:'Adjustable heads are set to the same precise level, compensating for ground slope.' },
+            { step:'4', title:'Weed Membrane', desc:'We lay weed membrane beneath the building to prevent anything growing up from below — and then we\'re done.' },
+          ].map(s => (
+            <div style="text-align:center; padding:24px 16px; background:#fff; border-radius:14px; border:1px solid #ebeced;">
+              <div style="width:40px; height:40px; background:#34a02e; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 12px; color:#fff; font-family:'Poppins',sans-serif; font-size:14px; font-weight:700;">{s.step}</div>
+              <p style="font-size:13px; font-weight:700; color:#2d3841; margin:0 0 6px;">{s.title}</p>
+              <p style="font-size:12.5px; color:#666; line-height:1.65; margin:0;">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <div style="border-radius:12px; overflow:hidden; height:240px;">
+            <img src="/images/ground%20screw%20installation.jpeg" alt="Ground screw installation" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+          </div>
+          <div style="border-radius:12px; overflow:hidden; height:240px;">
+            <img src="/images/ground%20screw%20installation%202.jpeg" alt="Ground screws being installed" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Concrete pedestals -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
+        <div style="border-radius:16px; overflow:hidden; height:400px;">
+          <img src="/images/foundations%20-%20concrete-pedestals.jpeg" alt="Concrete pedestal foundations" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+        </div>
+        <div>
+          <div style="display:inline-block; background:#f0f0f0; color:#555; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:5px 14px; border-radius:50px; margin-bottom:20px;">Alternative Foundation</div>
+          <h2 style="font-size:clamp(1.3rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin-bottom:16px;">Concrete Pedestals</h2>
+          <p style="font-size:1rem; color:#555; line-height:1.85; margin-bottom:16px;">In most gardens, ground screws are the right choice. The exception is where the ground is already covered by a sound existing concrete slab — a patio, old base or driveway — that's structurally suitable to build on.</p>
+          <p style="font-size:1rem; color:#555; line-height:1.85; margin-bottom:16px;">In these cases we use concrete pedestals: pre-formed blocks cemented directly to the existing slab surface. We use a laser level to set each pedestal to the correct height, giving us a perfectly level base without any drilling or excavation.</p>
+          <p style="font-size:1rem; color:#555; line-height:1.85; margin-bottom:24px;">We'll assess the slab condition during the site visit. If it's uneven or not structurally sound, we'll advise accordingly — sometimes that means breaking out a section and using ground screws regardless.</p>
+          <div style="background:#f8faf7; border-radius:14px; padding:20px; border:1px solid #ebeced;">
+            <p style="font-size:13px; font-weight:700; color:#2d3841; margin:0 0 10px;">When concrete pedestals are used:</p>
+            <div style="display:flex; flex-direction:column; gap:7px;">
+              {[
+                'Existing concrete slab is present and structurally sound',
+                'Ground screws cannot be driven through the existing surface',
+                'Customer wants to retain the existing patio or base',
+                'Slab is sufficiently level or can be shimmed to level',
+              ].map(point => (
+                <div style="display:flex; align-items:flex-start; gap:8px;">
+                  <svg width="12" height="12" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:3px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span style="font-size:13px; color:#555;">{point}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section style="background:#34a02e; padding:72px 24px; text-align:center;">
+    <div style="max-width:520px; margin:0 auto;">
+      <h2 style="font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700; color:#fff; margin-bottom:14px;">Not Sure What Foundation You Need?</h2>
+      <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:28px;">We'll assess your garden and advise during a free site visit. Ground screws suit the vast majority of plots — we'll only suggest an alternative where it's genuinely necessary.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+        <a href="/contact-us" class="btn-white" style="font-size:15px; padding:14px 32px;">Book a Free Site Visit</a>
+        <a href="/garden-room-price-calculator" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.5); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none;">Get an Instant Quote</a>
+      </div>
+    </div>
+  </section>
+
+</InfoLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 32px !important; }
+    div[style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+  }
+</style>

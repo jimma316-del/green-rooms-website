@@ -1,0 +1,70 @@
+---
+import InfoLayout from '../../layouts/InfoLayout.astro';
+---
+<InfoLayout
+  title="Garden Room Interior Decorating | Plastering & Finishing | The Green Rooms"
+  description="Every Green Rooms build includes fully plastered interior walls as standard. Here's what's included, the finish quality you can expect, and how to personalise the interior."
+  canonical="/your-build/decorating"
+  pageTitle="Decorating & Interior Finish"
+  pageSubtitle="We hand over the keys with plastered walls, fitted flooring and skirting boards — ready to paint and furnish."
+  heroImg="/images/GR%20internal%20with%20bifolds%20and%20decorated.jpg"
+  heroAlt="Decorated interior of a completed garden room with bifold doors"
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build', href: '/your-build/build-process' }, { label: 'Decorating' }]}
+>
+  <section style="background:#fff; padding:72px 0;">
+    <div style="max-width:840px; margin:0 auto; padding:0 24px;">
+
+      <div style="background:#e7f1e3; border-radius:16px; padding:24px; border:1px solid rgba(52,160,46,0.2); margin-bottom:40px; display:flex; gap:14px; align-items:flex-start;">
+        <svg width="20" height="20" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:2px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        <p style="font-size:14px; color:#2d3841; font-weight:600; margin:0; line-height:1.7;">We include fully plastered interior walls, skimmed ceilings, fitted flooring and skirting boards on every build. The room is handed over ready to paint.</p>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:32px; margin-bottom:48px;">
+        {[
+          {
+            title: 'Plastering',
+            body: 'Our plasterer finishes all internal walls and ceilings with a smooth skim coat — the same standard as you\'d expect in a house extension. We don\'t use dry lining as a substitute: every room gets wet plaster finish. The walls are smooth, flat and ready for paint as soon as the plaster has dried (typically 2–4 weeks after handover, depending on ventilation and weather).',
+          },
+          {
+            title: 'Skirting Boards',
+            body: 'White MDF skirting boards are fitted as standard around the full perimeter of the room. They cover the junction between floor and wall and give the space the finished look of a proper room rather than a converted outbuilding.',
+          },
+          {
+            title: 'Window Sills & Door Architraves',
+            body: 'Window boards and door architraves are fitted where applicable, completing the interior joinery finish. Everything is primed and ready to paint.',
+          },
+          {
+            title: 'Painting',
+            body: 'Painting the walls is the only thing we don\'t include — this is intentionally left to you so you can choose your own colours and apply them after the plaster has fully dried. Most customers find this straightforward and prefer to do it themselves.',
+          },
+          {
+            title: 'Furniture & Soft Furnishings',
+            body: 'Furniture, blinds and fittings are outside the scope of our build. We\'ll discuss furniture positioning when planning socket and lighting locations — getting this right at the planning stage means everything is in the right place from day one.',
+          },
+        ].map(s => (
+          <div style="padding-bottom:28px; border-bottom:1px solid #ebeced;">
+            <h3 style="font-size:1rem; font-weight:700; color:#2d3841; margin:0 0 10px;">{s.title}</h3>
+            <p style="font-size:14px; color:#555; line-height:1.85; margin:0;">{s.body}</p>
+          </div>
+        ))}
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:32px;">
+        <div style="border-radius:12px; overflow:hidden; height:200px;"><img src="/images/Classic%20GR%20internal%20plaster%20finish%20with%20integral%20blinds.jpg" alt="Plastered interior finish of a garden room" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:12px; overflow:hidden; height:200px;"><img src="/images/GR%20internal%20with%20bifolds%20and%20decorated.jpg" alt="Decorated interior of a garden room" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:12px; overflow:hidden; height:200px;"><img src="/images/internal%20room.jpg" alt="Finished interior of a garden room" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+
+      <div style="background:#2d3841; border-radius:16px; padding:24px; margin-bottom:24px;">
+        <h3 style="font-size:1rem; font-weight:700; color:#fff; margin:0 0 10px;">Interior Colour Advice</h3>
+        <p style="font-size:13.5px; color:rgba(255,255,255,0.75); line-height:1.75; margin:0;">Garden rooms benefit from lighter, neutral colours that reflect natural light — especially important in smaller builds. White or off-white (eg. Farrow &amp; Ball All White, Little Greene Loft White) is a popular choice. We're happy to discuss what's worked well in similar-sized rooms during your site visit.</p>
+      </div>
+
+      <div style="background:#34a02e; border-radius:20px; padding:28px; text-align:center;">
+        <h3 style="font-size:1.05rem; font-weight:700; color:#fff; margin:0 0 10px;">Ready to See a Finished Interior?</h3>
+        <p style="font-size:13.5px; color:rgba(255,255,255,0.85); margin:0 0 16px;">Visit our Lyne showroom to see the plaster finish, flooring and skirting boards in a real completed garden room.</p>
+        <a href="/showrooms" class="btn-white" style="font-size:14px; padding:12px 24px;">Visit Our Showroom</a>
+      </div>
+    </div>
+  </section>
+</InfoLayout>

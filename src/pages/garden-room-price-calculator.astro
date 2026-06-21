@@ -1,0 +1,876 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const C = 'https://cdn.prod.website-files.com/65fa73870456aaad8a954b46/';
+
+// Maps option index to its exact CDN image (from the live Webflow calculator)
+const IMG = {
+  size:     C + '69e68cfc3766b4a64dbade0a_0_1.jpg',
+  roof1:    C + '69e6a0c686dc3dbefe2d7c7a_1_1.jpg',
+  roof2:    C + '69e4e2594bfe3cb912071eed_1_2.jpg',
+  roof3:    C + '69e4e259e6652ad379015d62_1_3.jpg',
+  roof4:    C + '69e4e259e6652ad379015d62_1_3.jpg', // single pitch — reuse closest match
+  clad1:    '/images/classic%20GR%20thermo%20ayous%20and%20step.jpg',
+  clad2:    '/images/GR%20with%20storage%20cedar%20and%20step.jpg',
+  clad3:    C + '69e54438bf0888b05d3fb932_2_3.jpg',
+  clad4:    C + '69e5443899215259efb552bf_2_4.jpg',
+  clad5:    C + '69e544383603aec98959c117_2_5.jpg',
+  clad6:    C + '69e544399ee4bf614558ea09_2_6.jpg',
+  walls1:   C + '69e54fce1e5d0c716b8a4e79_3_1.jpg',
+  walls2:   C + '69e64a00570e8431357e3d68_3_2.jpg',
+  walls3:   C + '69e64a01a72a8d758d55da9e_3_3.jpg',
+  walls4:   C + '69e64a009f7f1bf0186f3353_3_4.jpg',
+  feat1:    C + '69e6a171fc0a831024b6436c_4_1.jpg',
+  feat2:    C + '69e64b1d1d1bb45805337e5a_4_2.jpg',
+  feat3:    C + '69e64b1d3ffa93d01e2acb79_4_3.jpg',
+  feat4:    C + '69e64b1d3ebd6206a28bd9e5_4_4.jpg',
+  feat5:    C + '69e64b1d70c42b1e5bfea9fc_4_5.jpg',
+  deck:     C + '69e697686c271019c963d15c_7_1.jpg',
+  door1:    C + '69e687b7946f357b92b766d5_5_1.jpg',
+  door2:    C + '69e687b79774182e723885c4_5_2.jpg',
+  door3:    C + '69e687b79d7e1b328a471be1_5_3.jpg',
+  door4:    C + '69e687b7f10eb8dc52fba7f0_5_4.jpg',
+  door5:    C + '69e687b7f695f5dcbdf08a6a_5_5.jpg',
+  door6:    C + '69e687b74e6de97cd6e96fac_5_6.jpg',
+  door7:    C + '69e687b754e368fd437c5d27_5_7.jpg',
+  door8:    C + '69e687b75845864a8cab22d3_5_8.jpg',
+  door9:    C + '69e687b78fa4ffb2b2dba37a_5_9.jpg',
+  door10:   C + '69e687b77477589f5ed74a79_5_10.jpg',
+  win1:     C + '69e690b86c271019c9627ab0_6_1.jpg',
+  win2:     C + '69e690b816b964fd702fad89_6_2.jpg',
+  win3:     C + '69e690b8ad67b9800f6c0874_6_3.jpg',
+  win4:     C + '69e690b8092397503524f585_6_4.jpg',
+  win5:     C + '69e690b863a4f317a9e29c14_6_5.jpg',
+  elec1:    C + '69e697eb31eb2a05ff76d5bd_8_1.jpg',
+  elec2:    C + '69e697ebb25042b7ecf73fd6_8_2.jpg',
+  elec3:    C + '69e697eb49e38cb2ee41eac7_8_3.jpg',
+  elec4:    C + '69e697ebeb23a63d848ca324_8_4.jpg',
+  elec5:    C + '69e697ebe2ba1519334dffa0_8_5.jpg',
+  climate1: C + '69e69a8a913f3c362894ac18_9_1.jpg',
+  climate2: C + '69e69a8aae9f289d5f132515_9_2.jpg',
+  climate3: C + '69e69a8ae2ba1519334e50d7_9_3.jpg',
+};
+
+const steps = ['Size','Structure','Cladding','Walls','Features','Decking','Doors','Windows','Electrics','Climate'];
+---
+
+<Layout
+  title="Garden Room Price Calculator | Instant Guide Price | The Green Rooms Surrey"
+  description="Get an instant guide price for your bespoke garden room. Configure size, roof, cladding, doors, windows and extras — real pricing, no email required to see your estimate."
+  canonical="/garden-room-price-calculator"
+>
+
+  <div style="background:#2d3841; padding:52px 24px 0;">
+    <div style="max-width:1100px; margin:0 auto;">
+      <p style="color:#34a02e; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; margin:0 0 12px;">Instant Price Calculator</p>
+      <h1 style="font-family:'Poppins',sans-serif; font-size:clamp(1.8rem,4vw,2.6rem); font-weight:700; color:#fff; margin:0 0 10px; line-height:1.15;">Build Your Price</h1>
+      <p style="color:rgba(255,255,255,0.65); font-size:1rem; margin:0 0 32px;">10 questions. Real pricing. Instant guide total.</p>
+      <div style="display:flex; overflow:hidden; border-radius:8px 8px 0 0;">
+        {steps.map((s,i) => (
+          <div class="prog-step" data-prog={i+1} style={`flex:1; padding:10px 4px; text-align:center; background:${i===0?'#34a02e':'rgba(255,255,255,0.06)'}; border-right:1px solid rgba(255,255,255,0.08); transition:background 0.3s;`}>
+            <p style="font-size:10px; font-weight:700; color:#fff; margin:0; opacity:0.85; text-transform:uppercase;">{i+1}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <section style="background:#f8faf7; padding:32px 0 80px;">
+    <div style="max-width:1100px; margin:0 auto; padding:0 24px; display:grid; grid-template-columns:1fr 320px; gap:24px; align-items:start;">
+
+      <div>
+
+        <!-- ── STEP 1: Size ── -->
+        <div class="calc-step step-active" data-step="1">
+          <div class="step-header">
+            <div class="step-badge">1 / 10</div>
+            <h2 class="step-title">What size would you like your build?</h2>
+            <p class="step-sub">Enter your desired width and depth in metres. We build to the millimetre so you can be as precise as you like.</p>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:16px;">
+            <div>
+              <label class="form-label">Desired Width in Metres</label>
+              <input type="number" id="inp-width" min="2" max="12" step="0.1" value="4" placeholder="e.g. 4.250" class="form-input" />
+            </div>
+            <div>
+              <label class="form-label">Desired Depth in Metres</label>
+              <input type="number" id="inp-depth" min="2" max="10" step="0.1" value="3" placeholder="e.g. 3.000" class="form-input" />
+            </div>
+          </div>
+          <div class="area-strip">
+            <span>Total floor area</span>
+            <strong id="area-display">12.000 m²</strong>
+          </div>
+        </div>
+
+        <!-- ── STEP 2: Structure ── -->
+        <div class="calc-step" data-step="2">
+          <div class="step-header">
+            <div class="step-badge">2 / 10</div>
+            <h2 class="step-title">Structure</h2>
+            <p class="step-sub">Choose your roof style. Note: within 2m of a boundary, maximum height is 2.5m.</p>
+          </div>
+          <div class="opt-list" id="roof-group">
+            {[
+              { id:'flat',         label:'Standard height, flat roof',    desc:'2.5m high',               img:'/images/Hero%20GR.jpg', rate:0   },
+              { id:'single_ext',   label:'Single Pitch Extended height',  desc:'3m high, 2.5m to eaves',  img:IMG.roof1, rate:100 },
+              { id:'dual_pitched', label:'Dual Pitched Roof',             desc:'2.5m high',               img:IMG.roof3, rate:200 },
+              { id:'dual_extended',label:'Dual Pitch Extended height',    desc:'4m high',                 img:IMG.roof2, rate:275 },
+            ].map((r,i) => (
+              <label class={`opt-row ${i===0?'selected':''}`} data-img={r.img}>
+                <input type="radio" name="roof" value={r.id} data-rate={r.rate} data-img={r.img} checked={i===0} class="sr-only" />
+                {r.img ? <img src={r.img} alt={r.label} class="opt-thumb" /> : <div class="opt-thumb-blank">—</div>}
+                <div class="opt-text">
+                  <span class="opt-label">{r.label}</span>
+                  <span class="opt-desc">{r.desc}</span>
+                </div>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <!-- ── STEP 3: Cladding ── -->
+        <div class="calc-step" data-step="3">
+          <div class="step-header">
+            <div class="step-badge">3 / 10</div>
+            <h2 class="step-title">What Visual Cladding would you like?</h2>
+            <p class="step-sub">Choose the external cladding finish. The number of walls to clad is selected in the next step.</p>
+          </div>
+          <div class="opt-list" id="cladding-group">
+            {[
+              { id:'thermo_ayous',   label:'Thermo Ayous',       desc:'Light hardwood · 30yr+ lifespan',         img:IMG.clad1, rate:245, tip:'Thermally modified hardwood with a light, honey-blonde tone. Stable and low-movement with excellent dimensional stability — 30+ year lifespan with minimal upkeep.' },
+              { id:'cedar',          label:'Western Red Cedar',  desc:'Classic warm timber · 30yr+ lifespan',    img:IMG.clad2, rate:266, tip:'Classic warm reddish-brown timber that weathers naturally to silver-grey if left untreated. Naturally rot and insect resistant with a 30+ year lifespan.' },
+              { id:'charred_spruce', label:'Charred Spruce',     desc:'Shou Sugi Ban dark finish · 40yr+',       img:IMG.clad3, rate:280, tip:'Inspired by the Japanese Shou Sugi Ban technique — charred to create a near-black, tactile finish. Extremely durable, fire resistant and pest resistant with a 40+ year lifespan.' },
+              { id:'hardie',         label:'Hardie® Plank',      desc:'Fibre cement · zero maintenance · 50yr+', img:IMG.clad4, rate:255, tip:'Fibre cement board that never rots, warps or cracks. Fully paintable in any colour, zero maintenance, and carries a 50+ year product warranty.' },
+              { id:'millboard',      label:'Millboard®',         desc:'Premium composite · 50yr+ · no maintenance', img:IMG.clad5, rate:448, tip:'Premium composite engineered to look like natural hardwood. Completely waterproof, splinter-free and requires zero maintenance — 50+ year lifespan, ideal for contemporary or coastal settings.' },
+              { id:'thermo_ash',     label:'Thermo Ash',         desc:'Dark hardwood · 30yr+ lifespan',          img:IMG.clad6, rate:395, tip:'Thermally modified ash with a rich, dark chocolate tone. Dense, durable and stable with a 30+ year lifespan — a refined alternative to cedar.' },
+            ].map((c,i) => (
+              <label class={`opt-row ${i===0?'selected':''}`} data-img={c.img}>
+                <input type="radio" name="cladding" value={c.id} data-rate={c.rate} data-img={c.img} checked={i===0} class="sr-only" />
+                <img src={c.img} alt={c.label} class="opt-thumb" />
+                <div class="opt-text">
+                  <span class="opt-label">{c.label}</span>
+                  <span class="opt-desc">{c.desc}</span>
+                </div>
+                <div class="info-wrap">
+                  <button class="info-btn" type="button" aria-label="More info">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                  </button>
+                  <div class="info-tip">{c.tip}</div>
+                </div>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <!-- ── STEP 4: Walls ── -->
+        <div class="calc-step" data-step="4">
+          <div class="step-header">
+            <div class="step-badge">4 / 10</div>
+            <h2 class="step-title">How many walls would you like cladded in Visual cladding?</h2>
+            <p class="step-sub">Select how many walls get the premium finish. 1 wall = front face only.</p>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px;" id="walls-group">
+            {[
+              { n:1, img:IMG.walls1 },
+              { n:2, img:IMG.walls2 },
+              { n:3, img:IMG.walls3 },
+              { n:4, img:IMG.walls4 },
+            ].map((w,i) => (
+              <label class={`opt-card ${i===0?'selected':''}`} data-img={w.img}>
+                <input type="radio" name="walls" value={w.n} data-img={w.img} checked={i===0} class="sr-only" />
+                <span class="opt-card-num">{w.n}</span>
+                <span class="opt-card-label">{w.n===1?'wall':'walls'}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <!-- ── STEP 5: Features ── -->
+        <div class="calc-step" data-step="5">
+          <div class="step-header">
+            <div class="step-badge">5 / 10</div>
+            <h2 class="step-title">Features</h2>
+            <p class="step-sub">All optional. Select any you'd like included. Click each to see a photo.</p>
+          </div>
+          <div class="opt-list">
+            {[
+              { val:'canopy',      label:'Canopy',               desc:'Full-width canopy over the entrance',             img:IMG.feat1 },
+              { val:'side_canopy', label:'Side canopy walls',    desc:'Side returns on the canopy (requires canopy)',     img:IMG.feat2 },
+              { val:'storage',     label:'Hidden Storage Room',  desc:'Built-in storage compartment at the rear',         img:IMG.feat3 },
+              { val:'glass_corner',label:'Glass corner',         desc:'Full-height frameless glass corner',               img:IMG.feat4 },
+              { val:'skylight',    label:'Skylight (90×120cm)',  desc:'Flush aluminium rooflight',                        img:IMG.feat5 },
+            ].map(f => (
+              <label class="opt-row feat-row" data-img={f.img}>
+                <input type="checkbox" name="features" value={f.val} data-img={f.img} class="sr-only" />
+                <div class="opt-checkbox"></div>
+                <img src={f.img} alt={f.label} class="opt-thumb" />
+                <div class="opt-text">
+                  <span class="opt-label">{f.label}</span>
+                  <span class="opt-desc">{f.desc}</span>
+                </div>
+                <span class="opt-price feat-price" data-feat={f.val}>—</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <!-- ── STEP 6: Decking ── -->
+        <div class="calc-step" data-step="6">
+          <div class="step-header">
+            <div class="step-badge">6 / 10</div>
+            <h2 class="step-title">Would you like any premium Millboard® Decking?</h2>
+            <p class="step-sub">Composite decking outside the entrance. Enter the deck dimensions if yes.</p>
+          </div>
+          <img src={IMG.deck} alt="Decking" class="step-illus" style="object-position:right bottom;" />
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px;">
+            <label class="opt-card selected" id="deck-no-card">
+              <input type="radio" name="decking" value="no" checked class="sr-only" />
+              <span class="opt-card-num" style="font-size:1.4rem; color:#aaa;">✕</span>
+              <span class="opt-card-label">Not required</span>
+            </label>
+            <label class="opt-card" id="deck-yes-card">
+              <input type="radio" name="decking" value="yes" class="sr-only" />
+              <span class="opt-card-num" style="font-size:1.4rem;">✓</span>
+              <span class="opt-card-label">Yes please</span>
+            </label>
+          </div>
+          <div id="deck-dimensions" style="display:none; display:none;">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:12px;">
+              <div>
+                <label class="form-label">Deck Width (metres)</label>
+                <input type="number" id="inp-deck-w" min="1" max="8" step="0.1" value="3" class="form-input" />
+              </div>
+              <div>
+                <label class="form-label">Deck Depth (metres)</label>
+                <input type="number" id="inp-deck-d" min="1" max="6" step="0.1" value="2" class="form-input" />
+              </div>
+            </div>
+            <div class="area-strip">
+              <span>Decking area</span>
+              <strong id="deck-area-display">6.000 m²</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── STEP 7: Doors ── -->
+        <div class="calc-step" data-step="7">
+          <div class="step-header">
+            <div class="step-badge">7 / 10</div>
+            <h2 class="step-title">What doors would you like?</h2>
+            <p class="step-sub">Choose one door type. All aluminium doors are thermally broken. Crittall-style frames available for a distinctive look.</p>
+          </div>
+          <div class="opt-list" id="door-group">
+            {[
+              { id:'upvc_sliding',   label:'uPVC Sliding Door',          desc:'1.6–2m wide',  img:IMG.door1,  price:1400 },
+              { id:'alu_french',     label:'Aluminium French Doors',     desc:'1.8m wide',    img:IMG.door2,  price:1900 },
+              { id:'alu_sliding_2m', label:'Aluminium Sliding Door',     desc:'2m wide',      img:IMG.door3,  price:2300 },
+              { id:'alu_sliding_26', label:'Aluminium Sliding Door',     desc:'2.6m wide',    img:IMG.door4,  price:2600 },
+              { id:'alu_bifold_36',  label:'Aluminium Bifold Doors',     desc:'Up to 3.6m',   img:IMG.door5,  price:2300 },
+              { id:'alu_crittal_3m', label:'Aluminium Crittall Bifolds', desc:'3m wide',      img:IMG.door6,  price:3225 },
+              { id:'alu_bifold_4m',  label:'Aluminium Bifold Doors',     desc:'4m wide',      img:IMG.door7,  price:4000 },
+              { id:'alu_crittal_4m', label:'Aluminium Crittall Bifolds', desc:'4m wide',      img:IMG.door8,  price:5175 },
+              { id:'alu_bifold_5m',  label:'Aluminium Bifold Doors',     desc:'5m wide',      img:IMG.door9,  price:4660 },
+              { id:'alu_crittal_5m', label:'Aluminium Crittall Bifolds', desc:'5m wide',      img:IMG.door10, price:6085 },
+            ].map((d,i) => (
+              <label class={`opt-row ${i===0?'selected':''}`} data-img={d.img}>
+                <input type="radio" name="door" value={d.id} data-price={d.price} data-img={d.img} checked={i===0} class="sr-only" />
+                <img src={d.img} alt={d.label} class="opt-thumb" />
+                <div class="opt-text">
+                  <span class="opt-label">{d.label}</span>
+                  <span class="opt-desc">{d.desc}</span>
+                </div>
+                <span class="opt-price">£{d.price.toLocaleString()}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <!-- ── STEP 8: Windows ── -->
+        <div class="calc-step" data-step="8">
+          <div class="step-header">
+            <div class="step-badge">8 / 10</div>
+            <h2 class="step-title">What windows type would you like?</h2>
+            <p class="step-sub">You can add up to three additional windows alongside your door glazing.</p>
+          </div>
+          {[0,1,2].map(slot => (
+            <div style="margin-bottom:20px;">
+              <label class="form-label" style="margin-bottom:8px;">Window {slot + 1}</label>
+              <div class="win-opts" id={`win-group-${slot}`}>
+                {[
+                  { id:'none',        label:'No Window',          img:'',        price:0    },
+                  { id:'slot',        label:'Slot (1m × 50cm)',   img:IMG.win1,  price:600  },
+                  { id:'square',      label:'Square (1m × 1m)',   img:IMG.win2,  price:750  },
+                  { id:'double',      label:'Double (1.4m × 1m)', img:IMG.win3,  price:900  },
+                  { id:'full_height', label:'Full Height Fixed',  img:IMG.win5,  price:860  },
+                  { id:'bifold_win',  label:'Bifold (2m × 1m)',   img:IMG.win4,  price:1900 },
+                ].map((w,i) => (
+                  <label class={`opt-row win-row ${i===0?'selected':''}`}
+                         data-img={w.img} data-slot={slot}>
+                    <input type="radio" name={`window${slot}`} value={w.id}
+                           data-price={w.price} data-img={w.img} data-slot={slot}
+                           checked={i===0} class="sr-only" />
+                    {w.img && <img src={w.img} alt={w.label} class="opt-thumb" />}
+                    {!w.img && <div class="opt-thumb-blank">—</div>}
+                    <div class="opt-text">
+                      <span class="opt-label">{w.label}</span>
+                    </div>
+                    <span class="opt-price">{w.price===0?'—':`£${w.price.toLocaleString()}`}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- ── STEP 9: Electrics ── -->
+        <div class="calc-step" data-step="9">
+          <div class="step-header">
+            <div class="step-badge">9 / 10</div>
+            <h2 class="step-title">Electric Options</h2>
+            <p class="step-sub">All rooms include full electrics, sockets, lighting and consumer unit. These are optional upgrades.</p>
+          </div>
+          <div class="opt-list">
+            {[
+              { val:'ext_lights',    label:'External Up/Down Lights', desc:'Outdoor up/down wall lights',               img:IMG.elec1, price:240 },
+              { val:'canopy_lights', label:'Canopy Downlights',       desc:'Recessed lights in the canopy soffit',      img:IMG.elec2, price:280 },
+              { val:'smart_switch',  label:'LCD Smart Switch',        desc:'Smart wall switch for scene control',       img:IMG.elec3, price:75  },
+              { val:'cat6',          label:'WiFi / Cat 6a',           desc:'Hard-wired internet and data points',       img:IMG.elec4, price:550 },
+              { val:'smart_socket',  label:'External Smart Socket',   desc:'Weatherproof outdoor socket',              img:IMG.elec5, price:145 },
+            ].map(e => (
+              <label class="opt-row feat-row" data-img={e.img}>
+                <input type="checkbox" name="elec" value={e.val} data-img={e.img} data-price={e.price} class="sr-only" />
+                <div class="opt-checkbox"></div>
+                <img src={e.img} alt={e.label} class="opt-thumb" />
+                <div class="opt-text">
+                  <span class="opt-label">{e.label}</span>
+                  <span class="opt-desc">{e.desc}</span>
+                </div>
+                <span class="opt-price">+£{e.price.toLocaleString()}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <!-- ── STEP 10: Climate ── -->
+        <div class="calc-step" data-step="10">
+          <div class="step-header">
+            <div class="step-badge">10 / 10</div>
+            <h2 class="step-title">Climate control</h2>
+            <p class="step-sub">All rooms use SIPs insulation. For year-round use most customers add at least a heater.</p>
+          </div>
+          <div class="opt-list" id="climate-group">
+            {[
+              { id:'none',        label:'None',                   desc:'SIPs keeps the room warm — add your own plug-in heater', img:IMG.climate1, price:0    },
+              { id:'ac_2_5kw',    label:'2.5kW Air Conditioning', desc:'For rooms up to ~25m² — heats and cools all year',       img:IMG.climate1, price:1860 },
+              { id:'ac_5kw',      label:'5kW Air Conditioning',   desc:'For larger rooms or heavy use',                          img:IMG.climate2, price:2740 },
+              { id:'wall_heater', label:'Smart Heater Panel',     desc:'Thermostat-controlled panel heater, fitted and wired',   img:IMG.climate3, price:330  },
+            ].map((c,i) => (
+              <label class={`opt-row ${i===0?'selected':''}`} data-img={c.img}>
+                <input type="radio" name="climate" value={c.id} data-price={c.price} data-img={c.img} checked={i===0} class="sr-only" />
+                <img src={c.img} alt={c.label} class="opt-thumb" />
+                <div class="opt-text">
+                  <span class="opt-label">{c.label}</span>
+                  <span class="opt-desc">{c.desc}</span>
+                </div>
+                <span class="opt-price">{c.price===0?'Included':`+£${c.price.toLocaleString()}`}</span>
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <!-- ── STEP 11: Quote form ── -->
+        <div class="calc-step" data-step="11">
+          <div class="step-header">
+            <div class="step-badge" style="background:#257a21;">Done!</div>
+            <h2 class="step-title">Get your quote emailed to you</h2>
+            <p class="step-sub">Enter your details and we'll email your full configuration and guide price. We'll follow up to arrange your free site visit.</p>
+          </div>
+          <div style="background:#2d3841; border-radius:16px; padding:24px; margin-bottom:24px; text-align:center;">
+            <div style="width:44px; height:44px; background:rgba(52,160,46,0.15); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 14px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34a02e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <p style="font-family:'Poppins',sans-serif; font-size:1rem; font-weight:700; color:#fff; margin:0 0 8px;">Your guide price is ready</p>
+            <p style="font-size:13px; color:rgba(255,255,255,0.55); line-height:1.6; margin:0;">Enter your details below and we'll reveal your price and email it to you straight away.</p>
+          </div>
+          <form id="quote-form" method="POST"
+                style="display:flex; flex-direction:column; gap:14px;">
+            <input type="hidden" name="form-name" value="calculator-quote" />
+            <input type="hidden" name="guide-price" id="hidden-price" />
+            <input type="hidden" name="configuration" id="hidden-config" />
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+              <div>
+                <label class="form-label">First name *</label>
+                <input type="text" name="first-name" required class="form-input" placeholder="James" />
+              </div>
+              <div>
+                <label class="form-label">Last name *</label>
+                <input type="text" name="last-name" required class="form-input" placeholder="Smith" />
+              </div>
+            </div>
+            <div>
+              <label class="form-label">Email address *</label>
+              <input type="email" name="email" required class="form-input" placeholder="james@example.com" />
+            </div>
+            <div>
+              <label class="form-label">Phone number *</label>
+              <input type="tel" name="phone" required class="form-input" placeholder="07700 900000" />
+            </div>
+            <div>
+              <label class="form-label">Address</label>
+              <input type="text" name="address" class="form-input" placeholder="Your address / postcode" />
+            </div>
+            <button type="submit" class="btn-submit">Email me my quote →</button>
+            <p style="font-size:11.5px; color:#888; text-align:center; margin:0;">No spam. No pressure. We'll follow up within one working day.</p>
+          </form>
+          <div id="form-success" style="display:none; padding:8px 0;">
+            <div style="background:#2d3841; border-radius:16px; padding:24px; margin-bottom:20px; text-align:center;">
+              <p style="font-size:11px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.1em; margin:0 0 8px;">Your Guide Price</p>
+              <p id="final-price-display" style="font-family:'Poppins',sans-serif; font-size:2.8rem; font-weight:700; color:#fff; margin:0 0 4px;">£—</p>
+              <p style="font-size:12px; color:rgba(255,255,255,0.4); margin:0 0 20px;">Guide price · confirmed after free site visit</p>
+              <div id="final-breakdown" style="border-top:1px solid rgba(255,255,255,0.1); padding-top:14px; display:grid; gap:4px; text-align:left;"></div>
+            </div>
+            <div style="text-align:center; padding:8px 0 24px;">
+              <div style="width:44px; height:44px; background:#e7f1e3; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 12px;">
+                <svg width="20" height="20" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              </div>
+              <p style="font-size:14px; font-weight:700; color:#2d3841; margin:0 0 6px;">Quote sent!</p>
+              <p style="font-size:13px; color:#555; margin:0 0 20px; line-height:1.6;">We've emailed your full breakdown. One of our team will be in touch to arrange your free site visit.</p>
+              <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:12px;">
+                <a href="/contact-us" class="btn-primary" style="font-size:14px; padding:12px 24px;">Book a free site visit</a>
+                <a href="tel:01932640242" style="display:inline-flex; align-items:center; gap:6px; border:2px solid #ebeced; color:#2d3841; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:10px 20px; border-radius:50px; text-decoration:none;">Call 01932 640242</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nav -->
+        <div id="calc-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+          <button id="btn-back" class="btn-nav-back" style="display:none;">← Back</button>
+          <div></div>
+          <button id="btn-next" class="btn-nav-next">Continue →</button>
+        </div>
+
+      </div>
+
+      <!-- Sticky right panel -->
+      <div style="position:sticky; top:90px;" id="price-panel">
+        <div style="border-radius:16px; overflow:hidden; background:#f0f0f0; margin-bottom:12px; aspect-ratio:4/3;">
+          <img id="main-preview" src={IMG.size} alt="Option preview" style="width:100%; height:100%; object-fit:contain; display:block; transition:opacity 0.2s ease;" />
+        </div>
+        <div id="price-display" style="display:none;"></div>
+        <div id="breakdown-lines" style="display:none;"></div>
+        <div style="background:#fff; border-radius:16px; padding:18px; border:1px solid #ebeced;">
+          {['Full installation included','All electrics & sign-off','No hidden extras','5 stars · 39 Google reviews','150+ garden rooms built'].map(t => (
+            <div style="display:flex; align-items:center; gap:10px; padding:6px 0; border-bottom:1px solid #f3f4f0;">
+              <svg width="14" height="14" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span style="font-size:12.5px; color:#444; font-weight:600;">{t}</span>
+            </div>
+          ))}
+          <a href="tel:01932640242" style="display:block; text-align:center; font-size:13px; font-weight:700; color:#34a02e; text-decoration:none; padding:12px 0 6px; margin-top:4px;">Call 01932 640242</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); }
+  .calc-step { display:none; }
+  .calc-step.step-active { display:block; }
+
+  .step-header { margin-bottom:20px; }
+  .step-badge { display:inline-block; background:#34a02e; color:#fff; font-size:11px; font-weight:700; padding:3px 10px; border-radius:50px; margin-bottom:12px; font-family:'Poppins',sans-serif; }
+  .step-title { font-family:'Poppins',sans-serif; font-size:1.2rem; font-weight:700; color:#2d3841; margin:0 0 8px; }
+  .step-sub { font-size:13px; color:#666; line-height:1.7; margin:0; }
+
+  /* Large illustration (static) */
+  .step-illus { width:100%; border-radius:14px; object-fit:cover; max-height:260px; display:block; margin-bottom:20px; }
+
+  /* Preview (changes on selection) */
+  .step-preview { width:100%; border-radius:14px; object-fit:contain; display:block; margin-bottom:16px; transition:opacity 0.2s ease; background:#f0f0f0; }
+
+  /* Option list */
+  .opt-list { display:flex; flex-direction:column; gap:8px; }
+
+  /* Option row */
+  .opt-row {
+    display:flex; align-items:center; gap:12px;
+    padding:10px 14px; border-radius:12px;
+    border:2px solid #ebeced; background:#fff;
+    cursor:pointer; transition:border-color 0.15s, background 0.15s;
+  }
+  .opt-row:hover { border-color:#b8d9b4; background:#fafff9; }
+  .opt-row.selected { border-color:#34a02e !important; background:#f0faf0 !important; }
+
+  /* Thumbnail in row */
+  .opt-thumb { width:64px; height:64px; border-radius:8px; object-fit:contain; flex-shrink:0; border:1px solid #ebeced; background:#f8f8f8; }
+  .opt-thumb-blank { width:64px; height:64px; border-radius:8px; flex-shrink:0; border:1px solid #ebeced; background:#f5f5f5; display:flex; align-items:center; justify-content:center; font-size:18px; color:#ccc; }
+
+  .opt-text { flex:1; min-width:0; }
+  .opt-label { font-size:13px; font-weight:700; color:#2d3841; display:block; }
+  .opt-desc  { font-size:12px; color:#888; display:block; margin-top:1px; }
+  .opt-price { font-size:13px; font-weight:700; color:#34a02e; white-space:nowrap; flex-shrink:0; }
+
+  /* Checkbox rows */
+  .opt-checkbox {
+    width:18px; height:18px; border-radius:5px;
+    border:2px solid #ccc; flex-shrink:0; position:relative; transition:all 0.15s;
+  }
+  .opt-row.checked .opt-checkbox { border-color:#34a02e; background:#34a02e; }
+  .opt-row.checked .opt-checkbox::after {
+    content:''; position:absolute; top:1px; left:4px;
+    width:5px; height:9px;
+    border-right:2px solid #fff; border-bottom:2px solid #fff;
+    transform:rotate(45deg);
+  }
+
+  /* Card options (walls) */
+  .opt-card {
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:4px; padding:18px 8px; border-radius:14px;
+    border:2px solid #ebeced; background:#fff;
+    cursor:pointer; transition:all 0.15s; text-align:center;
+  }
+  .opt-card:hover { border-color:#b8d9b4; }
+  .opt-card.selected { border-color:#34a02e; background:#f0faf0; }
+  .opt-card-num { font-family:'Poppins',sans-serif; font-size:2rem; font-weight:700; color:#34a02e; }
+  .opt-card-label { font-size:12px; font-weight:600; color:#555; }
+
+  /* Win rows (compact) */
+  .win-opts { display:flex; flex-direction:column; gap:6px; }
+  .win-row { padding:8px 12px; }
+  .win-row .opt-thumb { width:64px; height:64px; }
+
+  /* Sliders / inputs */
+  .area-strip { background:#e7f1e3; border-radius:10px; padding:12px 16px; display:flex; justify-content:space-between; align-items:center; margin-top:4px; font-size:13px; color:#444; }
+  .area-strip strong { font-family:'Poppins',sans-serif; font-size:14px; font-weight:700; color:#2d3841; }
+
+  /* Form */
+  .form-label { font-size:12.5px; font-weight:700; color:#2d3841; display:block; margin-bottom:6px; }
+  .form-input { width:100%; box-sizing:border-box; padding:11px 14px; border:2px solid #ebeced; border-radius:10px; font-size:14px; color:#2d3841; font-family:'Nunito',sans-serif; transition:border-color 0.15s; outline:none; }
+  .form-input:focus { border-color:#34a02e; }
+
+  /* Nav */
+  .btn-nav-back { font-family:'Poppins',sans-serif; font-size:14px; font-weight:600; color:#666; background:none; border:2px solid #ebeced; border-radius:50px; padding:11px 24px; cursor:pointer; }
+  .btn-nav-back:hover { border-color:#aaa; }
+  .btn-nav-next { font-family:'Poppins',sans-serif; font-size:14px; font-weight:700; color:#fff; background:#34a02e; border:none; border-radius:50px; padding:13px 32px; cursor:pointer; }
+  .btn-nav-next:hover { background:#257a21; }
+  .btn-submit { width:100%; font-family:'Poppins',sans-serif; font-size:15px; font-weight:700; color:#fff; background:#34a02e; border:none; border-radius:50px; padding:15px; cursor:pointer; }
+  .btn-submit:hover { background:#257a21; }
+
+  /* Info tooltip */
+  .info-wrap { position:relative; flex-shrink:0; }
+  .info-btn { background:none; border:none; cursor:pointer; color:#bbb; padding:4px; line-height:1; display:flex; align-items:center; border-radius:4px; }
+  .info-btn:hover { color:#34a02e; }
+  .info-btn:focus { outline:2px solid #34a02e; outline-offset:2px; }
+  .info-tip {
+    display:none; position:absolute;
+    bottom:calc(100% + 8px); right:0;
+    width:230px;
+    background:#2d3841; color:rgba(255,255,255,0.88);
+    font-size:12px; line-height:1.65; font-weight:400;
+    padding:10px 13px; border-radius:10px;
+    z-index:50; pointer-events:none;
+    box-shadow:0 4px 20px rgba(0,0,0,0.25);
+  }
+  .info-tip::after {
+    content:''; position:absolute; top:100%; right:10px;
+    border:6px solid transparent; border-top-color:#2d3841;
+  }
+  .info-wrap:hover .info-tip,
+  .info-btn:focus + .info-tip { display:block; }
+
+  /* Breakdown */
+  .bl-row { display:flex; justify-content:space-between; font-size:12px; padding:2px 0; }
+  .bl-label { color:rgba(255,255,255,0.55); }
+  .bl-val   { color:#fff; font-weight:600; }
+  .bl-green { color:#34a02e; font-weight:600; }
+
+  @media (max-width:900px) {
+    div[style*="grid-template-columns:1fr 320px"] { grid-template-columns:1fr !important; }
+    #price-panel { display:none !important; }
+  }
+  @media (max-width:600px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
+    div[style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns:1fr 1fr !important; }
+    .opt-row { padding:10px 10px; gap:10px; }
+    .opt-thumb { width:52px; height:52px; }
+    .opt-thumb-blank { width:52px; height:52px; }
+  }
+</style>
+
+<script>
+  const BASE=7450, SQM=825;
+  const ROOF_R: Record<string,number>={flat:0,dual_pitched:200,dual_extended:275,single_ext:100};
+  const CLAD_R: Record<string,number>={thermo_ayous:245,cedar:266,charred_spruce:280,hardie:255,millboard:448,thermo_ash:395};
+  const DOOR_P: Record<string,number>={upvc_sliding:1400,alu_french:1900,alu_sliding_2m:2300,alu_sliding_26:2600,alu_bifold_36:2300,alu_crittal_3m:3225,alu_bifold_4m:4000,alu_crittal_4m:5175,alu_bifold_5m:4660,alu_crittal_5m:6085};
+  const WIN_P: Record<string,number>={none:0,slot:600,square:750,double:900,bifold_win:1900,full_height:860};
+  const ELEC_P: Record<string,number>={ext_lights:240,canopy_lights:280,smart_switch:75,cat6:550,smart_socket:145};
+  const CLIMATE_P: Record<string,number>={none:0,ac_2_5kw:1860,ac_5kw:2740,wall_heater:330};
+
+  const st={
+    width:4.0, depth:3.0,
+    roofType:'flat', claddingMaterial:'thermo_ayous', claddingWalls:1,
+    canopy:false, side_canopy:false, storage:false, glass_corner:false, skylight:false,
+    hasDecking:false, deckW:3.0, deckD:2.0,
+    door:'upvc_sliding',
+    wins:['none','none','none'] as string[],
+    electricals:[] as string[],
+    climate:'none',
+  };
+
+  function cv(){ return CLAD_R[st.claddingMaterial]??0; }
+  function claddingCost(){
+    const r=cv();
+    if(st.claddingWalls===1) return st.width*r;
+    if(st.claddingWalls===2) return st.width*r+st.depth*r;
+    if(st.claddingWalls===3) return st.width*r+st.depth*(r*2);
+    return st.width*(r*2)+st.depth*(r*2);
+  }
+
+  function calc(){
+    const sqm=st.width*st.depth, r=cv();
+    const structure=BASE+sqm*SQM;
+    const roof=sqm*(ROOF_R[st.roofType]??0);
+    const cladding=claddingCost();
+    const canopy=st.canopy?1000+st.width*r/2:0;
+    const sideCanopy=st.side_canopy?700+2*r:0;
+    const storage=st.storage?1740:0;
+    const glassCorner=st.glass_corner?1450:0;
+    const skylight=st.skylight?1400:0;
+    const decking=st.hasDecking?225+360*st.deckW*st.deckD:0;
+    const door=DOOR_P[st.door]??0;
+    const windows=st.wins.reduce((s,w)=>s+(WIN_P[w]??0),0);
+    const electrical=st.electricals.reduce((s,e)=>s+(ELEC_P[e]??0),0);
+    const climate=CLIMATE_P[st.climate]??0;
+    const total=Math.round(structure+roof+cladding+canopy+sideCanopy+storage+glassCorner+skylight+decking+door+windows+electrical+climate);
+    return {structure,roof,cladding,canopy,sideCanopy,storage,glassCorner,skylight,decking,door,windows,electrical,climate,total};
+  }
+
+  function renderPrice(){
+    const b=calc(), r=cv();
+    const pd=document.getElementById('price-display');
+    if(pd) pd.textContent='£'+b.total.toLocaleString();
+
+    // Update dynamic feature prices
+    const feats:{[k:string]:[string,number]}={
+      canopy:['feat-canopy',Math.round(1000+st.width*r/2)],
+      side_canopy:['feat-side_canopy',Math.round(700+2*r)],
+      storage:['feat-storage',1740],
+      glass_corner:['feat-glass_corner',1450],
+      skylight:['feat-skylight',1400],
+    };
+    Object.entries(feats).forEach(([k,[,price]])=>{
+      document.querySelectorAll<HTMLElement>(`.feat-price[data-feat="${k}"]`).forEach(el=>{
+        el.textContent='+£'+price.toLocaleString();
+      });
+    });
+
+    const rows:[string,number,boolean][]=[
+      [`Structure (${(st.width*st.depth).toFixed(3)}m²)`,b.structure,false],
+      ...(b.roof?[[`Roof uplift`,b.roof,true] as [string,number,boolean]]:[]),
+      ...(b.cladding?[[`Cladding`,b.cladding,false] as [string,number,boolean]]:[]),
+      ...(b.canopy?[['Canopy',b.canopy,true] as [string,number,boolean]]:[]),
+      ...(b.sideCanopy?[['Side canopy',b.sideCanopy,true] as [string,number,boolean]]:[]),
+      ...(b.storage?[['Storage room',b.storage,true] as [string,number,boolean]]:[]),
+      ...(b.glassCorner?[['Glass corner',b.glassCorner,true] as [string,number,boolean]]:[]),
+      ...(b.skylight?[['Skylight',b.skylight,true] as [string,number,boolean]]:[]),
+      ...(b.decking?[['Decking',b.decking,true] as [string,number,boolean]]:[]),
+      ['Doors',b.door,false],
+      ...(b.windows?[['Windows',b.windows,true] as [string,number,boolean]]:[]),
+      ...(b.electrical?[['Electrics',b.electrical,true] as [string,number,boolean]]:[]),
+      ...(b.climate?[['Climate',b.climate,true] as [string,number,boolean]]:[]),
+    ];
+    const bl=document.getElementById('breakdown-lines');
+    if(bl) bl.innerHTML=rows.map(([l,v,g])=>
+      `<div class="bl-row"><span class="bl-label">${l}</span><span class="${g?'bl-green':'bl-val'}">${g?'+':''}£${Math.round(v).toLocaleString()}</span></div>`
+    ).join('');
+  }
+
+  function swapPreview(id: string, url: string){
+    if(!url) return;
+    const el=document.getElementById(id) as HTMLImageElement|null;
+    if(!el||el.src.endsWith(url.split('/').pop()??'')) return;
+    el.style.opacity='0';
+    setTimeout(()=>{el.src=url; el.style.opacity='1';},180);
+  }
+
+  // Step management
+  let cur=1;
+  function goTo(step: number){
+    document.querySelectorAll<HTMLElement>('.calc-step').forEach(e=>e.classList.remove('step-active'));
+    document.querySelector<HTMLElement>(`[data-step="${step}"]`)?.classList.add('step-active');
+    cur=step;
+    const bb=document.getElementById('btn-back') as HTMLButtonElement;
+    const bn=document.getElementById('btn-next') as HTMLButtonElement;
+    bb.style.display=step>1?'block':'none';
+    if(step>10){ document.getElementById('calc-nav')!.style.display='none'; }
+    else { bn.textContent=step===10?'Get my quote →':'Continue →'; }
+    document.querySelectorAll<HTMLElement>('.prog-step').forEach(e=>{
+      const n=parseInt(e.dataset.prog??'0');
+      e.style.background=n<=step?'#34a02e':'rgba(255,255,255,0.06)';
+    });
+    if(step===11) populateQuote();
+    document.querySelector<HTMLElement>(`[data-step="${step}"]`)?.scrollIntoView({behavior:'smooth',block:'start'});
+    renderPrice();
+    // Set right-panel preview to the selected option in this step, or step's default
+    const C_='https://cdn.prod.website-files.com/65fa73870456aaad8a954b46/';
+    const FALLBACK: Record<number,string>={
+      1:C_+'69e68cfc3766b4a64dbade0a_0_1.jpg',
+      6:C_+'69e697686c271019c963d15c_7_1.jpg',
+    };
+    const stepEl=document.querySelector<HTMLElement>(`[data-step="${step}"]`);
+    const sel=stepEl?.querySelector<HTMLElement>('.opt-row.selected[data-img], .opt-card.selected[data-img]');
+    const url=sel?.dataset.img??FALLBACK[step]??'';
+    if(url){
+      const mp=document.getElementById('main-preview') as HTMLImageElement|null;
+      if(mp){mp.style.opacity='0';setTimeout(()=>{mp.src=url;mp.style.opacity='1';},180);}
+    }
+  }
+
+  function populateQuote(){
+    const b=calc();
+    const fd=document.getElementById('final-price-display');
+    if(fd) fd.textContent='£'+b.total.toLocaleString();
+    const hp=document.getElementById('hidden-price') as HTMLInputElement|null;
+    if(hp) hp.value='£'+b.total.toLocaleString();
+    const hc=document.getElementById('hidden-config') as HTMLInputElement|null;
+    if(hc) hc.value=`${st.width}×${st.depth}m | Roof:${st.roofType} | Cladding:${st.claddingMaterial} ${st.claddingWalls}wall(s) | Canopy:${st.canopy} | Storage:${st.storage} | Glass:${st.glass_corner} | Skylight:${st.skylight} | Deck:${st.hasDecking?st.deckW+'×'+st.deckD:'no'} | Door:${st.door} | Wins:${st.wins.join(',')} | Elec:${st.electricals.join(',')} | Climate:${st.climate}`;
+    const fb=document.getElementById('final-breakdown');
+    if(fb){
+      const rows:[string,number][]=[
+        ['Structure',b.structure],
+        ...(b.roof?[['Roof uplift',b.roof] as [string,number]]:[]),
+        ['Cladding',b.cladding],
+        ...(b.canopy?[['Canopy',b.canopy] as [string,number]]:[]),
+        ...(b.sideCanopy?[['Side canopy',b.sideCanopy] as [string,number]]:[]),
+        ...(b.storage?[['Storage room',b.storage] as [string,number]]:[]),
+        ...(b.glassCorner?[['Glass corner',b.glassCorner] as [string,number]]:[]),
+        ...(b.skylight?[['Skylight',b.skylight] as [string,number]]:[]),
+        ...(b.decking?[['Decking',b.decking] as [string,number]]:[]),
+        ['Doors',b.door],
+        ...(b.windows?[['Windows',b.windows] as [string,number]]:[]),
+        ...(b.electrical?[['Electrics',b.electrical] as [string,number]]:[]),
+        ...(b.climate?[['Climate',b.climate] as [string,number]]:[]),
+      ];
+      fb.innerHTML=rows.map(([l,v])=>`<div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="font-size:12px;color:rgba(255,255,255,0.55)">${l}</span><span style="font-size:12px;font-weight:700;color:#fff">£${Math.round(v).toLocaleString()}</span></div>`).join('');
+    }
+  }
+
+  document.getElementById('btn-next')!.addEventListener('click',()=>{ if(cur<10)goTo(cur+1); else goTo(11); });
+  document.getElementById('btn-back')!.addEventListener('click',()=>{ if(cur>1)goTo(cur-1); });
+
+  // Size inputs
+  const iw=document.getElementById('inp-width') as HTMLInputElement;
+  const id_=document.getElementById('inp-depth') as HTMLInputElement;
+  function updateSize(){
+    st.width=parseFloat(iw.value)||4;
+    st.depth=parseFloat(id_.value)||3;
+    document.getElementById('area-display')!.textContent=(st.width*st.depth).toFixed(3)+' m²';
+    renderPrice();
+  }
+  iw.addEventListener('input',updateSize);
+  id_.addEventListener('input',updateSize);
+
+  // Radio group helper
+  function bindRadio(groupId: string, onPick:(r:HTMLInputElement)=>void){
+    document.querySelectorAll<HTMLInputElement>(`#${groupId} input[type="radio"]`).forEach(r=>{
+      r.addEventListener('change',()=>{
+        document.querySelectorAll(`#${groupId} .opt-row`).forEach(row=>row.classList.remove('selected'));
+        r.closest('.opt-row')?.classList.add('selected');
+        onPick(r); renderPrice();
+      });
+    });
+  }
+
+  bindRadio('roof-group',r=>{ st.roofType=r.value; swapPreview('main-preview',r.dataset.img??''); });
+  bindRadio('cladding-group',r=>{ st.claddingMaterial=r.value; swapPreview('main-preview',r.dataset.img??''); });
+  bindRadio('door-group',r=>{ st.door=r.value; swapPreview('main-preview',r.dataset.img??''); });
+  bindRadio('climate-group',r=>{ st.climate=r.value; swapPreview('main-preview',r.dataset.img??''); });
+
+  // Walls (card radios)
+  document.querySelectorAll<HTMLInputElement>('#walls-group input[type="radio"]').forEach(r=>{
+    r.addEventListener('change',()=>{
+      document.querySelectorAll('#walls-group .opt-card').forEach(c=>c.classList.remove('selected'));
+      r.closest('.opt-card')?.classList.add('selected');
+      st.claddingWalls=parseInt(r.value);
+      swapPreview('main-preview',r.dataset.img??'');
+      renderPrice();
+    });
+  });
+
+  // Features checkboxes
+  const FEAT_KEYS: Record<string,keyof typeof st>={
+    canopy:'canopy', side_canopy:'side_canopy',
+    storage:'storage', glass_corner:'glass_corner', skylight:'skylight',
+  };
+  document.querySelectorAll<HTMLInputElement>('input[name="features"]').forEach(cb=>{
+    cb.addEventListener('change',()=>{
+      const k=FEAT_KEYS[cb.value]; if(k)(st as Record<string,unknown>)[k]=cb.checked;
+      cb.closest('.opt-row')?.classList.toggle('checked',cb.checked);
+      if(cb.dataset.img) swapPreview('main-preview',cb.dataset.img);
+      renderPrice();
+    });
+  });
+
+  // Decking
+  document.querySelectorAll<HTMLInputElement>('input[name="decking"]').forEach(r=>{
+    r.addEventListener('change',()=>{
+      st.hasDecking=r.value==='yes';
+      const dd=document.getElementById('deck-dimensions')!;
+      dd.style.display=st.hasDecking?'block':'none';
+      document.getElementById('deck-no-card')!.classList.toggle('selected',!st.hasDecking);
+      document.getElementById('deck-yes-card')!.classList.toggle('selected',st.hasDecking);
+      renderPrice();
+    });
+  });
+  const idw=document.getElementById('inp-deck-w') as HTMLInputElement;
+  const idd=document.getElementById('inp-deck-d') as HTMLInputElement;
+  function updateDeck(){
+    st.deckW=parseFloat(idw.value)||3;
+    st.deckD=parseFloat(idd.value)||2;
+    document.getElementById('deck-area-display')!.textContent=(st.deckW*st.deckD).toFixed(3)+' m²';
+    renderPrice();
+  }
+  idw.addEventListener('input',updateDeck);
+  idd.addEventListener('input',updateDeck);
+
+  // Windows
+  for(let slot=0;slot<3;slot++){
+    document.querySelectorAll<HTMLInputElement>(`input[name="window${slot}"]`).forEach(r=>{
+      r.addEventListener('change',()=>{
+        document.querySelectorAll(`#win-group-${slot} .win-row`).forEach(row=>row.classList.remove('selected'));
+        r.closest('.win-row')?.classList.add('selected');
+        st.wins[slot]=r.value;
+        if(r.dataset.img) swapPreview('main-preview',r.dataset.img);
+        renderPrice();
+      });
+    });
+  }
+
+  // Electrical
+  document.querySelectorAll<HTMLInputElement>('input[name="elec"]').forEach(cb=>{
+    cb.addEventListener('change',()=>{
+      if(cb.checked){if(!st.electricals.includes(cb.value))st.electricals.push(cb.value);}
+      else st.electricals=st.electricals.filter(e=>e!==cb.value);
+      cb.closest('.opt-row')?.classList.toggle('checked',cb.checked);
+      if(cb.dataset.img) swapPreview('main-preview',cb.dataset.img);
+      renderPrice();
+    });
+  });
+
+  // Form submit
+  document.getElementById('quote-form')?.addEventListener('submit',e=>{
+    e.preventDefault();
+    const form=e.target as HTMLFormElement;
+    fetch('/.netlify/functions/calculator',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:new URLSearchParams(new FormData(form) as unknown as Record<string,string>).toString()})
+      .then(()=>{form.style.display='none';document.getElementById('form-success')!.style.display='block';})
+      .catch(()=>{form.style.display='none';document.getElementById('form-success')!.style.display='block';});
+  });
+
+  goTo(1);
+</script>

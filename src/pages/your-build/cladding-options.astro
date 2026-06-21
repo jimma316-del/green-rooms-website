@@ -1,0 +1,113 @@
+---
+import InfoLayout from '../../layouts/InfoLayout.astro';
+
+const claddings = [
+  {
+    name: 'Metal Cladding',
+    lifespan: 'N/A',
+    maintenance: 'Zero',
+    look: 'Industrial / Contemporary',
+    desc: 'Powder-coated steel or aluminium cladding panels. Completely zero-maintenance, available in a wide range of colours, and extremely durable in all weathers. Used on the non-feature walls of every build as standard.',
+    highlight: false,
+    img: '/images/metal%20cladding.jpg',
+  },
+  {
+    name: 'Western Red Cedar',
+    lifespan: '30+ years',
+    maintenance: 'Every 2–3 years (oiling)',
+    look: 'Warm / Natural',
+    desc: 'Naturally rich warm timber tones that silver over time if left untreated — or retain their warmth with periodic oiling. Cedar is naturally resistant to rot and insects, making it one of the most popular premium cladding choices for garden rooms.',
+    highlight: true,
+    img: '/images/GP%20cedar.jpg',
+  },
+  {
+    name: 'Charred Spruce (Shou Sugi Ban)',
+    lifespan: '40+ years',
+    maintenance: 'Very low',
+    look: 'Dramatic / Modern',
+    desc: 'Timber that\'s been heat-treated using the Japanese Shou Sugi Ban technique — the charring creates a hard carbon layer that dramatically increases durability and resistance to insects, rot and fire. The result is a striking near-black finish with visible wood grain.',
+    highlight: false,
+    img: '/images/GR%20charred%20spruce.jpg',
+  },
+  {
+    name: 'Hardie Plank',
+    lifespan: '60+ years',
+    maintenance: 'Zero',
+    look: 'Clean / Crisp / Contemporary',
+    desc: 'Fibre cement board that looks like timber cladding but requires zero maintenance. Resistant to fire, moisture, insects and impact. Available in a wide colour range with a pre-painted factory finish. Excellent for contemporary garden rooms.',
+    highlight: false,
+    img: '/images/hardie%20plank%20composite%20cladding%20black.jpg',
+  },
+  {
+    name: 'Millboard / Composite',
+    lifespan: '50+ years',
+    maintenance: 'Zero',
+    look: 'Premium Wood-Effect',
+    desc: 'Composite boards engineered to look like real timber with deep grain and natural colour variation — but with none of the maintenance requirements. Never rots, splinters or warps. Premium-feel finish at a higher price point.',
+    highlight: false,
+    img: '/images/millboard%20board%20and%20batten%20cladding%20in%20coppered%20oak.jpg',
+  },
+  {
+    name: 'Thermo Ayous / Thermo Ash',
+    lifespan: '30+ years',
+    maintenance: 'Very low',
+    look: 'Elegant / Natural',
+    desc: 'Thermally modified timber — heat-treated to dramatically reduce moisture absorption, making it far more stable and durable than untreated equivalents. A lighter alternative to Cedar with a refined, consistent finish.',
+    highlight: false,
+    img: '/images/thermo%20ayous%20cladding%20with%20Nordlux%20nico%20wall%20light.jpg',
+  },
+];
+---
+<InfoLayout
+  title="Cladding Options | Garden Room Cladding Guide | The Green Rooms"
+  description="Comparing garden room cladding — Cedar, Charred Spruce, Hardie Plank, metal, Millboard and Thermo Ayous. Lifespan, maintenance, look and cost guide."
+  canonical="/your-build/cladding-options"
+  pageTitle="Cladding Options"
+  pageSubtitle="Cladding is the most visible design decision in your garden room. Here's an honest comparison of every option we offer."
+  heroImg="/images/GR%20charred%20spruce.jpg"
+  heroAlt="Garden room with charred spruce cladding, Surrey"
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build', href: '/your-build/build-process' }, { label: 'Cladding Options' }]}
+>
+  <section style="background:#fff; padding:72px 0;">
+    <div style="max-width:1000px; margin:0 auto; padding:0 24px;">
+      <div style="background:#fff3cd; border-radius:14px; padding:18px 20px; border:1px solid #f0d060; margin-bottom:40px; display:flex; gap:12px; align-items:flex-start;">
+        <span style="font-size:18px; flex-shrink:0;">⚠️</span>
+        <p style="font-size:13.5px; color:#6b5900; margin:0; line-height:1.7;"><strong>We never use Redwood.</strong> Untreated Redwood is the industry standard at lower price points — it warps, splits and discolours within a few years. Every cladding we offer is specified for genuine longevity.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        {claddings.map(c => (
+          <div style={`border-radius:16px; overflow:hidden; border:2px solid ${c.highlight ? '#34a02e' : '#ebeced'}; background:${c.highlight ? '#f0faf0' : '#fff'}; position:relative;`}>
+            {c.highlight && <div style="position:absolute; top:12px; right:12px; z-index:1; background:#34a02e; color:#fff; font-size:11px; font-weight:700; padding:3px 12px; border-radius:50px;">Most Popular</div>}
+            <div style="height:200px; overflow:hidden;">
+              <img src={c.img} alt={c.name + ' cladding on a garden room'} style="width:100%; height:100%; object-fit:cover;" loading="lazy" />
+            </div>
+            <div style="padding:24px;">
+              <h3 style="font-size:1rem; font-weight:700; color:#2d3841; margin:0 0 14px;">{c.name}</h3>
+              <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-bottom:14px;">
+                {[['Lifespan', c.lifespan], ['Maintenance', c.maintenance], ['Look', c.look]].map(([label, val]) => (
+                  <div style="background:rgba(0,0,0,0.03); border-radius:8px; padding:8px; text-align:center;">
+                    <p style="font-size:10px; color:#888; margin:0 0 2px; text-transform:uppercase; letter-spacing:0.04em;">{label}</p>
+                    <p style="font-size:11.5px; font-weight:700; color:#2d3841; margin:0;">{val}</p>
+                  </div>
+                ))}
+              </div>
+              <p style="font-size:13px; color:#555; line-height:1.75; margin:0;">{c.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div style="background:#34a02e; border-radius:20px; padding:32px; margin-top:32px; text-align:center;">
+        <h3 style="font-size:1.1rem; font-weight:700; color:#fff; margin:0 0 10px;">See All Cladding Options at Our Showroom</h3>
+        <p style="font-size:13.5px; color:rgba(255,255,255,0.85); margin:0 0 20px;">Touch and compare every cladding side by side on our display wall in Lyne. The difference in texture and look is much clearer in person than in photos.</p>
+        <a href="/showrooms" class="btn-white" style="font-size:14px; padding:12px 24px;">Visit Our Showroom</a>
+      </div>
+    </div>
+  </section>
+</InfoLayout>
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  }
+</style>

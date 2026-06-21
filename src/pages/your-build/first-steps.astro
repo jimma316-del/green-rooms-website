@@ -1,0 +1,101 @@
+---
+import InfoLayout from '../../layouts/InfoLayout.astro';
+---
+<InfoLayout
+  title="Getting Started | Your Garden Room Journey | The Green Rooms Surrey"
+  description="From planning to handover — everything you need to know before starting your garden room project with The Green Rooms, Surrey."
+  canonical="/your-build/first-steps"
+  pageTitle="Getting Started"
+  pageSubtitle="Everything to think about before you build — and exactly what happens once you're ready."
+  heroImg="/images/site%20consultation.jpg"
+  heroAlt="The Green Rooms team on a site consultation in Surrey"
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build' }, { label: 'Getting Started' }]}
+>
+
+  <section style="background:#fff; padding:72px 0;">
+    <div style="max-width:1100px; margin:0 auto; padding:0 24px;">
+
+      <!-- Planning -->
+      <div style="display:inline-block; background:#e7f1e3; color:#257a21; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:5px 14px; border-radius:50px; margin-bottom:20px;">Planning Your Build</div>
+      <h2 style="font-size:clamp(1.4rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:40px;">Four Things to Think About First</h2>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:64px;">
+        {[
+          { num:'1', title:'What will you use it for?', body:'The use case shapes everything — size, insulation, power requirements, door type and whether planning permission applies. Be specific: "a home office for two monitors and video calls" gives us far more to work with than "an office".' },
+          { num:'2', title:'Where in the garden?', body:'Position affects light, privacy, access and planning rules. South-facing gives the most light but can overheat in summer. East-facing is popular for offices — good morning light without afternoon glare. Think about how far power needs to run from the house and how close you are to boundaries.' },
+          { num:'3', title:'What size do you need?', body:'A common mistake is going too small. Adding 0.5m in each direction adds 20–25% more usable space for a much smaller cost increase. We start at 4m × 2.5m and go well beyond 6m × 4m for bespoke builds. We\'ll advise on the right size during the site visit.' },
+          { num:'4', title:"What's your budget?", body:'Our garden rooms start from £12,750 for a pod and go upward based on size, cladding and specification. Use our instant calculator to get a guide price before we meet — it helps us recommend the right product for your range.' },
+        ].map(item => (
+          <div style="background:#f8faf7; border-radius:16px; padding:28px; border:1px solid #ebeced; display:flex; gap:16px; align-items:flex-start;">
+            <div style="width:36px; height:36px; background:#34a02e; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-family:'Poppins',sans-serif; font-size:14px; font-weight:700; flex-shrink:0;">{item.num}</div>
+            <div>
+              <h3 style="font-size:1rem; font-weight:700; color:#2d3841; margin:0 0 10px;">{item.title}</h3>
+              <p style="font-size:13.5px; color:#555; line-height:1.8; margin:0;">{item.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Site consultation photo -->
+      <div style="border-radius:20px; overflow:hidden; height:420px; margin-bottom:72px;">
+        <img src="/images/site%20consultation.jpg" alt="The Green Rooms team conducting a site consultation" style="width:100%;height:100%;object-fit:cover;object-position:center;" loading="lazy" />
+      </div>
+
+      <!-- Journey -->
+      <div style="display:inline-block; background:#e7f1e3; color:#257a21; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:5px 14px; border-radius:50px; margin-bottom:20px;">The Journey</div>
+      <h2 style="font-size:clamp(1.4rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:40px;">From First Contact to Handover</h2>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:48px;">
+        {[
+          { step:'01', title:'Free Site Visit', timing:'Week 1', body:"We visit your garden, assess the site and take measurements. We'll advise on planning permission, foundation type, access and design options. No charge, no obligation, no hard sell." },
+          { step:'02', title:'Design & Quote', timing:'Week 1–2', body:"We produce a detailed, itemised quote covering every element of the build at a fixed price. No hidden extras — what you agree is what you pay." },
+          { step:'03', title:'Deposit & Scheduling', timing:'After approval', body:"Once you approve the quote we take a deposit and lock in your build date. Lead times vary by season — we'll give you a confirmed start date." },
+          { step:'04', title:'Foundations', timing:'Build Day 1', body:'Our team installs ground screw foundations — no concrete, no excavation, works on slopes. Most builds are fully in the ground in a single day.' },
+          { step:'05', title:'Structure, Cladding & Fit-Out', timing:'Days 2–14', body:'SIPs frame, roof, cladding, glazing, electrics, plastering and flooring. Most builds complete in 2–3 weeks from first day on site.' },
+          { step:'06', title:'Handover & Sign-Off', timing:'Final day', body:'Full walk-through, electrical certificate issued, site left completely clean. Keys in hand, room ready to use.' },
+        ].map(s => (
+          <div style="background:#fff; border:1px solid #ebeced; border-radius:14px; padding:22px 24px; display:flex; gap:14px; align-items:flex-start;">
+            <div style="font-family:'Poppins',sans-serif; font-size:1.5rem; font-weight:800; color:#e7f1e3; flex-shrink:0; line-height:1; margin-top:2px;">{s.step}</div>
+            <div style="flex:1;">
+              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:8px;">
+                <h3 style="font-size:14px; font-weight:700; color:#2d3841; margin:0;">{s.title}</h3>
+                <span style="font-size:11px; font-weight:600; color:#34a02e; background:#e7f1e3; padding:3px 10px; border-radius:50px; white-space:nowrap;">{s.timing}</span>
+              </div>
+              <p style="font-size:13px; color:#555; line-height:1.75; margin:0;">{s.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Photo pair -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:48px;">
+        <div style="border-radius:16px; overflow:hidden; height:280px;">
+          <img src="/images/agreement%20shaking%20hands.jpg" alt="Agreeing the garden room quote" style="width:100%;height:100%;object-fit:cover;object-position:center;" loading="lazy" />
+        </div>
+        <div style="border-radius:16px; overflow:hidden; height:280px;">
+          <img src="/images/keys%20close%20up.jpg" alt="Garden room keys at handover" style="width:100%;height:100%;object-fit:cover;object-position:center;" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Stat CTA -->
+      <div style="background:#2d3841; border-radius:20px; padding:40px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px;">
+        <div>
+          <p style="font-family:'Poppins',sans-serif; font-size:2.2rem; font-weight:700; color:#34a02e; margin:0 0 4px;">2–3 Weeks</p>
+          <p style="font-size:14px; color:rgba(255,255,255,0.75); margin:0;">Average build time from first day on site to handover.</p>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:10px;">
+          <a href="/garden-room-price-calculator" class="btn-primary" style="font-size:14px; padding:12px 28px;">Get an Instant Quote</a>
+          <a href="/contact-us" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.4); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:13px; padding:10px 22px; border-radius:50px; text-decoration:none;">Book a Free Site Visit</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</InfoLayout>
+
+<style>
+  @media (max-width: 768px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 16px !important; }
+  }
+</style>

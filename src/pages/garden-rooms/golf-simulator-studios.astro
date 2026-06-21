@@ -1,0 +1,96 @@
+---
+import ServiceLayout from '../../components/ServiceLayout.astro';
+
+const features = [
+  { icon: 'ruler', title: 'Extended Height Structure', desc: 'Minimum 3m internal height — essential for a full golf swing without restriction. Single or dual pitch roof options available.' },
+  { icon: 'award', title: 'Partnership with Golf Swing Systems', desc: 'We work exclusively with Golf Swing Systems, industry experts with over 20 years in golf simulation technology, to specify and install every simulator.' },
+  { icon: 'network', title: 'Launch Monitor Integration', desc: 'Every system is matched to the right launch monitor for your game and budget — from entry-level to professional-grade.' },
+  { icon: 'tools', title: 'Full Technology Setup', desc: 'Projector, screen, turf mat, wall protection, gaming PC, and launch monitor — fully specified and installed as one package.' },
+  { icon: 'soundwave', title: 'SIPs Soundproofing', desc: 'Structural insulated panels keep impact noise in and weather noise out — essential for a realistic simulation experience.' },
+  { icon: 'lightning', title: 'Dedicated Electrical Circuit', desc: 'High-spec electrical installation with dedicated circuits for simulation equipment, lighting and heating.' },
+];
+
+const packages = [
+  { name: 'Option 1 — Budget-Friendly', price: 'From £15,000', desc: 'Entry-level launch monitor, projector and screen setup. A great starting point for practice at home.' },
+  { name: 'Option 2 — Mid-Range', price: 'From £22,500', desc: 'Upgraded launch monitor with improved accuracy and course simulation. The most popular choice.' },
+  { name: 'Option 3 — Premium', price: 'From £37,500', desc: 'Professional-grade technology. The closest experience to a real course you can get at home.' },
+];
+
+const related = [
+  { label: 'Bespoke Garden Rooms', href: '/garden-rooms/bespoke', img: '/images/Hero%20Bespoke%20build.jpg' },
+  { label: 'Garden Rooms', href: '/garden-rooms/garden-rooms', img: '/images/classic%20GR%20front%20on%20thermo%20ayous%20cladding.jpg' },
+  { label: 'Garden Offices', href: '/garden-rooms/garden-offices', img: '/images/GP%20office%20internal.jpg' },
+];
+---
+
+<ServiceLayout
+  title="Golf Simulator Garden Rooms Surrey | Golf Simulator Studios | The Green Rooms"
+  description="Custom golf simulator garden rooms built across Surrey. Extended height SIPs studios in partnership with Golf Swing Systems. Three packages from £15,000. Free consultation."
+  canonical="/garden-rooms/golf-simulator-studios"
+  heroImg="/images/HERO%20Golf%20sim.jpg"
+  heroAlt="Golf simulator garden room built by The Green Rooms in partnership with Golf Swing Systems"
+  h1="Golf Simulator Studios"
+  tagline="Custom Golf Simulator Garden Rooms — Surrey & South East"
+  intro="Practice your game in a purpose-built, extended-height garden studio — any time, in any weather, without leaving home. We design and build the structure; our partners Golf Swing Systems specify and install the technology. Together, we deliver a complete, ready-to-play golf simulator room from a single point of contact."
+  features={features}
+  relatedPages={related}
+>
+
+  <!-- Photo gallery -->
+  <section style="background:#f8faf7; padding:72px 0 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.4rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin:0 0 24px;">Golf Simulator Studios We've Built</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:12px;">
+        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/Golf%20sim%20setup%20hero.jpg" alt="Golf simulator studio setup" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/golf%20sim%20internal%20action%20shot.jpg" alt="Golf simulator in action inside garden room" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/extended%20height%20golf%20sim%20millboard%20board%20and%20batten%20in%20anthracite.jpg" alt="Extended height golf simulator garden room" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:72px;">
+        <div style="border-radius:14px; overflow:hidden; height:260px;"><img src="/images/night%20lighting%20extended%20height%20golf%20sim%20millboard%20board%20and%20batten%20in%20anthracite.jpg" alt="Golf simulator garden room at night with lighting" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:260px;"><img src="/images/extended%20height%20golf%20sim%20close%20up%20millboard%20board%20and%20batten%20in%20anthracite.jpg" alt="Close up of extended height golf simulator garden room" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simulator packages -->
+  <section class="section" style="background:#fff;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:40px;">
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:10px;">Simulator Packages</h2>
+        <p style="color:#666; max-width:520px; margin:0 auto;">Prices shown are for the simulator technology only. The garden room structure is priced separately based on your specifications.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+        {packages.map((pkg, i) => (
+          <div style={`background:#fff; border-radius:16px; padding:28px; border:2px solid ${i === 1 ? '#34a02e' : '#ebeced'}; position:relative;`}>
+            {i === 1 && <div style="position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:#34a02e; color:#fff; font-size:11px; font-weight:700; padding:4px 14px; border-radius:50px; white-space:nowrap;">Most Popular</div>}
+            <p style="font-size:13px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.06em; margin:0 0 8px;">{pkg.name}</p>
+            <p style="font-size:1.75rem; font-weight:700; color:#2d3841; margin:0 0 12px;">{pkg.price}</p>
+            <p style="font-size:13.5px; color:#666; line-height:1.65; margin:0;">{pkg.desc}</p>
+          </div>
+        ))}
+      </div>
+      <p style="text-align:center; font-size:13px; color:#999; margin-top:20px;">All prices exclude VAT. Garden room structure priced separately. Contact us for a full combined quote.</p>
+    </div>
+  </section>
+
+  <!-- Golf Swing Systems partnership -->
+  <section class="section" style="background:#f8faf7;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
+        <div>
+          <h2 style="font-size:clamp(1.5rem,2.5vw,2rem); font-weight:700; color:#2d3841; margin-bottom:16px;">Our Technology Partner</h2>
+          <p style="font-size:1rem; color:#666; line-height:1.8; margin-bottom:16px;">We partner exclusively with <strong>Golf Swing Systems</strong> — one of the UK's leading golf simulation specialists with over 20 years of experience. They handle every aspect of the technology: selection, installation, configuration, and ongoing support.</p>
+          <p style="font-size:1rem; color:#666; line-height:1.8; margin-bottom:24px;">Whatever your budget, your game demands, or your preferred technology, Golf Swing Systems will spec the right setup for you. We build the room around it.</p>
+          <a href="/contact-us" class="btn-primary">Book a Free Consultation</a>
+        </div>
+        <img
+          src="/images/golf%20sim%20internal%20action%20shot.jpg"
+          alt="Golf simulator in action inside a garden room studio by The Green Rooms"
+          style="width:100%; border-radius:16px; box-shadow:0 8px 32px rgba(0,0,0,0.1);"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+</ServiceLayout>

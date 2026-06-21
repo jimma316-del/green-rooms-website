@@ -1,0 +1,84 @@
+---
+import ServiceLayout from '../../components/ServiceLayout.astro';
+
+const features = [
+  { icon: 'bifold', title: 'Aluminium Bifold Doors', desc: 'Grand aluminium bifold doors that open the full front of the room — connecting your garden room to your garden seamlessly.' },
+  { icon: 'bulb', title: 'Canopy with LED Lighting', desc: 'Elegant front canopy with LED downlights, creating covered outdoor space and making the room usable morning to evening.' },
+  { icon: 'layers', title: 'Premium Visual Cladding', desc: 'Front wall and canopy underside finished in your choice of premium cladding. Other walls in durable, zero-maintenance metal cladding.' },
+  { icon: 'window', title: 'Slot Window', desc: 'A sleek aluminium slot window brings in side light without compromising privacy or wall space.' },
+  { icon: 'layers', title: 'SIPs Construction', desc: 'Full structural insulated panel build throughout. Warm in winter, cool in summer, and properly soundproofed.' },
+  { icon: 'lightning', title: 'Full Electrics Included', desc: 'Mains connection, consumer unit, lighting, sockets, and a signed electrical certificate as standard.' },
+  { icon: 'key', title: 'Fully Turnkey', desc: 'Foundations, structure, cladding, glazing, flooring, plastering, and site clean-up all included.' },
+  { icon: 'ruler', title: 'Sizes From 4m × 2.5m', desc: 'Medium to large builds designed to make the most of your available garden space.' },
+];
+
+const related = [
+  { label: 'Garden Rooms with Storage', href: '/garden-rooms/garden-rooms-with-storage', img: '/images/GR%20with%20storage%20cedar%20and%20step.jpg' },
+  { label: 'Garden Offices', href: '/garden-rooms/garden-offices', img: '/images/GP%20office%20internal.jpg' },
+  { label: 'Bespoke Garden Rooms', href: '/garden-rooms/bespoke', img: '/images/Hero%20Bespoke%20build.jpg' },
+];
+---
+
+<ServiceLayout
+  title="Garden Rooms Surrey | Luxury Garden Rooms from £16,950 | The Green Rooms"
+  description="Luxury bespoke garden rooms built across Surrey from £16,950 inc VAT. Aluminium bifold doors, canopy, SIPs construction, full electrics — turnkey installation. Free site visit."
+  canonical="/garden-rooms/garden-rooms"
+  heroImg="/images/Hero%20GR.jpg"
+  heroAlt="Luxury bespoke garden room built by The Green Rooms, Surrey"
+  h1="Garden Rooms"
+  tagline="Luxury Garden Rooms — Surrey & South East"
+  price="From £16,950 inc VAT"
+  intro="Our Garden Rooms are the most versatile structure we build — equally at home as an entertainment space, a creative studio, a home bar, or simply your favourite room in the house. They come with grand aluminium bifold doors, a canopy with LED lighting, and a premium cladding finish as standard. These are rooms designed to be used and enjoyed, not just looked at."
+  features={features}
+  relatedPages={related}
+>
+
+  <section class="section" style="background:#fff;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
+        <img
+          src="/images/GR%20at%20night%20charred%20spruce%20crittal%20french%20doors.jpg"
+          alt="Garden room at night with LED canopy lighting, Surrey"
+          style="width:100%; border-radius:16px; box-shadow:0 8px 32px rgba(0,0,0,0.1);"
+          loading="lazy"
+        />
+        <div>
+          <h2 style="font-size:clamp(1.5rem,2.5vw,2rem); font-weight:700; color:#2d3841; margin-bottom:16px;">Whatever You Want It to Be</h2>
+          <p style="font-size:1rem; color:#666; line-height:1.8; margin-bottom:20px;">The beauty of a garden room with bifold doors is that it blurs the line between indoors and outdoors. Open them up on a summer evening and you have an extension of your garden. Close them on a January afternoon and you have a warm, insulated, light-filled room with nowhere else quite like it.</p>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+            {['Entertainment lounge', 'Home gym', 'Games room', 'Art or music studio', 'Home bar', 'Cinema room', 'Yoga or wellness space', 'Guest room'].map(use => (
+              <div style="display:flex; align-items:center; gap:8px; font-size:13px; font-weight:600; color:#2d3841;">
+                <svg width="14" height="14" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                {use}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo gallery -->
+  <section style="background:#f8faf7; padding:72px 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.4rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin:0 0 24px;">Garden Rooms We've Built</h2>
+      <div style="display:grid; grid-template-columns:2fr 1fr 1fr; gap:12px; margin-bottom:12px;">
+        <div style="border-radius:14px; overflow:hidden; height:320px;"><img src="/images/GR%20dual%20canopy%20blinds%20glass%20corner.jpg" alt="Garden room with dual canopy and glass corner" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:320px;"><img src="/images/GR%20internal%20with%20bifolds%20and%20decorated.jpg" alt="Garden room interior with bifold doors" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:320px;"><img src="/images/GR%20end%20of%20garden%202.jpg" alt="Garden room at end of garden, Surrey" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 2fr; gap:12px; margin-bottom:12px;">
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/night%20lighting.jpg" alt="Garden room with exterior lighting at night" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/GR%20glass%20corner%20dual%20canopy.jpg" alt="Garden room with glass corner and canopy" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/GR%20with%20cedar%20cladding%20Nordlux%20kyclop%20ripple%20wall%20light.jpg" alt="Garden room with cedar cladding and wall lighting" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:12px; margin-bottom:72px;">
+        <div style="border-radius:14px; overflow:hidden; height:180px;"><img src="/images/GR%20charred%20spruce.jpg" alt="Garden room with charred spruce cladding" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:180px;"><img src="/images/Classic%20GR%20in%20Garden.jpeg" alt="Classic garden room in a Surrey garden" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:180px;"><img src="/images/GR%20extended%20height%20with%20thermo%20ayous%20cladding%20and%20millboard%20decking%20opposite%20angle.jpg" alt="Extended height garden room with millboard decking" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:180px;"><img src="/images/winter%20shot%20of%20GR.jpg" alt="Garden room in winter" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+</ServiceLayout>

@@ -1,0 +1,165 @@
+---
+import InfoLayout from '../layouts/InfoLayout.astro';
+
+const comparisons = [
+  {
+    topic: 'Structure',
+    us: 'SIPs (Structural Insulated Panels) throughout — the same system used in Scandinavian passive-house construction. Rigid, warm, and acoustically superior.',
+    them: 'Most competitors use timber stud frame — cheaper to build, but significantly worse for insulation, soundproofing and long-term stability.',
+  },
+  {
+    topic: 'Roofing',
+    us: 'EPDM rubber or metal panel roofing with a 20-year manufacturer\'s guarantee on every build.',
+    them: 'Many builders use felt roofing — it\'s cheap, but typically fails within 10–15 years and is not covered by meaningful guarantees.',
+  },
+  {
+    topic: 'Cladding',
+    us: 'Thermo Ayous, Cedar, Charred Spruce, Hardie Plank, Millboard or Thermo Ash. All chosen for their 40+ year lifespan. We never use Redwood.',
+    them: 'Budget cladding (including untreated Redwood) is common in the industry. It looks fine initially but warps, splits and discolours within a few years.',
+  },
+  {
+    topic: 'Electrical',
+    us: 'Mains-connected consumer unit, full circuit testing, and a signed electrical certificate on every single build.',
+    them: 'Many suppliers provide a basic spur connection or no dedicated consumer unit — which may not meet building regulations and can create issues with insurers.',
+  },
+  {
+    topic: 'Interior Finish',
+    us: 'Fully plastered internal walls, fitted flooring and skirting boards as standard — move-in ready from day one.',
+    them: 'OSB boarding or basic lining is common at lower price points. You\'ll need to hire additional trades to finish the interior yourself.',
+  },
+  {
+    topic: 'Foundations',
+    us: 'Ground screw foundations as standard — no digging, no concrete, suitable for slopes, and removable if you ever move.',
+    them: 'Concrete pad foundations are most common — cheaper to lay but permanent, require excavation, and can crack on poor ground conditions.',
+  },
+  {
+    topic: 'Who Builds It',
+    us: 'Our own team of employed carpenters, installers, electricians and plasterers. One team, one build, one point of contact.',
+    them: 'Subcontracting is widespread. The company you spoke to may have minimal involvement in the actual build.',
+  },
+  {
+    topic: 'What\'s Included',
+    us: 'Fully turnkey. Foundations, structure, cladding, glazing, electrics, flooring, plastering, and site clean-up. Price agreed, price paid.',
+    them: 'Many quotes exclude groundworks, electrical connections or interior finishes — which then arrive as additional costs after you\'ve committed.',
+  },
+];
+
+const certs = [
+  { icon: '🌿', label: 'FSC Certified', desc: 'All timber from certified sustainable forests.' },
+  { icon: '🌍', label: 'PEFC Certified', desc: 'Programme for the Endorsement of Forest Certification.' },
+  { icon: '⚡', label: 'Electrical Sign-Off', desc: 'Full BS 7671 testing and certification on every build.' },
+  { icon: '📋', label: '10-Year Structural Guarantee', desc: 'Written guarantee covering build integrity.' },
+];
+---
+
+<InfoLayout
+  title="Why Choose The Green Rooms | What Sets Us Apart | Surrey Garden Rooms"
+  description="How The Green Rooms compares to other garden room builders: SIPs vs timber frame, EPDM vs felt roofing, what's really included in our quotes, and who actually builds your room."
+  canonical="/why-us"
+  pageTitle="Why Choose The Green Rooms"
+  pageSubtitle="Garden rooms vary enormously in quality. Here's an honest breakdown of what sets us apart — and what to look out for with any builder you consider."
+  heroImg="/images/SIPS.jpg"
+  heroAlt="SIPs construction panel for a garden room by The Green Rooms, Surrey"
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Why Us' }]}
+>
+
+  <!-- Certs strip -->
+  <section style="background:#e7f1e3; padding:40px 24px;">
+    <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:16px;">
+      {certs.map(c => (
+        <div style="display:flex; align-items:center; gap:12px; background:#fff; padding:16px 20px; border-radius:12px; border:1px solid rgba(52,160,46,0.2);">
+          <span style="font-size:22px;">{c.icon}</span>
+          <div>
+            <p style="font-size:13px; font-weight:700; color:#2d3841; margin:0 0 2px;">{c.label}</p>
+            <p style="font-size:12px; color:#555; margin:0;">{c.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Comparison table -->
+  <section style="background:#fff; padding:80px 0;">
+    <div style="max-width:1000px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:48px;">
+        <h2 style="font-size:clamp(1.4rem,3vw,2rem); font-weight:700; color:#2d3841; margin:0 0 12px;">The Green Rooms vs The Industry Standard</h2>
+        <p style="font-size:1rem; color:#555; max-width:560px; margin:0 auto; line-height:1.7;">This isn't a comparison with the worst builders out there — it's a fair look at where we differ from the typical specification you'll find at a similar price point.</p>
+      </div>
+
+      <!-- Header -->
+      <div style="display:grid; grid-template-columns:180px 1fr 1fr; gap:0; margin-bottom:2px;">
+        <div></div>
+        <div style="background:#2d3841; color:#fff; font-size:13px; font-weight:700; padding:14px 20px; border-radius:12px 0 0 0; text-align:center;">The Green Rooms</div>
+        <div style="background:#f3f4f0; color:#666; font-size:13px; font-weight:700; padding:14px 20px; border-radius:0 12px 0 0; text-align:center;">Typical Alternative</div>
+      </div>
+
+      {comparisons.map((row, i) => (
+        <div style={`display:grid; grid-template-columns:180px 1fr 1fr; gap:0; margin-bottom:2px;`}>
+          <div style={`background:#2d3841; padding:20px; display:flex; align-items:center; ${i === comparisons.length - 1 ? 'border-radius:0 0 0 12px;' : ''}`}>
+            <span style="font-size:13px; font-weight:700; color:#34a02e;">{row.topic}</span>
+          </div>
+          <div style={`background:#f8faf7; border-left:3px solid #34a02e; padding:16px 20px; ${i === comparisons.length - 1 ? 'border-radius:0 0 0 0;' : ''}`}>
+            <p style="font-size:13px; color:#2d3841; line-height:1.65; margin:0;">{row.us}</p>
+          </div>
+          <div style={`background:#f8f8f8; padding:16px 20px; ${i === comparisons.length - 1 ? 'border-radius:0 0 12px 0;' : ''}`}>
+            <p style="font-size:13px; color:#666; line-height:1.65; margin:0;">{row.them}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Photo strip showing quality -->
+  <section style="background:#f8faf7; padding:72px 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.3rem,2.5vw,1.7rem); font-weight:700; color:#2d3841; margin:0 0 24px;">The Standard We Build To</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:12px;">
+        <div style="border-radius:14px; overflow:hidden; height:220px;"><img src="/images/GR%20clean%20pic%20portrait.jpg" alt="Clean finished garden room by The Green Rooms" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:220px;"><img src="/images/Classic%20GR%20internal%20plaster%20finish%20with%20integral%20blinds.jpg" alt="Plastered interior finish in a garden room" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:220px;"><img src="/images/GR%20internal%20with%20bifolds%20and%20decorated.jpg" alt="Decorated interior of a finished garden room" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:220px;"><img src="/images/Dual%20Canopy%20Lighting.jpg" alt="LED canopy lighting on a garden room at night" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section style="background:#1a2328; padding:72px 24px;">
+    <div style="max-width:1000px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center;">
+      {[
+        { n: '150+', label: 'Garden Rooms Built' },
+        { n: '5★', label: '39 Google Reviews' },
+        { n: '2–3wk', label: 'Average Build Time' },
+        { n: '40yr+', label: 'Cladding Lifespan' },
+      ].map(s => (
+        <div style="padding:28px 16px; border:1px solid rgba(255,255,255,0.08); border-radius:16px;">
+          <p style="font-family:'Poppins',sans-serif; font-size:2rem; font-weight:700; color:#34a02e; margin:0 0 6px;">{s.n}</p>
+          <p style="font-size:13px; color:rgba(255,255,255,0.6); margin:0;">{s.label}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#34a02e; padding:72px 24px; text-align:center;">
+    <div style="max-width:520px; margin:0 auto;">
+      <h2 style="font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700; color:#fff; margin-bottom:14px;">See the Difference In Person</h2>
+      <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:28px;">Visit our showroom in Lyne, walk through a finished garden room, and see the materials — cladding, SIPs cross-sections, glazing, flooring — up close before you commit to anything.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+        <a href="/showrooms" class="btn-white" style="font-size:15px; padding:14px 32px;">Visit Our Showroom</a>
+        <a href="/contact-us" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.5); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none;">Book a Free Site Visit</a>
+      </div>
+    </div>
+  </section>
+
+</InfoLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+    div[style*="grid-template-columns:180px 1fr 1fr"] { grid-template-columns: 1fr !important; }
+    div[style*="grid-template-columns:180px 1fr 1fr"] > div:first-child { border-radius: 12px 12px 0 0 !important; }
+  }
+  @media (max-width: 600px) {
+    div[style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: 1fr !important; }
+  }
+</style>

@@ -1,0 +1,380 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+
+const services = [
+  {
+    title: 'Garden Offices',
+    price: 'From £15,450 inc VAT',
+    desc: 'Purpose-built workspaces designed for focus and productivity. SIPs-insulated, climate controlled, and fully wired for year-round use.',
+    href: '/garden-rooms/garden-offices',
+    img: '/images/GP%20office%20internal.jpg',
+    cta: 'Explore Garden Offices',
+  },
+  {
+    title: 'Garden Rooms',
+    price: 'From £16,950 inc VAT',
+    desc: 'Versatile, beautifully finished spaces for entertaining, relaxing, or creating — with bifold doors, canopy, and premium cladding as standard.',
+    href: '/garden-rooms/garden-rooms',
+    img: '/images/classic%20GR%20front%20on%20thermo%20ayous%20cladding.jpg',
+    cta: 'Explore Garden Rooms',
+  },
+  {
+    title: 'Garden Pods',
+    price: 'From £12,750 inc VAT',
+    desc: 'Compact, affordable garden buildings — ideal for a quiet retreat, hobby room, or storage without compromising on quality.',
+    href: '/garden-rooms/garden-pods',
+    img: '/images/Classic%20GP%20larch%20front%20on.jpg',
+    cta: 'Explore Garden Pods',
+  },
+  {
+    title: 'Garden Rooms with Storage',
+    price: 'From £18,900 inc VAT',
+    desc: 'All the features of our garden rooms plus an integrated, hidden storage area behind a seamlessly clad secret door.',
+    href: '/garden-rooms/garden-rooms-with-storage',
+    img: '/images/GR%20with%20storage%20cedar%20and%20step.jpg',
+    cta: 'Explore Storage Rooms',
+  },
+  {
+    title: 'Golf Simulator Studios',
+    price: 'From £37,500 inc VAT',
+    desc: 'Extended-height studios purpose-built for golf simulation, in partnership with Golf Swing Systems. Practice any time, in any weather.',
+    href: '/garden-rooms/golf-simulator-studios',
+    img: '/images/HERO%20Golf%20sim.jpg',
+    cta: 'Explore Golf Simulators',
+  },
+  {
+    title: 'Bespoke Garden Rooms',
+    price: 'Fully custom — prices on request',
+    desc: 'No two gardens are the same. We design and build completely custom structures — any shape, any size, any vision.',
+    href: '/garden-rooms/bespoke',
+    img: '/images/Hero%20Bespoke%20build.jpg',
+    cta: 'Explore Bespoke',
+  },
+];
+
+const whyUs = [
+  { title: 'SIPs Construction', desc: 'Structural Insulated Panels give far superior insulation, strength and soundproofing compared to standard timber frame — keeping you warm in winter and cool in summer.', icon: 'layers' },
+  { title: '40+ Year Cladding', desc: 'We only use cladding materials with a 40-year or greater lifespan. No Redwood. Every external finish is chosen for longevity, not price.', icon: 'leaf' },
+  { title: '20-Year Roof Guarantee', desc: 'Every roof uses EPDM or metal panel — never felt. Both come with a 20-year guarantee protecting your investment.', icon: 'shield' },
+  { title: 'Fully Turnkey', desc: 'Foundations, structure, cladding, glazing, electrics, flooring, plastering, and site clean-up. You move in — we handle everything else.', icon: 'key' },
+  { title: 'Electrical Sign-Off', desc: 'Every build includes a mains-connected consumer unit, full testing, and a signed electrical certificate. Safe, legal, and insurable.', icon: 'lightning' },
+  { title: 'Local Surrey Company', desc: 'A dedicated team of skilled carpenters based in Lyne, Surrey — working mainly across Surrey and the South East since 2019.', icon: 'map' },
+];
+---
+
+<Layout
+  title="Bespoke Garden Rooms Surrey | The Green Rooms"
+  description="Bespoke garden rooms, garden offices, garden gyms and golf simulator studios hand built across Surrey. SIPs construction, 10-year guarantee, fully turnkey. Get an instant quote in 3 minutes."
+  canonical="/"
+>
+
+  <!-- HERO SLIDESHOW -->
+  <section id="hero" style="position:relative; min-height:92vh; display:flex; align-items:center; overflow:hidden; background:#1a2328;">
+
+    <!-- Slides -->
+    <div style="position:absolute; inset:0; z-index:0;">
+      <img class="hero-slide active" src="/images/Hero%20GR.jpg"
+        alt="Bespoke garden room built by The Green Rooms, Surrey"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition:opacity 1.2s ease;"
+        fetchpriority="high" />
+      <img class="hero-slide" src="/images/HERO%20Bespoke%20build.jpg"
+        alt="Bespoke garden room exterior, Surrey"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.2s ease;"
+        loading="lazy" />
+      <img class="hero-slide" src="/images/HERO%20Bespoke%20garden%20room%20end%20of%20garden.jpeg"
+        alt="Bespoke garden room at end of Surrey garden"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.2s ease;"
+        loading="lazy" />
+      <img class="hero-slide" src="/images/HERO%20GR%204m%20bifolds.jpg"
+        alt="Garden room with 4m bifold doors, Surrey"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.2s ease;"
+        loading="lazy" />
+      <img class="hero-slide" src="/images/HERO%20Golf%20sim.jpg"
+        alt="Golf simulator garden room, Surrey"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.2s ease;"
+        loading="lazy" />
+      <img class="hero-slide" src="/images/HERO%20crittal%20doors%20millboard%20cladding%20in%20burnt%20cedar%20GP.jpg"
+        alt="Garden pod with crittall doors and millboard cladding, Surrey"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.2s ease;"
+        loading="lazy" />
+      <img class="hero-slide" src="/images/HERO%20extended%20height%20golf%20sim%20millboard%20board%20and%20batten%20in%20anthracite.jpg"
+        alt="Extended height golf simulator studio with millboard cladding, Surrey"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.2s ease;"
+        loading="lazy" />
+      <img class="hero-slide" src="/images/Hero%20showroom.jpeg"
+        alt="The Green Rooms showroom in Lyne, Surrey"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.2s ease;"
+        loading="lazy" />
+      <!-- Neutral left-side gradient for text legibility -->
+      <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0) 70%);pointer-events:none;"></div>
+    </div>
+
+    <!-- Content -->
+    <div style="position:relative; z-index:2; max-width:1280px; margin:0 auto; padding:80px 24px; width:100%;">
+      <div style="max-width:640px;">
+        <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(52,160,46,0.9); color:#fff; font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:5px 14px; border-radius:50px; margin-bottom:24px;">
+          <span style="width:6px; height:6px; background:#fff; border-radius:50%;"></span>
+          Surrey &amp; South East — Est. 2019
+        </div>
+        <h1 style="font-family:'Poppins',sans-serif; font-size:clamp(2.2rem,5vw,3.75rem); font-weight:700; color:#fff; line-height:1.1; margin-bottom:20px; letter-spacing:-0.01em;">
+          Bespoke Garden Rooms<br/>Hand Built in Surrey
+        </h1>
+        <p style="font-size:1.1rem; color:rgba(255,255,255,0.88); line-height:1.8; margin-bottom:36px; max-width:520px;">
+          We design and build 100% bespoke garden rooms, offices, gyms, and golf simulator studios across Surrey — using SIPs construction, premium materials, and a fully turnkey service from foundations to electrical sign-off.
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:12px; align-items:center;">
+          <a href="/garden-room-price-calculator" class="btn-primary" style="font-size:15px; padding:15px 34px;">Get an Instant Quote</a>
+          <a href="/contact-us" class="btn-white" style="font-size:15px; padding:15px 34px;">Book a Free Site Visit</a>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:28px;">
+          <div style="display:flex; align-items:center; gap:6px; color:rgba(255,255,255,0.8); font-size:13px; font-weight:600;">
+            <svg width="14" height="14" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            10-year structural guarantee
+          </div>
+          <div style="display:flex; align-items:center; gap:6px; color:rgba(255,255,255,0.8); font-size:13px; font-weight:600;">
+            <svg width="14" height="14" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            Free site visit included
+          </div>
+          <div style="display:flex; align-items:center; gap:6px; color:rgba(255,255,255,0.8); font-size:13px; font-weight:600;">
+            <svg width="14" height="14" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            Built in 2–3 weeks
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide dots -->
+    <div id="hero-dots" style="position:absolute; bottom:28px; right:32px; z-index:3; display:flex; gap:8px;">
+      <button class="hero-dot active" data-index="0" aria-label="Slide 1"></button>
+      <button class="hero-dot" data-index="1" aria-label="Slide 2"></button>
+      <button class="hero-dot" data-index="2" aria-label="Slide 3"></button>
+      <button class="hero-dot" data-index="3" aria-label="Slide 4"></button>
+      <button class="hero-dot" data-index="4" aria-label="Slide 5"></button>
+      <button class="hero-dot" data-index="5" aria-label="Slide 6"></button>
+      <button class="hero-dot" data-index="6" aria-label="Slide 7"></button>
+      <button class="hero-dot" data-index="7" aria-label="Slide 8"></button>
+    </div>
+  </section>
+
+  <!-- PROOF STRIP -->
+  <div style="background:#34a02e; padding:14px 24px;">
+    <div style="max-width:1280px; margin:0 auto; display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:8px 32px;">
+      <div style="display:flex; align-items:center; gap:6px; color:#fff; font-size:13px; font-weight:700;">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+        5 Stars · 39 Google Reviews
+      </div>
+      <span style="color:rgba(255,255,255,0.4);">|</span>
+      <span style="color:#fff; font-size:13px; font-weight:600;">150+ Garden Rooms Built Across Surrey</span>
+      <span style="color:rgba(255,255,255,0.4);">|</span>
+      <span style="color:#fff; font-size:13px; font-weight:600;">FSC &amp; PEFC Certified Materials</span>
+      <span style="color:rgba(255,255,255,0.4);">|</span>
+      <a href="/contact-us" style="color:#fff; font-size:13px; font-weight:600; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.4);">Surrey &amp; Surrounding Areas — Not Sure If We Cover You? <span style="text-decoration:underline;">Get in Touch</span></a>
+    </div>
+  </div>
+
+  <!-- SERVICES GRID -->
+  <section class="section" style="background:#fff;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:52px;">
+        <h2 style="font-size:clamp(1.75rem,3.5vw,2.5rem); font-weight:700; color:#2d3841; margin-bottom:12px;">What We Build</h2>
+        <p style="font-size:1.05rem; color:#666; max-width:540px; margin:0 auto;">Every garden room is designed around your space, your needs, and your budget. Browse our range or go completely bespoke.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+        {services.map(s => (
+          <a href={s.href} class="service-card" style="display:flex; flex-direction:column; text-decoration:none; background:#fff; border-radius:20px; overflow:hidden; border:1px solid #ebeced;">
+            <div style="position:relative; height:220px; overflow:hidden;">
+              <img src={s.img} alt={s.title + ' by The Green Rooms, Surrey'} loading="lazy"
+                   style="width:100%; height:100%; object-fit:cover;" class="service-img" />
+              <div style="position:absolute; bottom:12px; left:12px; background:rgba(45,56,65,0.92); color:#fff; font-size:11px; font-weight:700; padding:4px 12px; border-radius:50px; letter-spacing:0.02em;">{s.price}</div>
+            </div>
+            <div style="padding:22px; flex:1; display:flex; flex-direction:column; gap:10px;">
+              <h3 style="font-size:1.1rem; font-weight:700; color:#2d3841; margin:0;">{s.title}</h3>
+              <p style="font-size:13.5px; color:#666; line-height:1.65; margin:0; flex:1;">{s.desc}</p>
+              <span style="display:inline-flex; align-items:center; gap:4px; color:#34a02e; font-size:13px; font-weight:700; margin-top:4px;">
+                {s.cta}
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR BANNER -->
+  <section style="background:#2d3841; padding:80px 24px;">
+    <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
+      <div>
+        <div style="display:inline-block; background:rgba(52,160,46,0.2); color:#6fcf6b; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:5px 14px; border-radius:50px; margin-bottom:16px;">Instant Quote</div>
+        <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.75rem,3vw,2.5rem); font-weight:700; color:#fff; line-height:1.2; margin-bottom:16px;">Design Your Garden Room in 3 Minutes</h2>
+        <p style="font-size:1rem; color:rgba(255,255,255,0.75); line-height:1.8; margin-bottom:28px;">
+          Choose your size, structure, cladding, doors, windows, and electrics — and get a guide price instantly. No email required to see your estimate. We confirm the final price after a free site visit.
+        </p>
+        <a href="/garden-room-price-calculator" class="btn-primary" style="font-size:15px; padding:15px 34px;">Start My Instant Quote</a>
+      </div>
+      <div>
+        <img src="/images/GR%20clean%20pic%20portrait.jpg"
+             alt="Garden room price calculator"
+             style="width:100%; border-radius:16px; box-shadow:0 24px 64px rgba(0,0,0,0.4);"
+             loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="section" style="background:#2d3841;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:52px;">
+        <h2 style="font-size:clamp(1.75rem,3.5vw,2.5rem); font-weight:700; color:#fff; margin-bottom:12px;">Why Choose The Green Rooms?</h2>
+        <p style="font-size:1.05rem; color:rgba(255,255,255,0.65); max-width:520px; margin:0 auto;">We don't cut corners on materials or craftsmanship. Here's what separates us from cheaper alternatives.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+        {whyUs.map(w => (
+          <div style="background:rgba(255,255,255,0.06); border-radius:16px; padding:28px; border:1px solid rgba(255,255,255,0.1); transition:background 0.2s;" class="why-card">
+            <div style="width:40px; height:40px; background:#34a02e; border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
+              <Icon name={w.icon} size={20} color="#fff" />
+            </div>
+            <h3 style="font-size:1rem; font-weight:700; color:#fff; margin-bottom:8px;">{w.title}</h3>
+            <p style="font-size:13.5px; color:rgba(255,255,255,0.65); line-height:1.7; margin:0;">{w.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div style="text-align:center; margin-top:36px;">
+        <a href="/why-us" class="btn-primary">Everything That Sets Us Apart</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECENT PROJECTS -->
+  <section class="section" style="background:#fff;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:40px; flex-wrap:wrap; gap:16px;">
+        <div>
+          <h2 style="font-size:clamp(1.75rem,3.5vw,2.5rem); font-weight:700; color:#2d3841; margin-bottom:8px;">Recent Projects</h2>
+          <p style="font-size:1rem; color:#666; margin:0;">A selection of recent garden rooms built across Surrey.</p>
+        </div>
+        <a href="/our-work" class="btn-outline">View All Projects</a>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+        <a href="/our-work" class="project-card" style="display:block; text-decoration:none; border-radius:16px; overflow:hidden; position:relative; height:280px;">
+          <img src="/images/GR%20end%20of%20garden.jpg" alt="Bespoke garden office in East Molesey, Surrey" style="width:100%; height:100%; object-fit:cover;" class="project-img" loading="lazy" />
+          <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);"></div>
+          <div style="position:absolute; bottom:16px; left:16px;">
+            <p style="color:#fff; font-weight:700; font-size:14px; margin:0 0 2px;">Bespoke Garden Office</p>
+            <p style="color:rgba(255,255,255,0.75); font-size:12px; margin:0;">East Molesey, Surrey</p>
+          </div>
+        </a>
+        <a href="/our-work" class="project-card" style="display:block; text-decoration:none; border-radius:16px; overflow:hidden; position:relative; height:280px;">
+          <img src="/images/golf%20sim%20internal%20action%20shot.jpg" alt="Golf simulator garden room, Surrey" style="width:100%; height:100%; object-fit:cover;" class="project-img" loading="lazy" />
+          <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);"></div>
+          <div style="position:absolute; bottom:16px; left:16px;">
+            <p style="color:#fff; font-weight:700; font-size:14px; margin:0 0 2px;">Golf Simulator Studio</p>
+            <p style="color:rgba(255,255,255,0.75); font-size:12px; margin:0;">Surrey</p>
+          </div>
+        </a>
+        <a href="/our-work" class="project-card" style="display:block; text-decoration:none; border-radius:16px; overflow:hidden; position:relative; height:280px;">
+          <img src="/images/hidden%20storage%20room.jpg" alt="Garden gym with hidden storage in Chobham, Surrey" style="width:100%; height:100%; object-fit:cover;" class="project-img" loading="lazy" />
+          <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);"></div>
+          <div style="position:absolute; bottom:16px; left:16px;">
+            <p style="color:#fff; font-weight:700; font-size:14px; margin:0 0 2px;">Garden Gym with Hidden Storage</p>
+            <p style="color:rgba(255,255,255,0.75); font-size:12px; margin:0;">Chobham, Surrey</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOWROOM CTA -->
+  <section style="padding:80px 24px; text-align:center; position:relative; overflow:hidden; background:#1a2328;">
+    <div style="position:absolute; inset:0;">
+      <img src="/images/Hero%20showroom.jpeg"
+           style="width:100%; height:100%; object-fit:cover;" alt="" loading="lazy" />
+      <div style="position:absolute; inset:0; background:rgba(20,30,25,0.72);"></div>
+    </div>
+    <div style="position:relative; z-index:1; max-width:640px; margin:0 auto;">
+      <h2 style="font-size:clamp(1.75rem,3.5vw,2.4rem); font-weight:700; color:#fff; margin-bottom:16px;">Come and See for Yourself</h2>
+      <p style="font-size:1.05rem; color:rgba(255,255,255,0.8); margin-bottom:32px;">Visit our showroom at The Farm Shop, Lyne — open 7 days a week. See the quality of our materials in person and talk to us about your project with no pressure.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+        <a href="/showrooms" class="btn-white">Visit Our Showroom</a>
+        <a href="/contact-us" class="btn-primary">Book a Free Site Visit</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* Hero slideshow dots */
+  .hero-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .hero-dot.active {
+    background: #fff;
+    transform: scale(1.35);
+  }
+  .hero-dot:hover { background: rgba(255,255,255,0.75); }
+
+  .why-card:hover { background: rgba(255,255,255,0.1) !important; }
+  .service-card { transition: box-shadow 0.25s, transform 0.25s; }
+  .service-card:hover { box-shadow: 0 8px 40px rgba(0,0,0,0.12); transform: translateY(-4px); }
+  .service-card:hover .service-img { transform: scale(1.04); }
+  .service-img { transition: transform 0.4s ease; }
+  .project-card:hover .project-img { transform: scale(1.06); }
+  .project-img { transition: transform 0.4s ease; }
+
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"] {
+      grid-template-columns: 1fr 1fr !important;
+    }
+  }
+  @media (max-width: 600px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"],
+    div[style*="grid-template-columns:1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+    }
+    div[style*="grid-template-columns:1fr 1fr"][style*="gap:64px"] {
+      grid-template-columns: 1fr !important;
+      gap: 32px !important;
+    }
+  }
+</style>
+
+<script>
+  const slides = document.querySelectorAll<HTMLElement>('.hero-slide');
+  const dots = document.querySelectorAll<HTMLElement>('.hero-dot');
+  let current = 0;
+  let timer: ReturnType<typeof setInterval>;
+
+  function goTo(index: number) {
+    slides[current].style.opacity = '0';
+    dots[current].classList.remove('active');
+    current = index;
+    slides[current].style.opacity = '1';
+    dots[current].classList.add('active');
+  }
+
+  function next() {
+    goTo((current + 1) % slides.length);
+  }
+
+  function startTimer() {
+    timer = setInterval(next, 5000);
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      clearInterval(timer);
+      goTo(Number(dot.dataset.index));
+      startTimer();
+    });
+  });
+
+  startTimer();
+</script>

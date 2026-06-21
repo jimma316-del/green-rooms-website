@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  pageTitle: string;
+  pageSubtitle?: string;
+  heroImg?: string;
+  heroAlt?: string;
+  breadcrumb?: { label: string; href?: string }[];
+}
+
+const { title, description, canonical, pageTitle, pageSubtitle, heroImg, heroAlt = '', breadcrumb = [] } = Astro.props;
+---
+
+<Layout title={title} description={description} canonical={canonical}>
+
+  {heroImg ? (
+    <section style="position:relative; height:48vh; min-height:360px; display:flex; align-items:flex-end; overflow:hidden; background:#1a2328;">
+      <img
+        src={heroImg}
+        alt={heroAlt}
+        fetchpriority="high"
+        decoding="async"
+        style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center;"
+      />
+      <div style="position:absolute; inset:0; background:linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0) 70%);"></div>
+      <div style="position:relative; z-index:1; max-width:1280px; margin:0 auto; padding:0 24px 48px; width:100%;">
+        {breadcrumb.length > 0 && (
+          <div style="display:flex; align-items:center; gap:8px; font-size:13px; margin-bottom:14px;">
+            {breadcrumb.map((crumb, i) => (
+              <>
+                {crumb.href
+                  ? <a href={crumb.href} style="color:rgba(255,255,255,0.55); text-decoration:none;" class="bc">{crumb.label}</a>
+                  : <span style="color:#34a02e; font-weight:600;">{crumb.label}</span>
+                }
+                {i < breadcrumb.length - 1 && <span style="color:rgba(255,255,255,0.3);">›</span>}
+              </>
+            ))}
+          </div>
+        )}
+        <h1 style="font-family:'Poppins',sans-serif; font-size:clamp(1.8rem,4vw,2.8rem); font-weight:700; color:#fff; margin:0 0 14px; line-height:1.15;">{pageTitle}</h1>
+        {pageSubtitle && <p style="color:rgba(255,255,255,0.78); font-size:1.05rem; max-width:640px; line-height:1.75; margin:0;">{pageSubtitle}</p>}
+      </div>
+    </section>
+  ) : (
+    <div style="background:#2d3841; padding:56px 24px 48px;">
+      <div style="max-width:1280px; margin:0 auto;">
+        {breadcrumb.length > 0 && (
+          <div style="display:flex; align-items:center; gap:8px; font-size:13px; margin-bottom:16px;">
+            {breadcrumb.map((crumb, i) => (
+              <>
+                {crumb.href
+                  ? <a href={crumb.href} style="color:rgba(255,255,255,0.55); text-decoration:none; transition:color 0.2s;" class="bc">{crumb.label}</a>
+                  : <span style="color:#34a02e; font-weight:600;">{crumb.label}</span>
+                }
+                {i < breadcrumb.length - 1 && <span style="color:rgba(255,255,255,0.25);">›</span>}
+              </>
+            ))}
+          </div>
+        )}
+        <h1 style="font-family:'Poppins',sans-serif; font-size:clamp(1.8rem,4vw,2.8rem); font-weight:700; color:#fff; margin:0 0 14px; line-height:1.15;">{pageTitle}</h1>
+        {pageSubtitle && <p style="color:rgba(255,255,255,0.72); font-size:1.05rem; max-width:640px; line-height:1.75; margin:0;">{pageSubtitle}</p>}
+      </div>
+    </div>
+  )}
+
+  <slot />
+
+</Layout>
+
+<style>
+  .bc:hover { color: #fff !important; }
+</style>

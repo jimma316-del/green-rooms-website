@@ -1,0 +1,83 @@
+---
+import InfoLayout from '../../layouts/InfoLayout.astro';
+---
+<InfoLayout
+  title="Garden Room Flooring | Flooring Options | The Green Rooms Surrey"
+  description="Garden room flooring options from The Green Rooms — laminate, LVT, and engineered wood. What's included, what you can upgrade to, and why it matters."
+  canonical="/your-build/flooring"
+  pageTitle="Flooring"
+  pageSubtitle="Flooring is included in every build. Here's what we fit as standard and the options available."
+  heroImg="/images/storage%20room%20internal%20with%20laminate%20flooring.jpg"
+  heroAlt="Laminate flooring in a completed garden room"
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build', href: '/your-build/build-process' }, { label: 'Flooring' }]}
+>
+  <section style="background:#fff; padding:72px 0;">
+    <div style="max-width:840px; margin:0 auto; padding:0 24px;">
+
+      <div style="background:#e7f1e3; border-radius:16px; padding:24px; border:1px solid rgba(52,160,46,0.2); margin-bottom:40px; display:flex; gap:14px; align-items:flex-start;">
+        <svg width="20" height="20" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:2px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        <p style="font-size:14px; color:#2d3841; font-weight:600; margin:0; line-height:1.7;">Every Green Rooms build includes fitted flooring and skirting boards as standard. You won't need to arrange or source this separately.</p>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:20px; margin-bottom:48px;">
+        {[
+          {
+            name: 'Laminate Flooring',
+            included: true,
+            desc: 'High-quality laminate flooring is fitted as standard on all builds. Available in a range of wood-effect finishes — light oak, grey oak, dark walnut and more. Hard-wearing, easy to clean and appropriate for year-round garden room use.',
+            suitable: 'Offices, garden rooms, studios — any dry indoor use',
+          },
+          {
+            name: 'Luxury Vinyl Tile (LVT)',
+            included: false,
+            desc: 'An upgrade on standard laminate — LVT is waterproof, softer underfoot, more realistic in look and texture, and handles minor moisture better. Good choice for yoga studios, gyms or any space where you\'d prefer a warmer feel underfoot.',
+            suitable: 'Gyms, yoga studios, any space where warmth underfoot matters',
+          },
+          {
+            name: 'Engineered Wood',
+            included: false,
+            desc: 'A real wood veneer over a stable ply core — the look and feel of solid timber without the instability that comes with temperature and humidity changes. More expensive than laminate but a premium finish for high-spec builds.',
+            suitable: 'High-spec bespoke builds, music studios, premium offices',
+          },
+          {
+            name: 'Rubber Flooring',
+            included: false,
+            desc: 'Commercial-grade rubber matting for gyms and fitness rooms. Protects subfloor from impact, provides grip, dampens noise. Can be fitted as a full-floor installation or as a partial overlay over laminate.',
+            suitable: 'Garden gyms, golf simulator rooms',
+          },
+        ].map(f => (
+          <div style={`border-radius:16px; padding:24px; border:2px solid ${f.included ? '#34a02e' : '#ebeced'}; background:${f.included ? '#f0faf0' : '#fff'};`}>
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:10px;">
+              <h3 style="font-size:1rem; font-weight:700; color:#2d3841; margin:0;">{f.name}</h3>
+              <span style={`font-size:11px; font-weight:700; padding:3px 12px; border-radius:50px; white-space:nowrap; ${f.included ? 'background:#34a02e; color:#fff;' : 'background:#f3f4f0; color:#666;'}`}>
+                {f.included ? 'Included as standard' : 'Available on request'}
+              </span>
+            </div>
+            <p style="font-size:13.5px; color:#555; line-height:1.75; margin:0 0 10px;">{f.desc}</p>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="font-size:12px; color:#34a02e; font-weight:700;">Best for:</span>
+              <span style="font-size:12px; color:#555;">{f.suitable}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:32px;">
+        <div style="border-radius:12px; overflow:hidden; height:200px;"><img src="/images/gym%20flooring.jpeg" alt="Rubber gym flooring in a garden room" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:12px; overflow:hidden; height:200px;"><img src="/images/storage%20room%20internal%20with%20laminate%20flooring.jpg" alt="Laminate flooring in a garden room with storage" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:12px; overflow:hidden; height:200px;"><img src="/images/gym%20flooring%20extended%20height%20internal%20view.jpg" alt="Flooring in an extended height garden gym" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+
+      <div style="background:#2d3841; border-radius:16px; padding:24px; margin-bottom:24px;">
+        <h3 style="font-size:1rem; font-weight:700; color:#fff; margin:0 0 10px;">Underfloor Preparation</h3>
+        <p style="font-size:13.5px; color:rgba(255,255,255,0.75); line-height:1.75; margin:0;">All our builds use SIPs for the floor panel as well as the walls and roof — this gives a rigid, properly insulated subfloor that prevents cold bridging and dampness from below. Flooring is fitted on top of this once the interior is plastered and dried out, ensuring a flat, stable surface.</p>
+      </div>
+
+      <div style="background:#34a02e; border-radius:20px; padding:28px; text-align:center;">
+        <h3 style="font-size:1.05rem; font-weight:700; color:#fff; margin:0 0 10px;">Choosing Your Flooring</h3>
+        <p style="font-size:13.5px; color:rgba(255,255,255,0.85); margin:0 0 16px;">We'll discuss your flooring preference during the quotation stage — you can see samples at our showroom or we can bring them to your site visit.</p>
+        <a href="/contact-us" class="btn-white" style="font-size:14px; padding:12px 24px;">Book a Free Site Visit</a>
+      </div>
+    </div>
+  </section>
+</InfoLayout>

@@ -1,0 +1,101 @@
+---
+import InfoLayout from '../layouts/InfoLayout.astro';
+
+const faqs = [
+  {
+    q: 'Do I need planning permission for a garden room?',
+    a: 'Most garden rooms fall under Permitted Development, which means no planning permission is required. The key rules are: the building must not be forward of the principal elevation, must be single storey, must not exceed 2.5m in height within 2m of the boundary, and must not cover more than 50% of the garden. There are exceptions for listed buildings, conservation areas and national parks — we\'ll advise you on your specific situation during our free site visit.'
+  },
+  {
+    q: 'How close to the boundary can I build?',
+    a: 'Under Permitted Development, a garden room can be built very close to a boundary — sometimes leaving just a few millimetres of space for practical access. The height restriction (max 2.5m within 2m of a boundary) may affect your roof style, which is something we factor in at the design stage.'
+  },
+  {
+    q: 'What are your garden rooms built from?',
+    a: 'Every Green Rooms build uses SIPs — Structural Insulated Panels. SIPs are a composite panel with a rigid foam core bonded between two structural boards. They deliver far superior insulation, strength and soundproofing compared to traditional timber frame construction, and are used in high-performance housing across Scandinavia and Northern Europe. All timber in our builds is FSC and PEFC certified.'
+  },
+  {
+    q: 'Can I use my garden room all year round?',
+    a: 'Yes. SIPs construction gives you genuine all-year insulation — warm in winter, cool in summer. Combined with A-rated glazing and your choice of heating (smart electric panel heater, air conditioning unit or infrared), a Green Rooms garden room is comfortable in every season. We can also add air conditioning at the build stage if you want cooling in summer.'
+  },
+  {
+    q: 'What foundations do you use?',
+    a: 'We use ground screw foundations as standard. Ground screws are installed by drilling directly into the ground with no digging or concrete — which means they can be installed on slopes and in tight access spaces, and removed cleanly if you ever move house. On gardens with specific ground conditions or access limitations, we also use concrete pedestal systems.'
+  },
+  {
+    q: 'Can you build on sloping ground?',
+    a: 'Yes — this is one of the advantages of ground screw foundations. Screws can be installed at different depths on a slope without significant excavation or retaining work, creating a level base for the build. We\'ll assess your garden during the free site visit to confirm the best approach.'
+  },
+  {
+    q: 'How long does the build take?',
+    a: 'Most garden rooms are completed within 2–3 weeks from the first day on site. The timeline varies depending on the size, complexity and specification of the build. We\'ll give you a specific timeline in your quote, and our team works continuously from start to handover.'
+  },
+  {
+    q: 'What areas do you cover?',
+    a: 'We mainly work across Surrey, Berkshire and West London. We may also take on projects in wider South East England depending on the project — get in touch and we\'ll let you know if we cover your area.'
+  },
+  {
+    q: 'Is everything included in the price?',
+    a: 'Yes. Every Green Rooms quote is fully turnkey: ground screw foundations, SIPs structure, cladding, doors, windows, full electrical installation (mains connection, consumer unit, lighting, sockets), plastered interior, fitted flooring, and site clean-up. The price you agree is the price you pay. The only thing not included as standard is furniture.'
+  },
+  {
+    q: 'Can I see examples of your previous work?',
+    a: 'Yes — our showroom in Lyne lets you walk through a finished, full-size garden room in person. You can also browse our project portfolio on the Our Work page and follow us on Instagram and Facebook for regular build updates. We\'re also happy to put you in touch with previous clients on request.'
+  },
+  {
+    q: 'What guarantee do you provide?',
+    a: 'We provide a 10-year structural guarantee covering the integrity of the build, 3 years on windows, doors and glazing, and 1 year on interior finishes and electrical components. Full details are on our Guarantee page.'
+  },
+];
+---
+
+<InfoLayout
+  title="Garden Room FAQ | Common Questions Answered | The Green Rooms Surrey"
+  description="Answers to the most common garden room questions — planning permission, build time, what's included, foundations, materials and more. From The Green Rooms, Surrey."
+  canonical="/faq"
+  pageTitle="Frequently Asked Questions"
+  pageSubtitle="Everything you need to know about getting a garden room built — answered honestly."
+  heroImg="/images/GR%20side%20view%20in%20garden.jpeg"
+  heroAlt="Garden room in garden, Surrey"
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'FAQ' }]}
+>
+
+  <section style="background:#fff; padding:72px 0;">
+    <div style="max-width:840px; margin:0 auto; padding:0 24px;">
+      <div style="display:flex; flex-direction:column; gap:2px;">
+        {faqs.map((faq, i) => (
+          <details class="faq-item" style="border-bottom:1px solid #ebeced; padding:0;" open={i === 0}>
+            <summary style="display:flex; justify-content:space-between; align-items:center; padding:22px 0; cursor:pointer; list-style:none; gap:16px;">
+              <span style="font-size:1rem; font-weight:700; color:#2d3841; line-height:1.35;">{faq.q}</span>
+              <span class="faq-icon" style="flex-shrink:0; width:24px; height:24px; background:#e7f1e3; border-radius:50%; display:flex; align-items:center; justify-content:center; transition:transform 0.2s;">
+                <svg width="12" height="12" fill="#34a02e" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+              </span>
+            </summary>
+            <div style="padding:0 0 22px; padding-right:40px;">
+              <p style="font-size:14.5px; color:#555; line-height:1.8; margin:0;">{faq.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#34a02e; padding:72px 24px; text-align:center;">
+    <div style="max-width:520px; margin:0 auto;">
+      <h2 style="font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700; color:#fff; margin-bottom:14px;">Still Have Questions?</h2>
+      <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:28px;">Call us on 01932 640242 or book a free site visit — we'll answer everything in person and give you an honest assessment of what's possible in your garden.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+        <a href="/contact-us" class="btn-white" style="font-size:15px; padding:14px 32px;">Book a Free Site Visit</a>
+        <a href="tel:01932640242" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.5); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none;">01932 640242</a>
+      </div>
+    </div>
+  </section>
+
+</InfoLayout>
+
+<style>
+  .faq-item summary::-webkit-details-marker { display: none; }
+  details[open] .faq-icon { transform: rotate(180deg); background: #34a02e; }
+  details[open] .faq-icon svg { fill: #fff; }
+  .faq-item summary:hover span:first-child { color: #34a02e; }
+</style>
