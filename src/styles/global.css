@@ -13,8 +13,8 @@
   --warm-grey: #f3f4f0;
 }
 
-html, body { overflow-x: hidden; }
-html { scroll-behavior: smooth; }
+html { overflow-x: hidden; scroll-behavior: smooth; }
+body { overflow-x: hidden; position: relative; max-width: 100%; }
 
 body {
   font-family: 'Nunito', sans-serif;

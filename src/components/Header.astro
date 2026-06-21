@@ -36,7 +36,7 @@ const navInfo = [
 
 <header class="site-header">
   <!-- Top bar -->
-  <div style="background:#1a2328; padding: 8px 0;">
+  <div class="top-bar" style="background:#1a2328; padding: 8px 0;">
     <div style="max-width:1280px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; gap:16px;">
       <div style="display:flex; align-items:center; gap:20px;">
         <a href="https://www.facebook.com/thegreenroomsltd" target="_blank" rel="noopener" style="color:#fff; opacity:0.8; text-decoration:none;" aria-label="Facebook">
@@ -184,9 +184,12 @@ const navInfo = [
   .nav-dropdown:hover .dropdown-menu { display: block !important; }
   .mega-card:hover .mega-img { transform: scale(1.05); }
 
+  .site-header { overflow-x: hidden; }
+
   @media (max-width: 1024px) {
     .desktop-nav { display: none !important; }
     #mobile-toggle { display: block !important; }
+    .top-bar { display: none !important; }
   }
 </style>
 
