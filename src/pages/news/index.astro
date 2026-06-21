@@ -13,33 +13,8 @@ import InfoLayout from '../../layouts/InfoLayout.astro';
 
   <section style="background:#fff; padding:80px 0;">
     <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
-
-      <!-- Coming soon placeholder — replace with blog post cards when content is ready -->
-      <div style="background:#f8faf7; border-radius:20px; padding:64px; text-align:center; border:2px dashed #d0e4cc;">
-        <span style="font-size:40px; display:block; margin-bottom:16px;">📰</span>
-        <h2 style="font-size:1.3rem; font-weight:700; color:#2d3841; margin:0 0 10px;">Articles Coming Soon</h2>
-        <p style="font-size:14px; color:#555; max-width:440px; margin:0 auto 24px; line-height:1.7;">We're working on guides covering planning permission, cladding comparisons, garden room uses and more. In the meantime, our FAQ has answers to the most common questions.</p>
-        <a href="/faq" class="btn-primary">Read Our FAQ →</a>
-      </div>
-
-      <!-- Teaser topic cards -->
-      <div style="margin-top:40px; display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
-        {[
-          { emoji: '📋', topic: 'Planning Permission Guide', desc: 'A plain-English guide to what Permitted Development means for your garden room project.' },
-          { emoji: '🪵', topic: 'Cladding Comparison', desc: 'Cedar vs Charred Spruce vs Hardie Plank — which cladding is right for your garden and budget?' },
-          { emoji: '❄️', topic: 'Year-Round Use', desc: 'How SIPs construction keeps your garden room warm in winter and cool in summer without expensive heating bills.' },
-          { emoji: '⚡', topic: 'Electrical Guide', desc: 'What\'s included in a proper electrical installation and why a dedicated consumer unit matters.' },
-          { emoji: '🏗️', topic: 'SIPs vs Timber Frame', desc: 'Why we use Structural Insulated Panels on every build — and what you lose with a timber stud alternative.' },
-          { emoji: '🏡', topic: 'Does a Garden Room Add Value?', desc: 'What the data says about garden rooms and property values — and which features make the biggest difference.' },
-        ].map(t => (
-          <div style="background:#fff; border-radius:14px; padding:24px; border:1px solid #ebeced;">
-            <span style="font-size:24px; display:block; margin-bottom:12px;">{t.emoji}</span>
-            <p style="font-size:14px; font-weight:700; color:#2d3841; margin:0 0 8px;">{t.topic}</p>
-            <p style="font-size:13px; color:#666; line-height:1.6; margin:0 0 14px;">{t.desc}</p>
-            <span style="font-size:12px; color:#aaa; font-weight:600;">Coming soon</span>
-          </div>
-        ))}
-      </div>
+      <div id="soro-blog"></div>
+      <script src="https://app.trysoro.com/api/embed/074399e7-9f01-4cbd-aaeb-d31d58ca04cb" defer is:inline></script>
     </div>
   </section>
 
