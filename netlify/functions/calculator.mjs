@@ -139,7 +139,7 @@ function customerEmail(firstName, price, c) {
     </div>
 
     <p style="margin:0 0 24px;color:#555;font-size:13px;">You can call or WhatsApp us on <a href="tel:01932640242" style="color:#34a02e;font-weight:600;text-decoration:none;">01932 640242</a>, or simply reply to this email and we'll arrange a time that suits you.</p>
-    <p style="margin:0 0 36px;color:#555;font-size:13px;">Best regards,<br><strong style="color:#2d3841;">James Austin</strong><br>The Green Rooms</p>
+    <p style="margin:0 0 36px;color:#555;font-size:13px;">Kind regards,<br><strong style="color:#2d3841;">James Austin</strong><br>The Green Rooms</p>
   </td></tr>
 
   <!-- Footer -->

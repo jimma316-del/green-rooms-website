@@ -32,7 +32,7 @@ function customerEmail(firstName, formType) {
     </div>
 
     <p style="font-size:13px;color:#555;margin:0 0 24px;">In the meantime, you can call or WhatsApp us on <a href="tel:01932640242" style="color:#34a02e;font-weight:600;text-decoration:none;">01932 640242</a>, or use our <a href="https://www.thegreenrooms.com/garden-room-price-calculator" style="color:#34a02e;text-decoration:none;">price calculator</a> to explore your options.</p>
-    <p style="font-size:13px;color:#555;margin:0 0 36px;">Best regards,<br><strong style="color:#2d3841;">James Austin</strong><br>The Green Rooms</p>
+    <p style="font-size:13px;color:#555;margin:0 0 36px;">Kind regards,<br><strong style="color:#2d3841;">James Austin</strong><br>The Green Rooms</p>
   </td></tr>
   <tr><td style="background:#f8f8f8;padding:18px 32px;text-align:center;border-top:1px solid #eee;">
     <p style="font-size:11px;color:#aaa;margin:0;">The Green Rooms · Lyne Lane, Lyne, Surrey KT16 0AN</p>
