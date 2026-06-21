@@ -20,38 +20,52 @@ import InfoLayout from '../../layouts/InfoLayout.astro';
         <p style="font-size:14px; color:rgba(255,255,255,0.8); line-height:1.85; margin:0;">The result: most garden room users find they need very little heating or cooling for moderate temperatures. A well-insulated SIPs room is typically comfortable from around 5°C to 25°C outdoor temperature with no active climate control.</p>
       </div>
 
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:40px;">
+      <h2 style="font-size:1.1rem; font-weight:700; color:#2d3841; margin:0 0 20px;">Your Climate Control Options</h2>
+      <div style="display:flex; flex-direction:column; gap:16px; margin-bottom:40px;">
         {[
           {
-            season: '❄️ Winter',
-            color: '#e8f4fd',
-            border: '#b8d4e8',
-            options: [
-              ['Smart Panel Heater (+£600)', 'Wi-Fi enabled electric panel heater. Efficient, programmable, and app-controllable. Best for moderate climates and occasional use.'],
-              ['Air Conditioning Unit (+£1,400)', 'A split-system air conditioning unit doubles as an efficient heat pump in winter — heating and cooling from one unit. Best for daily all-year use.'],
-              ['Infrared Heating Panel', 'Ceiling-mounted radiant heating — no air movement, very efficient for occasional use. Good for yoga studios.'],
-            ]
+            label: 'None',
+            price: 'No extra cost',
+            tag: 'Budget option',
+            tagColor: '#f3f4f0',
+            tagText: '#555',
+            desc: 'SIPs insulation alone keeps the room comfortable across most of the year. Many customers bring their own plug-in heater for winter — perfectly adequate for occasional use.',
           },
           {
-            season: '☀️ Summer',
-            color: '#fff8e8',
-            border: '#e8d89e',
-            options: [
-              ['Air Conditioning (+£1,400)', 'The only truly effective cooling option. A split-system AC unit can cool a medium garden room to your chosen temperature regardless of outdoor conditions.'],
-              ['Natural Ventilation', 'Casement or tilt-turn windows create cross-ventilation when positioned on opposite walls. Good in spring/autumn, less effective in July/August.'],
-              ['Glazing Specification', 'Triple glazing or solar-control glass significantly reduces heat gain through large glazed areas. Worth considering on south-facing builds.'],
-            ]
+            label: 'Smart Heater Panel',
+            price: '+£330',
+            tag: 'Most popular for hobby rooms',
+            tagColor: '#e7f1e3',
+            tagText: '#257a21',
+            desc: 'Thermostat-controlled electric panel heater, fitted and wired as part of the build. Efficient, quiet, and programmable — the right choice for regular use without daily all-year demand.',
           },
-        ].map(s => (
-          <div style={`background:${s.color}; border-radius:16px; padding:24px; border:1px solid ${s.border};`}>
-            <h3 style="font-size:1rem; font-weight:700; color:#2d3841; margin:0 0 16px;">{s.season}</h3>
-            <div style="display:flex; flex-direction:column; gap:12px;">
-              {s.options.map(([name, desc]) => (
-                <div style="background:#fff; border-radius:10px; padding:14px; border:1px solid rgba(0,0,0,0.08);">
-                  <p style="font-size:13px; font-weight:700; color:#2d3841; margin:0 0 5px;">{name}</p>
-                  <p style="font-size:12.5px; color:#555; line-height:1.65; margin:0;">{desc}</p>
-                </div>
-              ))}
+          {
+            label: '2.5kW Air Conditioning',
+            price: '+£1,860',
+            tag: 'Best for offices up to ~25m²',
+            tagColor: '#e7f1e3',
+            tagText: '#257a21',
+            desc: 'Split-system AC unit that heats in winter and cools in summer — one unit, one dedicated circuit. Ideal for a daily garden office where year-round comfort is essential.',
+          },
+          {
+            label: '5kW Air Conditioning',
+            price: '+£2,740',
+            tag: 'Best for larger rooms or heavy use',
+            tagColor: '#e7f1e3',
+            tagText: '#257a21',
+            desc: 'Higher-output split-system for bigger rooms or spaces with high thermal demand — gyms, golf simulators, or large open-plan rooms used intensively.',
+          },
+        ].map(opt => (
+          <div style="background:#f8faf7; border-radius:14px; padding:20px 24px; border:1px solid #ebeced; display:flex; align-items:flex-start; gap:20px;">
+            <div style="flex:1;">
+              <div style="display:flex; align-items:center; gap:10px; margin-bottom:6px; flex-wrap:wrap;">
+                <p style="font-size:15px; font-weight:700; color:#2d3841; margin:0;">{opt.label}</p>
+                <span style={`background:${opt.tagColor}; color:${opt.tagText}; font-size:11px; font-weight:700; padding:2px 10px; border-radius:50px;`}>{opt.tag}</span>
+              </div>
+              <p style="font-size:13px; color:#555; line-height:1.7; margin:0;">{opt.desc}</p>
+            </div>
+            <div style="text-align:right; flex-shrink:0;">
+              <p style="font-family:'Poppins',sans-serif; font-size:16px; font-weight:700; color:#34a02e; margin:0;">{opt.price}</p>
             </div>
           </div>
         ))}
@@ -59,8 +73,8 @@ import InfoLayout from '../../layouts/InfoLayout.astro';
 
       <div style="background:#f8faf7; border-radius:16px; padding:24px; border:1px solid #ebeced; margin-bottom:32px;">
         <h3 style="font-size:1rem; font-weight:700; color:#2d3841; margin:0 0 12px;">What Most Customers Choose</h3>
-        <p style="font-size:13.5px; color:#555; line-height:1.8; margin:0 0 12px;">For a garden office used daily year-round: we recommend a split-system air conditioning unit installed at the build stage. It heats efficiently in winter, cools in summer, and a dedicated electrical circuit makes installation clean and straightforward. Cost: from £1,400 added to your build.</p>
-        <p style="font-size:13.5px; color:#555; line-height:1.8; margin:0;">For occasional use or a hobby room: a smart panel heater (from +£600) is adequate for most Surrey winters — the SIPs insulation means it heats up quickly and holds the temperature well. You can add air conditioning later if needed.</p>
+        <p style="font-size:13.5px; color:#555; line-height:1.8; margin:0 0 12px;">For a garden office used daily year-round: the 2.5kW AC unit (+£1,860) is the best value. It heats in winter, cools in summer, and installs cleanly as part of the build on its own dedicated circuit.</p>
+        <p style="font-size:13.5px; color:#555; line-height:1.8; margin:0;">For a hobby room or occasional use: the Smart Heater Panel (+£330) is usually enough. The SIPs insulation heats the room quickly and holds the temperature well — and you can always add AC later.</p>
       </div>
 
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:32px;">

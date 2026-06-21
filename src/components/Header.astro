@@ -144,20 +144,46 @@ const navInfo = [
     </div>
 
     <!-- Mobile menu -->
-    <div id="mobile-menu" style="display:none; border-top:1px solid #ebeced; background:#fff; padding:16px 24px 24px;">
-      <div style="display:flex; flex-direction:column; gap:4px;">
-        <a href="/garden-rooms" style="padding:10px 0; font-size:15px; font-weight:600; color:#2d3841; text-decoration:none; border-bottom:1px solid #f3f3f3;">Garden Rooms</a>
-        <a href="/about" style="padding:10px 0; font-size:15px; font-weight:600; color:#2d3841; text-decoration:none; border-bottom:1px solid #f3f3f3;">About Us</a>
-        <a href="/showrooms" style="padding:10px 0; font-size:15px; font-weight:600; color:#2d3841; text-decoration:none; border-bottom:1px solid #f3f3f3;">Showroom</a>
-        <a href="/our-work" style="padding:10px 0; font-size:15px; font-weight:600; color:#2d3841; text-decoration:none; border-bottom:1px solid #f3f3f3;">Our Work</a>
-        <p style="font-size:12px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.08em; margin:12px 0 4px;">Your Build</p>
-        {navBuild.map(item => (
-          <a href={item.href} style="padding:10px 0; font-size:15px; font-weight:600; color:#2d3841; text-decoration:none; border-bottom:1px solid #f3f3f3;">{item.label}</a>
-        ))}
-        <p style="font-size:12px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.08em; margin:12px 0 4px;">Information</p>
-        {navInfo.map(item => (
-          <a href={item.href} style="padding:10px 0; font-size:15px; font-weight:600; color:#2d3841; text-decoration:none; border-bottom:1px solid #f3f3f3;">{item.label}</a>
-        ))}
+    <div id="mobile-menu" style="display:none; border-top:1px solid #ebeced; background:#fff; padding:8px 24px 24px;">
+      <div style="display:flex; flex-direction:column;">
+
+        <!-- Garden Rooms accordion -->
+        <button class="mob-acc-btn" data-target="mob-gr" style="display:flex; align-items:center; justify-content:space-between; padding:13px 0; font-size:15px; font-weight:600; color:#2d3841; background:none; border:none; border-bottom:1px solid #f3f3f3; cursor:pointer; width:100%; text-align:left;">
+          Garden Rooms
+          <svg class="mob-acc-arrow" width="16" height="16" fill="none" stroke="#34a02e" stroke-width="2.5" viewBox="0 0 24 24" style="transition:transform 0.2s; flex-shrink:0;"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div id="mob-gr" class="mob-acc-content" style="display:none; padding:4px 0 8px 12px;">
+          {navServices.map(item => (
+            <a href={item.href} style="display:block; padding:9px 0; font-size:14px; font-weight:500; color:#555; text-decoration:none; border-bottom:1px solid #f9f9f9;">{item.label}</a>
+          ))}
+        </div>
+
+        <a href="/about" style="padding:13px 0; font-size:15px; font-weight:600; color:#2d3841; text-decoration:none; border-bottom:1px solid #f3f3f3;">About Us</a>
+        <a href="/showrooms" style="padding:13px 0; font-size:15px; font-weight:600; color:#2d3841; text-decoration:none; border-bottom:1px solid #f3f3f3;">Showroom</a>
+        <a href="/our-work" style="padding:13px 0; font-size:15px; font-weight:600; color:#2d3841; text-decoration:none; border-bottom:1px solid #f3f3f3;">Our Work</a>
+
+        <!-- Your Build accordion -->
+        <button class="mob-acc-btn" data-target="mob-build" style="display:flex; align-items:center; justify-content:space-between; padding:13px 0; font-size:15px; font-weight:600; color:#2d3841; background:none; border:none; border-bottom:1px solid #f3f3f3; cursor:pointer; width:100%; text-align:left;">
+          Your Build
+          <svg class="mob-acc-arrow" width="16" height="16" fill="none" stroke="#34a02e" stroke-width="2.5" viewBox="0 0 24 24" style="transition:transform 0.2s; flex-shrink:0;"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div id="mob-build" class="mob-acc-content" style="display:none; padding:4px 0 8px 12px;">
+          {navBuild.map(item => (
+            <a href={item.href} style="display:block; padding:9px 0; font-size:14px; font-weight:500; color:#555; text-decoration:none; border-bottom:1px solid #f9f9f9;">{item.label}</a>
+          ))}
+        </div>
+
+        <!-- Information accordion -->
+        <button class="mob-acc-btn" data-target="mob-info" style="display:flex; align-items:center; justify-content:space-between; padding:13px 0; font-size:15px; font-weight:600; color:#2d3841; background:none; border:none; border-bottom:1px solid #f3f3f3; cursor:pointer; width:100%; text-align:left;">
+          Information
+          <svg class="mob-acc-arrow" width="16" height="16" fill="none" stroke="#34a02e" stroke-width="2.5" viewBox="0 0 24 24" style="transition:transform 0.2s; flex-shrink:0;"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div id="mob-info" class="mob-acc-content" style="display:none; padding:4px 0 8px 12px;">
+          {navInfo.map(item => (
+            <a href={item.href} style="display:block; padding:9px 0; font-size:14px; font-weight:500; color:#555; text-decoration:none; border-bottom:1px solid #f9f9f9;">{item.label}</a>
+          ))}
+        </div>
+
         <div style="display:flex; flex-direction:column; gap:10px; margin-top:16px;">
           <a href="/garden-room-price-calculator" class="btn-primary" style="text-align:center; justify-content:center;">Get an Instant Quote</a>
           <a href="tel:01932640242" class="btn-outline" style="text-align:center; justify-content:center;">01932 640242</a>
@@ -199,6 +225,18 @@ const navInfo = [
   const mobileMenu = document.getElementById('mobile-menu');
   toggle?.addEventListener('click', () => {
     mobileMenu!.style.display = mobileMenu!.style.display === 'none' ? 'block' : 'none';
+  });
+
+  // Mobile accordion
+  document.querySelectorAll('.mob-acc-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = (btn as HTMLElement).dataset.target!;
+      const content = document.getElementById(targetId)!;
+      const arrow = btn.querySelector('.mob-acc-arrow') as HTMLElement;
+      const isOpen = content.style.display !== 'none';
+      content.style.display = isOpen ? 'none' : 'block';
+      arrow.style.transform = isOpen ? '' : 'rotate(180deg)';
+    });
   });
 
   // Garden Rooms mega menu — show on hover of trigger or the menu itself
