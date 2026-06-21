@@ -383,21 +383,25 @@ const steps = ['Size','Structure','Cladding','Walls','Features','Decking','Doors
         <div class="calc-step" data-step="11">
           <div class="step-header">
             <div class="step-badge" style="background:#257a21;">Done!</div>
-            <h2 class="step-title">Get your quote emailed to you</h2>
-            <p class="step-sub">Enter your details and we'll email your full configuration and guide price. We'll follow up to arrange your free site visit.</p>
+            <h2 class="step-title">Your Guide Price</h2>
+            <p class="step-sub">Based on your selections. Confirmed after your free site visit.</p>
           </div>
+
+          <!-- Price always visible -->
           <div style="background:#2d3841; border-radius:16px; padding:24px; margin-bottom:24px; text-align:center;">
-            <div style="width:44px; height:44px; background:rgba(52,160,46,0.15); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 14px;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34a02e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            </div>
-            <p style="font-family:'Poppins',sans-serif; font-size:1rem; font-weight:700; color:#fff; margin:0 0 8px;">Your guide price is ready</p>
-            <p style="font-size:13px; color:rgba(255,255,255,0.55); line-height:1.6; margin:0;">Enter your details below and we'll reveal your price and email it to you straight away.</p>
+            <p style="font-size:11px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.1em; margin:0 0 10px;">Your Guide Price</p>
+            <p id="final-price-display" style="font-family:'Poppins',sans-serif; font-size:2.8rem; font-weight:700; color:#fff; margin:0 0 4px;">£—</p>
+            <p style="font-size:12px; color:rgba(255,255,255,0.4); margin:0 0 20px;">Inc VAT · Guide price · Confirmed after free site visit</p>
+            <div id="final-breakdown" style="border-top:1px solid rgba(255,255,255,0.1); padding-top:14px; display:grid; gap:4px; text-align:left;"></div>
           </div>
-          <form id="quote-form" method="POST"
-                style="display:flex; flex-direction:column; gap:14px;">
+
+          <!-- Email capture form -->
+          <form id="quote-form" method="POST" style="display:flex; flex-direction:column; gap:14px;">
             <input type="hidden" name="form-name" value="calculator-quote" />
             <input type="hidden" name="guide-price" id="hidden-price" />
             <input type="hidden" name="configuration" id="hidden-config" />
+            <p style="font-size:13.5px; font-weight:600; color:#2d3841; margin:0;">Get the full breakdown emailed to you</p>
+            <p style="font-size:13px; color:#666; margin:-8px 0 4px; line-height:1.6;">We'll send your full specification to your inbox and follow up within one working day to arrange your free site visit.</p>
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
               <div>
                 <label class="form-label">First name *</label>
@@ -420,26 +424,19 @@ const steps = ['Size','Structure','Cladding','Walls','Features','Decking','Doors
               <label class="form-label">Address</label>
               <input type="text" name="address" class="form-input" placeholder="Your address / postcode" />
             </div>
-            <button type="submit" class="btn-submit">Email me my quote →</button>
+            <button type="submit" class="btn-submit">Email me the full breakdown →</button>
             <p style="font-size:11.5px; color:#888; text-align:center; margin:0;">No spam. No pressure. We'll follow up within one working day.</p>
           </form>
-          <div id="form-success" style="display:none; padding:8px 0;">
-            <div style="background:#2d3841; border-radius:16px; padding:24px; margin-bottom:20px; text-align:center;">
-              <p style="font-size:11px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.1em; margin:0 0 8px;">Your Guide Price</p>
-              <p id="final-price-display" style="font-family:'Poppins',sans-serif; font-size:2.8rem; font-weight:700; color:#fff; margin:0 0 4px;">£—</p>
-              <p style="font-size:12px; color:rgba(255,255,255,0.4); margin:0 0 20px;">Guide price · confirmed after free site visit</p>
-              <div id="final-breakdown" style="border-top:1px solid rgba(255,255,255,0.1); padding-top:14px; display:grid; gap:4px; text-align:left;"></div>
+
+          <div id="form-success" style="display:none; padding:8px 0 24px; text-align:center;">
+            <div style="width:44px; height:44px; background:#e7f1e3; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 12px;">
+              <svg width="20" height="20" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
             </div>
-            <div style="text-align:center; padding:8px 0 24px;">
-              <div style="width:44px; height:44px; background:#e7f1e3; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 12px;">
-                <svg width="20" height="20" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              </div>
-              <p style="font-size:14px; font-weight:700; color:#2d3841; margin:0 0 6px;">Quote sent!</p>
-              <p style="font-size:13px; color:#555; margin:0 0 20px; line-height:1.6;">We've emailed your full breakdown. One of our team will be in touch to arrange your free site visit.</p>
-              <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:12px;">
-                <a href="/contact-us" class="btn-primary" style="font-size:14px; padding:12px 24px;">Book a free site visit</a>
-                <a href="tel:01932640242" style="display:inline-flex; align-items:center; gap:6px; border:2px solid #ebeced; color:#2d3841; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:10px 20px; border-radius:50px; text-decoration:none;">Call 01932 640242</a>
-              </div>
+            <p style="font-size:14px; font-weight:700; color:#2d3841; margin:0 0 6px;">Breakdown sent!</p>
+            <p style="font-size:13px; color:#555; margin:0 0 20px; line-height:1.6;">We've emailed your full specification. One of our team will be in touch within one working day to arrange your free site visit.</p>
+            <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:12px;">
+              <a href="/contact-us" class="btn-primary" style="font-size:14px; padding:12px 24px;">Book a free site visit</a>
+              <a href="tel:01932640242" style="display:inline-flex; align-items:center; gap:6px; border:2px solid #ebeced; color:#2d3841; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:10px 20px; border-radius:50px; text-decoration:none;">Call 01932 640242</a>
             </div>
           </div>
         </div>
