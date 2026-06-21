@@ -1,0 +1,95 @@
+---
+import InfoLayout from '../../layouts/InfoLayout.astro';
+
+const steps = [
+  {
+    num: '01',
+    title: 'Free Site Visit',
+    desc: 'One of our team comes to you — no cost, no obligation. We look at the space, discuss what you want to build, and answer any questions about planning, access and timescales. Most site visits take around an hour.',
+  },
+  {
+    num: '02',
+    title: 'Design & Quote',
+    desc: 'We put together a detailed quote based on your site and specification. This covers everything — foundations, structure, cladding, glazing, electrics, flooring and any extras. No hidden costs added later.',
+  },
+  {
+    num: '03',
+    title: 'Deposit & Slot Secured',
+    desc: "Once you're happy with the quote, a deposit secures your build slot in our schedule and kicks off materials ordering. Most customers wait 6–10 weeks from deposit to build start, depending on our current schedule.",
+  },
+  {
+    num: '04',
+    title: 'Planning (if Required)',
+    desc: "Most garden rooms fall under permitted development and don't need planning permission. If yours does, we advise you on the application. We don't begin building until any required permissions are in place.",
+  },
+  {
+    num: '05',
+    title: 'Ground Screws & Base',
+    desc: 'On build day one, our foundation team installs the ground screw system. This takes a few hours and leaves your garden completely undisturbed — no concrete, no mess, no digging. The frame goes up the same day or the next morning.',
+  },
+  {
+    num: '06',
+    title: 'Structure & Panels',
+    desc: 'The SIPs structural insulated panels form the walls, floor and roof — fast, precise and highly insulated. Doors, windows and cladding follow. Most builds take 3–5 days on site.',
+  },
+  {
+    num: '07',
+    title: 'First Fix Electrics',
+    desc: 'Our electrician runs cables and fits consumer units while walls are still accessible. We wire for your exact layout — sockets, lighting circuits, and any special requirements like air conditioning or EV charging.',
+  },
+  {
+    num: '08',
+    title: 'Plastering, Second Fix & Finishing',
+    desc: 'Walls are plastered, painted and finished. Second fix electrics go in (switches, sockets, light fittings). Flooring is laid. Your garden room is ready to use.',
+  },
+  {
+    num: '09',
+    title: 'Handover',
+    desc: 'We walk you through the finished room, hand over your guarantee documentation, and leave the site clean and tidy. Our 10-year structural guarantee covers your build from day one.',
+  },
+];
+---
+
+<InfoLayout
+  title="Our Build Process | How We Build Garden Rooms | The Green Rooms Surrey"
+  description="How The Green Rooms builds garden rooms — from site visit to handover. Transparent process, no hidden costs, 10-year guarantee."
+  canonical="/your-build/build-process"
+  pageTitle="Our Build Process"
+  pageSubtitle="From first conversation to handover — here's exactly how a Green Rooms build works."
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build', href: '/your-build/first-steps' }, { label: 'Build Process' }]}
+>
+
+  <section style="background:#fff; padding:80px 0;">
+    <div style="max-width:860px; margin:0 auto; padding:0 24px;">
+      <div style="display:flex; flex-direction:column; gap:0;">
+        {steps.map((s, i) => (
+          <div style={`display:flex; gap:32px; padding-bottom:${i < steps.length - 1 ? '48px' : '0'}; position:relative;`}>
+            {i < steps.length - 1 && (
+              <div style="position:absolute; left:28px; top:56px; width:2px; height:calc(100% - 24px); background:#e8f5e8;"></div>
+            )}
+            <div style="flex-shrink:0; width:56px; height:56px; background:#34a02e; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:1;">
+              <span style="font-family:'Poppins',sans-serif; font-size:13px; font-weight:700; color:#fff;">{s.num}</span>
+            </div>
+            <div style="padding-top:12px;">
+              <h3 style="font-family:'Poppins',sans-serif; font-size:1.1rem; font-weight:700; color:#2d3841; margin:0 0 8px;">{s.title}</h3>
+              <p style="color:#666; font-size:15px; line-height:1.7; margin:0;">{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#2d3841; padding:80px 0; text-align:center;">
+    <div style="max-width:520px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#fff; margin:0 0 14px;">Ready to Start?</h2>
+      <p style="color:rgba(255,255,255,0.8); font-size:1rem; margin:0 0 28px; line-height:1.7;">Book a free site visit or get an instant guide price with our calculator. No obligation, no pressure.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+        <a href="/contact-us" style="display:inline-flex; align-items:center; background:#34a02e; color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:14px 32px; border-radius:50px; text-decoration:none;">Book a Free Site Visit</a>
+        <a href="/garden-room-price-calculator" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.4); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none;">Get an Instant Price</a>
+      </div>
+    </div>
+  </section>
+
+</InfoLayout>

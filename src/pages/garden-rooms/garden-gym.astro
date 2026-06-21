@@ -1,0 +1,94 @@
+---
+import ServiceLayout from '../../components/ServiceLayout.astro';
+
+const features = [
+  { icon: 'layers', title: 'SIPs Construction Throughout', desc: 'Structural insulated panels mean your gym stays warm in winter and cool in summer — without expensive running costs.' },
+  { icon: 'ruler', title: 'Rubber Gym Flooring', desc: 'We supply and fit heavy-duty rubber tile flooring rated for weights and gym equipment — protecting both the floor and your joints.' },
+  { icon: 'leaf', title: 'Mirrored Walls', desc: 'Full-length mirrored wall panels on request — properly fixed and frameless, not DIY clip-on mirrors.' },
+  { icon: 'key', title: 'Dedicated Electrical Supply', desc: 'Multiple circuits, RCD protection, and enough sockets for your equipment. We wire for your setup, not a generic one.' },
+  { icon: 'tools', title: 'Climate Control', desc: 'A 5kw air conditioning unit keeps your gym comfortable in every season — essential for intensive training.' },
+  { icon: 'certificate', title: 'Hidden Storage Option', desc: 'Add an integrated storage room alongside your gym — a separate, lockable space for garden tools and seasonal items.' },
+];
+
+const related = [
+  { label: 'Garden Rooms', href: '/garden-rooms/garden-rooms', img: '/images/Hero%20GR.jpg' },
+  { label: 'Bespoke Builds', href: '/garden-rooms/bespoke', img: '/images/HERO%20Bespoke%20build.jpg' },
+  { label: 'With Storage', href: '/garden-rooms/garden-rooms-with-storage', img: '/images/GR%20with%20storage%20cedar%20and%20step.jpg' },
+];
+---
+
+<ServiceLayout
+  title="Garden Gym Surrey | Bespoke Garden Gym Buildings | The Green Rooms"
+  description="Bespoke garden gym buildings designed and built across Surrey. Rubber flooring, mirrors, dedicated electrics and climate control — fully insulated and ready to train in."
+  canonical="/garden-rooms/garden-gym"
+  heroImg="/images/garden%20gym%2C%20dual%20canopy%20view%20from%20outside.jpg"
+  heroAlt="Bespoke garden gym built by The Green Rooms, Surrey"
+  h1="Garden Gyms"
+  tagline="Bespoke Garden Gym Buildings — Surrey & South East"
+  intro="A garden gym is one of the best investments you can make — no memberships, no commute, no waiting for equipment. We build fully insulated, properly fitted gym buildings that are comfortable to train in year-round. Every build includes rubber flooring, dedicated electrics, and climate control as standard. We can also add mirrored walls, integrated storage, and whatever else your training setup requires."
+  features={features}
+  relatedPages={related}
+>
+
+  <!-- Gallery -->
+  <section style="background:#f8faf7; padding:72px 0 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.4rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin:0 0 24px;">Garden Gym Builds</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:12px;">
+        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/garden%20gym%2C%20dual%20canopy%20view%20from%20outside.jpg" alt="Garden gym with dual canopy exterior" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/garden%20gym%20internal%201.jpg" alt="Garden gym interior with rubber flooring" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/garden%20gym%20internal%202.jpg" alt="Garden gym interior view" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:72px;">
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/garden%20gym%20internal%203.jpg" alt="Garden gym with LED lighting" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/garden%20gym%20internal%204.jpg" alt="Garden gym equipment space" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/LED%20strip%20lighting%20gym.jpg" alt="LED strip lighting in garden gym" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's included -->
+  <section class="section" style="background:#fff;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:40px;">
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:10px;">What's Included in Every Garden Gym</h2>
+        <p style="color:#666; max-width:520px; margin:0 auto;">Every garden gym we build is fully turnkey — ready to train in on the day we leave.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:20px; max-width:860px; margin:0 auto;">
+        {[
+          { item: 'Ground screw foundations', note: 'No concrete — installed in hours' },
+          { item: 'SIPs structural insulated panels', note: 'Warm in winter, cool in summer' },
+          { item: 'Heavy-duty rubber tile flooring', note: 'Rated for weights and equipment' },
+          { item: 'Dedicated electrical consumer unit', note: 'Multiple circuits for equipment' },
+          { item: '5kw air conditioning unit', note: 'Heating and cooling year-round' },
+          { item: 'LED lighting on dimmer', note: 'Smart switch option available' },
+          { item: 'Plastered and painted walls', note: 'Mirror panels available on request' },
+          { item: 'Aluminium doors and windows', note: 'A-rated glazing throughout' },
+        ].map(r => (
+          <div style="display:flex; gap:14px; padding:16px; background:#f8faf7; border-radius:12px; border:1px solid #ebeced; align-items:start;">
+            <div style="width:20px; height:20px; background:#34a02e; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;">
+              <svg width="10" height="10" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <p style="font-size:13.5px; font-weight:700; color:#2d3841; margin:0 0 2px;">{r.item}</p>
+              <p style="font-size:12px; color:#888; margin:0;">{r.note}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background:#34a02e; text-align:center;">
+    <div style="max-width:520px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#fff; margin-bottom:14px;">Get Your Garden Gym Quote</h2>
+      <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:28px; line-height:1.7;">Use our price calculator for an instant guide price, or book a free site visit and we'll come to you.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+        <a href="/garden-room-price-calculator" class="btn-white" style="font-size:15px; padding:14px 32px;">Get an Instant Price</a>
+        <a href="/contact-us" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.5); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none;">Book a Free Site Visit</a>
+      </div>
+    </div>
+  </section>
+
+</ServiceLayout>

@@ -2,63 +2,9 @@
   publish = "dist"
   command = "npm run build"
 
-# Redirects for pages that exist on the old site but not yet on the new one.
-# Sends rankings to the closest matching page rather than 404ing.
+# Redirects for pages that exist on the old site but not on the new one.
 
-# Our-work case study pages → our-work index (until individual pages are built)
-[[redirects]]
-  from = "/our-work/garden-room-with-decking-lean-to-shed"
-  to = "/our-work"
-  status = 301
-
-[[redirects]]
-  from = "/our-work/l-shaped-garden-office"
-  to = "/our-work"
-  status = 301
-
-[[redirects]]
-  from = "/our-work/garden-gym-with-hidden-storage"
-  to = "/our-work"
-  status = 301
-
-[[redirects]]
-  from = "/our-work/golf-simulator-garden-room"
-  to = "/garden-rooms/golf-simulator-studios"
-  status = 301
-
-[[redirects]]
-  from = "/our-work/music-studio"
-  to = "/garden-rooms/bespoke"
-  status = 301
-
-[[redirects]]
-  from = "/our-work/bespoke-garden-office-in-east-molesey"
-  to = "/our-work"
-  status = 301
-
-[[redirects]]
-  from = "/our-work/garden-hobby-room"
-  to = "/our-work"
-  status = 301
-
-[[redirects]]
-  from = "/our-work/oak-garden-room"
-  to = "/our-work"
-  status = 301
-
-[[redirects]]
-  from = "/our-work/outdoor-living-space"
-  to = "/garden-rooms/bespoke"
-  status = 301
-
-# Area pages now have proper pages — no redirects needed
-
-# Garden room type pages
-[[redirects]]
-  from = "/garden-rooms/garden-gym"
-  to = "/garden-rooms/bespoke"
-  status = 301
-
+# Garden room type pages without dedicated pages yet
 [[redirects]]
   from = "/garden-rooms/garden-bar"
   to = "/garden-rooms/bespoke"
@@ -72,12 +18,6 @@
 [[redirects]]
   from = "/recycle-bin/garden-studios"
   to = "/garden-rooms/garden-rooms"
-  status = 301
-
-# Your-build pages
-[[redirects]]
-  from = "/your-build/build-process"
-  to = "/your-build/first-steps"
   status = 301
 
 # Other missing pages
@@ -94,14 +34,4 @@
 [[redirects]]
   from = "/site-survey"
   to = "/contact-us"
-  status = 301
-
-[[redirects]]
-  from = "/privacy-policy"
-  to = "/"
-  status = 301
-
-[[redirects]]
-  from = "/terms-conditions"
-  to = "/"
   status = 301

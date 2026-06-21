@@ -1,0 +1,315 @@
+---
+import InfoLayout from '../../layouts/InfoLayout.astro';
+
+export function getStaticPaths() {
+  const projects = {
+    'golf-simulator-garden-room': {
+      title: 'Golf Simulator Garden Room — Surrey',
+      metaDesc: 'Extended height golf simulator garden room built in Surrey by The Green Rooms. Millboard cladding, full electrical fit-out and Golf Swing Systems installation.',
+      h1: 'Golf Simulator Garden Room',
+      tagline: 'Extended height build with full simulator installation — Surrey',
+      intro: 'This extended height golf simulator studio was built for a client in Surrey who wanted a proper, year-round practice space at home. The structure is built to 4m internal height to accommodate a full simulator screen and tracking system, with a dedicated electrical supply including multiple circuits for the projector, simulator unit, lighting and heating.',
+      detail: 'The exterior is clad in Millboard board and batten in anthracite — a low-maintenance composite that holds its appearance without any treatment. Internally, the room was finished with acoustic wall panels on the screen wall, LED strip lighting on a dimmer circuit, and a wall-mounted air conditioning unit to keep the space comfortable year-round. The simulator itself was installed by Golf Swing Systems after our build was complete.',
+      specs: [
+        { label: 'Structure', value: 'Extended height (4m internal)' },
+        { label: 'Cladding', value: 'Millboard board & batten, anthracite' },
+        { label: 'Doors', value: 'Aluminium bifold doors' },
+        { label: 'Electrics', value: 'Dedicated consumer unit, 6 circuits' },
+        { label: 'Climate', value: '5kw air conditioning' },
+        { label: 'Simulator', value: 'Golf Swing Systems' },
+      ],
+      heroImg: '/images/HERO%20Golf%20sim.jpg',
+      gallery: [
+        { src: '/images/HERO%20extended%20height%20golf%20sim%20millboard%20board%20and%20batten%20in%20anthracite.jpg', alt: 'Extended height golf simulator studio exterior' },
+        { src: '/images/golf%20sim%20internal%20action%20shot.jpg', alt: 'Golf simulator in use inside the garden room' },
+        { src: '/images/golf%20sim%20hero%20portrait.jpg', alt: 'Golf simulator garden room at dusk' },
+        { src: '/images/Golf%20sim%20setup%20hero.jpg', alt: 'Golf simulator setup and screen' },
+        { src: '/images/night%20lighting%20extended%20height%20golf%20sim%20millboard%20board%20and%20batten%20in%20anthracite.jpg', alt: 'Golf simulator studio at night' },
+        { src: '/images/extended%20height%20golf%20sim%20close%20up%20millboard%20board%20and%20batten%20in%20anthracite.jpg', alt: 'Close up of millboard cladding on golf simulator studio' },
+      ],
+      related: '/garden-rooms/golf-simulator-studios',
+      relatedLabel: 'Golf Simulator Studios',
+    },
+    'garden-gym-with-hidden-storage': {
+      title: 'Garden Gym with Hidden Storage Room — Surrey',
+      metaDesc: 'Bespoke garden gym with integrated hidden storage room built in Surrey by The Green Rooms. Rubber flooring, LED lighting and dual canopy.',
+      h1: 'Garden Gym with Hidden Storage',
+      tagline: 'Dual-purpose build with integrated storage — Surrey',
+      intro: 'This garden gym project combined a fully kitted-out fitness space with a concealed storage room — all within a single structure that looks from the outside like a standard garden room. The storage room is accessed through a flush door that sits invisibly within the exterior cladding.',
+      detail: 'The gym itself is fitted with rubber tile flooring throughout, wall-mounted mirrors, LED strip lighting on a smart dimmer, and a 5kw air conditioning unit for year-round use. A dual canopy runs the full width of the front elevation, creating a sheltered outdoor space immediately in front of the bifold doors. The hidden storage room gives the owners a place to store garden tools and seasonal items without compromising the gym\'s clean interior.',
+      specs: [
+        { label: 'Structure', value: 'Standard height with canopy' },
+        { label: 'Cladding', value: 'Thermo Ayous' },
+        { label: 'Doors', value: 'Aluminium bifold doors' },
+        { label: 'Flooring', value: 'Rubber gym tiles throughout' },
+        { label: 'Electrics', value: 'LED strip lighting, smart switches' },
+        { label: 'Climate', value: '5kw air conditioning' },
+        { label: 'Storage', value: 'Integrated hidden storage room' },
+      ],
+      heroImg: '/images/garden%20gym%2C%20dual%20canopy%20view%20from%20outside.jpg',
+      gallery: [
+        { src: '/images/garden%20gym%20internal%201.jpg', alt: 'Garden gym interior with rubber flooring' },
+        { src: '/images/garden%20gym%20internal%202.jpg', alt: 'Garden gym interior view' },
+        { src: '/images/garden%20gym%20internal%203.jpg', alt: 'Garden gym with LED lighting' },
+        { src: '/images/garden%20gym%20internal%204.jpg', alt: 'Garden gym equipment setup' },
+        { src: '/images/LED%20strip%20lighting%20gym.jpg', alt: 'LED strip lighting in garden gym' },
+        { src: '/images/gym%20flooring%20extended%20height%20internal%20view.jpg', alt: 'Gym flooring internal view' },
+      ],
+      related: '/garden-rooms/garden-rooms-with-storage',
+      relatedLabel: 'Garden Rooms with Storage',
+    },
+    'music-studio': {
+      title: 'Garden Music Studio — Surrey',
+      metaDesc: 'Bespoke garden music studio built in Surrey by The Green Rooms. Acoustic wall panelling, soundproofing and specialist electrical fit-out.',
+      h1: 'Garden Music Studio',
+      tagline: 'Acoustic wall panelling and specialist fit-out — Surrey',
+      intro: 'This bespoke garden music studio was designed around the client\'s specific acoustic requirements. The brief was for a space that could be used for recording and practice without sound leaking into the neighbouring properties — achieved through a combination of our standard SIPs construction and a specialist acoustic fit-out.',
+      detail: 'Internally, the walls are lined with acoustic absorption panels alternating with diffuser panels, tuned to the mid and high frequency range. The floor is floated on acoustic isolation mounts to reduce impact noise transmission. Electrically, the room has a dedicated circuit for studio equipment, with all power outlets on filtered circuits to eliminate interference. The external appearance is a standard cedar-clad garden room — the acoustic treatment is entirely on the inside.',
+      specs: [
+        { label: 'Structure', value: 'Standard height flat roof' },
+        { label: 'Cladding', value: 'Western Red Cedar' },
+        { label: 'Doors', value: 'Aluminium French doors' },
+        { label: 'Acoustic fit-out', value: 'Absorption and diffuser panels' },
+        { label: 'Flooring', value: 'Floating acoustic isolation floor' },
+        { label: 'Electrics', value: 'Filtered studio circuits' },
+      ],
+      heroImg: '/images/internal%20shot%20of%20music%20room.jpg',
+      gallery: [
+        { src: '/images/internal%20shot%20of%20music%20room.jpg', alt: 'Garden music studio interior with acoustic panels' },
+        { src: '/images/internal%20shot%20of%20music%20room%20close%20up.jpg', alt: 'Close up of acoustic wall panelling in music studio' },
+      ],
+      related: '/garden-rooms/bespoke',
+      relatedLabel: 'Bespoke Garden Rooms',
+    },
+    'l-shaped-garden-office': {
+      title: 'L-Shaped Garden Office — Surrey',
+      metaDesc: 'Bespoke L-shaped garden office built in Surrey by The Green Rooms. Custom footprint maximising a corner plot, full home office fit-out.',
+      h1: 'L-Shaped Garden Office',
+      tagline: 'Custom footprint maximising a corner plot — Surrey',
+      intro: 'This L-shaped garden office was designed to make the most of an awkward corner plot that a standard rectangular build couldn\'t have used efficiently. The L-shape allows the building to wrap around a mature tree that the client wanted to keep, while maximising the usable internal floor area.',
+      detail: 'The structure is built on a bespoke ground screw foundation layout that follows the L-shaped footprint. Both wings of the L have full-height glazing at their ends, flooding the interior with light from two directions. The interior is split into two zones — a primary desk area in the larger wing and a quiet reading/meeting area in the secondary wing. The whole space is finished to the same standard as any room in the house: plastered walls, engineered oak flooring, and a full electrical fit-out.',
+      specs: [
+        { label: 'Structure', value: 'L-shaped bespoke footprint' },
+        { label: 'Cladding', value: 'Millboard / Composite' },
+        { label: 'Doors', value: 'Aluminium bifold doors' },
+        { label: 'Flooring', value: 'Engineered oak' },
+        { label: 'Finish', value: 'Plastered and painted' },
+        { label: 'Electrics', value: 'Full home office fit-out' },
+      ],
+      heroImg: '/images/GR%20bespoke%20glass%20corner%20millboard.jpg',
+      gallery: [
+        { src: '/images/GR%20bespoke%20glass%20corner%20millboard.jpg', alt: 'L-shaped garden office exterior' },
+        { src: '/images/GP%20office%20internal.jpg', alt: 'Garden office interior' },
+        { src: '/images/bespoke%20build%20close%20up%20hero.jpg', alt: 'Close up detail of bespoke garden office' },
+      ],
+      related: '/garden-rooms/garden-offices',
+      relatedLabel: 'Garden Offices',
+    },
+    'garden-room-with-decking-lean-to-shed': {
+      title: 'Garden Room with Decking & Lean-To Shed — Surrey',
+      metaDesc: 'Cedar garden room with integrated decking and lean-to storage shed built in Surrey by The Green Rooms. Bifold doors and full canopy.',
+      h1: 'Garden Room with Decking & Lean-To Shed',
+      tagline: 'Integrated decking and lean-to storage — Surrey',
+      intro: 'This project combined a cedar-clad garden room with a full-width composite decking platform and an integrated lean-to storage shed running along the side elevation. The result is a single structure that provides living space, outdoor entertaining space, and practical storage — all tied together with a consistent design language.',
+      detail: 'The garden room itself is clad in Western Red Cedar with a full-width front canopy and aluminium bifold doors opening directly onto the decking. The decking is laid in Millboard composite in burnt cedar — a material that requires no maintenance and never needs oiling or staining. The lean-to shed sits flush against the side wall, sharing the same roof line, and is accessed via a flush-fit timber door. From the garden, the whole structure reads as one cohesive build.',
+      specs: [
+        { label: 'Structure', value: 'Standard height with full canopy' },
+        { label: 'Cladding', value: 'Western Red Cedar' },
+        { label: 'Doors', value: 'Aluminium bifold doors' },
+        { label: 'Decking', value: 'Millboard composite, burnt cedar' },
+        { label: 'Storage', value: 'Integrated lean-to shed' },
+        { label: 'Electrics', value: 'Lighting, sockets, external up/down lights' },
+      ],
+      heroImg: '/images/classic%20GR%20with%20storage%20and%20decking.jpg',
+      gallery: [
+        { src: '/images/classic%20GR%20with%20storage%20and%20decking.jpg', alt: 'Cedar garden room with decking and lean-to storage' },
+        { src: '/images/GR%20decking.jpg', alt: 'Composite decking platform outside garden room' },
+        { src: '/images/bespoke%20shed%20addition.jpg', alt: 'Integrated lean-to shed alongside garden room' },
+        { src: '/images/millboard%20step%20in%20burnt%20cedar.jpeg', alt: 'Millboard composite step in burnt cedar' },
+      ],
+      related: '/garden-rooms/garden-rooms-with-storage',
+      relatedLabel: 'Garden Rooms with Storage',
+    },
+    'bespoke-garden-office-in-east-molesey': {
+      title: 'Bespoke Garden Office in East Molesey — Surrey',
+      metaDesc: 'Bespoke garden office built in East Molesey, Surrey by The Green Rooms. Charred spruce cladding, Crittall doors and full home office specification.',
+      h1: 'Bespoke Garden Office — East Molesey',
+      tagline: 'Charred spruce cladding and Crittall doors — East Molesey, Surrey',
+      intro: 'This bespoke garden office in East Molesey was designed for a client who wanted a building that made a statement — something that stood apart from the typical cedar or composite-clad garden rooms. The result is a fully custom structure clad in Charred Spruce (Shou Sugi Ban) with aluminium Crittall-style doors.',
+      detail: 'The charred spruce cladding is treated using the traditional Japanese technique of surface charring, which creates a deep black finish and dramatically increases the timber\'s resistance to moisture, insects and UV. It requires no ongoing maintenance. The Crittall-style aluminium doors flood the interior with light while maintaining the industrial-modern aesthetic of the exterior. Inside, the office is finished to a high specification with plaster skim walls, engineered flooring, and a full electrical fit-out including a dedicated broadband connection via Cat 6a cable.',
+      specs: [
+        { label: 'Structure', value: 'Bespoke flat roof' },
+        { label: 'Cladding', value: 'Charred Spruce (Shou Sugi Ban)' },
+        { label: 'Doors', value: 'Aluminium Crittall doors' },
+        { label: 'Finish', value: 'Plaster skim, engineered flooring' },
+        { label: 'Electrics', value: 'Full office spec inc. Cat 6a' },
+        { label: 'Location', value: 'East Molesey, Surrey' },
+      ],
+      heroImg: '/images/GR%20at%20night%20charred%20spruce%20crittal%20french%20doors.jpg',
+      gallery: [
+        { src: '/images/GR%20at%20night%20charred%20spruce%20crittal%20french%20doors.jpg', alt: 'Charred spruce garden office at night with Crittall doors lit up' },
+        { src: '/images/GR%20charred%20spruce.jpg', alt: 'Charred spruce cladding close up' },
+        { src: '/images/GR%20charred%20spruce%20in%20garden.jpg', alt: 'Charred spruce garden office in garden setting' },
+        { src: '/images/crittal%20bifold%20doors%20viewed%20from%20inside.jpg', alt: 'Crittall bifold doors viewed from inside' },
+      ],
+      related: '/garden-rooms/bespoke',
+      relatedLabel: 'Bespoke Garden Rooms',
+    },
+    'oak-garden-room': {
+      title: 'Oak Garden Room — Surrey',
+      metaDesc: 'Bespoke oak garden room built in Surrey by The Green Rooms. Natural timber finish with bifold doors and full interior specification.',
+      h1: 'Oak Garden Room',
+      tagline: 'Natural timber finish with full interior specification — Surrey',
+      intro: 'This oak garden room was built for a client who wanted a natural, warm aesthetic that complemented their traditional house and mature garden. The exterior uses natural oak cladding that will silver gracefully over time, blending into the garden setting.',
+      detail: 'The structure is built on our standard SIPs panel system, giving the same high level of insulation and structural performance as all our builds — the oak cladding is a finishing choice, not a structural one. Inside, the room is fitted out as a versatile garden room with plastered walls, engineered oak flooring to match the exterior aesthetic, full electrics and a wall-mounted air conditioning unit. Bifold doors across the full front elevation maximise the connection between the inside and the garden.',
+      specs: [
+        { label: 'Structure', value: 'Standard height flat roof' },
+        { label: 'Cladding', value: 'Natural oak' },
+        { label: 'Doors', value: 'Aluminium bifold doors' },
+        { label: 'Flooring', value: 'Engineered oak' },
+        { label: 'Finish', value: 'Plastered and painted' },
+        { label: 'Climate', value: 'Air conditioning' },
+      ],
+      heroImg: '/images/GR%20clean%20pic%20portrait.jpg',
+      gallery: [
+        { src: '/images/GR%20clean%20pic%20portrait.jpg', alt: 'Oak garden room exterior' },
+        { src: '/images/internal%20view%20typical%20set%20up%20sofa%20tv.jpg', alt: 'Garden room interior' },
+        { src: '/images/GR%20end%20of%20garden.jpg', alt: 'Garden room at end of garden' },
+      ],
+      related: '/garden-rooms/garden-rooms',
+      relatedLabel: 'Garden Rooms',
+    },
+    'outdoor-living-space': {
+      title: 'Outdoor Living Space — Surrey',
+      metaDesc: 'Bespoke outdoor living space and garden shelter built in Surrey by The Green Rooms. Open-plan structure with hot tub area and full electrics.',
+      h1: 'Outdoor Living Space',
+      tagline: 'Open-plan garden shelter with hot tub area — Surrey',
+      intro: 'This outdoor living space was designed for year-round entertaining — an open-sided garden shelter with a full roof, integrated lighting, and space for a hot tub. It sits at the end of the garden and creates a destination space that gets used in every season.',
+      detail: 'The structure is open on three sides with a solid roof and back wall providing weather protection and privacy. Integrated LED strip lighting runs around the perimeter of the ceiling, with external up/down wall lights on the back wall. The floor is laid in composite decking, flush with the surrounding garden level. A dedicated electrical supply powers the hot tub, lighting, and an outdoor speaker system. The whole structure is built on ground screws — no concrete, no mess, and fully reversible.',
+      specs: [
+        { label: 'Structure', value: 'Open-sided garden shelter' },
+        { label: 'Cladding', value: 'Thermo Ayous back wall' },
+        { label: 'Flooring', value: 'Composite decking' },
+        { label: 'Lighting', value: 'LED strip + up/down wall lights' },
+        { label: 'Electrics', value: 'Hot tub supply, outdoor circuits' },
+        { label: 'Foundations', value: 'Ground screws' },
+      ],
+      heroImg: '/images/bespoke%20shelter%20hot%20tub.jpg',
+      gallery: [
+        { src: '/images/bespoke%20shelter%20hot%20tub.jpg', alt: 'Outdoor living space with hot tub' },
+        { src: '/images/bespoke%20shelter%20square%20on.jpg', alt: 'Garden shelter square on view' },
+        { src: '/images/bespoke%20shelter.jpg', alt: 'Bespoke garden shelter exterior' },
+      ],
+      related: '/garden-rooms/bespoke',
+      relatedLabel: 'Bespoke Garden Rooms',
+    },
+    'garden-hobby-room': {
+      title: 'Garden Hobby Room — Surrey',
+      metaDesc: 'Bespoke garden hobby room built in Surrey by The Green Rooms. Versatile space for crafts, art, or personal use with full electrics and insulation.',
+      h1: 'Garden Hobby Room',
+      tagline: 'Versatile personal space with full fit-out — Surrey',
+      intro: 'This garden hobby room was built for a client who wanted a dedicated personal space separate from the house — somewhere quiet to pursue crafts, art, and creative projects without needing to clear the kitchen table. The brief was simple: a comfortable, well-lit, warm space that felt like a proper room.',
+      detail: 'The structure is a standard flat-roof garden room clad in Thermo Ayous with a single set of sliding doors and a large fixed window providing plenty of natural light. Inside, the walls are plastered and painted, the floor is laid in LVT, and the room has a full electrical fit-out including multiple double sockets, USB outlets, overhead lighting on a dimmer, and a wall-mounted electric panel heater. A simple, well-executed build that the client uses every single day.',
+      specs: [
+        { label: 'Structure', value: 'Standard height flat roof' },
+        { label: 'Cladding', value: 'Thermo Ayous' },
+        { label: 'Doors', value: 'Aluminium sliding doors' },
+        { label: 'Flooring', value: 'LVT' },
+        { label: 'Finish', value: 'Plastered and painted' },
+        { label: 'Climate', value: 'Electric panel heater' },
+      ],
+      heroImg: '/images/bespoke%20shape%20GP.jpg',
+      gallery: [
+        { src: '/images/bespoke%20shape%20GP.jpg', alt: 'Garden hobby room exterior' },
+        { src: '/images/internal%20room.jpg', alt: 'Garden hobby room interior' },
+        { src: '/images/bespoke%20shape%20window.jpg', alt: 'Garden room window detail' },
+      ],
+      related: '/garden-rooms/garden-rooms',
+      relatedLabel: 'Garden Rooms',
+    },
+  };
+
+  return Object.entries(projects).map(([slug, data]) => ({
+    params: { slug },
+    props: { data },
+  }));
+}
+
+const { slug } = Astro.params;
+const { data } = Astro.props;
+const { title, metaDesc, h1, tagline, intro, detail, specs, heroImg, gallery, related, relatedLabel } = data;
+---
+
+<InfoLayout
+  title={`${title} | The Green Rooms Surrey`}
+  description={metaDesc}
+  canonical={`/our-work/${slug}`}
+  pageTitle={h1}
+  pageSubtitle={tagline}
+  heroImg={heroImg}
+  heroAlt={h1 + ' by The Green Rooms'}
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Our Work', href: '/our-work' }, { label: h1 }]}
+>
+
+  <!-- Project detail -->
+  <section style="background:#fff; padding:80px 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px; display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:start;">
+      <div>
+        <p style="font-size:1rem; color:#555; line-height:1.85; margin:0 0 20px;">{intro}</p>
+        <p style="font-size:1rem; color:#555; line-height:1.85; margin:0 0 32px;">{detail}</p>
+        <a href="/contact-us" class="btn-primary">Book a Free Site Visit</a>
+      </div>
+      <div style="background:#f8faf7; border-radius:16px; padding:28px; border:1px solid #ebeced;">
+        <p style="font-size:12px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 16px;">Project Specification</p>
+        <table style="width:100%; border-collapse:collapse;">
+          {specs.map(s => (
+            <tr style="border-bottom:1px solid #ebeced;">
+              <td style="font-size:13px; font-weight:600; color:#2d3841; padding:10px 0; width:40%; vertical-align:top;">{s.label}</td>
+              <td style="font-size:13px; color:#555; padding:10px 0;">{s.value}</td>
+            </tr>
+          ))}
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  {gallery.length > 0 && (
+    <section style="background:#f8faf7; padding:72px 0;">
+      <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+        <h2 style="font-size:clamp(1.3rem,2.5vw,1.7rem); font-weight:700; color:#2d3841; margin:0 0 28px;">Project Photos</h2>
+        <div style={`display:grid; grid-template-columns:${gallery.length >= 3 ? 'repeat(3,1fr)' : gallery.length === 2 ? '1fr 1fr' : '1fr'}; gap:12px;`}>
+          {gallery.map(img => (
+            <div style="border-radius:12px; overflow:hidden; aspect-ratio:4/3;">
+              <img src={img.src} alt={img.alt} style="width:100%; height:100%; object-fit:cover;" loading="lazy" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- CTA -->
+  <section style="background:#2d3841; padding:72px 24px; text-align:center;">
+    <div style="max-width:520px; margin:0 auto;">
+      <h2 style="font-size:clamp(1.3rem,2.5vw,1.8rem); font-weight:700; color:#fff; margin:0 0 14px;">Interested in Something Similar?</h2>
+      <p style="color:rgba(255,255,255,0.75); font-size:1rem; margin:0 0 28px; line-height:1.7;">Book a free site visit and we'll come to you, assess what's possible, and give you an honest quote — no obligation.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+        <a href="/contact-us" class="btn-white" style="font-size:15px; padding:14px 32px;">Book a Free Site Visit</a>
+        <a href={related} style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.4); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none;">{relatedLabel} →</a>
+      </div>
+    </div>
+  </section>
+
+</InfoLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:1fr 1fr"]:not([style*="repeat"]) { grid-template-columns: 1fr !important; gap: 40px !important; }
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+  }
+  @media (max-width: 600px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"],
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  }
+</style>
