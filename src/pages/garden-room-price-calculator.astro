@@ -738,7 +738,7 @@ const steps = ['Size','Structure','Cladding','Walls','Features','Decking','Doors
     const hp=document.getElementById('hidden-price') as HTMLInputElement|null;
     if(hp) hp.value='£'+b.total.toLocaleString();
     const hc=document.getElementById('hidden-config') as HTMLInputElement|null;
-    if(hc) hc.value=`${st.width}×${st.depth}m | Roof:${st.roofType} | Cladding:${st.claddingMaterial} ${st.claddingWalls}wall(s) | Canopy:${st.canopy} | Storage:${st.storage} | Glass:${st.glass_corner} | Skylight:${st.skylight} | Deck:${st.hasDecking?st.deckW+'×'+st.deckD:'no'} | Door:${st.door} | Wins:${st.wins.join(',')} | Elec:${st.electricals.join(',')} | Climate:${st.climate}`;
+    if(hc) hc.value=JSON.stringify(st);
     const fb=document.getElementById('final-breakdown');
     if(fb){
       const rows:[string,number][]=[
