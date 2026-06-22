@@ -2,6 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
 
+function srcset(img: string, sizes = '(max-width:768px) 100vw, 50vw') {
+  const filename = img.split('/').pop()!;
+  const decoded = decodeURIComponent(filename);
+  const dot = decoded.lastIndexOf('.');
+  const base = decoded.substring(0, dot);
+  const sm = '/images/sm/' + encodeURIComponent(base + '-sm.webp');
+  return { srcset: `${sm} 900w, ${img} 1920w`, sizes };
+}
+
 const services = [
   {
     title: 'Garden Offices',
@@ -194,7 +203,8 @@ const whyUs = [
         {services.map(s => (
           <a href={s.href} class="service-card" style="display:flex; flex-direction:column; text-decoration:none; background:#fff; border-radius:20px; overflow:hidden; border:1px solid #ebeced;">
             <div style="position:relative; height:220px; overflow:hidden;">
-              <img src={s.img} alt={s.title + ' by The Green Rooms, Surrey'} loading="lazy"
+              <img src={s.img} {...srcset(s.img, '(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw')}
+                   alt={s.title + ' by The Green Rooms, Surrey'} loading="lazy"
                    style="width:100%; height:100%; object-fit:cover;" class="service-img" />
               <div style="position:absolute; bottom:12px; left:12px; background:rgba(45,56,65,0.92); color:#fff; font-size:11px; font-weight:700; padding:4px 12px; border-radius:50px; letter-spacing:0.02em;">{s.price}</div>
             </div>
@@ -225,6 +235,7 @@ const whyUs = [
       </div>
       <div>
         <img src="/images/GR%20clean%20pic%20portrait.webp"
+             {...srcset('/images/GR%20clean%20pic%20portrait.webp')}
              alt="Garden room price calculator"
              style="width:100%; border-radius:16px; box-shadow:0 24px 64px rgba(0,0,0,0.4);"
              loading="lazy" />
@@ -268,7 +279,7 @@ const whyUs = [
       </div>
       <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
         <a href="/our-work" class="project-card" style="display:block; text-decoration:none; border-radius:16px; overflow:hidden; position:relative; height:280px;">
-          <img src="/images/GR%20end%20of%20garden.webp" alt="Bespoke garden office in East Molesey, Surrey" style="width:100%; height:100%; object-fit:cover;" class="project-img" loading="lazy" />
+          <img src="/images/GR%20end%20of%20garden.webp" {...srcset('/images/GR%20end%20of%20garden.webp', '(max-width:640px) 100vw, 33vw')} alt="Bespoke garden office in East Molesey, Surrey" style="width:100%; height:100%; object-fit:cover;" class="project-img" loading="lazy" />
           <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);"></div>
           <div style="position:absolute; bottom:16px; left:16px;">
             <p style="color:#fff; font-weight:700; font-size:14px; margin:0 0 2px;">Bespoke Garden Office</p>
@@ -276,7 +287,7 @@ const whyUs = [
           </div>
         </a>
         <a href="/our-work" class="project-card" style="display:block; text-decoration:none; border-radius:16px; overflow:hidden; position:relative; height:280px;">
-          <img src="/images/golf%20sim%20internal%20action%20shot.webp" alt="Golf simulator garden room, Surrey" style="width:100%; height:100%; object-fit:cover;" class="project-img" loading="lazy" />
+          <img src="/images/golf%20sim%20internal%20action%20shot.webp" {...srcset('/images/golf%20sim%20internal%20action%20shot.webp', '(max-width:640px) 100vw, 33vw')} alt="Golf simulator garden room, Surrey" style="width:100%; height:100%; object-fit:cover;" class="project-img" loading="lazy" />
           <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);"></div>
           <div style="position:absolute; bottom:16px; left:16px;">
             <p style="color:#fff; font-weight:700; font-size:14px; margin:0 0 2px;">Golf Simulator Studio</p>
@@ -284,7 +295,7 @@ const whyUs = [
           </div>
         </a>
         <a href="/our-work" class="project-card" style="display:block; text-decoration:none; border-radius:16px; overflow:hidden; position:relative; height:280px;">
-          <img src="/images/hidden%20storage%20room.webp" alt="Garden gym with hidden storage in Chobham, Surrey" style="width:100%; height:100%; object-fit:cover;" class="project-img" loading="lazy" />
+          <img src="/images/hidden%20storage%20room.webp" {...srcset('/images/hidden%20storage%20room.webp', '(max-width:640px) 100vw, 33vw')} alt="Garden gym with hidden storage in Chobham, Surrey" style="width:100%; height:100%; object-fit:cover;" class="project-img" loading="lazy" />
           <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);"></div>
           <div style="position:absolute; bottom:16px; left:16px;">
             <p style="color:#fff; font-weight:700; font-size:14px; margin:0 0 2px;">Garden Gym with Hidden Storage</p>
@@ -299,6 +310,7 @@ const whyUs = [
   <section style="padding:80px 24px; text-align:center; position:relative; overflow:hidden; background:#1a2328;">
     <div style="position:absolute; inset:0;">
       <img src="/images/Hero%20showroom.webp"
+           {...srcset('/images/Hero%20showroom.webp', '100vw')}
            style="width:100%; height:100%; object-fit:cover;" alt="" loading="lazy" />
       <div style="position:absolute; inset:0; background:rgba(20,30,25,0.72);"></div>
     </div>
