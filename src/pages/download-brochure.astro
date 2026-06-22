@@ -55,15 +55,15 @@ const brochures = [
             </button>
 
             <!-- Page image + counter -->
-            <div style="flex:1; position:relative;">
-              <div style="border-radius:12px; overflow:hidden; box-shadow:0 8px 40px rgba(0,0,0,0.18);">
+            <div style="flex:1; position:relative; display:flex; flex-direction:column; align-items:center;">
+              <div style="border-radius:12px; overflow:hidden; box-shadow:0 8px 40px rgba(0,0,0,0.18); width:fit-content;">
                 {b.pages.map((pg, pi) => (
                   <img
                     class="brochure-page"
                     data-viewer={bi}
                     src={pg}
                     alt={`${b.title} page ${pi + 1}`}
-                    style={`width:100%; max-height:82vh; object-fit:contain; display:${pi === 0 ? 'block' : 'none'};`}
+                    style={`max-height:85vh; width:auto; max-width:100%; display:${pi === 0 ? 'block' : 'none'};`}
                   />
                 ))}
               </div>
