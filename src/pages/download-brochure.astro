@@ -46,32 +46,38 @@ const brochures = [
         <div class="brochure-viewer" data-brochure={bi} style={bi === 0 ? '' : 'display:none;'}>
 
           <!-- Main page display -->
-          <div style="position:relative; border-radius:16px; overflow:hidden; margin-bottom:20px; box-shadow:0 8px 40px rgba(0,0,0,0.15);">
+          <div style="display:flex; align-items:center; gap:16px; margin-bottom:20px;">
 
-            {b.pages.map((pg, pi) => (
-              <img
-                class="brochure-page"
-                data-viewer={bi}
-                src={pg}
-                alt={`${b.title} page ${pi + 1}`}
-                style={`width:100%; display:${pi === 0 ? 'block' : 'none'};`}
-              />
-            ))}
-
-            <!-- Prev / Next arrows -->
+            <!-- Prev arrow -->
             <button class="pg-prev" data-viewer={bi} aria-label="Previous page"
-              style="position:absolute; left:16px; top:50%; transform:translateY(-50%); width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,0.15); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; color:#fff; transition:background 0.2s;">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
-            </button>
-            <button class="pg-next" data-viewer={bi} aria-label="Next page"
-              style="position:absolute; right:16px; top:50%; transform:translateY(-50%); width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,0.15); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; color:#fff; transition:background 0.2s;">
-              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+              style="flex-shrink:0; width:52px; height:52px; border-radius:50%; background:#2d3841; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; color:#fff; transition:background 0.2s; box-shadow:0 4px 12px rgba(0,0,0,0.2);">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
             </button>
 
-            <!-- Page counter -->
-            <div style="position:absolute; bottom:16px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.5); color:#fff; font-size:13px; font-weight:600; padding:4px 14px; border-radius:50px;">
-              <span class="pg-current" data-viewer={bi}>1</span> / {b.pages.length}
+            <!-- Page image + counter -->
+            <div style="flex:1; position:relative;">
+              <div style="border-radius:12px; overflow:hidden; box-shadow:0 8px 40px rgba(0,0,0,0.18);">
+                {b.pages.map((pg, pi) => (
+                  <img
+                    class="brochure-page"
+                    data-viewer={bi}
+                    src={pg}
+                    alt={`${b.title} page ${pi + 1}`}
+                    style={`width:100%; max-height:82vh; object-fit:contain; display:${pi === 0 ? 'block' : 'none'};`}
+                  />
+                ))}
+              </div>
+              <div style="text-align:center; margin-top:10px; font-size:13px; font-weight:600; color:#888;">
+                Page <span class="pg-current" data-viewer={bi}>1</span> of {b.pages.length}
+              </div>
             </div>
+
+            <!-- Next arrow -->
+            <button class="pg-next" data-viewer={bi} aria-label="Next page"
+              style="flex-shrink:0; width:52px; height:52px; border-radius:50%; background:#2d3841; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; color:#fff; transition:background 0.2s; box-shadow:0 4px 12px rgba(0,0,0,0.2);">
+              <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+
           </div>
 
           <!-- Thumbnail strip -->
@@ -97,7 +103,7 @@ const brochures = [
 </Layout>
 
 <style>
-  .pg-prev:hover, .pg-next:hover { background: rgba(255,255,255,0.3) !important; }
+  .pg-prev:hover, .pg-next:hover { background: #34a02e !important; }
   .brochure-tab:hover { border-color: #34a02e !important; }
 </style>
 
