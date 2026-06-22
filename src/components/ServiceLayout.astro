@@ -19,9 +19,20 @@ interface Props {
 
 const {
   title, description, canonical,
-  heroImg, heroSrcset, heroAlt, h1, tagline, intro, price,
+  heroImg, heroSrcset: heroSrcsetProp, heroAlt, h1, tagline, intro, price,
   features, relatedPages = [],
 } = Astro.props;
+
+function smSrcset(img: string, existing?: string) {
+  if (existing) return existing;
+  const filename = img.split('/').pop()!;
+  const decoded = decodeURIComponent(filename);
+  const dot = decoded.lastIndexOf('.');
+  const base = decoded.substring(0, dot);
+  const sm = '/images/sm/' + encodeURIComponent(base + '-sm.jpg');
+  return `${sm} 900w, ${img} 1920w`;
+}
+const heroSrcset = smSrcset(heroImg, heroSrcsetProp);
 
 const whyUs = [
   { title: 'SIPs Construction', desc: 'Structural Insulated Panels — far superior insulation, strength and soundproofing compared to timber frame. Warm in winter, cool in summer.' },
