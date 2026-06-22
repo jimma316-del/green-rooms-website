@@ -322,7 +322,14 @@ const whyUs = [
     border: none;
     cursor: pointer;
     padding: 0;
+    position: relative;
     transition: background 0.3s, transform 0.3s;
+  }
+  /* Expand touch area to 44×44px without changing visual size */
+  .hero-dot::before {
+    content: '';
+    position: absolute;
+    inset: -18px;
   }
   .hero-dot.active {
     background: #fff;
