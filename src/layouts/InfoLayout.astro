@@ -26,7 +26,7 @@ function smSrcset(img: string | undefined) {
 const heroSrcset = smSrcset(heroImg);
 ---
 
-<Layout title={title} description={description} canonical={canonical}>
+<Layout title={title} description={description} canonical={canonical} preloadImg={heroImg}>
 
   {heroImg ? (
     <section style="position:relative; height:48vh; min-height:360px; display:flex; align-items:flex-end; overflow:hidden; background:#1a2328;">

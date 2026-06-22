@@ -8,6 +8,7 @@ interface Props {
   description?: string;
   image?: string;
   canonical?: string;
+  preloadImg?: string;
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   description = 'Bespoke garden rooms, garden offices, garden gyms and golf simulator rooms hand built across Surrey and the South East. Expert craftsmanship, SIPs construction, 10-year guarantee.',
   image = '/images/og-default.webp',
   canonical,
+  preloadImg,
 } = Astro.props;
 
 const siteUrl = 'https://www.thegreenrooms.com';
@@ -42,6 +44,11 @@ const canonicalUrl = canonical ? `${siteUrl}${canonical}` : `${siteUrl}${Astro.u
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={`${siteUrl}${image}`} />
+
+  <!-- Preload LCP image if specified -->
+  {preloadImg && (
+    <link rel="preload" as="image" href={preloadImg} fetchpriority="high" />
+  )}
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/images/favicon.png" />
