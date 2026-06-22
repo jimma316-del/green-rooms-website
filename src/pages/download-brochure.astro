@@ -1,0 +1,172 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const brochures = [
+  {
+    id: 'pods',
+    title: 'Garden Pods Brochure',
+    pages: [
+      '/images/brochures/pods/pod1.webp',
+      '/images/brochures/pods/pod2.webp',
+      '/images/brochures/pods/Pod3.webp',
+      '/images/brochures/pods/pod4.webp',
+    ],
+  },
+];
+---
+
+<Layout
+  title="Brochures | The Green Rooms Garden Rooms Surrey"
+  description="Browse The Green Rooms brochures online — garden pods, garden rooms, offices and more. Flick through the pages or download."
+  canonical="/download-brochure"
+>
+
+  <div style="background:#1a2328; padding:56px 24px 48px;">
+    <div style="max-width:1280px; margin:0 auto;">
+      <h1 style="font-family:'Poppins',sans-serif; font-size:clamp(1.8rem,4vw,2.8rem); font-weight:700; color:#fff; margin:0 0 10px;">Our Brochures</h1>
+      <p style="color:rgba(255,255,255,0.7); font-size:1rem; margin:0;">Browse our range online — flip through each page or zoom in for a closer look.</p>
+    </div>
+  </div>
+
+  <section style="background:#f8faf7; padding:56px 24px; min-height:70vh;">
+    <div style="max-width:1000px; margin:0 auto;">
+
+      <!-- Brochure tabs (for future brochures) -->
+      <div id="brochure-tabs" style="display:flex; gap:10px; margin-bottom:32px; flex-wrap:wrap;">
+        {brochures.map((b, i) => (
+          <button
+            class="brochure-tab"
+            data-brochure={i}
+            style={`padding:10px 22px; border-radius:50px; border:2px solid ${i === 0 ? '#34a02e' : '#ddd'}; background:${i === 0 ? '#34a02e' : '#fff'}; color:${i === 0 ? '#fff' : '#555'}; font-family:'Nunito',sans-serif; font-size:14px; font-weight:700; cursor:pointer; transition:all 0.2s;`}
+          >{b.title}</button>
+        ))}
+      </div>
+
+      {brochures.map((b, bi) => (
+        <div class="brochure-viewer" data-brochure={bi} style={bi === 0 ? '' : 'display:none;'}>
+
+          <!-- Main page display -->
+          <div style="position:relative; background:#2d3841; border-radius:20px; overflow:hidden; margin-bottom:20px; display:flex; align-items:center; justify-content:center; min-height:560px;">
+
+            {b.pages.map((pg, pi) => (
+              <img
+                class="brochure-page"
+                data-viewer={bi}
+                src={pg}
+                alt={`${b.title} page ${pi + 1}`}
+                style={`max-width:100%; max-height:75vh; width:auto; object-fit:contain; display:${pi === 0 ? 'block' : 'none'};`}
+              />
+            ))}
+
+            <!-- Prev / Next arrows -->
+            <button class="pg-prev" data-viewer={bi} aria-label="Previous page"
+              style="position:absolute; left:16px; top:50%; transform:translateY(-50%); width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,0.15); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; color:#fff; transition:background 0.2s;">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="pg-next" data-viewer={bi} aria-label="Next page"
+              style="position:absolute; right:16px; top:50%; transform:translateY(-50%); width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,0.15); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; color:#fff; transition:background 0.2s;">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+
+            <!-- Page counter -->
+            <div style="position:absolute; bottom:16px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,0.5); color:#fff; font-size:13px; font-weight:600; padding:4px 14px; border-radius:50px;">
+              <span class="pg-current" data-viewer={bi}>1</span> / {b.pages.length}
+            </div>
+          </div>
+
+          <!-- Thumbnail strip -->
+          <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+            {b.pages.map((pg, pi) => (
+              <button
+                class="pg-thumb"
+                data-viewer={bi}
+                data-page={pi}
+                style={`border:3px solid ${pi === 0 ? '#34a02e' : 'transparent'}; border-radius:8px; overflow:hidden; padding:0; background:none; cursor:pointer; transition:border-color 0.2s;`}
+              >
+                <img src={pg} alt={`Page ${pi + 1}`} style="width:100px; height:70px; object-fit:cover; display:block;" loading="lazy" />
+              </button>
+            ))}
+          </div>
+
+        </div>
+      ))}
+
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .pg-prev:hover, .pg-next:hover { background: rgba(255,255,255,0.3) !important; }
+  .brochure-tab:hover { border-color: #34a02e !important; }
+</style>
+
+<script>
+  const viewers: Record<number, number> = {};
+
+  function showPage(viewerIdx: number, pageIdx: number) {
+    const pages = document.querySelectorAll<HTMLElement>(`.brochure-page[data-viewer="${viewerIdx}"]`);
+    const thumbs = document.querySelectorAll<HTMLElement>(`.pg-thumb[data-viewer="${viewerIdx}"]`);
+    const counter = document.querySelector<HTMLElement>(`.pg-current[data-viewer="${viewerIdx}"]`);
+
+    pages.forEach((p, i) => p.style.display = i === pageIdx ? 'block' : 'none');
+    thumbs.forEach((t, i) => t.style.borderColor = i === pageIdx ? '#34a02e' : 'transparent');
+    if (counter) counter.textContent = String(pageIdx + 1);
+    viewers[viewerIdx] = pageIdx;
+  }
+
+  // Prev / Next
+  document.querySelectorAll<HTMLElement>('.pg-prev').forEach(btn => {
+    const vi = Number(btn.dataset.viewer);
+    btn.addEventListener('click', () => {
+      const pages = document.querySelectorAll(`.brochure-page[data-viewer="${vi}"]`);
+      const cur = viewers[vi] ?? 0;
+      showPage(vi, (cur - 1 + pages.length) % pages.length);
+    });
+  });
+
+  document.querySelectorAll<HTMLElement>('.pg-next').forEach(btn => {
+    const vi = Number(btn.dataset.viewer);
+    btn.addEventListener('click', () => {
+      const pages = document.querySelectorAll(`.brochure-page[data-viewer="${vi}"]`);
+      const cur = viewers[vi] ?? 0;
+      showPage(vi, (cur + 1) % pages.length);
+    });
+  });
+
+  // Thumbnails
+  document.querySelectorAll<HTMLElement>('.pg-thumb').forEach(btn => {
+    btn.addEventListener('click', () => {
+      showPage(Number(btn.dataset.viewer), Number(btn.dataset.page));
+    });
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') {
+      const vi = 0;
+      const pages = document.querySelectorAll(`.brochure-page[data-viewer="${vi}"]`);
+      showPage(vi, ((viewers[vi] ?? 0) + 1) % pages.length);
+    }
+    if (e.key === 'ArrowLeft') {
+      const vi = 0;
+      const pages = document.querySelectorAll(`.brochure-page[data-viewer="${vi}"]`);
+      showPage(vi, ((viewers[vi] ?? 0) - 1 + pages.length) % pages.length);
+    }
+  });
+
+  // Brochure tab switching
+  document.querySelectorAll<HTMLElement>('.brochure-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const bi = Number(tab.dataset.brochure);
+      document.querySelectorAll<HTMLElement>('.brochure-viewer').forEach((v, i) => {
+        v.style.display = i === bi ? 'block' : 'none';
+      });
+      document.querySelectorAll<HTMLElement>('.brochure-tab').forEach((t, i) => {
+        t.style.background = i === bi ? '#34a02e' : '#fff';
+        t.style.color = i === bi ? '#fff' : '#555';
+        t.style.borderColor = i === bi ? '#34a02e' : '#ddd';
+      });
+    });
+  });
+</script>
