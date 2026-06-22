@@ -67,6 +67,35 @@ const windows = [
         ))}
       </div>
 
+      <!-- Skylights -->
+      <div style="border-radius:16px; overflow:hidden; border:1px solid #ebeced; margin-bottom:24px; display:grid; grid-template-columns:2fr 3fr;">
+        <div style="overflow:hidden; min-height:280px;">
+          <img src="/images/skylight.webp"
+               alt="Skylight fitted into a garden room flat roof"
+               style="width:100%; height:100%; object-fit:cover;" loading="lazy" />
+        </div>
+        <div style="padding:28px; display:flex; flex-direction:column; justify-content:center;">
+          <div style="display:inline-block; background:#e7f1e3; color:#257a21; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:4px 12px; border-radius:50px; margin-bottom:14px;">Optional Upgrade</div>
+          <h2 style="font-size:1.15rem; font-weight:700; color:#2d3841; margin:0 0 10px;">Skylights</h2>
+          <p style="font-size:13.5px; color:#555; line-height:1.8; margin:0 0 20px;">Overhead glazing brings in a quality of light that no wall window can match — especially on flat-roof builds where rear glazing isn't possible. We fit triple-glazed skylights with a 20-year warranty as standard.</p>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+            {[
+              { label: 'Glazing', value: 'Triple glazed' },
+              { label: 'U Value', value: '0.9 W/m²K' },
+              { label: 'G Value', value: '58%' },
+              { label: 'Noise reduction', value: '39 dB' },
+              { label: 'Internal size', value: '1000 × 2000 mm' },
+              { label: 'Warranty', value: '20 years' },
+            ].map(s => (
+              <div style="background:#f8faf7; border-radius:10px; padding:10px 14px; border:1px solid #ebeced;">
+                <p style="font-size:11px; font-weight:700; color:#888; text-transform:uppercase; letter-spacing:0.05em; margin:0 0 2px;">{s.label}</p>
+                <p style="font-size:13.5px; font-weight:700; color:#2d3841; margin:0;">{s.value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <!-- Integral Blinds -->
       <div style="border-radius:16px; overflow:hidden; border:1px solid #ebeced; margin-bottom:48px;">
         <div style="height:300px; overflow:hidden;">
@@ -102,5 +131,6 @@ const windows = [
   @media (max-width: 640px) {
     div[style*="grid-template-columns:2fr 3fr"] { grid-template-columns: 1fr !important; }
     div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+    div[style*="grid-template-columns:1fr 1fr"][style*="gap:10px"] { grid-template-columns: 1fr 1fr !important; }
   }
 </style>
