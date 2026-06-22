@@ -1,5 +1,6 @@
 ---
 import InfoLayout from '../layouts/InfoLayout.astro';
+import Icon from '../components/Icon.astro';
 ---
 
 <InfoLayout
@@ -57,15 +58,17 @@ import InfoLayout from '../layouts/InfoLayout.astro';
         <h2 style="font-size:clamp(1.3rem,2.5vw,1.75rem); font-weight:700; color:#2d3841; margin-bottom:20px;">What You'll See</h2>
         <div style="display:flex; flex-direction:column; gap:12px;">
           {[
-            { icon: '🏠', title: 'A Real Finished Garden Room', desc: 'Walk through a full-size, completed garden room — not a show stand or a floor plan. Get a proper feel for the space, the height, the light.' },
-            { icon: '🪵', title: 'Cladding Options on Display', desc: 'Touch and compare our cladding materials side by side — Cedar, Charred Spruce, Thermo Ayous, Hardie Plank, metal cladding and more.' },
-            { icon: '🏗️', title: 'Roof & Structure on Show', desc: 'See the EPDM flat roof detail and structural build quality up close — understand how we build before you commit.' },
-            { icon: '🚪', title: 'Doors, Windows & Glazing', desc: 'Aluminium bifolds, French doors, sliding doors, slot windows — inspect the hardware and glazing quality up close.' },
-            { icon: '🏡', title: 'Flooring & Interior Finish', desc: 'Sample flooring options and see how our plaster finish looks and feels at full scale.' },
-            { icon: '💡', title: 'Lighting & Electrical', desc: 'See LED canopy lighting, internal downlights, and our consumer unit setup in a real installed context.' },
+            { icon: 'home',   title: 'A Real Finished Garden Room', desc: 'Walk through a full-size, completed garden room — not a show stand or a floor plan. Get a proper feel for the space, the height, the light.' },
+            { icon: 'layers', title: 'Cladding Options on Display', desc: 'Touch and compare our cladding materials side by side — Cedar, Charred Spruce, Thermo Ayous, Hardie Plank, metal cladding and more.' },
+            { icon: 'box',    title: 'Roof & Structure on Show', desc: 'See the EPDM flat roof detail and structural build quality up close — understand how we build before you commit.' },
+            { icon: 'door',   title: 'Doors, Windows & Glazing', desc: 'Aluminium bifolds, French doors, sliding doors, slot windows — inspect the hardware and glazing quality up close.' },
+            { icon: 'ruler',  title: 'Flooring & Interior Finish', desc: 'Sample flooring options and see how our plaster finish looks and feels at full scale.' },
+            { icon: 'bulb',   title: 'Lighting & Electrical', desc: 'See LED canopy lighting, internal downlights, and our consumer unit setup in a real installed context.' },
           ].map(item => (
             <div style="display:flex; gap:14px; padding:16px; background:#f8faf7; border-radius:12px; border:1px solid #ebeced;">
-              <span style="font-size:18px; flex-shrink:0;">{item.icon}</span>
+              <div style="width:36px; height:36px; background:#34a02e; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <Icon name={item.icon} size={18} color="#fff" />
+              </div>
               <div>
                 <p style="font-size:13px; font-weight:700; color:#2d3841; margin:0 0 3px;">{item.title}</p>
                 <p style="font-size:12.5px; color:#555; line-height:1.6; margin:0;">{item.desc}</p>
