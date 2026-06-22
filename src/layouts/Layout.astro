@@ -46,9 +46,15 @@ const canonicalUrl = canonical ? `${siteUrl}${canonical}` : `${siteUrl}${Astro.u
   <meta name="twitter:image" content={`${siteUrl}${image}`} />
 
   <!-- Preload LCP image if specified -->
-  {preloadImg && (
-    <link rel="preload" as="image" href={preloadImg} fetchpriority="high" />
-  )}
+  {preloadImg && (() => {
+    const filename = preloadImg.split('/').pop()!;
+    const decoded = decodeURIComponent(filename);
+    const dot = decoded.lastIndexOf('.');
+    const base = decoded.substring(0, dot);
+    const sm = '/images/sm/' + encodeURIComponent(base + '-sm.webp');
+    const imgSrcset = `${sm} 900w, ${preloadImg} 1920w`;
+    return <link rel="preload" as="image" href={preloadImg} imagesrcset={imgSrcset} imagesizes="100vw" fetchpriority="high" />;
+  })()}
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/images/favicon.png" />
