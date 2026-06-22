@@ -78,34 +78,27 @@ const whyUs = [
         alt="Bespoke garden room built by The Green Rooms, Surrey"
         style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:1;transition:opacity 1.2s ease;"
         fetchpriority="high" />
-      <img class="hero-slide" src="/images/HERO%20Bespoke%20build.jpg"
+      <img class="hero-slide" data-src="/images/HERO%20Bespoke%20build.jpg"
         alt="Bespoke garden room exterior, Surrey"
-        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.2s ease;"
-        loading="lazy" />
-      <img class="hero-slide" src="/images/HERO%20Bespoke%20garden%20room%20end%20of%20garden.jpeg"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.2s ease;" />
+      <img class="hero-slide" data-src="/images/HERO%20Bespoke%20garden%20room%20end%20of%20garden.jpeg"
         alt="Bespoke garden room at end of Surrey garden"
-        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.2s ease;"
-        loading="lazy" />
-      <img class="hero-slide" src="/images/HERO%20GR%204m%20bifolds.jpg"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.2s ease;" />
+      <img class="hero-slide" data-src="/images/HERO%20GR%204m%20bifolds.jpg"
         alt="Garden room with 4m bifold doors, Surrey"
-        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.2s ease;"
-        loading="lazy" />
-      <img class="hero-slide" src="/images/HERO%20Golf%20sim.jpg"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.2s ease;" />
+      <img class="hero-slide" data-src="/images/HERO%20Golf%20sim.jpg"
         alt="Golf simulator garden room, Surrey"
-        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.2s ease;"
-        loading="lazy" />
-      <img class="hero-slide" src="/images/HERO%20crittal%20doors%20millboard%20cladding%20in%20burnt%20cedar%20GP.jpg"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.2s ease;" />
+      <img class="hero-slide" data-src="/images/HERO%20crittal%20doors%20millboard%20cladding%20in%20burnt%20cedar%20GP.jpg"
         alt="Garden pod with crittall doors and millboard cladding, Surrey"
-        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.2s ease;"
-        loading="lazy" />
-      <img class="hero-slide" src="/images/HERO%20extended%20height%20golf%20sim%20millboard%20board%20and%20batten%20in%20anthracite.jpg"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.2s ease;" />
+      <img class="hero-slide" data-src="/images/HERO%20extended%20height%20golf%20sim%20millboard%20board%20and%20batten%20in%20anthracite.jpg"
         alt="Extended height golf simulator studio with millboard cladding, Surrey"
-        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.2s ease;"
-        loading="lazy" />
-      <img class="hero-slide" src="/images/Hero%20showroom.jpeg"
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.2s ease;" />
+      <img class="hero-slide" data-src="/images/Hero%20showroom.jpeg"
         alt="The Green Rooms showroom in Lyne, Surrey"
-        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.2s ease;"
-        loading="lazy" />
+        style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.2s ease;" />
       <!-- Neutral left-side gradient for text legibility -->
       <div style="position:absolute;inset:0;z-index:1;background:linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0) 70%);pointer-events:none;"></div>
     </div>
@@ -352,10 +345,18 @@ const whyUs = [
   let current = 0;
   let timer: ReturnType<typeof setInterval>;
 
+  function loadSlide(slide: HTMLElement) {
+    const s = slide as HTMLImageElement;
+    if (s.dataset.src && !s.src) {
+      s.src = s.dataset.src;
+    }
+  }
+
   function goTo(index: number) {
     slides[current].style.opacity = '0';
     dots[current].classList.remove('active');
     current = index;
+    loadSlide(slides[current] as HTMLElement);
     slides[current].style.opacity = '1';
     dots[current].classList.add('active');
   }
