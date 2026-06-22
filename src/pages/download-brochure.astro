@@ -46,7 +46,7 @@ const brochures = [
         <div class="brochure-viewer" data-brochure={bi} style={bi === 0 ? '' : 'display:none;'}>
 
           <!-- Main page display -->
-          <div style="position:relative; background:#2d3841; border-radius:20px; overflow:hidden; margin-bottom:20px; display:flex; align-items:center; justify-content:center; min-height:560px;">
+          <div style="position:relative; border-radius:16px; overflow:hidden; margin-bottom:20px; box-shadow:0 8px 40px rgba(0,0,0,0.15);">
 
             {b.pages.map((pg, pi) => (
               <img
@@ -54,7 +54,7 @@ const brochures = [
                 data-viewer={bi}
                 src={pg}
                 alt={`${b.title} page ${pi + 1}`}
-                style={`max-width:100%; max-height:75vh; width:auto; object-fit:contain; display:${pi === 0 ? 'block' : 'none'};`}
+                style={`width:100%; display:${pi === 0 ? 'block' : 'none'};`}
               />
             ))}
 
@@ -104,6 +104,33 @@ const brochures = [
 <script>
   const viewers: Record<number, number> = {};
 
+  function playPageTurn() {
+    try {
+      const ctx = new AudioContext();
+      const duration = 0.12;
+      const bufferSize = Math.floor(ctx.sampleRate * duration);
+      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) {
+        const env = Math.pow(1 - i / bufferSize, 1.8);
+        data[i] = (Math.random() * 2 - 1) * env;
+      }
+      const source = ctx.createBufferSource();
+      source.buffer = buffer;
+      const filter = ctx.createBiquadFilter();
+      filter.type = 'bandpass';
+      filter.frequency.value = 2200;
+      filter.Q.value = 0.8;
+      const gain = ctx.createGain();
+      gain.gain.setValueAtTime(0.18, ctx.currentTime);
+      source.connect(filter);
+      filter.connect(gain);
+      gain.connect(ctx.destination);
+      source.start();
+      source.onended = () => ctx.close();
+    } catch {}
+  }
+
   function showPage(viewerIdx: number, pageIdx: number) {
     const pages = document.querySelectorAll<HTMLElement>(`.brochure-page[data-viewer="${viewerIdx}"]`);
     const thumbs = document.querySelectorAll<HTMLElement>(`.pg-thumb[data-viewer="${viewerIdx}"]`);
@@ -121,6 +148,7 @@ const brochures = [
     btn.addEventListener('click', () => {
       const pages = document.querySelectorAll(`.brochure-page[data-viewer="${vi}"]`);
       const cur = viewers[vi] ?? 0;
+      playPageTurn();
       showPage(vi, (cur - 1 + pages.length) % pages.length);
     });
   });
@@ -130,6 +158,7 @@ const brochures = [
     btn.addEventListener('click', () => {
       const pages = document.querySelectorAll(`.brochure-page[data-viewer="${vi}"]`);
       const cur = viewers[vi] ?? 0;
+      playPageTurn();
       showPage(vi, (cur + 1) % pages.length);
     });
   });
@@ -137,6 +166,7 @@ const brochures = [
   // Thumbnails
   document.querySelectorAll<HTMLElement>('.pg-thumb').forEach(btn => {
     btn.addEventListener('click', () => {
+      playPageTurn();
       showPage(Number(btn.dataset.viewer), Number(btn.dataset.page));
     });
   });
@@ -146,11 +176,13 @@ const brochures = [
     if (e.key === 'ArrowRight') {
       const vi = 0;
       const pages = document.querySelectorAll(`.brochure-page[data-viewer="${vi}"]`);
+      playPageTurn();
       showPage(vi, ((viewers[vi] ?? 0) + 1) % pages.length);
     }
     if (e.key === 'ArrowLeft') {
       const vi = 0;
       const pages = document.querySelectorAll(`.brochure-page[data-viewer="${vi}"]`);
+      playPageTurn();
       showPage(vi, ((viewers[vi] ?? 0) - 1 + pages.length) % pages.length);
     }
   });
