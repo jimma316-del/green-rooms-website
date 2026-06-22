@@ -137,7 +137,7 @@ const isSurrey = area === 'surrey';
   canonical={`/areas/${area}`}
   pageTitle={isSurrey ? 'Garden Rooms Across Surrey' : `Garden Rooms in ${name}`}
   pageSubtitle={isSurrey ? 'Based in Lyne, Surrey — we cover the whole county.' : `Bespoke garden rooms designed and built in ${name} and the surrounding area.`}
-  heroImg="/images/classic GR front on thermo ayous cladding.jpg"
+  heroImg="/images/classic GR front on thermo ayous cladding.webp"
   heroAlt={`Bespoke garden room built by The Green Rooms, serving ${name}`}
   breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Areas', href: '/areas/surrey' }, { label: name }]}
 >
@@ -199,12 +199,12 @@ const isSurrey = area === 'surrey';
       </div>
       <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
         {[
-          { title: 'Garden Offices', href: '/garden-rooms/garden-offices', desc: 'Fully insulated, wired, and plastered — ready to work in from day one.', img: '/images/GP%20office%20internal.jpg' },
-          { title: 'Garden Rooms', href: '/garden-rooms/garden-rooms', desc: 'Versatile spaces for living, hobbies, fitness, or entertainment.', img: '/images/Hero%20GR.jpg' },
-          { title: 'Bespoke Builds', href: '/garden-rooms/bespoke', desc: 'Any shape, any size, any specification. We start with a blank page.', img: '/images/HERO%20Bespoke%20build.jpg' },
-          { title: 'Golf Simulators', href: '/garden-rooms/golf-simulator-studios', desc: 'Extended height structures built around your simulator setup.', img: '/images/HERO%20Golf%20sim.jpg' },
-          { title: 'Garden Pods', href: '/garden-rooms/garden-pods', desc: 'Compact, affordable, and ready in as little as two weeks.', img: '/images/Classic%20GP%20upvc%20sliding%20doors%20Hero.jpg' },
-          { title: 'With Storage', href: '/garden-rooms/garden-rooms-with-storage', desc: 'A garden room and a storage room in one seamless structure.', img: '/images/GR%20with%20storage%20cedar%20and%20step.jpg' },
+          { title: 'Garden Offices', href: '/garden-rooms/garden-offices', desc: 'Fully insulated, wired, and plastered — ready to work in from day one.', img: '/images/GP%20office%20internal.webp' },
+          { title: 'Garden Rooms', href: '/garden-rooms/garden-rooms', desc: 'Versatile spaces for living, hobbies, fitness, or entertainment.', img: '/images/Hero%20GR.webp' },
+          { title: 'Bespoke Builds', href: '/garden-rooms/bespoke', desc: 'Any shape, any size, any specification. We start with a blank page.', img: '/images/HERO%20Bespoke%20build.webp' },
+          { title: 'Golf Simulators', href: '/garden-rooms/golf-simulator-studios', desc: 'Extended height structures built around your simulator setup.', img: '/images/HERO%20Golf%20sim.webp' },
+          { title: 'Garden Pods', href: '/garden-rooms/garden-pods', desc: 'Compact, affordable, and ready in as little as two weeks.', img: '/images/Classic%20GP%20upvc%20sliding%20doors%20Hero.webp' },
+          { title: 'With Storage', href: '/garden-rooms/garden-rooms-with-storage', desc: 'A garden room and a storage room in one seamless structure.', img: '/images/GR%20with%20storage%20cedar%20and%20step.webp' },
         ].map(p => (
           <a href={p.href} style="display:block; background:#fff; border-radius:14px; overflow:hidden; border:1px solid #ebeced; text-decoration:none;">
             <img src={p.img} alt={p.title} style="width:100%; height:180px; object-fit:cover;" loading="lazy" />
