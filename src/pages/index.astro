@@ -370,6 +370,20 @@ const whyUs = [
     }
   }
 
+  // Preload all deferred slides in the background after page load
+  // so they're cache-hits when the slider reaches them
+  window.addEventListener('load', () => {
+    slides.forEach((slide, i) => {
+      if (i === 0) return;
+      const s = slide as HTMLImageElement;
+      if (!s.dataset.src) return;
+      const img = new Image();
+      if (s.dataset.srcset) img.srcset = s.dataset.srcset;
+      img.sizes = '100vw';
+      img.src = s.dataset.src;
+    });
+  });
+
   function goTo(index: number) {
     slides[current].style.opacity = '0';
     dots[current].classList.remove('active');
