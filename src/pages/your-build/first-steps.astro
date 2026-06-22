@@ -47,20 +47,17 @@ import InfoLayout from '../../layouts/InfoLayout.astro';
 
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:48px;">
         {[
-          { step:'01', title:'Free Site Visit', timing:'Week 1', body:"We visit your garden, assess the site and take measurements. We'll advise on planning permission, foundation type, access and design options. No charge, no obligation, no hard sell." },
-          { step:'02', title:'Design & Quote', timing:'Week 1–2', body:"We produce a detailed, itemised quote covering every element of the build at a fixed price. No hidden extras — what you agree is what you pay." },
-          { step:'03', title:'Deposit & Scheduling', timing:'After approval', body:"Once you approve the quote we take a deposit and lock in your build date. Lead times vary by season — we'll give you a confirmed start date." },
-          { step:'04', title:'Foundations', timing:'Build Day 1', body:'Our team installs ground screw foundations — no concrete, no excavation, works on slopes. Most builds are fully in the ground in a single day.' },
-          { step:'05', title:'Structure, Cladding & Fit-Out', timing:'Days 2–14', body:'SIPs frame, roof, cladding, glazing, electrics, plastering and flooring. Most builds complete in 2–3 weeks from first day on site.' },
-          { step:'06', title:'Handover & Sign-Off', timing:'Final day', body:'Full walk-through, electrical certificate issued, site left completely clean. Keys in hand, room ready to use.' },
+          { step:'01', title:'Free Site Visit', body:"We visit your garden, assess the site and take measurements. We'll advise on planning permission, foundation type, access and design options. No charge, no obligation, no hard sell." },
+          { step:'02', title:'Design & Quote', body:"We produce a detailed, itemised quote covering every element of the build at a fixed price. We'll get it over to you within 24 hours of the site visit. No hidden extras — what you agree is what you pay." },
+          { step:'03', title:'Deposit & Scheduling', body:"Once you approve the quote we take a deposit and lock in your build date. Lead times vary by season — we'll give you a confirmed start date." },
+          { step:'04', title:'Foundations', body:'Our team installs ground screw foundations — no concrete, no excavation, works on slopes. Most builds are fully in the ground in a single day.' },
+          { step:'05', title:'Structure, Cladding & Fit-Out', body:'SIPs frame, roof, cladding, glazing, electrics, plastering and flooring. Most builds complete in 2–3 weeks from first day on site.' },
+          { step:'06', title:'Handover & Sign-Off', body:'Full walk-through, electrical certificate issued, site left completely clean. Keys in hand, room ready to use.' },
         ].map(s => (
           <div style="background:#fff; border:1px solid #ebeced; border-radius:14px; padding:22px 24px; display:flex; gap:14px; align-items:flex-start;">
             <div style="font-family:'Poppins',sans-serif; font-size:1.5rem; font-weight:800; color:#e7f1e3; flex-shrink:0; line-height:1; margin-top:2px;">{s.step}</div>
             <div style="flex:1;">
-              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:8px;">
-                <h3 style="font-size:14px; font-weight:700; color:#2d3841; margin:0;">{s.title}</h3>
-                <span style="font-size:11px; font-weight:600; color:#34a02e; background:#e7f1e3; padding:3px 10px; border-radius:50px; white-space:nowrap;">{s.timing}</span>
-              </div>
+              <h3 style="font-size:14px; font-weight:700; color:#2d3841; margin:0 0 8px;">{s.title}</h3>
               <p style="font-size:13px; color:#555; line-height:1.75; margin:0;">{s.body}</p>
             </div>
           </div>
