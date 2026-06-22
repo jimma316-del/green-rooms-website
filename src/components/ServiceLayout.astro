@@ -27,7 +27,7 @@ const whyUs = [
   { title: 'SIPs Construction', desc: 'Structural Insulated Panels — far superior insulation, strength and soundproofing compared to timber frame. Warm in winter, cool in summer.' },
   { title: '30+ Year Cladding', desc: 'Thermo Ayous, Cedar, Charred Spruce, Hardie Plank, Millboard or Thermo Ash. Every material chosen for longevity. No Redwood, ever.' },
   { title: '20-Year Roof Guarantee', desc: 'EPDM or metal panel on every build — never felt. Both carry a 20-year guarantee as standard.' },
-  { title: 'Fully Turnkey Service', desc: 'Foundations, structure, cladding, glazing, electrics, flooring, plastering, and site clean-up. Nothing left for you to organise.' },
+  { title: 'Fully Turnkey Service', desc: 'Foundations, structure, cladding, glazing, electrics, flooring, plastering, and site clean-up all included. We hand the keys over on the last day — you walk into a finished room.' },
   { title: 'Electrical Sign-Off', desc: 'Mains-connected consumer unit, full testing, and a signed electrical certificate included on every single build.' },
   { title: 'Built in 2–3 Weeks', desc: 'Our experienced team of carpenters complete most builds within 2–3 weeks from start to handover.' },
 ];
@@ -116,6 +116,39 @@ const whyUs = [
     </section>
   )}
 
+  <!-- TURNKEY INCLUSIONS — every service page -->
+  <section style="background:#2d3841; padding:64px 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:36px;">
+        <div style="display:inline-block; background:rgba(52,160,46,0.15); color:#34a02e; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:5px 14px; border-radius:50px; margin-bottom:14px;">Fully Turnkey</div>
+        <h2 style="font-size:clamp(1.4rem,2.5vw,1.9rem); font-weight:700; color:#fff; margin:0 0 10px;">Everything's Included. Nothing Left to Organise.</h2>
+        <p style="color:rgba(255,255,255,0.6); font-size:1rem; max-width:560px; margin:0 auto; line-height:1.7;">We hand the keys over on the final day. You walk into a finished, ready-to-use room — we handle everything from groundworks to flooring.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:20px;">
+        {[
+          'Ground screw foundations',
+          'SIPs structural panels',
+          'EPDM or metal roof',
+          'External cladding',
+          'Doors & windows',
+          'Full mains electrics',
+          'Consumer unit & cert',
+          'LED lighting',
+          'Fully plastered interior',
+          'Fitted flooring',
+          'Site clean-up',
+          '10-year guarantee',
+        ].map(item => (
+          <div style="display:flex; align-items:center; gap:8px; background:rgba(255,255,255,0.06); padding:10px 14px; border-radius:10px; border:1px solid rgba(52,160,46,0.2);">
+            <svg width="14" height="14" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            <span style="font-size:13px; font-weight:600; color:rgba(255,255,255,0.85);">{item}</span>
+          </div>
+        ))}
+      </div>
+      <p style="text-align:center; font-size:12.5px; color:rgba(255,255,255,0.4); margin:0;">Interior decorating (painting / wallpaper after plastering) is not included but can be arranged through our trusted decorator — just ask.</p>
+    </div>
+  </section>
+
   <!-- EXTRA CONTENT SLOT -->
   <slot />
 
@@ -190,10 +223,12 @@ const whyUs = [
     div[style*="grid-template-columns:1.1fr 1fr"],
     div[style*="grid-template-columns:1fr 2fr"] { grid-template-columns: 1fr !important; gap: 40px !important; }
     div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+    div[style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: 1fr 1fr !important; }
     div[style*="position:sticky"] { position: static !important; }
   }
   @media (max-width: 600px) {
     div[style*="grid-template-columns:repeat(3,1fr)"],
+    div[style*="grid-template-columns:repeat(4,1fr)"],
     div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
   }
 </style>
