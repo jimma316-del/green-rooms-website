@@ -375,19 +375,18 @@ const whyUs = [
     }
   }
 
-  // Preload all deferred slides in the background after page load
-  // so they're cache-hits when the slider reaches them
-  window.addEventListener('load', () => {
-    slides.forEach((slide, i) => {
-      if (i === 0) return;
-      const s = slide as HTMLImageElement;
-      if (!s.dataset.src) return;
+  function preloadNext(index: number) {
+    const next = slides[(index + 1) % slides.length] as HTMLImageElement;
+    if (next.dataset.src && !next.src) {
       const img = new Image();
-      if (s.dataset.srcset) img.srcset = s.dataset.srcset;
+      if (next.dataset.srcset) img.srcset = next.dataset.srcset;
       img.sizes = '100vw';
-      img.src = s.dataset.src;
-    });
-  });
+      img.src = next.dataset.src;
+    }
+  }
+
+  // Preload just slide 2 after page load so first transition is instant
+  window.addEventListener('load', () => preloadNext(0));
 
   function goTo(index: number) {
     slides[current].style.opacity = '0';
@@ -396,6 +395,7 @@ const whyUs = [
     loadSlide(slides[current] as HTMLElement);
     slides[current].style.opacity = '1';
     dots[current].classList.add('active');
+    preloadNext(index);
   }
 
   function next() {
