@@ -388,20 +388,27 @@ const steps = ['Size','Structure','Cladding','Walls','Features','Decking','Doors
           </div>
 
           <!-- Price always visible -->
-          <div style="background:#2d3841; border-radius:16px; padding:24px; margin-bottom:24px; text-align:center;">
+          <div style="background:#2d3841; border-radius:16px; padding:32px 24px; margin-bottom:28px; text-align:center;">
             <p style="font-size:11px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.1em; margin:0 0 10px;">Your Guide Price</p>
-            <p id="final-price-display" style="font-family:'Poppins',sans-serif; font-size:2.8rem; font-weight:700; color:#fff; margin:0 0 4px;">£—</p>
-            <p style="font-size:12px; color:rgba(255,255,255,0.4); margin:0 0 20px;">Inc VAT · Guide price · Confirmed after free site visit</p>
-            <div id="final-breakdown" style="border-top:1px solid rgba(255,255,255,0.1); padding-top:14px; display:grid; gap:4px; text-align:left;"></div>
+            <p id="final-price-display" style="font-family:'Poppins',sans-serif; font-size:3rem; font-weight:700; color:#fff; margin:0 0 8px;">£—</p>
+            <p style="font-size:12px; color:rgba(255,255,255,0.4); margin:0;">Inc VAT · Guide price · Confirmed after free site visit</p>
           </div>
 
-          <!-- Email capture form -->
-          <form id="quote-form" method="POST" style="display:flex; flex-direction:column; gap:14px;">
+          <!-- Lead capture form -->
+          <form id="quote-form" method="POST" style="display:flex; flex-direction:column; gap:16px;">
             <input type="hidden" name="form-name" value="calculator-quote" />
             <input type="hidden" name="guide-price" id="hidden-price" />
             <input type="hidden" name="configuration" id="hidden-config" />
-            <p style="font-size:13.5px; font-weight:600; color:#2d3841; margin:0;">Get the full breakdown emailed to you</p>
-            <p style="font-size:13px; color:#666; margin:-8px 0 4px; line-height:1.6;">We'll send your full specification to your inbox and follow up within one working day to arrange your free site visit.</p>
+
+            <p style="font-size:15px; font-weight:700; color:#2d3841; margin:0;">Get your quote sent over</p>
+            <p style="font-size:13px; color:#666; margin:-10px 0 4px; line-height:1.65;">We'll email your full spec and text you within 24 hours — just to check your location and access before we confirm the price. No sales calls, no pressure.</p>
+
+            <div>
+              <label class="form-label">Your address or postcode *</label>
+              <input type="text" name="address" required class="form-input" placeholder="e.g. Lyne, KT16 0AA" />
+              <p style="font-size:11.5px; color:#999; margin:5px 0 0; line-height:1.5;">Location and access can affect the final price — we check this before confirming so there are no surprises later.</p>
+            </div>
+
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
               <div>
                 <label class="form-label">First name *</label>
@@ -417,27 +424,21 @@ const steps = ['Size','Structure','Cladding','Walls','Features','Decking','Doors
               <input type="email" name="email" required class="form-input" placeholder="james@example.com" />
             </div>
             <div>
-              <label class="form-label">Phone number *</label>
+              <label class="form-label">Mobile number *</label>
               <input type="tel" name="phone" required class="form-input" placeholder="07700 900000" />
             </div>
-            <div>
-              <label class="form-label">Address</label>
-              <input type="text" name="address" class="form-input" placeholder="Your address / postcode" />
-            </div>
-            <button type="submit" class="btn-submit">Email me the full breakdown →</button>
-            <p style="font-size:11.5px; color:#888; text-align:center; margin:0;">No spam. No pressure. We'll follow up within one working day.</p>
+
+            <button type="submit" class="btn-submit">Send me my quote →</button>
+            <p style="font-size:11.5px; color:#888; text-align:center; margin:0;">No spam. No sales calls. We'll text you within 24 hours.</p>
           </form>
 
           <div id="form-success" style="display:none; padding:8px 0 24px; text-align:center;">
             <div style="width:44px; height:44px; background:#e7f1e3; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 12px;">
               <svg width="20" height="20" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
             </div>
-            <p style="font-size:14px; font-weight:700; color:#2d3841; margin:0 0 6px;">Breakdown sent!</p>
-            <p style="font-size:13px; color:#555; margin:0 0 20px; line-height:1.6;">We've emailed your full specification. One of our team will be in touch within one working day to arrange your free site visit.</p>
-            <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:12px;">
-              <a href="/contact-us" class="btn-primary" style="font-size:14px; padding:12px 24px;">Book a free site visit</a>
-              <a href="tel:01932640242" style="display:inline-flex; align-items:center; gap:6px; border:2px solid #ebeced; color:#2d3841; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:10px 20px; border-radius:50px; text-decoration:none;">Call 01932 640242</a>
-            </div>
+            <p style="font-size:14px; font-weight:700; color:#2d3841; margin:0 0 6px;">Quote sent to your inbox</p>
+            <p style="font-size:13px; color:#555; margin:0 0 20px; line-height:1.6;">We'll text you within 24 hours to check location and access. If everything looks good, we'll confirm the price and book in your free site visit.</p>
+            <a href="/contact-us" class="btn-primary" style="font-size:14px; padding:12px 28px; display:inline-block;">Book a free site visit</a>
           </div>
         </div>
 
@@ -736,25 +737,6 @@ const steps = ['Size','Structure','Cladding','Walls','Features','Decking','Doors
     if(hp) hp.value='£'+b.total.toLocaleString();
     const hc=document.getElementById('hidden-config') as HTMLInputElement|null;
     if(hc) hc.value=JSON.stringify(st);
-    const fb=document.getElementById('final-breakdown');
-    if(fb){
-      const rows:[string,number][]=[
-        ['Structure',b.structure],
-        ...(b.roof?[['Roof uplift',b.roof] as [string,number]]:[]),
-        ['Cladding',b.cladding],
-        ...(b.canopy?[['Canopy',b.canopy] as [string,number]]:[]),
-        ...(b.sideCanopy?[['Side canopy',b.sideCanopy] as [string,number]]:[]),
-        ...(b.storage?[['Storage room',b.storage] as [string,number]]:[]),
-        ...(b.glassCorner?[['Glass corner',b.glassCorner] as [string,number]]:[]),
-        ...(b.skylight?[['Skylight',b.skylight] as [string,number]]:[]),
-        ...(b.decking?[['Decking',b.decking] as [string,number]]:[]),
-        ['Doors',b.door],
-        ...(b.windows?[['Windows',b.windows] as [string,number]]:[]),
-        ...(b.electrical?[['Electrics',b.electrical] as [string,number]]:[]),
-        ...(b.climate?[['Climate',b.climate] as [string,number]]:[]),
-      ];
-      fb.innerHTML=rows.map(([l,v])=>`<div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.06)"><span style="font-size:12px;color:rgba(255,255,255,0.55)">${l}</span><span style="font-size:12px;font-weight:700;color:#fff">£${Math.round(v).toLocaleString()}</span></div>`).join('');
-    }
   }
 
   document.getElementById('btn-next')!.addEventListener('click',()=>{ if(cur<10)goTo(cur+1); else goTo(11); });
