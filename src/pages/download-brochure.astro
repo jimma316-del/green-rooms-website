@@ -3,6 +3,16 @@ import Layout from '../layouts/Layout.astro';
 
 const brochures = [
   {
+    id: 'rooms',
+    title: 'Garden Rooms Brochure',
+    pages: Array.from({length: 6}, (_, i) => `/images/brochures/rooms/page${i+1}.webp`),
+  },
+  {
+    id: 'bespoke',
+    title: 'Bespoke Brochure',
+    pages: Array.from({length: 36}, (_, i) => `/images/brochures/bespoke/page${i+1}.webp`),
+  },
+  {
     id: 'pods',
     title: 'Garden Pods Brochure',
     pages: [
