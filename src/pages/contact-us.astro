@@ -24,6 +24,11 @@ import InfoLayout from '../layouts/InfoLayout.astro';
           <p style="font-size:13.5px; color:rgba(255,255,255,0.7); margin:0 0 28px; line-height:1.65;">We'll visit your garden, assess what's possible, and give you honest advice — with no obligation to proceed.</p>
           <form id="site-visit-form" name="site-visit" method="POST" style="display:flex; flex-direction:column; gap:14px;">
             <input type="hidden" name="form-name" value="site-visit" />
+            <input type="hidden" name="_timestamp" id="sv-timestamp" value="" />
+            <div style="position:absolute; left:-9999px; top:-9999px; opacity:0; pointer-events:none;" aria-hidden="true">
+              <label for="sv-website">Website</label>
+              <input type="text" id="sv-website" name="website" value="" tabindex="-1" autocomplete="off" />
+            </div>
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
               <div>
                 <label style="font-size:12px; font-weight:600; color:rgba(255,255,255,0.7); display:block; margin-bottom:5px;">First Name *</label>
@@ -88,6 +93,11 @@ import InfoLayout from '../layouts/InfoLayout.astro';
           <p style="font-size:13.5px; color:#555; margin:0 0 24px; line-height:1.65;">Want someone from the team at our Lyne showroom to walk you through everything in person? Book an appointment below.</p>
           <form id="showroom-form" name="showroom-appointment" method="POST" style="display:flex; flex-direction:column; gap:12px;">
             <input type="hidden" name="form-name" value="showroom-appointment" />
+            <input type="hidden" name="_timestamp" id="sh-timestamp" value="" />
+            <div style="position:absolute; left:-9999px; top:-9999px; opacity:0; pointer-events:none;" aria-hidden="true">
+              <label for="sh-website">Website</label>
+              <input type="text" id="sh-website" name="website" value="" tabindex="-1" autocomplete="off" />
+            </div>
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
               <div>
                 <label style="font-size:12px; font-weight:600; color:#555; display:block; margin-bottom:5px;">First Name *</label>
@@ -179,6 +189,13 @@ import InfoLayout from '../layouts/InfoLayout.astro';
 </InfoLayout>
 
 <script>
+  // Stamp load time into each form for timing check
+  const now = String(Date.now());
+  const svTs = document.getElementById('sv-timestamp') as HTMLInputElement | null;
+  const shTs = document.getElementById('sh-timestamp') as HTMLInputElement | null;
+  if (svTs) svTs.value = now;
+  if (shTs) shTs.value = now;
+
   function handleForm(formId: string, successId: string) {
     const form = document.getElementById(formId) as HTMLFormElement | null;
     const success = document.getElementById(successId);
@@ -186,6 +203,20 @@ import InfoLayout from '../layouts/InfoLayout.astro';
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+
+      // Honeypot check — bots fill this field
+      const honeypot = form.querySelector<HTMLInputElement>('input[name="website"]');
+      if (honeypot && honeypot.value) {
+        form.style.display = 'none'; success.style.display = 'block'; return;
+      }
+
+      // Timing check — bots submit in < 3 seconds
+      const tsInput = form.querySelector<HTMLInputElement>('input[name="_timestamp"]');
+      const elapsed = tsInput ? Date.now() - Number(tsInput.value) : 9999;
+      if (elapsed < 3000) {
+        form.style.display = 'none'; success.style.display = 'block'; return;
+      }
+
       if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
       fetch('/.netlify/functions/contact', {
         method: 'POST',

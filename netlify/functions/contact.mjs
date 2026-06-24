@@ -106,6 +106,16 @@ export default async (request) => {
     const body = await request.text()
     const p = new URLSearchParams(body)
 
+    // Spam protection — honeypot + timing
+    const honeypot = p.get('website') || ''
+    const timestamp = parseInt(p.get('_timestamp') || '0')
+    if (honeypot || (timestamp && Date.now() - timestamp < 3000)) {
+      return new Response(JSON.stringify({ success: true }), {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      })
+    }
+
     const firstName = p.get('first-name') || 'there'
     const surname = p.get('surname') || ''
     const fullName = [firstName, surname].filter(Boolean).join(' ')
