@@ -9,10 +9,11 @@ interface Props {
   pageSubtitle?: string;
   heroImg?: string;
   heroAlt?: string;
+  heroPos?: string;
   breadcrumb?: { label: string; href?: string }[];
 }
 
-const { title, description, canonical, pageTitle, pageSubtitle, heroImg, heroAlt = '', breadcrumb = [] } = Astro.props;
+const { title, description, canonical, pageTitle, pageSubtitle, heroImg, heroAlt = '', heroPos = 'center', breadcrumb = [] } = Astro.props;
 
 function smSrcset(img: string | undefined) {
   if (!img) return undefined;
@@ -37,7 +38,7 @@ const heroSrcset = smSrcset(heroImg);
         alt={heroAlt}
         fetchpriority="high"
         decoding="async"
-        style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center;"
+        style={`position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:${heroPos};`}
       />
       <div style="position:absolute; inset:0; background:linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 40%, rgba(0,0,0,0) 70%);"></div>
       <div style="position:relative; z-index:1; max-width:1280px; margin:0 auto; padding:0 24px 48px; width:100%;">
