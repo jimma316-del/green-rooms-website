@@ -361,7 +361,7 @@ const steps = ['Size','Structure','Cladding','Walls','Features','Decking','Doors
           </div>
           <div class="opt-list" id="climate-group">
             {[
-              { id:'none',        label:'None',                   desc:'SIPs keeps the room warm — add your own plug-in heater', img:IMG.climate1, price:0    },
+              { id:'none',        label:'None',                   desc:'SIPs keeps the room warm — add your own plug-in heater', img:'/images/GR%20internal%20with%20bifolds%20and%20decorated.webp', price:0    },
               { id:'ac_2_5kw',    label:'2.5kW Air Conditioning', desc:'For rooms up to ~25m² — heats and cools all year',       img:IMG.climate1, price:1860 },
               { id:'ac_5kw',      label:'5kW Air Conditioning',   desc:'For larger rooms or heavy use',                          img:IMG.climate2, price:2740 },
               { id:'wall_heater', label:'Smart Heater Panel',     desc:'Thermostat-controlled panel heater, fitted and wired',   img:IMG.climate3, price:330  },
@@ -387,16 +387,14 @@ const steps = ['Size','Structure','Cladding','Walls','Features','Decking','Doors
             <p class="step-sub">Just a couple of details so we can check your location and confirm the price is accurate for your area.</p>
           </div>
 
-          <!-- Price card — blurred until form submitted -->
-          <div style="background:#2d3841; border-radius:16px; padding:32px 24px; margin-bottom:24px; text-align:center; position:relative; overflow:hidden;">
-            <p style="font-size:11px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.1em; margin:0 0 10px;">Your Guide Price</p>
-            <p id="final-price-display" style="font-family:'Poppins',sans-serif; font-size:3rem; font-weight:700; color:#fff; margin:0 0 8px; filter:blur(10px); transition:filter 0.5s ease; user-select:none; pointer-events:none;">£──,───</p>
-            <p style="font-size:12px; color:rgba(255,255,255,0.4); margin:0;">Inc VAT · Guide price · Confirmed after free site visit</p>
-            <div id="price-lock-overlay" style="position:absolute; inset:0; background:rgba(25,35,42,0.5); display:flex; align-items:center; justify-content:center; transition:opacity 0.5s ease;">
-              <div style="display:flex; align-items:center; gap:8px; background:rgba(0,0,0,0.4); border-radius:50px; padding:9px 20px;">
-                <svg width="13" height="13" fill="rgba(255,255,255,0.8)" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
-                <span style="font-size:12px; color:rgba(255,255,255,0.85); font-weight:600;">Enter your details to reveal</span>
-              </div>
+          <!-- Price ready indicator — no number shown until form submitted -->
+          <div style="background:#f0faf0; border:2px solid #34a02e; border-radius:16px; padding:20px 24px; margin-bottom:24px; display:flex; align-items:center; gap:16px;">
+            <div style="width:40px; height:40px; background:#34a02e; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <svg width="20" height="20" fill="#fff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            </div>
+            <div>
+              <p style="font-size:14px; font-weight:700; color:#2d3841; margin:0 0 2px;">Your price is calculated</p>
+              <p style="font-size:13px; color:#555; margin:0; line-height:1.5;">Enter your details below to see your guide price — we'll send a copy to your inbox too.</p>
             </div>
           </div>
 
@@ -432,13 +430,20 @@ const steps = ['Size','Structure','Cladding','Walls','Features','Decking','Doors
             <p style="font-size:11.5px; color:#888; text-align:center; margin:0;">No spam. No sales calls. Unsubscribe any time.</p>
           </form>
 
-          <div id="form-success" style="display:none; padding:8px 0 24px; text-align:center;">
-            <div style="width:44px; height:44px; background:#e7f1e3; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 12px;">
-              <svg width="20" height="20" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          <div id="form-success" style="display:none;">
+            <div style="background:#2d3841; border-radius:16px; padding:32px 24px; margin-bottom:20px; text-align:center;">
+              <p style="font-size:11px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.1em; margin:0 0 10px;">Your Guide Price</p>
+              <p id="final-price-display" style="font-family:'Poppins',sans-serif; font-size:3rem; font-weight:700; color:#fff; margin:0 0 8px;">£──,───</p>
+              <p style="font-size:12px; color:rgba(255,255,255,0.4); margin:0;">Inc VAT · Guide price · Confirmed after free site visit</p>
             </div>
-            <p style="font-size:14px; font-weight:700; color:#2d3841; margin:0 0 6px;">Quote sent to your inbox</p>
-            <p style="font-size:13px; color:#555; margin:0 0 20px; line-height:1.6;">We've emailed your full spec. We'll be in touch to arrange a free site visit whenever you're ready.</p>
-            <a href="/contact-us" class="btn-primary" style="font-size:14px; padding:12px 28px; display:inline-block;">Book a free site visit</a>
+            <div style="padding:4px 0 24px; text-align:center;">
+              <div style="width:44px; height:44px; background:#e7f1e3; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 12px;">
+                <svg width="20" height="20" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              </div>
+              <p style="font-size:14px; font-weight:700; color:#2d3841; margin:0 0 6px;">Quote sent to your inbox</p>
+              <p style="font-size:13px; color:#555; margin:0 0 20px; line-height:1.6;">We've emailed your full spec. We'll be in touch to arrange a free site visit whenever you're ready.</p>
+              <a href="/contact-us" class="btn-primary" style="font-size:14px; padding:12px 28px; display:inline-block;">Book a free site visit</a>
+            </div>
           </div>
         </div>
 
@@ -843,10 +848,6 @@ const steps = ['Size','Structure','Cladding','Walls','Features','Decking','Doors
   });
 
   function revealPrice(){
-    const fd=document.getElementById('final-price-display');
-    if(fd){fd.style.filter='none';fd.style.userSelect='auto';fd.style.pointerEvents='auto';}
-    const lo=document.getElementById('price-lock-overlay');
-    if(lo){lo.style.opacity='0';setTimeout(()=>{lo.style.display='none';},500);}
     document.getElementById('quote-form')!.style.display='none';
     document.getElementById('form-success')!.style.display='block';
   }
