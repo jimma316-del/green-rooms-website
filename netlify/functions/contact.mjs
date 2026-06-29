@@ -45,12 +45,13 @@ function customerEmail(firstName, formType) {
 </html>`
 }
 
-function teamEmail(fullName, email, phone, postcode, roomType, source, message, formType) {
+function teamEmail(fullName, email, phone, address, postcode, roomType, source, message, formType) {
   const label = formType === 'showroom-appointment' ? 'Showroom Appointment Request' : 'Free Site Visit Enquiry'
   const rows = [
     ['Name', fullName],
     ['Email', email ? `<a href="mailto:${email}" style="color:#34a02e;">${email}</a>` : '—'],
     ['Phone', phone ? `<a href="tel:${phone}" style="color:#34a02e;">${phone}</a>` : '—'],
+    address ? ['Address', address] : null,
     postcode ? ['Postcode', postcode] : null,
     roomType ? ['Room Type', roomType] : null,
     source ? ['Source', source] : null,
@@ -121,6 +122,9 @@ export default async (request) => {
     const fullName = [firstName, surname].filter(Boolean).join(' ')
     const email = p.get('email') || ''
     const phone = p.get('phone') || ''
+    const houseNumber = p.get('house-number') || ''
+    const streetName = p.get('street-name') || ''
+    const address = [houseNumber, streetName].filter(Boolean).join(' ')
     const postcode = p.get('postcode') || ''
     const roomType = p.get('room-type') || ''
     const source = p.get('source') || ''
@@ -148,7 +152,7 @@ export default async (request) => {
       apiKey,
       TEAM_EMAIL,
       `New ${subjectLabel} Enquiry — ${fullName}${postcode ? ', ' + postcode : ''}`,
-      teamEmail(fullName, email, phone, postcode, roomType, source, message, formType),
+      teamEmail(fullName, email, phone, address, postcode, roomType, source, message, formType),
       email || undefined,
     )
 
