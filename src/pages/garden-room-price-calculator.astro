@@ -381,7 +381,7 @@ const steps = ['Size','Structure','Cladding','Walls','Features','Decking','Doors
 
         <!-- ── STEP 11: Quote form ── -->
         <div class="calc-step" data-step="11">
-          <div class="step-header">
+          <div class="step-header" id="step11-header">
             <div class="step-badge">Final step</div>
             <h2 class="step-title">Where are you based?</h2>
             <p class="step-sub">We use your postcode to tailor the price to your location and confirm we cover your area. We'll send your full breakdown to your inbox.</p>
@@ -405,7 +405,11 @@ const steps = ['Size','Structure','Cladding','Walls','Features','Decking','Doors
             </div>
 
             <div>
-              <label class="form-label">Your postcode *</label>
+              <label class="form-label">First line of address *</label>
+              <input type="text" name="address-line1" required class="form-input" placeholder="12 High Street" />
+            </div>
+            <div>
+              <label class="form-label">Postcode *</label>
               <input type="text" name="address" required class="form-input" placeholder="KT16 0AA" />
               <p style="font-size:11.5px; color:#999; margin:5px 0 0; line-height:1.5;">Used to assess your location and ensure the price is accurate for your area.</p>
             </div>
@@ -837,6 +841,8 @@ const steps = ['Size','Structure','Cladding','Walls','Features','Decking','Doors
   });
 
   function revealPrice(){
+    const h=document.getElementById('step11-header');
+    if(h)h.style.display='none';
     document.getElementById('quote-form')!.style.display='none';
     document.getElementById('form-success')!.style.display='block';
   }
