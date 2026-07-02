@@ -399,9 +399,14 @@ const steps = ['Size','Structure','Cladding','Walls','Features','Decking','Doors
                 <input type="text" name="first-name" required class="form-input" placeholder="James" />
               </div>
               <div>
-                <label class="form-label">Email address *</label>
-                <input type="email" name="email" required class="form-input" placeholder="james@example.com" />
+                <label class="form-label">Surname *</label>
+                <input type="text" name="last-name" required class="form-input" placeholder="Austin" />
               </div>
+            </div>
+
+            <div>
+              <label class="form-label">Email address *</label>
+              <input type="email" name="email" required class="form-input" placeholder="james@example.com" />
             </div>
 
             <div>
@@ -409,9 +414,18 @@ const steps = ['Size','Structure','Cladding','Walls','Features','Decking','Doors
               <input type="text" name="address-line1" required class="form-input" placeholder="12 High Street" />
             </div>
             <div>
-              <label class="form-label">Postcode *</label>
-              <input type="text" name="address" required class="form-input" placeholder="KT16 0AA" />
-              <p style="font-size:11.5px; color:#999; margin:5px 0 0; line-height:1.5;">Used to assess your location and ensure the price is accurate for your area.</p>
+              <label class="form-label">Second line of address <span style="color:#bbb; font-weight:400;">(optional)</span></label>
+              <input type="text" name="address-line2" class="form-input" placeholder="Village name, area" />
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+              <div>
+                <label class="form-label">Town / City *</label>
+                <input type="text" name="city" required class="form-input" placeholder="Chertsey" />
+              </div>
+              <div>
+                <label class="form-label">Postcode *</label>
+                <input type="text" name="postcode" required class="form-input" placeholder="KT16 0AA" />
+              </div>
             </div>
 
             <div>

@@ -230,8 +230,11 @@ export default async (request) => {
     const email = p.get('email') || ''
     const phone = p.get('phone') || ''
     const addressLine1 = p.get('address-line1') || ''
-    const postcode = p.get('address') || ''
-    const address = [addressLine1, postcode].filter(Boolean).join(', ')
+    const addressLine2 = p.get('address-line2') || ''
+    const city = p.get('city') || ''
+    // 'postcode' is the new field name; 'address' was the old (misnamed) postcode field
+    const postcode = p.get('postcode') || p.get('address') || ''
+    const address = [addressLine1, addressLine2, city, postcode].filter(Boolean).join(', ')
     const price = p.get('guide-price') || ''
     const configRaw = p.get('configuration') || '{}'
     let c = {}
@@ -275,7 +278,10 @@ export default async (request) => {
         name: fullName,
         email,
         phone,
-        address,
+        address: addressLine1 || null,
+        address_line_2: addressLine2 || null,
+        city: city || null,
+        postcode: postcode || null,
         width: c.width,
         depth: c.depth,
         'Estimated Price': price,
