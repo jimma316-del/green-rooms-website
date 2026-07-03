@@ -1,26 +1,55 @@
 ---
+import { getCollection } from 'astro:content';
 import InfoLayout from '../../layouts/InfoLayout.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
 ---
 
 <InfoLayout
-  title="Garden Room News & Ideas | The Green Rooms Surrey Blog"
-  description="Garden room ideas, guides and news from The Green Rooms — planning tips, cladding guides, build stories and more from our Surrey garden room builders."
+  title="Garden Room Ideas & Guides | The Green Rooms Surrey Blog"
+  description="Garden room ideas, guides and advice from The Green Rooms — planning tips, cladding guides, cost guides and build stories from our Surrey garden room builders."
   canonical="/news"
   pageTitle="News & Ideas"
-  pageSubtitle="Garden room guides, build stories and ideas from our team in Surrey."
+  pageSubtitle="Garden room guides, cost advice and ideas from our team in Surrey."
   breadcrumb={[{ label: 'Home', href: '/' }, { label: 'News' }]}
 >
 
   <section style="background:#fff; padding:80px 0;">
     <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
-      <div id="soro-blog"></div>
-      <script src="https://app.trysoro.com/api/embed/074399e7-9f01-4cbd-aaeb-d31d58ca04cb" defer is:inline></script>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:28px;">
+        {posts.map(post => (
+          <a href={`/news/${post.data.slug}`} style="text-decoration:none; display:flex; flex-direction:column; border-radius:16px; border:1px solid #ebeced; overflow:hidden; transition:box-shadow 0.2s;" class="blog-card">
+            <div style="padding:24px 24px 20px; flex:1; display:flex; flex-direction:column;">
+              <p style="font-size:11px; color:#999; font-weight:600; text-transform:uppercase; letter-spacing:0.07em; margin:0 0 10px;">
+                {new Date(post.data.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
+              </p>
+              <h2 style="font-family:'Poppins',sans-serif; font-size:1rem; font-weight:700; color:#2d3841; line-height:1.4; margin:0 0 10px;">{post.data.title}</h2>
+              <p style="font-size:13px; color:#666; line-height:1.7; margin:0 0 16px; flex:1;">{post.data.excerpt}</p>
+              <span style="font-size:13px; font-weight:600; color:#34a02e;">Read more →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#34a02e; padding:72px 24px; text-align:center;">
+    <div style="max-width:520px; margin:0 auto;">
+      <h2 style="font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700; color:#fff; margin-bottom:14px;">Ready to Get Started?</h2>
+      <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:28px;">Get an instant price estimate or book a free site visit — no obligation, no pressure.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+        <a href="/garden-room-price-calculator" class="btn-white" style="font-size:15px; padding:14px 32px;">Get an Instant Quote</a>
+        <a href="/contact-us" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.5); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none;">Book a Free Site Visit</a>
+      </div>
     </div>
   </section>
 
 </InfoLayout>
 
 <style>
+  .blog-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.10); }
   @media (max-width: 900px) {
     div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr 1fr !important; }
   }
