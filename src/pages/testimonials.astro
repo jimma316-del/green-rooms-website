@@ -2,6 +2,18 @@
 import InfoLayout from '../layouts/InfoLayout.astro';
 import Icon from '../components/Icon.astro';
 
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "The Green Rooms",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "39",
+    "bestRating": "5"
+  }
+};
+
 const reviews = [
   {
     name: 'Kate Hardesty',
@@ -41,6 +53,7 @@ const reviews = [
   heroAlt="Classic garden room end of garden, Surrey"
   breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Testimonials' }]}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(reviewSchema)} />
 
   <!-- Google rating hero -->
   <section style="background:#e7f1e3; padding:48px 24px; text-align:center;">

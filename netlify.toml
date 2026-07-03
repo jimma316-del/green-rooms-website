@@ -26,10 +26,6 @@
   to = "/our-prices"
   status = 301
 
-[[redirects]]
-  from = "/download-brochure"
-  to = "/contact-us"
-  status = 301
 
 [[redirects]]
   from = "/site-survey"

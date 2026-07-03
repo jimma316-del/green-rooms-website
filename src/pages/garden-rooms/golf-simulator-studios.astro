@@ -11,9 +11,24 @@ const features = [
 ];
 
 const packages = [
-  { name: 'Option 1 — Budget-Friendly', price: 'From £15,000', desc: 'Entry-level launch monitor, projector and screen setup. A great starting point for practice at home.' },
-  { name: 'Option 2 — Mid-Range', price: 'From £22,500', desc: 'Upgraded launch monitor with improved accuracy and course simulation. The most popular choice.' },
-  { name: 'Option 3 — Premium', price: 'From £37,500', desc: 'Professional-grade technology. The closest experience to a real course you can get at home.' },
+  {
+    name: 'Option 1 — Budget-Friendly',
+    price: 'From £15,000',
+    desc: 'Entry-level launch monitor, projector and screen setup. A great starting point for practice at home.',
+    includes: ['Entry-level launch monitor', 'Projector & impact screen', 'Artificial turf hitting mat', 'Golf simulation software', 'Wall protection padding', 'Gaming PC setup'],
+  },
+  {
+    name: 'Option 2 — Mid-Range',
+    price: 'From £22,500',
+    desc: 'Upgraded launch monitor with improved accuracy and course simulation. The most popular choice.',
+    includes: ['Mid-range launch monitor', 'High-brightness projector', 'Premium impact screen', 'Pro turf hitting mat', 'Wall & side protection', 'Gaming PC with premium software', '100+ course library'],
+  },
+  {
+    name: 'Option 3 — Premium',
+    price: 'From £37,500',
+    desc: 'Professional-grade technology. The closest experience to a real course you can get at home.',
+    includes: ['Professional launch monitor', 'Ultra-bright 4K projector', 'High-res premium screen', 'Pro hitting bay & mat', 'Full surround protection', 'High-spec gaming PC', '200+ course library', 'Club fitting integration'],
+  },
 ];
 
 const related = [
@@ -61,11 +76,22 @@ const related = [
       </div>
       <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
         {packages.map((pkg, i) => (
-          <div style={`background:#fff; border-radius:16px; padding:28px; border:2px solid ${i === 1 ? '#34a02e' : '#ebeced'}; position:relative;`}>
+          <div style={`background:#fff; border-radius:16px; padding:28px; border:2px solid ${i === 1 ? '#34a02e' : '#ebeced'}; position:relative; display:flex; flex-direction:column;`}>
             {i === 1 && <div style="position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:#34a02e; color:#fff; font-size:11px; font-weight:700; padding:4px 14px; border-radius:50px; white-space:nowrap;">Most Popular</div>}
             <p style="font-size:13px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.06em; margin:0 0 8px;">{pkg.name}</p>
             <p style="font-size:1.75rem; font-weight:700; color:#2d3841; margin:0 0 12px;">{pkg.price}</p>
-            <p style="font-size:13.5px; color:#666; line-height:1.65; margin:0;">{pkg.desc}</p>
+            <p style="font-size:13.5px; color:#666; line-height:1.65; margin:0 0 20px;">{pkg.desc}</p>
+            <div style="border-top:1px solid #f0f0f0; padding-top:16px; margin-top:auto;">
+              <p style="font-size:11px; font-weight:700; color:#2d3841; text-transform:uppercase; letter-spacing:0.07em; margin:0 0 10px;">What's included</p>
+              <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:6px;">
+                {pkg.includes.map(item => (
+                  <li style="display:flex; align-items:flex-start; gap:8px; font-size:12.5px; color:#555;">
+                    <svg width="12" height="12" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:2px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         ))}
       </div>

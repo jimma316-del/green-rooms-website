@@ -163,8 +163,8 @@ const whyUs = [
       </div>
     </div>
 
-    <!-- Slide dots -->
-    <div id="hero-dots" style="position:absolute; bottom:28px; right:32px; z-index:3; display:flex; gap:8px;">
+    <!-- Slide dots + pause -->
+    <div id="hero-dots" style="position:absolute; bottom:28px; right:32px; z-index:3; display:flex; gap:8px; align-items:center;">
       <button class="hero-dot active" data-index="0" aria-label="Slide 1"></button>
       <button class="hero-dot" data-index="1" aria-label="Slide 2"></button>
       <button class="hero-dot" data-index="2" aria-label="Slide 3"></button>
@@ -173,6 +173,9 @@ const whyUs = [
       <button class="hero-dot" data-index="5" aria-label="Slide 6"></button>
       <button class="hero-dot" data-index="6" aria-label="Slide 7"></button>
       <button class="hero-dot" data-index="7" aria-label="Slide 8"></button>
+      <button id="hero-pause" aria-label="Pause slideshow" style="width:26px; height:26px; background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.35); border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; padding:0; margin-left:4px; flex-shrink:0; transition:background 0.2s;">
+        <svg id="hero-pause-icon" width="10" height="11" fill="white" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+      </button>
     </div>
   </section>
 
@@ -415,8 +418,28 @@ const whyUs = [
     dot.addEventListener('click', () => {
       clearInterval(timer);
       goTo(Number(dot.dataset.index));
-      startTimer();
+      if (!paused) startTimer();
     });
+  });
+
+  const pauseBtn = document.getElementById('hero-pause') as HTMLButtonElement | null;
+  const pauseIcon = document.getElementById('hero-pause-icon');
+  let paused = false;
+  const PAUSE_SVG = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+  const PLAY_SVG = '<path d="M8 5v14l11-7z"/>';
+
+  pauseBtn?.addEventListener('click', () => {
+    if (paused) {
+      paused = false;
+      if (pauseIcon) pauseIcon.innerHTML = PAUSE_SVG;
+      if (pauseBtn) pauseBtn.setAttribute('aria-label', 'Pause slideshow');
+      startTimer();
+    } else {
+      paused = true;
+      if (pauseIcon) pauseIcon.innerHTML = PLAY_SVG;
+      if (pauseBtn) pauseBtn.setAttribute('aria-label', 'Play slideshow');
+      clearInterval(timer);
+    }
   });
 
   startTimer();

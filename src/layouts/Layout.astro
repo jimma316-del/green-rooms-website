@@ -9,6 +9,7 @@ interface Props {
   image?: string;
   canonical?: string;
   preloadImg?: string;
+  breadcrumbItems?: { name: string; url: string }[];
 }
 
 const {
@@ -17,9 +18,63 @@ const {
   image = '/images/og-default.webp',
   canonical,
   preloadImg,
+  breadcrumbItems,
 } = Astro.props;
 
+const isHome = canonical === '/';
 const siteUrl = 'https://www.thegreenrooms.com';
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "The Green Rooms",
+  "url": "https://www.thegreenrooms.com",
+  "logo": "https://cdn.prod.website-files.com/65fa73870456aaad8a954b46/661cf61b0d2c970adddf26ad_the-green-rooms%20White.webp",
+  "image": `${siteUrl}/images/Hero%20GR.webp`,
+  "telephone": "+441932640242",
+  "email": "info@thegreenrooms.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Lyne Lane",
+    "addressLocality": "Lyne",
+    "addressRegion": "Surrey",
+    "postalCode": "KT16 0AN",
+    "addressCountry": "GB"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 51.3871, "longitude": -0.5275 },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Surrey" },
+    { "@type": "AdministrativeArea", "name": "Berkshire" },
+    { "@type": "AdministrativeArea", "name": "West London" },
+    { "@type": "AdministrativeArea", "name": "South East England" }
+  ],
+  "priceRange": "£££",
+  "foundingDate": "2019",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "39",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "sameAs": [
+    "https://www.facebook.com/thegreenroomsltd",
+    "https://www.instagram.com/thegreenroomsltd/",
+    "https://www.linkedin.com/company/the-green-rooms-surrey/"
+  ]
+};
+
+const breadcrumbSchema = breadcrumbItems && breadcrumbItems.length > 1 ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbItems.map((item, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "name": item.name,
+    "item": `${siteUrl}${item.url}`
+  }))
+} : null;
+
 const canonicalUrl = canonical ? `${siteUrl}${canonical}` : `${siteUrl}${Astro.url.pathname}`;
 ---
 <!DOCTYPE html>
@@ -62,10 +117,15 @@ const canonicalUrl = canonical ? `${siteUrl}${canonical}` : `${siteUrl}${Astro.u
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192.png" />
 
-  <!-- Fonts — preconnect first, then single combined request -->
+  <!-- Fonts — async load to eliminate render-blocking -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap" /></noscript>
+
+  <!-- Structured data -->
+  {isHome && <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />}
+  {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GS62TB80X8" is:inline></script>

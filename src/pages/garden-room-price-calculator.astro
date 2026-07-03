@@ -433,6 +433,13 @@ const steps = ['Size','Structure','Cladding','Walls','Features','Decking','Doors
               <input type="tel" name="phone" class="form-input" placeholder="07700 900000" />
             </div>
 
+            <div style="background:#f8faf7; border-radius:10px; padding:12px 16px; display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap;">
+              <div style="display:flex; gap:2px;">
+                {[1,2,3,4,5].map(() => <svg width="14" height="14" fill="#f9bc02" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>)}
+              </div>
+              <span style="font-size:12.5px; color:#444; font-weight:600;">5.0 · 39 Google Reviews</span>
+              <span style="font-size:12px; color:#888; border-left:1px solid #ddd; padding-left:14px;">150+ builds completed</span>
+            </div>
             <button type="submit" class="btn-submit">Get my guide price →</button>
             <p style="font-size:11.5px; color:#888; text-align:center; margin:0;">No spam. No sales calls. Unsubscribe any time.</p>
           </form>
@@ -873,5 +880,34 @@ const steps = ['Size','Structure','Cladding','Walls','Features','Decking','Doors
       .catch(()=>revealPrice());
   });
 
+  // localStorage persistence — save state on any change, restore on load
+  function saveState(){ try{localStorage.setItem('tgr-calc',JSON.stringify(st));}catch{} }
+  function restoreState(){
+    try{
+      const raw=localStorage.getItem('tgr-calc');
+      if(!raw) return;
+      const saved=JSON.parse(raw);
+      Object.assign(st, saved);
+    }catch{}
+  }
+
+  // Patch renderPrice to also save
+  const _rp=renderPrice;
+  // @ts-ignore
+  (window as any).__calcSave=saveState;
+
+  // Save on every goTo
+  const _goTo=goTo;
+  // Wrap existing change handlers to save after each change
+  document.querySelectorAll<HTMLInputElement>('input[name="roof"],input[name="cladding-material"],input[name="cladding-walls"],input[name="door"],input[name="climate"]').forEach(r=>{
+    r.addEventListener('change',saveState);
+  });
+  document.querySelectorAll<HTMLInputElement>('input[name="elec"],input[name="window-1"],input[name="window-2"],input[name="window-3"],input[name="feature"]').forEach(cb=>{
+    cb.addEventListener('change',saveState);
+  });
+  document.getElementById('inp-width')?.addEventListener('input',saveState);
+  document.getElementById('inp-depth')?.addEventListener('input',saveState);
+
+  restoreState();
   goTo(1);
 </script>

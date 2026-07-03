@@ -15,6 +15,10 @@ interface Props {
 
 const { title, description, canonical, pageTitle, pageSubtitle, heroImg, heroAlt = '', heroPos = 'center', breadcrumb = [] } = Astro.props;
 
+const breadcrumbItems = breadcrumb.length > 1
+  ? breadcrumb.map(b => ({ name: b.label, url: b.href ?? canonical }))
+  : undefined;
+
 function smSrcset(img: string | undefined) {
   if (!img) return undefined;
   const filename = img.split('/').pop()!;
@@ -27,7 +31,7 @@ function smSrcset(img: string | undefined) {
 const heroSrcset = smSrcset(heroImg);
 ---
 
-<Layout title={title} description={description} canonical={canonical} preloadImg={heroImg}>
+<Layout title={title} description={description} canonical={canonical} preloadImg={heroImg} breadcrumbItems={breadcrumbItems}>
 
   {heroImg ? (
     <section style="position:relative; height:48vh; min-height:360px; display:flex; align-items:flex-end; overflow:hidden; background:#1a2328;">
