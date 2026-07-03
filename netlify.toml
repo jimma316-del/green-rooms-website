@@ -31,3 +31,11 @@
   from = "/site-survey"
   to = "/contact-us"
   status = 301
+
+# Redirect old Soro ?post=slug URLs to new native blog post pages
+[[redirects]]
+  from = "/news"
+  to = "/news/:post"
+  status = 301
+  [redirects.query]
+    post = ":post"
