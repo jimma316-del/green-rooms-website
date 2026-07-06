@@ -91,11 +91,4 @@ export const yourBuildPages: YourBuildPage[] = [
     img: '/images/GR%20charred%20spruce%20in%20garden.webp',
     href: '/your-build/eco-friendly',
   },
-  {
-    slug: 'maintenance',
-    shortTitle: 'Maintenance',
-    desc: 'What to check, how often, and how to keep your room in perfect condition.',
-    img: '/images/classic%20GR%20front%20on%20thermo%20ayous%20cladding.webp',
-    href: '/your-build/maintenance',
-  },
 ];
