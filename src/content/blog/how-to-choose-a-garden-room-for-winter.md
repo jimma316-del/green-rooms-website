@@ -79,6 +79,6 @@ Of course, quality matters. A poorly built room may be cheaper upfront, but if i
 
 When you are investing in a garden room for winter, ask the unglamorous questions as confidently as the exciting ones. How is it insulated? What is the structure made from? What heating options are available? How will glazing affect warmth and privacy? Can the layout be tailored to your garden and the way you live?
 
-A good provider should make those conversations straightforward, not foggy. At The Green Rooms, that balance of design, build quality and tailored specification is exactly what turns an outdoor building into a room you will genuinely use in February, not just admire in July.
+A good provider should make those conversations straightforward, not foggy. At The Green Rooms, that balance of design, build quality and tailored specification is exactly what turns an outdoor building into a room you will genuinely use in February, not just admire in July. Our [all-year garden room guide](/garden-rooms/all-year-use) covers the key things to look for in more detail.
 
 Because the best garden room is not the one that photographs well on a bright summer afternoon. It is the one that still feels warm, stylish and quietly indispensable on a dark winter morning when the rest of the house is chaos and you would quite like to shut the door on it for an hour or two.

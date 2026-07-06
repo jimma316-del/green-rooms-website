@@ -1,5 +1,6 @@
 ---
 import InfoLayout from '../../layouts/InfoLayout.astro';
+import YourBuildNav from '../../components/YourBuildNav.astro';
 
 const steps = [
   {
@@ -48,6 +49,21 @@ const steps = [
     desc: 'We walk you through the finished room, hand over your guarantee documentation, and leave the site clean and tidy. Our 10-year structural guarantee covers your build from day one.',
   },
 ];
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How The Green Rooms Builds a Bespoke Garden Room",
+  "description": "From free site visit to final handover — the 9-step process for building a bespoke garden room with The Green Rooms in Surrey and the South East.",
+  "totalTime": "PT3W",
+  "estimatedCost": { "@type": "MonetaryAmount", "currency": "GBP", "minValue": "15450", "maxValue": "60000" },
+  "step": steps.map((s, i) => ({
+    "@type": "HowToStep",
+    "position": i + 1,
+    "name": s.title,
+    "text": s.desc
+  }))
+};
 ---
 
 <InfoLayout
@@ -56,8 +72,9 @@ const steps = [
   canonical="/your-build/build-process"
   pageTitle="How We Build Garden Rooms in Surrey"
   pageSubtitle="From first conversation to handover — here's exactly how a Green Rooms build works."
-  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build', href: '/your-build/first-steps' }, { label: 'Build Process' }]}
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build', href: '/your-build' }, { label: 'Build Process' }]}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
 
   <section style="background:#fff; padding:80px 0;">
     <div style="max-width:860px; margin:0 auto; padding:0 24px;">
@@ -92,4 +109,5 @@ const steps = [
     </div>
   </section>
 
+  <YourBuildNav currentSlug="build-process" />
 </InfoLayout>

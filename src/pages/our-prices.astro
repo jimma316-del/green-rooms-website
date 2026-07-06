@@ -142,6 +142,118 @@ const included = [
     </div>
   </section>
 
+  <!-- Price by size table -->
+  <section style="background:#f8faf7; padding:72px 0; border-top:1px solid #ebeced;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:40px;">
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin:0 0 10px;">Guide Prices by Size</h2>
+        <p style="font-size:15px; color:#666; max-width:520px; margin:0 auto;">Prices below are fully installed and inclusive of VAT. Every build is quoted individually — use the calculator for your exact size and specification.</p>
+      </div>
+      <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; background:#fff; border-radius:16px; overflow:hidden; border:1px solid #ebeced; font-size:14px;">
+          <thead>
+            <tr style="background:#2d3841;">
+              <th style="padding:16px 20px; text-align:left; font-family:'Poppins',sans-serif; font-size:13px; font-weight:700; color:#fff;">Size</th>
+              <th style="padding:16px 20px; text-align:center; font-family:'Poppins',sans-serif; font-size:13px; font-weight:700; color:#fff;">Garden Pod</th>
+              <th style="padding:16px 20px; text-align:center; font-family:'Poppins',sans-serif; font-size:13px; font-weight:700; color:#fff;">Garden Office</th>
+              <th style="padding:16px 20px; text-align:center; font-family:'Poppins',sans-serif; font-size:13px; font-weight:700; color:#fff;">Garden Room</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { size: 'Starting price (any size)', pod: 'From £12,750', office: 'From £15,450', room: 'From £16,950', highlight: false },
+              { size: '5 × 3m (most popular)', pod: '£22,860', office: 'Use calculator', room: '£25,460', highlight: true },
+              { size: 'Bespoke / larger', pod: '—', office: 'Use calculator', room: 'From £28,000+', highlight: false },
+            ].map((row, i) => (
+              <tr style={`border-top:1px solid #ebeced; background:${row.highlight ? '#f0f8ef' : i % 2 === 0 ? '#fff' : '#fafafa'};`}>
+                <td style={`padding:16px 20px; color:#2d3841; font-weight:${row.highlight ? '700' : '500'};`}>{row.size}</td>
+                <td style={`padding:16px 20px; text-align:center; color:${row.highlight ? '#34a02e' : '#555'}; font-weight:${row.highlight ? '700' : '400'};`}>{row.pod}</td>
+                <td style={`padding:16px 20px; text-align:center; color:${row.highlight ? '#34a02e' : '#555'}; font-weight:${row.highlight ? '700' : '400'};`}>{row.office}</td>
+                <td style={`padding:16px 20px; text-align:center; color:${row.highlight ? '#34a02e' : '#555'}; font-weight:${row.highlight ? '700' : '400'};`}>{row.room}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p style="text-align:center; font-size:13px; color:#888; margin:16px 0 0;">All prices include ground screw foundations, SIPs construction, cladding, glazing, electrics, flooring and plastering. <a href="/garden-room-price-calculator" style="color:#34a02e; font-weight:600;">Use the calculator for your size →</a></p>
+    </div>
+  </section>
+
+  <!-- Which is right for me? -->
+  <section style="background:#f8faf7; padding:72px 0; border-top:1px solid #ebeced;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:40px;">
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin:0 0 10px;">Which Is Right for Me?</h2>
+        <p style="font-size:15px; color:#666; max-width:500px; margin:0 auto;">Here's how our three most popular structures compare — so you can find the right starting point for your project.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+
+        {/* Garden Pod */}
+        <div style="background:#fff; border-radius:20px; border:1px solid #ebeced; padding:28px; display:flex; flex-direction:column;">
+          <p style="font-size:11px; font-weight:700; color:#888; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 6px;">Compact & Affordable</p>
+          <h3 style="font-size:1.15rem; font-weight:700; color:#2d3841; margin:0 0 4px;">Garden Pod</h3>
+          <p style="font-size:1.25rem; font-weight:700; color:#34a02e; margin:0 0 20px;">From £12,750 <span style="font-size:12px; font-weight:400; color:#888;">inc VAT</span></p>
+          <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:20px; flex:1;">
+            {['Solo home office or retreat', 'UPVC doors as standard', 'SIPs insulation throughout', 'Full electrical installation', 'Fitted flooring & plastered walls', 'Budget-conscious starting point'].map(item => (
+              <div style="display:flex; gap:8px; align-items:flex-start;">
+                <svg width="14" height="14" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:2px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span style="font-size:13px; color:#555; line-height:1.45;">{item}</span>
+              </div>
+            ))}
+          </div>
+          <div style="background:#f8faf7; border-radius:10px; padding:14px; margin-bottom:20px; border-left:3px solid #34a02e;">
+            <p style="font-size:12px; font-weight:700; color:#2d3841; margin:0 0 3px;">Choose if…</p>
+            <p style="font-size:12.5px; color:#555; margin:0; line-height:1.5;">You want an affordable, well-built structure for one person — working, hobbies, or quiet time.</p>
+          </div>
+          <a href="/garden-rooms/garden-pods" class="btn-outline-dark" style="font-size:14px; padding:11px 24px; text-align:center; justify-content:center;">See Garden Pods →</a>
+        </div>
+
+        {/* Garden Office */}
+        <div style="background:#fff; border-radius:20px; border:2px solid #34a02e; padding:28px; display:flex; flex-direction:column; position:relative;">
+          <div style="position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:#34a02e; color:#fff; font-size:11px; font-weight:700; padding:4px 14px; border-radius:50px; white-space:nowrap;">Most Popular</div>
+          <p style="font-size:11px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 6px;">Built for Working</p>
+          <h3 style="font-size:1.15rem; font-weight:700; color:#2d3841; margin:0 0 4px;">Garden Office</h3>
+          <p style="font-size:1.25rem; font-weight:700; color:#34a02e; margin:0 0 20px;">From £15,450 <span style="font-size:12px; font-weight:400; color:#888;">inc VAT</span></p>
+          <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:20px; flex:1;">
+            {['Everything in the Garden Pod', 'Aluminium door upgrade', 'Cat 6a internet cable included', 'Canopy with LED downlights', 'Window positioned for screen glare', 'Electrical sign-off certificate'].map(item => (
+              <div style="display:flex; gap:8px; align-items:flex-start;">
+                <svg width="14" height="14" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:2px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span style="font-size:13px; color:#555; line-height:1.45;">{item}</span>
+              </div>
+            ))}
+          </div>
+          <div style="background:#e7f1e3; border-radius:10px; padding:14px; margin-bottom:20px; border-left:3px solid #34a02e;">
+            <p style="font-size:12px; font-weight:700; color:#2d3841; margin:0 0 3px;">Choose if…</p>
+            <p style="font-size:12.5px; color:#555; margin:0; line-height:1.5;">You work from home regularly and need a dedicated, professional space with reliable connectivity.</p>
+          </div>
+          <a href="/garden-rooms/garden-offices" class="btn-primary" style="font-size:14px; padding:11px 24px; text-align:center; justify-content:center;">See Garden Offices →</a>
+        </div>
+
+        {/* Garden Room */}
+        <div style="background:#fff; border-radius:20px; border:1px solid #ebeced; padding:28px; display:flex; flex-direction:column;">
+          <p style="font-size:11px; font-weight:700; color:#888; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 6px;">Most Versatile</p>
+          <h3 style="font-size:1.15rem; font-weight:700; color:#2d3841; margin:0 0 4px;">Garden Room</h3>
+          <p style="font-size:1.25rem; font-weight:700; color:#34a02e; margin:0 0 20px;">From £16,950 <span style="font-size:12px; font-weight:400; color:#888;">inc VAT</span></p>
+          <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:20px; flex:1;">
+            {['Everything in the Garden Office', 'Full-width aluminium bifold doors', 'Slot window included as standard', 'Full-width canopy & LED lighting', 'Premium cladding on feature wall', 'Ideal for entertaining & relaxing'].map(item => (
+              <div style="display:flex; gap:8px; align-items:flex-start;">
+                <svg width="14" height="14" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:2px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span style="font-size:13px; color:#555; line-height:1.45;">{item}</span>
+              </div>
+            ))}
+          </div>
+          <div style="background:#f8faf7; border-radius:10px; padding:14px; margin-bottom:20px; border-left:3px solid #34a02e;">
+            <p style="font-size:12px; font-weight:700; color:#2d3841; margin:0 0 3px;">Choose if…</p>
+            <p style="font-size:12.5px; color:#555; margin:0; line-height:1.5;">You want the most versatile structure — a room you can work in, entertain in, or just enjoy all year round.</p>
+          </div>
+          <a href="/garden-rooms/garden-rooms" class="btn-outline-dark" style="font-size:14px; padding:11px 24px; text-align:center; justify-content:center;">See Garden Rooms →</a>
+        </div>
+
+      </div>
+      <p style="text-align:center; font-size:13px; color:#888; margin:24px 0 0;">Need something different? <a href="/garden-rooms/bespoke" style="color:#34a02e; font-weight:600;">Explore bespoke builds →</a></p>
+    </div>
+  </section>
+
   <!-- Calculator CTA -->
   <section style="background:#34a02e; padding:72px 24px; text-align:center;">
     <div style="max-width:520px; margin:0 auto;">
@@ -159,6 +271,7 @@ const included = [
 <style>
   @media (max-width: 900px) {
     div[style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
     div[style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: 1fr 1fr !important; }
     div[style*="grid-template-columns:1.5fr 1fr"] { grid-template-columns: 1fr !important; gap: 24px !important; }
   }

@@ -1,0 +1,179 @@
+---
+import ServiceLayout from '../../components/ServiceLayout.astro';
+
+const features = [
+  { icon: 'layers', title: 'Open-Sided Design', desc: 'A hot tub shelter is a covered outdoor structure — open on the sides for air flow, with a solid weatherproof roof. Different from a closed garden room, and priced accordingly.' },
+  { icon: 'ruler', title: 'Ground Screw Foundations', desc: 'No concrete, no excavation. Ground screws are installed in hours and can be set precisely level on any gradient — ideal for the end-of-garden positions where hot tubs often sit.' },
+  { icon: 'leaf', title: 'LED Canopy Lighting', desc: 'Strip lighting under the roof soffit creates the right atmosphere for evening use. We design the lighting layout and wire it properly as part of the build.' },
+  { icon: 'key', title: 'Weatherproof Roof', desc: 'EPDM rubber or metal panel roof with a 20-year guarantee. No felt, no leaks, no maintenance — just a dry space whatever the weather.' },
+  { icon: 'tools', title: 'Decking Integration', desc: 'We can incorporate composite or hardwood decking around the hot tub position — creating a flush, safe surround that looks finished.' },
+  { icon: 'certificate', title: 'Bespoke Sizing', desc: 'Sized around your tub model. Hot tubs range from 2×2m to 2.5×2.5m — we\'ll build the shelter around the specific footprint you have or are planning to buy.' },
+];
+
+const related = [
+  { label: 'Garden Bar', href: '/garden-rooms/garden-bar', img: '/images/Dual%20Canopy%20Lighting.webp' },
+  { label: 'Bespoke Builds', href: '/garden-rooms/bespoke', img: '/images/HERO%20Bespoke%20build.webp' },
+  { label: 'Outdoor Living Space', href: '/our-work/outdoor-living-space', img: '/images/bespoke%20shelter%20hot%20tub.webp' },
+];
+
+const faqs = [
+  {
+    q: "Does a hot tub shelter need planning permission?",
+    a: "An open-sided garden shelter is treated the same as any outbuilding under Permitted Development — single storey, within the garden footprint limits, no taller than 2.5m within 2m of the boundary. We confirm your exact position at the free site visit. Conservation areas and listed buildings may have different requirements."
+  },
+  {
+    q: "What size does a hot tub shelter need to be?",
+    a: "Your hot tub footprint plus access clearance around it. Most hot tubs are 2×2m to 2.5×2.5m square. You need at least 500mm clearance on the sides you access the cover from, and 700mm on the service side. A typical shelter for a standard hot tub is 4×4m — enough space to move around it comfortably. We size it exactly around your model."
+  },
+  {
+    q: "Can I enclose the sides in winter?",
+    a: "Yes — we can design in glass bi-fold panels or polycarbonate side panels that store open in summer and close in winter. This gives you the best of both: open-air in warm months, enclosed in cold weather. It's a popular addition that extends the usable season significantly."
+  },
+  {
+    q: "What about electrical for the hot tub?",
+    a: "Hot tubs require a dedicated 32A or 63A circuit depending on the model — this is the most safety-critical part of a hot tub installation. We run the cable from the house consumer unit to a junction point at the shelter position; your hot tub supplier or a dedicated electrician completes the final connection to the tub. We coordinate this with your installation."
+  },
+  {
+    q: "Can I combine a hot tub shelter with a garden room?",
+    a: "Yes — this is a popular configuration. A fully enclosed garden room with a canopy or adjacent open shelter gives you an indoor space (drinks, music, seating) connected to an outdoor hot tub position. We have a completed project showing this configuration: the <a href='/our-work/outdoor-living-space' style='color:#34a02e;font-weight:600;'>outdoor living space</a> in Chobham, Surrey."
+  },
+  {
+    q: "What's the difference between a hot tub shelter and a full garden room?",
+    a: "A shelter is open-sided and uninsulated — a covered outdoor space rather than an enclosed room. It costs significantly less than a full garden room because there are fewer materials and no insulation. If you want to enclose the space, heat it and use it as a room, that becomes a full garden room with a hot tub position alongside — we've built both. We'll help you work out which suits your garden and budget at the site visit."
+  },
+];
+---
+
+<ServiceLayout
+  title="Hot Tub Shelter Surrey | Garden Hot Tub Shelter Buildings | The Green Rooms"
+  description="Bespoke hot tub shelters and outdoor living structures built across Surrey. Open-sided design, ground screw foundations, LED lighting — a properly built cover for your hot tub position."
+  canonical="/garden-rooms/hot-tub-shelter"
+  heroImg="/images/bespoke%20shelter%20hot%20tub.webp"
+  heroAlt="Bespoke hot tub shelter built by The Green Rooms, Surrey"
+  price="From £12,000 inc VAT"
+  h1="Hot Tub Shelters Surrey"
+  tagline="Bespoke Hot Tub Shelters & Outdoor Living Structures — Surrey & South East"
+  intro="A proper hot tub shelter makes the difference between using your tub all year and avoiding it when the weather turns. We build open-sided outdoor shelters with weatherproof roofs, LED lighting and ground screw foundations — sized around your tub model and finished to the same standard as every other build we do."
+  features={features}
+  relatedPages={related}
+  faqs={faqs}
+  projects={[
+    { slug: 'outdoor-living-space', label: 'Outdoor Living Space', tagline: 'Chobham, Surrey · Open-sided shelter · Hot tub position · LED canopy · Ground screws', img: '/images/bespoke%20shelter%20hot%20tub.webp' },
+  ]}
+>
+
+  <!-- Gallery -->
+  <section style="background:#f8faf7; padding:72px 0 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.4rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin:0 0 24px;">Hot Tub Shelter Builds</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
+        <div style="border-radius:14px; overflow:hidden; height:380px;"><img src="/images/bespoke%20shelter%20hot%20tub.webp" alt="Bespoke hot tub shelter with open sides" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:380px;"><img src="/images/bespoke%20shelter%20square%20on.webp" alt="Hot tub shelter square on view" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:72px;">
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/bespoke%20shelter.webp" alt="Garden hot tub shelter" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/Dual%20Canopy%20Lighting.webp" alt="Hot tub shelter with LED canopy lighting" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/GR%20decking.webp" alt="Hot tub shelter with decking surround" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's included -->
+  <section class="section" style="background:#fff;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:40px;">
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:10px;">What's Included in Every Hot Tub Shelter</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:20px; max-width:860px; margin:0 auto;">
+        {[
+          { item: 'Ground screw foundations', note: 'No concrete — clean install, removable if needed' },
+          { item: 'Structural timber or steel frame', note: 'Designed for the span and wind load of your site' },
+          { item: 'Weatherproof roof — EPDM or metal panel', note: '20-year guarantee — no felt, no leaks' },
+          { item: 'LED soffit lighting', note: 'Wired and fitted during the build' },
+          { item: 'Electrical supply to shelter position', note: 'Armoured cable from house consumer unit' },
+          { item: 'Hot tub cable route to tub position', note: 'Ready for your supplier or electrician to terminate' },
+          { item: 'Optional decking surround', note: 'Composite or hardwood — flush to tub level' },
+          { item: 'Optional glazed side panels', note: 'Bi-fold or fixed — enclose in winter, open in summer' },
+        ].map(r => (
+          <div style="display:flex; gap:14px; padding:16px; background:#f8faf7; border-radius:12px; border:1px solid #ebeced; align-items:start;">
+            <div style="width:20px; height:20px; background:#34a02e; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;">
+              <svg width="10" height="10" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <p style="font-size:13.5px; font-weight:700; color:#2d3841; margin:0 0 2px;">{r.item}</p>
+              <p style="font-size:12px; color:#888; margin:0;">{r.note}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Shelter vs Full Room -->
+  <section class="section" style="background:#f8faf7;">
+    <div style="max-width:860px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-size:clamp(1.3rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin-bottom:24px; text-align:center;">Shelter vs Full Garden Room — Which Do I Need?</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        <div style="background:#fff; border-radius:16px; padding:28px; border:1px solid #ebeced;">
+          <p style="font-size:14px; font-weight:700; color:#2d3841; margin:0 0 6px;">Open-Sided Shelter</p>
+          <p style="font-size:12.5px; color:#888; margin:0 0 16px;">From £12,000</p>
+          {[
+            'Covered outdoor space — not an enclosed room',
+            'Hot tub and seating — no climate control needed',
+            'Open sides for air flow and views',
+            'Glazed panels optionally close in winter',
+            'Faster to build — less planning restriction',
+            'Lower cost for the covered area you get',
+          ].map(pt => (
+            <div style="display:flex; align-items:flex-start; gap:8px; margin-bottom:8px;">
+              <svg width="11" height="11" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:3px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span style="font-size:12.5px; color:#555;">{pt}</span>
+            </div>
+          ))}
+        </div>
+        <div style="background:#e7f1e3; border-radius:16px; padding:28px; border:2px solid #34a02e;">
+          <p style="font-size:14px; font-weight:700; color:#2d3841; margin:0 0 6px;">Full Garden Room + Hot Tub Position</p>
+          <p style="font-size:12.5px; color:#888; margin:0 0 16px;">From £20,000</p>
+          {[
+            'Fully enclosed, insulated space alongside the tub',
+            'Bar area, seating, music — usable year-round',
+            'Hot tub position outside under a canopy',
+            'Best of both: indoor and outdoor together',
+            'Adds more to property value',
+            'The most popular configuration for entertaining',
+          ].map(pt => (
+            <div style="display:flex; align-items:flex-start; gap:8px; margin-bottom:8px;">
+              <svg width="11" height="11" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:3px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span style="font-size:12.5px; color:#2d3841; font-weight:500;">{pt}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background:#34a02e; text-align:center;">
+    <div style="max-width:520px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#fff; margin-bottom:14px;">Plan Your Hot Tub Shelter</h2>
+      <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:28px; line-height:1.7;">Tell us your tub model and garden layout and we'll design the shelter around it. Free site visit across Surrey.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+        <a href="/contact-us" class="btn-white" style="font-size:15px; padding:14px 32px;">Book a Free Site Visit</a>
+        <a href="/garden-room-price-calculator" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.5); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none;">Get an Instant Price</a>
+      </div>
+    </div>
+  </section>
+
+</ServiceLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 32px !important; }
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+    div[style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
+  }
+  @media (max-width: 600px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"],
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  }
+</style>

@@ -1,0 +1,162 @@
+---
+import InfoLayout from '../../layouts/InfoLayout.astro';
+---
+<InfoLayout
+  title="Does a Garden Room Add Value to Your House? | The Green Rooms Surrey"
+  description="A properly built garden room typically adds 5–15% to property value. Here's what the data shows, how it compares to other home improvements, and what affects the uplift."
+  canonical="/garden-rooms/add-value"
+  pageTitle="Does a Garden Room Add Value to Your House?"
+  pageSubtitle="The short answer: yes — typically 5–15% added to property value. Here's what the data shows and what affects the uplift."
+  heroImg="/images/GR%20end%20of%20garden%201.webp"
+  heroAlt="Garden room at the end of the garden adding value to a Surrey home"
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Garden Rooms', href: '/garden-rooms/garden-rooms' }, { label: 'Does a Garden Room Add Value?' }]}
+>
+
+  <section style="background:#fff; padding:72px 0;">
+    <div style="max-width:860px; margin:0 auto; padding:0 24px;">
+
+      <!-- Key stat callout -->
+      <div style="background:#e7f1e3; border-radius:20px; padding:40px; margin-bottom:56px; text-align:center; border:1px solid #c8e0c4;">
+        <p style="font-size:12px; font-weight:700; color:#257a21; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 12px;">The headline figure</p>
+        <p style="font-size:clamp(2.5rem,6vw,4rem); font-weight:800; color:#34a02e; margin:0 0 8px; font-family:'Poppins',sans-serif; line-height:1;">5–15%</p>
+        <p style="font-size:1.1rem; color:#2d3841; font-weight:600; margin:0 0 12px;">typical property value increase from a quality garden room</p>
+        <p style="font-size:13.5px; color:#555; margin:0; max-width:480px; margin:0 auto;">On a £600,000 Surrey home, that's £30,000–£90,000 added to the asking price — from an investment that typically starts at £20,000.</p>
+      </div>
+
+      <!-- What the data shows -->
+      <h2 style="font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700; color:#2d3841; margin:0 0 20px;">What the Data Shows</h2>
+      <p style="font-size:1rem; color:#555; line-height:1.85; margin-bottom:16px;">Rightmove reported a 1,046% increase in property listings that specifically mention a garden office between 2020 and 2022 — a sign of how dramatically buyer demand shifted during and after the pandemic. That demand hasn't reversed. WFH is a permanent feature of professional life for a significant proportion of buyers, and garden rooms — particularly garden offices — have become a genuine selling point rather than a nice-to-have.</p>
+      <p style="font-size:1rem; color:#555; line-height:1.85; margin-bottom:40px;">Estate agents across Surrey consistently report that a quality garden room shortens time on market and supports asking price. The key word is quality — an insulated, plastered, properly finished garden room with ground screws and a 20-year roof guarantee behaves differently in a sale than a treated redwood shed with a felt roof.</p>
+
+      <!-- Comparison table -->
+      <div style="background:#f8faf7; border-radius:20px; padding:40px; margin-bottom:56px; border:1px solid #ebeced;">
+        <h2 style="font-size:1.3rem; font-weight:700; color:#2d3841; margin:0 0 24px;">How a Garden Room Compares to Other Home Improvements</h2>
+        <div style="overflow-x:auto;">
+          <table style="width:100%; border-collapse:collapse; font-size:13.5px;">
+            <thead>
+              <tr style="border-bottom:2px solid #ebeced;">
+                <th style="text-align:left; padding:10px 16px; font-weight:700; color:#2d3841; font-size:12px; text-transform:uppercase; letter-spacing:0.05em;">Improvement</th>
+                <th style="text-align:right; padding:10px 16px; font-weight:700; color:#2d3841; font-size:12px; text-transform:uppercase; letter-spacing:0.05em;">Typical Cost</th>
+                <th style="text-align:right; padding:10px 16px; font-weight:700; color:#2d3841; font-size:12px; text-transform:uppercase; letter-spacing:0.05em;">Value Added</th>
+                <th style="text-align:right; padding:10px 16px; font-weight:700; color:#2d3841; font-size:12px; text-transform:uppercase; letter-spacing:0.05em;">Disruption</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { type: 'Single-storey extension', cost: '£50,000–£80,000', value: '£30,000–£60,000', disruption: 'Major — 3–6 months', highlight: false },
+                { type: 'Loft conversion', cost: '£30,000–£60,000', value: '£20,000–£50,000', disruption: 'Significant — 6–10 weeks', highlight: false },
+                { type: 'New kitchen', cost: '£15,000–£30,000', value: '£5,000–£15,000', disruption: 'Medium — 2–4 weeks', highlight: false },
+                { type: 'Garden room (quality build)', cost: '£20,000–£45,000', value: '£20,000–£50,000', disruption: 'Minimal — 5–10 days', highlight: true },
+                { type: 'New bathroom', cost: '£8,000–£15,000', value: '£3,000–£8,000', disruption: 'Medium — 1–2 weeks', highlight: false },
+                { type: 'Driveway / landscaping', cost: '£5,000–£20,000', value: '£5,000–£10,000', disruption: 'Low', highlight: false },
+              ].map(row => (
+                <tr style={`border-bottom:1px solid #ebeced; background:${row.highlight ? '#f0faf0' : 'transparent'};`}>
+                  <td style={`padding:12px 16px; font-weight:${row.highlight ? '700' : '500'}; color:${row.highlight ? '#34a02e' : '#2d3841'};`}>{row.type} {row.highlight && <span style="font-size:11px; background:#34a02e; color:#fff; padding:2px 8px; border-radius:50px; margin-left:6px; font-weight:700;">The Green Rooms</span>}</td>
+                  <td style="padding:12px 16px; text-align:right; color:#555;">{row.cost}</td>
+                  <td style={`padding:12px 16px; text-align:right; font-weight:${row.highlight ? '700' : '400'}; color:${row.highlight ? '#34a02e' : '#555'};`}>{row.value}</td>
+                  <td style="padding:12px 16px; text-align:right; color:#555;">{row.disruption}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:12px; color:#888; margin:16px 0 0; font-style:italic;">Value figures are estimates based on industry data and Surrey estate agent feedback. Individual results vary significantly based on property type, location and build quality.</p>
+      </div>
+
+      <!-- What affects the uplift -->
+      <h2 style="font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700; color:#2d3841; margin:0 0 20px;">What Affects How Much Value a Garden Room Adds</h2>
+
+      <div style="display:flex; flex-direction:column; gap:16px; margin-bottom:56px;">
+        {[
+          {
+            factor: 'Construction quality',
+            good: 'A properly insulated build (SIPs construction, EPDM roof, plastered interior, ground screw foundations) is described in property listings as a garden room or garden office — a genuine extra room.',
+            bad: 'A felt-roofed, timber frame shed is treated as a garden shed by buyers and surveyors. It adds little or no value and may even put buyers off if it looks like a maintenance liability.',
+          },
+          {
+            factor: 'Finish and fit-out',
+            good: 'Plastered walls, quality flooring, A-rated glazing, and an electrical installation done by a Part P certified electrician — what buyers expect of a room they might use daily.',
+            bad: 'Unfinished walls, bare subfloor, inadequate lighting. A part-finished garden room can do more harm than good if buyers have to budget for the work themselves.',
+          },
+          {
+            factor: 'Permanent foundations',
+            good: 'Ground screws count as a permanent, structural foundation. Solicitors and mortgage surveyors treat ground-screw-mounted garden rooms as fixtures — this matters at the point of sale.',
+            bad: 'A cabin placed on paving slabs or a plastic base system is moveable by definition. Solicitors may classify it as a chattel rather than a fixture — which can create complications at exchange.',
+          },
+          {
+            factor: 'Planning compliance',
+            good: 'Most garden rooms fall under Permitted Development — no planning application needed. This means no complications in the property search or conveyancing process.',
+            bad: 'A garden room that required planning permission but doesn\'t have it creates a legal issue at the point of sale. Always confirm PD compliance before you build.',
+          },
+        ].map(f => (
+          <div style="border-radius:16px; border:1px solid #ebeced; overflow:hidden;">
+            <div style="background:#2d3841; padding:14px 20px;">
+              <p style="font-size:14px; font-weight:700; color:#fff; margin:0;">{f.factor}</p>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:0;">
+              <div style="padding:18px 20px; background:#f0faf0; border-right:1px solid #ebeced;">
+                <p style="font-size:11px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.06em; margin:0 0 8px;">Adds value</p>
+                <p style="font-size:13px; color:#555; line-height:1.7; margin:0;">{f.good}</p>
+              </div>
+              <div style="padding:18px 20px; background:#fff;">
+                <p style="font-size:11px; font-weight:700; color:#cc4444; text-transform:uppercase; letter-spacing:0.06em; margin:0 0 8px;">Doesn't add value</p>
+                <p style="font-size:13px; color:#555; line-height:1.7; margin:0;">{f.bad}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Surrey context -->
+      <div style="background:#2d3841; border-radius:20px; padding:40px; margin-bottom:56px;">
+        <h2 style="font-size:1.3rem; font-weight:700; color:#fff; margin:0 0 16px;">The Surrey Context</h2>
+        <p style="font-size:14px; color:rgba(255,255,255,0.8); line-height:1.85; margin:0 0 14px;">Surrey and the South East consistently perform above the national average for garden room value uplift. The combination of high property values (where each percentage point is worth more in absolute terms), a professional buyer demographic with WFH lifestyles, and demand for outdoor space in leafy suburban areas creates the strongest market for garden rooms in the UK.</p>
+        <p style="font-size:14px; color:rgba(255,255,255,0.8); line-height:1.85; margin:0 0 14px;">We build across 19 locations in Surrey and the surrounding area — including Weybridge, Esher, Cobham, Guildford, Leatherhead, Walton-on-Thames and the wider South East. Buyers in these markets are sophisticated and expect quality — which is why a SIPs build with a 20-year roof guarantee positions very differently to a timber frame shed.</p>
+        <p style="font-size:14px; color:rgba(255,255,255,0.8); line-height:1.85; margin:0;">If you're considering a garden room partly as an investment in your property, we'd encourage you to think about two things: the quality of the build and the use case. A well-built garden office in a professional Surrey suburb adds more value, more reliably, than any other type of outbuilding.</p>
+      </div>
+
+      <!-- FAQ-style common questions -->
+      <h2 style="font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700; color:#2d3841; margin:0 0 20px;">Common Questions</h2>
+      <div style="display:flex; flex-direction:column; gap:1px; background:#ebeced; border-radius:16px; overflow:hidden; margin-bottom:40px;">
+        {[
+          { q: 'Does a garden room need to be declared on a property sale?', a: 'Yes — any permanent structure should be declared on the property information form (TA6). If it was built under Permitted Development (which most garden rooms are), this is straightforward. Your solicitor will advise, and we\'ll provide you with any documentation about the build that\'s needed.' },
+          { q: 'Does a garden room affect council tax?', a: 'Not typically. A garden room is classified as an outbuilding, not a habitable room, so it doesn\'t add to the council tax banding. However, if the room includes sleeping accommodation, cooking facilities and an external entrance — characteristics of a habitable dwelling — this could change. A standard garden office or hobby room is not affected.' },
+          { q: 'Does a garden room affect buildings insurance?', a: 'Yes — you should notify your insurer and add the garden room to your buildings policy. The rebuild cost for a quality garden room is typically £15,000–£25,000 depending on size and spec. Some policies already include outbuildings up to a certain value — check your policy documents and update if needed.' },
+          { q: 'Will a garden room show up on a survey?', a: 'Yes. A RICS surveyor will note the garden room in their report. If it was built under Permitted Development and meets the standard rules, this is a positive entry. If there\'s any uncertainty about planning compliance, we recommend confirming the PD position before you list the property — it\'s much simpler to resolve before a sale than during one.' },
+        ].map(item => (
+          <details style="background:#fff; padding:20px 24px;">
+            <summary style="font-size:14.5px; font-weight:700; color:#2d3841; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px;">
+              {item.q}
+              <svg width="16" height="16" fill="none" stroke="#34a02e" stroke-width="2.5" viewBox="0 0 24 24" style="flex-shrink:0;"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p style="font-size:13.5px; color:#555; line-height:1.8; margin:14px 0 0;">{item.a}</p>
+          </details>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#34a02e; padding:72px 24px; text-align:center;">
+    <div style="max-width:520px; margin:0 auto;">
+      <h2 style="font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700; color:#fff; margin-bottom:14px;">Get a Price on Your Garden Room</h2>
+      <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:28px;">Use our price calculator for an instant guide price, or book a free site visit — we'll come out to you across Surrey.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+        <a href="/garden-room-price-calculator" class="btn-white" style="font-size:15px; padding:14px 32px;">Get an Instant Price</a>
+        <a href="/contact-us" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.5); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none;">Book a Free Site Visit</a>
+      </div>
+    </div>
+  </section>
+
+</InfoLayout>
+
+<style>
+  @media (max-width: 700px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+    table { font-size:12px !important; }
+    th, td { padding:8px !important; }
+  }
+  details summary::-webkit-details-marker { display:none; }
+  details[open] summary svg { transform:rotate(180deg); }
+</style>

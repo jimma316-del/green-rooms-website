@@ -1,0 +1,187 @@
+---
+import ServiceLayout from '../../components/ServiceLayout.astro';
+
+const features = [
+  { icon: 'layers', title: 'SIPs Throughout', desc: 'Warm in winter, cool in summer — properly insulated so you can actually use the space year-round, not just in good weather.' },
+  { icon: 'ruler', title: 'No Compromise Interior', desc: 'Whatever you want in there, we\'ll wire, fit and finish for it. Games setup, pool table, bar corner, projector, dart board — tell us what\'s going in.' },
+  { icon: 'leaf', title: 'Mood Lighting', desc: 'Smart LED lighting, dimmable circuits, strip lighting — the right atmosphere for whatever you\'re doing in the space.' },
+  { icon: 'key', title: 'Dedicated Electrical Supply', desc: 'Multiple circuits properly spec\'d for a gaming rig, fridge, sound system and everything else. Not a single ring main run from the house.' },
+  { icon: 'tools', title: 'Your Cladding, Your Look', desc: 'Charred spruce, cedar, Hardie Plank in whatever colour — a garden man cave should look the part from the outside too.' },
+  { icon: 'certificate', title: 'Climate Control', desc: 'Air conditioning option keeps the room comfortable during long sessions — heating in winter, cooling in summer, on one unit.' },
+];
+
+const related = [
+  { label: 'Garden Cinema', href: '/garden-rooms/garden-cinema', img: '/images/internal%20view%20typical%20set%20up%20sofa%20tv.webp' },
+  { label: 'Garden Bar', href: '/garden-rooms/garden-bar', img: '/images/Dual%20Canopy%20Lighting.webp' },
+  { label: 'Bespoke Builds', href: '/garden-rooms/bespoke', img: '/images/HERO%20Bespoke%20build.webp' },
+];
+
+const faqs = [
+  {
+    q: "What goes in a garden man cave?",
+    a: "That's entirely up to you. The most common setups: a gaming room (multiple screens, gaming chair, PC rig or console), a sports den (big screen, surround sound, bar fridge, your team's memorabilia), a home bar (counter, bar fridge, seating), a hobby workshop (storage, workbench, good lighting), or some combination of all of them. We build the room around your list — not a template."
+  },
+  {
+    q: "What size do I need?",
+    a: "A 3×3m room (9m²) fits a tight setup — one gaming station, a TV and a chair. 4×3m is the most popular choice and gives you room to breathe plus space for friends. If you want a pool table, that needs 5×4m minimum with comfortable cue clearance. We'll lay out your equipment in the space at the site visit so you know exactly what fits."
+  },
+  {
+    q: "Do I need planning permission?",
+    a: "Almost certainly not. A garden man cave is an outbuilding like any other — Permitted Development covers single-storey structures within garden footprint limits, with a maximum height of 2.5m within 2m of the boundary. We confirm your exact position at the free site visit. See our <a href='/your-build/first-steps' style='color:#34a02e;font-weight:600;'>planning guide</a> for the full rules."
+  },
+  {
+    q: "How do I run power and broadband out to the garden?",
+    a: "We run a dedicated armoured cable from your consumer unit to the garden room — properly spec'd for the load, not an extension lead. Broadband can come via a powerline adapter (often adequate) or a dedicated data cable run. We plan both at the design stage. If you're running a serious gaming rig or streaming setup, we'll make sure the data route is capable."
+  },
+  {
+    q: "Can I add a toilet or kitchenette?",
+    a: "A kitchenette (sink, mini fridge, microwave) is straightforward — we accommodate the plumbing run from the house and your plumber does the connections. A toilet requires more drainage planning and is less common in a man cave context, but possible where the garden layout allows. We'll advise at the site visit."
+  },
+  {
+    q: "What's the best insulation for a man cave?",
+    a: "<a href='/your-build/structure' style='color:#34a02e;font-weight:600;'>SIPs construction</a> gives you far better thermal and acoustic insulation than a timber frame build. The solid foam core has no air gaps — which matters both for keeping the room warm and for keeping game and music noise contained. For most man cave uses, the standard SIPs build provides more than adequate sound isolation."
+  },
+];
+---
+
+<ServiceLayout
+  title="Garden Man Cave Surrey | Bespoke Man Cave Buildings | The Green Rooms"
+  description="Bespoke garden man cave buildings across Surrey. Gaming rooms, sports dens, home bars, workshop spaces — SIPs insulated and wired exactly how you want it."
+  canonical="/garden-rooms/man-cave"
+  heroImg="/images/games%20room%20internal%20view.webp"
+  heroAlt="Garden man cave interior, Surrey"
+  price="From £20,000 inc VAT"
+  h1="Garden Man Cave Buildings Surrey"
+  tagline="Bespoke Garden Man Caves — Surrey & South East"
+  intro="A garden man cave is a space with no compromises — done exactly how you want it, with nobody else's taste imposed on it. Gaming room, sports den, home bar, workshop, recording setup — or all of the above. We build properly insulated, properly wired garden buildings designed around your list, not a template."
+  features={features}
+  relatedPages={related}
+  faqs={faqs}
+  projects={[
+    { slug: 'garden-hobby-room', label: 'Garden Hobby Room', tagline: 'Multi-use hobby and lounge space · Cedar cladding · Cedar canopy', img: '/images/classic%20canopy%20in%20cedar.webp' },
+    { slug: 'golf-simulator-garden-room', label: 'Golf Simulator Studio', tagline: 'Extended height · Millboard cladding · Full AV setup', img: '/images/HERO%20Golf%20sim.webp' },
+  ]}
+>
+
+  <!-- Gallery -->
+  <section style="background:#f8faf7; padding:72px 0 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.4rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin:0 0 24px;">Man Cave Builds</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:12px;">
+        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/games%20room%20internal%20view.webp" alt="Garden man cave games room interior" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/internal%20view%20typical%20set%20up%20sofa%20tv.webp" alt="Man cave interior with TV lounge setup" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/GR%20charred%20spruce%20in%20garden.webp" alt="Man cave exterior with charred spruce cladding" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:72px;">
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/night%20lighting.webp" alt="Man cave exterior at night" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/GR%20at%20night%20charred%20spruce%20crittal%20french%20doors.webp" alt="Garden man cave at night with crittal doors" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/GR%20end%20of%20garden%201.webp" alt="Garden man cave at the end of the garden" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular setups -->
+  <section class="section" style="background:#fff;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:36px;">
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:10px;">Popular Man Cave Configurations</h2>
+        <p style="color:#666; max-width:520px; margin:0 auto;">Every build is bespoke — but here's what our customers typically go for.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:960px; margin:0 auto;">
+        {[
+          {
+            title: 'Gaming & Sim Room',
+            icon: '🎮',
+            items: ['Multi-monitor gaming station', 'PC rig or console setup', 'Racing sim or flight sim', 'Soundproofed for late sessions', 'Dedicated high-speed data connection'],
+          },
+          {
+            title: 'Sports Den',
+            icon: '🏟️',
+            items: ['Large projection or QLED screen', 'Surround sound system wiring', 'Bar counter + bar fridge', 'Your team\'s colours and memorabilia', 'Comfortable viewing with friends'],
+          },
+          {
+            title: 'Home Bar & Lounge',
+            icon: '🍺',
+            items: ['Bar counter with stools', 'Under-counter fridge + keg line', 'Pool table or darts area', 'Mood LED lighting', 'Canopy for outdoor overflow'],
+          },
+          {
+            title: 'Workshop & Hobby Room',
+            icon: '🔧',
+            items: ['Heavy-duty workbench', 'Dedicated power tools circuits', 'Dust extraction ventilation', 'Storage walls and shelving', 'Good task lighting throughout'],
+          },
+          {
+            title: 'Music & Recording',
+            icon: '🎸',
+            items: ['SIPs acoustic isolation', 'Amp circuits and earthing', 'Acoustic panel mounting prep', 'Quiet ventilation system', 'Cable runs through walls'],
+          },
+          {
+            title: 'Mixed Use',
+            icon: '✨',
+            items: ['Design around multiple hobbies', 'Flexible furniture layout', 'Good all-round electrical spec', 'Day and evening lighting zones', 'Bespoke to your combination'],
+          },
+        ].map(setup => (
+          <div style="background:#f8faf7; border-radius:16px; padding:24px; border:1px solid #ebeced;">
+            <p style="font-size:22px; margin:0 0 8px;">{setup.icon}</p>
+            <p style="font-size:14px; font-weight:700; color:#2d3841; margin:0 0 14px;">{setup.title}</p>
+            <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:7px;">
+              {setup.items.map(item => (
+                <li style="display:flex; align-items:flex-start; gap:8px; font-size:12.5px; color:#555;">
+                  <svg width="10" height="10" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:3px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section style="background:#f8faf7; padding:72px 0; border-top:1px solid #ebeced;">
+    <div style="max-width:900px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:32px;">
+        <div style="display:flex; justify-content:center; gap:3px; margin-bottom:8px;">
+          {[1,2,3,4,5].map(() => <svg width="20" height="20" fill="#f59e0b" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>)}
+        </div>
+        <p style="font-size:13px; color:#888; margin:0;">5.0 · 39 Google Reviews</p>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        <blockquote style="background:#fff; border-radius:16px; padding:28px; border:1px solid #ebeced; margin:0;">
+          <p style="font-size:14.5px; color:#444; line-height:1.8; margin:0 0 16px; font-style:italic;">"We have been totally delighted with our garden room. From initial discussions to completion, the whole process has been professional and very efficient. Nothing has been too much trouble."</p>
+          <footer style="font-size:13px; font-weight:700; color:#2d3841;">Chris & Sarah <span style="font-weight:400; color:#888;">· October 2024</span></footer>
+        </blockquote>
+        <blockquote style="background:#fff; border-radius:16px; padding:28px; border:1px solid #ebeced; margin:0;">
+          <p style="font-size:14.5px; color:#444; line-height:1.8; margin:0 0 16px; font-style:italic;">"Incredible attention to detail, customer service, materials and quality of craftsmanship. Could not be happier with what James and his team built for us and perfectly on schedule too!"</p>
+          <footer style="font-size:13px; font-weight:700; color:#2d3841;">Nick <span style="font-weight:400; color:#888;">· July 2023</span></footer>
+        </blockquote>
+      </div>
+      <p style="text-align:center; margin:20px 0 0;"><a href="/testimonials" style="color:#34a02e; font-size:13.5px; font-weight:600; text-decoration:none;">Read all 39 reviews →</a></p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background:#34a02e; text-align:center;">
+    <div style="max-width:520px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#fff; margin-bottom:14px;">Build Your Man Cave</h2>
+      <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:28px; line-height:1.7;">Tell us what's going in it and we'll design the room around it. Get a guide price in 60 seconds or book a free site visit.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+        <a href="/garden-room-price-calculator" class="btn-white" style="font-size:15px; padding:14px 32px;">Get an Instant Price</a>
+        <a href="/contact-us" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.5); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none;">Book a Free Site Visit</a>
+      </div>
+    </div>
+  </section>
+
+</ServiceLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 32px !important; }
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+    div[style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
+  }
+  @media (max-width: 600px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"],
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  }
+</style>

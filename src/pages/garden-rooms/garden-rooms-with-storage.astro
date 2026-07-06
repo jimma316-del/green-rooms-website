@@ -17,6 +17,33 @@ const related = [
   { label: 'Bespoke Garden Rooms', href: '/garden-rooms/bespoke', img: '/images/Hero%20Bespoke%20build.webp' },
   { label: 'Garden Offices', href: '/garden-rooms/garden-offices', img: '/images/GP%20office%20internal.webp' },
 ];
+
+const faqs = [
+  {
+    q: "How big is the storage area?",
+    a: "The storage section is typically 1–1.5m deep across the full width of the structure — giving you a generous area that comfortably fits bikes, a lawnmower, garden tools, outdoor furniture, and seasonal storage. The exact depth is agreed at the design stage based on your overall room width and how you plan to use the space."
+  },
+  {
+    q: "Does the storage area have electrics?",
+    a: "Yes — the storage section is on the same electrical installation as the main room. A light fitting and a socket are included in the storage area as standard, so you can actually see what you're doing and charge power tools. The consumer unit serves both areas."
+  },
+  {
+    q: "What can be stored in the storage area?",
+    a: "The storage section is fully weatherproof and secure — it's part of the same SIPs structure as the room. Common uses include: bikes and e-bikes, lawnmower, garden power tools, outdoor furniture covers, ski gear and winter sports equipment, golf clubs, seasonal decorations and general overflow. Because it's enclosed within the main structure, it's more secure and weatherproof than any standalone shed."
+  },
+  {
+    q: "How does this compare to having a garden room and a separate shed?",
+    a: "Two separate structures costs more, takes up more garden space, and looks less cohesive. The garden room with storage solves both needs in a single footprint, with a seamlessly clad secret door that blends into the exterior. One planning permission consideration, one installation, one neat finish. If you'd like to explore the option, see our <a href='/garden-rooms/garden-rooms' style='color:#34a02e;font-weight:600;'>standard Garden Room</a> for comparison."
+  },
+  {
+    q: "Does a garden room with storage need planning permission?",
+    a: "The same Permitted Development rules apply as to any garden room — most builds don't require planning permission. The storage section doesn't change the planning position, as it's part of the same single-storey structure. We confirm your position at the free site visit. See our <a href='/your-build/first-steps' style='color:#34a02e;font-weight:600;'>getting started guide</a> for the full Permitted Development criteria."
+  },
+  {
+    q: "What is the minimum garden size needed for a garden room with storage?",
+    a: "As a guide, a 4×3m build (including storage) fits comfortably in most medium-sized Surrey gardens. The 50% garden coverage rule under Permitted Development applies — so we'll check that the footprint stays within permitted limits. At the free site visit we bring a tape measure and give you a clear picture of what fits and what options look best in your space."
+  },
+];
 ---
 
 <ServiceLayout
@@ -31,6 +58,11 @@ const related = [
   intro="The smartest version of our standard garden room — everything you get with our Garden Room, plus a fully integrated storage area hidden behind a secret door clad to match the room's interior. You get a beautiful, functional living space and a place to keep the garden tidy, all in one footprint."
   features={features}
   relatedPages={related}
+  faqs={faqs}
+  projects={[
+    { slug: 'garden-room-with-decking-lean-to-shed', label: 'Garden Room with Decking & Lean-To Shed', tagline: 'Surrey · Western Red Cedar · Millboard decking · Integrated lean-to storage shed', img: '/images/classic%20GR%20with%20storage%20and%20decking.webp' },
+    { slug: 'garden-gym-with-hidden-storage', label: 'Garden Gym with Hidden Storage', tagline: 'Chobham, Surrey · Hidden storage room behind secret flush door · Dual canopy', img: '/images/garden%20gym%2C%20dual%20canopy%20view%20from%20outside.webp' },
+  ]}
 >
 
   <!-- Photo gallery -->
@@ -54,6 +86,7 @@ const related = [
     </div>
   </section>
 
+  <!-- Secret door feature -->
   <section class="section" style="background:#fff;">
     <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
       <div style="background:#f8faf7; border-radius:20px; padding:40px; border:1px solid #ebeced; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;">
@@ -72,10 +105,102 @@ const related = [
     </div>
   </section>
 
+  <!-- Storage details -->
+  <section class="section" style="background:#f8faf7;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:36px;">
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:10px;">What Goes in the Storage Area?</h2>
+        <p style="color:#666; max-width:500px; margin:0 auto;">The storage section is weatherproof, electrified, and secure — not just a bare cupboard.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:900px; margin:0 auto 32px;">
+        {[
+          { icon: '🚲', title: 'Bikes & E-bikes', desc: 'Full-height clearance and enough depth for 2–3 bikes stored side by side.' },
+          { icon: '🌿', title: 'Garden Tools & Mower', desc: 'A petrol or electric mower, strimmer, leaf blower and all associated tools.' },
+          { icon: '⛷️', title: 'Seasonal & Sports Kit', desc: 'Skis, golf clubs, camping gear, outdoor furniture covers — bulky items sorted.' },
+        ].map(s => (
+          <div style="background:#fff; border-radius:14px; padding:24px; border:1px solid #ebeced; text-align:center;">
+            <div style="font-size:2rem; margin-bottom:10px;">{s.icon}</div>
+            <p style="font-size:14px; font-weight:700; color:#2d3841; margin:0 0 6px;">{s.title}</p>
+            <p style="font-size:13px; color:#666; line-height:1.6; margin:0;">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div style="max-width:900px; margin:0 auto;">
+        <div style="background:#fff; border-radius:14px; padding:24px 28px; border:1px solid #ebeced; display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px;">
+          <div style="text-align:center;">
+            <p style="font-size:1.75rem; font-weight:800; color:#34a02e; margin:0; font-family:'Poppins',sans-serif;">1–1.5m</p>
+            <p style="font-size:12px; color:#888; margin:4px 0 0; font-weight:600;">Typical depth</p>
+          </div>
+          <div style="text-align:center; border-left:1px solid #ebeced; border-right:1px solid #ebeced;">
+            <p style="font-size:1.75rem; font-weight:800; color:#34a02e; margin:0; font-family:'Poppins',sans-serif;">Light + socket</p>
+            <p style="font-size:12px; color:#888; margin:4px 0 0; font-weight:600;">Electrics included</p>
+          </div>
+          <div style="text-align:center;">
+            <p style="font-size:1.75rem; font-weight:800; color:#34a02e; margin:0; font-family:'Poppins',sans-serif;">Weatherproof</p>
+            <p style="font-size:12px; color:#888; margin:4px 0 0; font-weight:600;">Same SIPs structure</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Planning permission -->
+  <section class="section" style="background:#fff;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;">
+        <div>
+          <div style="display:inline-block; background:#e7f1e3; color:#257a21; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:5px 14px; border-radius:50px; margin-bottom:14px;">Good News</div>
+          <h2 style="font-size:clamp(1.3rem,2.5vw,1.75rem); font-weight:700; color:#2d3841; margin-bottom:16px;">Permitted Development Applies to the Whole Structure</h2>
+          <p style="font-size:15px; color:#555; line-height:1.8; margin-bottom:14px;">The storage section doesn't change the planning position — the same Permitted Development rules apply to the combined structure as to any garden room. Most builds don't require planning permission.</p>
+          <p style="font-size:15px; color:#555; line-height:1.8; margin-bottom:20px;">We confirm this at the free site visit. If you're on a listed building, in a conservation area, or on a corner plot with boundary considerations, we'll tell you clearly what applies before you commit to anything.</p>
+          <a href="/your-build/first-steps" style="color:#34a02e; font-weight:600; font-size:14px; text-decoration:none;">Read our getting started guide →</a>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          {[
+            { rule: 'Single storey — both room and storage', ok: true },
+            { rule: 'No more than 50% of garden covered', ok: true },
+            { rule: 'Max 2.5m height within 2m of boundary', ok: true },
+            { rule: 'Storage included in total footprint calculation', ok: true },
+            { rule: 'Listed buildings — check with us', ok: false },
+            { rule: 'Conservation areas — check with us', ok: false },
+          ].map(r => (
+            <div style={`display:flex; align-items:center; gap:12px; padding:12px 16px; background:${r.ok ? '#f8faf7' : '#fff8f8'}; border-radius:10px; border:1px solid ${r.ok ? '#ebeced' : '#f5e0e0'};`}>
+              <svg width="16" height="16" fill={r.ok ? '#34a02e' : '#cc4444'} viewBox="0 0 24 24">{r.ok ? <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/> : <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>}</svg>
+              <span style="font-size:13.5px; font-weight:600; color:#2d3841;">{r.rule}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section style="background:#f8faf7; padding:72px 0; border-top:1px solid #ebeced;">
+    <div style="max-width:900px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:32px;">
+        <div style="display:flex; justify-content:center; gap:3px; margin-bottom:8px;">
+          {[1,2,3,4,5].map(() => <svg width="20" height="20" fill="#f59e0b" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>)}
+        </div>
+        <p style="font-size:13px; color:#888; margin:0;">5.0 · 39 Google Reviews</p>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        <blockquote style="background:#fff; border-radius:16px; padding:28px; border:1px solid #ebeced; margin:0;">
+          <p style="font-size:14.5px; color:#444; line-height:1.8; margin:0 0 16px; font-style:italic;">"I've got a home office AND storage shed in one beautiful space. The quality of the build is excellent and James was great to work with from start to finish. Really happy with the end result."</p>
+          <footer style="font-size:13px; font-weight:700; color:#2d3841;">James Ross <span style="font-weight:400; color:#888;">· January 2024</span></footer>
+        </blockquote>
+        <blockquote style="background:#fff; border-radius:16px; padding:28px; border:1px solid #ebeced; margin:0;">
+          <p style="font-size:14.5px; color:#444; line-height:1.8; margin:0 0 16px; font-style:italic;">"Brilliant space that now serves as both a garden office and a storage room. Very efficiently designed and excellent quality materials throughout. I would recommend The Green Rooms to anyone considering this type of project."</p>
+          <footer style="font-size:13px; font-weight:700; color:#2d3841;">Philip McDowell <span style="font-weight:400; color:#888;">· February 2024</span></footer>
+        </blockquote>
+      </div>
+      <p style="text-align:center; margin:20px 0 0;"><a href="/testimonials" style="color:#34a02e; font-size:13.5px; font-weight:600; text-decoration:none;">Read all 39 reviews →</a></p>
+    </div>
+  </section>
+
   <section style="background:#34a02e; padding:72px 24px; text-align:center;">
     <div style="max-width:520px; margin:0 auto;">
       <h2 style="font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700; color:#fff; margin-bottom:14px;">Get a Price for Your Garden Room with Storage</h2>
-      <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:28px;">Use our instant calculator to configure your build and see a guide price — including the hidden storage option. No email needed to see your estimate.</p>
+      <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:28px;">Use our instant calculator to configure your build and see a guide price — including the hidden storage option.</p>
       <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
         <a href="/garden-room-price-calculator" class="btn-white" style="font-size:15px; padding:14px 32px;">Get an Instant Quote</a>
         <a href="/contact-us" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.5); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none;">Book a Free Site Visit</a>
@@ -84,3 +209,16 @@ const related = [
   </section>
 
 </ServiceLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 32px !important; }
+    div[style*="grid-template-columns:2fr 1fr 1fr"] { grid-template-columns: 1fr 1fr !important; }
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+  }
+  @media (max-width: 600px) {
+    div[style*="grid-template-columns:2fr 1fr 1fr"],
+    div[style*="grid-template-columns:repeat(3,1fr)"],
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  }
+</style>

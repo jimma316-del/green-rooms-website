@@ -1,5 +1,6 @@
 ---
 import InfoLayout from '../../layouts/InfoLayout.astro';
+import YourBuildNav from '../../components/YourBuildNav.astro';
 ---
 <InfoLayout
   title="Garden Room Landscaping | Decking, Paths & Garden Design | The Green Rooms"
@@ -10,7 +11,7 @@ import InfoLayout from '../../layouts/InfoLayout.astro';
   heroImg="/images/bespoke%20shelter%20square%20on.webp"
   heroAlt="Bespoke garden shelter square on view, Surrey"
   heroPos="center 65%"
-  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build', href: '/your-build/build-process' }, { label: 'Landscaping' }]}
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build', href: '/your-build' }, { label: 'Landscaping' }]}
 >
   <section style="background:#fff; padding:72px 0;">
     <div style="max-width:840px; margin:0 auto; padding:0 24px;">
@@ -70,4 +71,5 @@ import InfoLayout from '../../layouts/InfoLayout.astro';
       </div>
     </div>
   </section>
+  <YourBuildNav currentSlug="landscaping" />
 </InfoLayout>

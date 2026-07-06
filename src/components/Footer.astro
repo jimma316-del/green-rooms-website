@@ -1,10 +1,39 @@
 ---
+const locations = [
+  { label: 'Weybridge', href: '/locations/garden-rooms-weybridge' },
+  { label: 'Esher', href: '/locations/garden-rooms-esher' },
+  { label: 'Cobham', href: '/locations/garden-rooms-cobham' },
+  { label: 'Walton-on-Thames', href: '/locations/garden-rooms-walton-on-thames' },
+  { label: 'Guildford', href: '/locations/garden-rooms-guildford' },
+  { label: 'Leatherhead', href: '/locations/garden-rooms-leatherhead' },
+  { label: 'Woking', href: '/locations/garden-rooms-woking' },
+  { label: 'Epsom', href: '/locations/garden-rooms-epsom' },
+  { label: 'Staines', href: '/locations/garden-rooms-staines' },
+  { label: 'Chertsey', href: '/locations/garden-rooms-chertsey' },
+  { label: 'Oxshott', href: '/locations/garden-rooms-oxshott' },
+  { label: 'Claygate', href: '/locations/garden-rooms-claygate' },
+  { label: 'East Molesey', href: '/locations/garden-rooms-east-molesey' },
+  { label: 'Godalming', href: '/locations/garden-rooms-godalming' },
+  { label: 'Virginia Water', href: '/locations/garden-rooms-virginia-water' },
+  { label: 'Reigate', href: '/locations/garden-rooms-reigate' },
+  { label: 'Dorking', href: '/locations/garden-rooms-dorking' },
+  { label: 'Farnham', href: '/locations/garden-rooms-farnham' },
+  { label: 'Sunbury-on-Thames', href: '/locations/garden-rooms-sunbury' },
+];
+
 const services = [
   { label: 'Garden Pods', href: '/garden-rooms/garden-pods' },
-  { label: 'Garden Offices', href: '/garden-rooms/garden-offices' },
   { label: 'Garden Rooms', href: '/garden-rooms/garden-rooms' },
+  { label: 'Garden Offices', href: '/garden-rooms/garden-offices' },
+  { label: 'Garden Gyms', href: '/garden-rooms/garden-gym' },
   { label: 'Garden Rooms with Storage', href: '/garden-rooms/garden-rooms-with-storage' },
   { label: 'Golf Simulator Studios', href: '/garden-rooms/golf-simulator-studios' },
+  { label: 'Garden Bars', href: '/garden-rooms/garden-bar' },
+  { label: 'Garden Cinemas', href: '/garden-rooms/garden-cinema' },
+  { label: 'Man Caves', href: '/garden-rooms/man-cave' },
+  { label: 'Music Studios', href: '/garden-rooms/music-studio' },
+  { label: 'Yoga Studios', href: '/garden-rooms/yoga-studio' },
+  { label: 'Hot Tub Shelters', href: '/garden-rooms/hot-tub-shelter' },
   { label: 'Bespoke', href: '/garden-rooms/bespoke' },
 ];
 const info = [
@@ -14,7 +43,12 @@ const info = [
   { label: 'Why Us', href: '/why-us' },
   { label: 'Testimonials', href: '/testimonials' },
   { label: 'Showroom', href: '/showrooms' },
-
+  { label: 'Does a Garden Room Add Value?', href: '/garden-rooms/add-value' },
+  { label: 'How We Compare', href: '/garden-rooms/compare' },
+  { label: 'Garden Room vs Extension', href: '/garden-rooms/vs-extension' },
+  { label: 'Garden Room vs Conservatory', href: '/garden-rooms/vs-conservatory' },
+  { label: 'All-Year Use Guide', href: '/garden-rooms/all-year-use' },
+  { label: 'Maintenance Guide', href: '/your-build/maintenance' },
   { label: 'Planning', href: '/planning' },
   { label: 'Guarantee', href: '/guarantee' },
   { label: 'FAQ', href: '/faq' },
@@ -25,11 +59,12 @@ const info = [
 
 <footer style="background:#2d3841; color:#fff;">
   <!-- Main footer -->
-  <div style="max-width:1280px; margin:0 auto; padding:64px 24px 40px; display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:48px;">
+  <div style="max-width:1280px; margin:0 auto; padding:64px 24px 40px; display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:40px;">
     <!-- Brand col -->
     <div>
       <img src="https://cdn.prod.website-files.com/65fa73870456aaad8a954b46/661cf61b0d2c970adddf26ad_the-green-rooms%20White.webp"
            alt="The Green Rooms"
+           width="450" height="225"
            style="height:48px; width:auto; margin-bottom:24px;"
            loading="lazy" />
       <p style="font-size:14px; color:rgba(255,255,255,0.7); line-height:1.7; margin-bottom:24px; max-width:300px;">
@@ -86,11 +121,21 @@ const info = [
         ))}
       </ul>
     </div>
+
+    <!-- Locations col -->
+    <div>
+      <p style="font-size:13px; font-weight:700; color:#fff; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:16px;">Areas We Cover</p>
+      <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px;">
+        {locations.map(item => (
+          <li><a href={item.href} style="color:rgba(255,255,255,0.75); text-decoration:none; font-size:14px; transition:color 0.2s;" class="footer-link">{item.label}</a></li>
+        ))}
+      </ul>
+    </div>
   </div>
 
   <!-- Bottom bar -->
   <div style="border-top:1px solid rgba(255,255,255,0.1); max-width:1280px; margin:0 auto; padding:20px 24px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
-    <p style="font-size:13px; color:rgba(255,255,255,0.65); margin:0;">© The Green Rooms {new Date().getFullYear()}. All rights reserved. Registered in England & Wales.</p>
+    <p style="font-size:13px; color:rgba(255,255,255,0.65); margin:0;">© The Green Rooms {new Date().getFullYear()}. All rights reserved. Registered in England & Wales. Company No. 14041171 · VAT No. 412772509</p>
     <div style="display:flex; gap:20px;">
       <a href="/terms-conditions" style="font-size:13px; color:rgba(255,255,255,0.65); text-decoration:none;" class="footer-link">Terms & Conditions</a>
       <a href="/privacy-policy" style="font-size:13px; color:rgba(255,255,255,0.65); text-decoration:none;" class="footer-link">Privacy Policy</a>
@@ -109,10 +154,16 @@ const info = [
   .social-icon:hover { background: rgba(255,255,255,0.2) !important; }
   .whatsapp-float:hover { transform: scale(1.1); }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
+    footer > div:first-child {
+      grid-template-columns: 1fr 1fr !important;
+      gap: 32px !important;
+    }
+  }
+  @media (max-width: 640px) {
     footer > div:first-child {
       grid-template-columns: 1fr !important;
-      gap: 32px !important;
+      gap: 28px !important;
       padding: 40px 20px 32px !important;
     }
   }

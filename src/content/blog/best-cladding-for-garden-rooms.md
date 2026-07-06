@@ -69,7 +69,7 @@ This is where expert design advice matters. The best result usually comes from v
 
 A garden room in the UK needs to cope with persistent rain, damp mornings, occasional heat and the odd week where the weather cannot decide what season it is. That makes durability and moisture resistance especially important.
 
-Cedar and thermally modified timber perform well when properly detailed and installed. Composite is also a strong performer where weather resistance and low maintenance are priorities. What matters just as much, though, is the build system beneath the cladding. Even the most attractive exterior will not make up for poor insulation, weak detailing or inadequate ventilation.
+Cedar and thermally modified timber perform well when properly detailed and installed. Composite is also a strong performer where weather resistance and low maintenance are priorities. If you want to compare the full range, we cover all our [cladding options](https://www.thegreenrooms.com/your-build/cladding-options) in detail. What matters just as much, though, is the build system beneath the cladding. Even the most attractive exterior will not make up for poor insulation, weak detailing or inadequate ventilation.
 
 That is why cladding should never be chosen in isolation. On a high-quality build, it works together with the wall construction, insulation and weatherproof layers to keep the room comfortable all year round. A beautiful exterior is great. A beautiful exterior wrapped around a cold, damp box is not.
 

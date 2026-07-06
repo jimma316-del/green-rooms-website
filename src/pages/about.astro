@@ -23,6 +23,30 @@ const values = [
   { icon: 'certificate', title: 'Honest Pricing', desc: 'No hidden extras. Our quotes are itemised and fixed — the price you agree is the price you pay.' },
   { icon: 'leaf', title: 'Sustainability Built In', desc: 'All timber is FSC and PEFC certified. Ground screw foundations leave zero concrete in the ground.' },
 ];
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "James",
+  "jobTitle": "Owner & Principal Designer",
+  "description": "Founder of The Green Rooms and principal designer. Started as a carpenter building custom furniture and garden structures under JPA Carpentry, then founded The Green Rooms in 2019. Has personally overseen 150+ bespoke garden room builds across Surrey and the South East.",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "The Green Rooms",
+    "url": "https://www.thegreenrooms.com"
+  },
+  "knowsAbout": [
+    "SIPs construction",
+    "structural insulated panels",
+    "bespoke garden rooms",
+    "carpentry",
+    "garden room design",
+    "Surrey garden rooms",
+    "Permitted Development rights",
+    "ground screw foundations",
+    "EPDM roofing"
+  ]
+};
 ---
 
 <InfoLayout
@@ -35,6 +59,7 @@ const values = [
   heroAlt="The Green Rooms showroom end of garden, Lyne, Surrey"
   breadcrumb={[{ label: 'Home', href: '/' }, { label: 'About Us' }]}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
 
   <!-- Story section -->
   <section style="background:#fff; padding:80px 0;">

@@ -15,6 +15,33 @@ const related = [
   { label: 'Bespoke Builds', href: '/garden-rooms/bespoke', img: '/images/HERO%20Bespoke%20build.webp' },
   { label: 'With Storage', href: '/garden-rooms/garden-rooms-with-storage', img: '/images/GR%20with%20storage%20cedar%20and%20step.webp' },
 ];
+
+const faqs = [
+  {
+    q: "What size do I need for a garden gym?",
+    a: "It depends on how you train. As a guide: 3×3m works for yoga, stretching and bodyweight training. 4×3m is the sweet spot for most people — enough for a cardio machine, a rack and free weights. 5×4m and above is needed for a full power rack with walk-around clearance, or if you want space for two people training simultaneously. We'll advise at the free site visit based on your equipment list."
+  },
+  {
+    q: "Can the floor handle heavy weights?",
+    a: "Yes. We fit heavy-duty rubber tile flooring rated for gym use — it handles the impact of dropped weights and protects the subfloor beneath. Ground screw foundations distribute load evenly and flex with ground movement, unlike a concrete slab which can crack. If you're planning very heavy deadlifts or Olympic lifting, tell us at the design stage and we'll spec the subfloor accordingly."
+  },
+  {
+    q: "How do I keep a garden gym cool in summer?",
+    a: "We include a 5kW air conditioning unit as standard in our garden gym spec — it both heats and cools, so you're comfortable year-round. <a href='/your-build/climate-control' style='color:#34a02e;font-weight:600;'>SIPs construction</a> also significantly reduces temperature fluctuation compared to a timber-frame shed, so the air conditioning doesn't have to work nearly as hard."
+  },
+  {
+    q: "Does a garden gym need planning permission?",
+    a: "Most garden gyms fall under Permitted Development — the same rules as any other garden room. Single storey, not covering more than 50% of the garden, max 2.5m height within 2m of a boundary. We confirm your position at the free site visit. See our <a href='/your-build/first-steps' style='color:#34a02e;font-weight:600;'>getting started guide</a> for a full rundown."
+  },
+  {
+    q: "Can I soundproof a garden gym?",
+    a: "<a href='/your-build/structure' style='color:#34a02e;font-weight:600;'>SIPs construction</a> provides excellent acoustic insulation by default — far better than a timber-frame shed. If you're planning heavy lifting with significant impact noise, we can discuss additional acoustic measures. For most gym uses — cardio, free weights, fitness classes — the standard build is more than adequate and your neighbours won't hear a thing."
+  },
+  {
+    q: "Can the gym be used for anything else?",
+    a: "Absolutely. Many of our garden gym customers design the space to double up — gym in the morning, yoga or Pilates studio in the evening, or a general multi-use room with easy-clean rubber flooring. With bifold doors and the right lighting, it also works as an entertaining space. We'll help you design around multiple uses if that's what you're after."
+  },
+];
 ---
 
 <ServiceLayout
@@ -23,11 +50,16 @@ const related = [
   canonical="/garden-rooms/garden-gym"
   heroImg="/images/garden%20gym%2C%20dual%20canopy%20view%20from%20outside.webp"
   heroAlt="Bespoke garden gym built by The Green Rooms, Surrey"
+  price="From £20,000 inc VAT"
   h1="Garden Gyms Surrey"
   tagline="Bespoke Garden Gym Buildings — Surrey & South East"
   intro="A garden gym is one of the best investments you can make — no memberships, no commute, no waiting for equipment. We build fully insulated, properly fitted gym buildings that are comfortable to train in year-round. Every build includes rubber flooring, dedicated electrics, and climate control as standard. We can also add mirrored walls, integrated storage, and whatever else your training setup requires."
   features={features}
   relatedPages={related}
+  faqs={faqs}
+  projects={[
+    { slug: 'garden-gym-with-hidden-storage', label: 'Garden Gym with Hidden Storage', tagline: 'Chobham, Surrey · 5.8×5.3m · Rubber flooring · Dual canopy · Hidden storage room', img: '/images/garden%20gym%2C%20dual%20canopy%20view%20from%20outside.webp' },
+  ]}
 >
 
   <!-- Gallery -->
@@ -47,8 +79,57 @@ const related = [
     </div>
   </section>
 
-  <!-- What's included -->
+  <!-- Sizing guide -->
   <section class="section" style="background:#fff;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:36px;">
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:10px;">What Size Garden Gym Do I Need?</h2>
+        <p style="color:#666; max-width:520px; margin:0 auto;">The right size depends on your training style. Here's how the most common gym setups map to room dimensions.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:900px; margin:0 auto 32px;">
+        {[
+          {
+            size: '3 × 3m',
+            label: 'Yoga / Pilates',
+            uses: ['Yoga or Pilates mat', 'Stretching and mobility', 'Bodyweight workouts', 'Meditation space'],
+            note: '9m² — solo practice, no heavy equipment',
+          },
+          {
+            size: '4 × 3m',
+            label: 'Functional Training',
+            uses: ['Treadmill or rower', 'Dumbbells and bench', 'Kettlebell work', 'Cardio + strength'],
+            note: '12m² — the most popular gym size',
+            highlight: true,
+          },
+          {
+            size: '5 × 4m',
+            label: 'Full Power Setup',
+            uses: ['Power rack with clearance', 'Olympic barbell + plates', 'Cardio machine alongside', 'Two people training'],
+            note: '20m² — space for a serious home gym',
+          },
+        ].map(s => (
+          <div style={`background:#fff; border-radius:16px; padding:24px; border:${s.highlight ? '2px solid #34a02e' : '1px solid #ebeced'}; position:relative;`}>
+            {s.highlight && <div style="position:absolute; top:-11px; left:50%; transform:translateX(-50%); background:#34a02e; color:#fff; font-size:11px; font-weight:700; padding:3px 12px; border-radius:50px; white-space:nowrap;">Most Popular</div>}
+            <p style="font-size:1.5rem; font-weight:700; color:#2d3841; margin:0 0 2px; font-family:'Poppins',sans-serif;">{s.size}</p>
+            <p style="font-size:11px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.07em; margin:0 0 12px;">{s.label}</p>
+            <ul style="list-style:none; padding:0; margin:0 0 12px; display:flex; flex-direction:column; gap:6px;">
+              {s.uses.map(u => (
+                <li style="display:flex; align-items:center; gap:7px; font-size:13px; color:#555;">
+                  <svg width="11" height="11" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  {u}
+                </li>
+              ))}
+            </ul>
+            <p style="font-size:11.5px; color:#999; margin:0; border-top:1px solid #f0f0f0; padding-top:10px;">{s.note}</p>
+          </div>
+        ))}
+      </div>
+      <p style="text-align:center; font-size:13.5px; color:#666;">Not sure? Bring your equipment list to the <a href="/contact-us" style="color:#34a02e;font-weight:600;">free site visit</a> and we'll work out the best dimensions together.</p>
+    </div>
+  </section>
+
+  <!-- What's included -->
+  <section class="section" style="background:#f8faf7;">
     <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
       <div style="text-align:center; margin-bottom:40px;">
         <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:10px;">What's Included in Every Garden Gym</h2>
@@ -65,7 +146,7 @@ const related = [
           { item: 'Plastered and painted walls', note: 'Mirror panels available on request' },
           { item: 'Aluminium doors and windows', note: 'A-rated glazing throughout' },
         ].map(r => (
-          <div style="display:flex; gap:14px; padding:16px; background:#f8faf7; border-radius:12px; border:1px solid #ebeced; align-items:start;">
+          <div style="display:flex; gap:14px; padding:16px; background:#fff; border-radius:12px; border:1px solid #ebeced; align-items:start;">
             <div style="width:20px; height:20px; background:#34a02e; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;">
               <svg width="10" height="10" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
@@ -76,6 +157,59 @@ const related = [
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- Planning permission -->
+  <section class="section" style="background:#fff;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;">
+        <div>
+          <div style="display:inline-block; background:#e7f1e3; color:#257a21; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:5px 14px; border-radius:50px; margin-bottom:14px;">Good News</div>
+          <h2 style="font-size:clamp(1.3rem,2.5vw,1.75rem); font-weight:700; color:#2d3841; margin-bottom:16px;">Most Garden Gyms Don't Need Planning Permission</h2>
+          <p style="font-size:15px; color:#555; line-height:1.8; margin-bottom:14px;">Under Permitted Development rights, a garden gym is treated the same as any other garden outbuilding. Single storey, within the garden footprint limits, and no taller than 2.5m within 2m of the boundary — and no planning application is needed.</p>
+          <p style="font-size:15px; color:#555; line-height:1.8; margin-bottom:20px;">We confirm your position at the free site visit. Listed buildings, conservation areas and national parks may have different requirements — we'll tell you exactly what applies to your property.</p>
+          <a href="/your-build/first-steps" style="color:#34a02e; font-weight:600; font-size:14px; text-decoration:none;">Read our getting started guide →</a>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          {[
+            { rule: 'Single storey only', ok: true },
+            { rule: 'No more than 50% of garden covered', ok: true },
+            { rule: 'Max 2.5m height within 2m of boundary', ok: true },
+            { rule: 'Not forward of the principal elevation', ok: true },
+            { rule: 'Listed buildings — check with us', ok: false },
+            { rule: 'Conservation areas — check with us', ok: false },
+          ].map(r => (
+            <div style={`display:flex; align-items:center; gap:12px; padding:12px 16px; background:${r.ok ? '#f8faf7' : '#fff8f8'}; border-radius:10px; border:1px solid ${r.ok ? '#ebeced' : '#f5e0e0'};`}>
+              <svg width="16" height="16" fill={r.ok ? '#34a02e' : '#cc4444'} viewBox="0 0 24 24">{r.ok ? <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/> : <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>}</svg>
+              <span style="font-size:13.5px; font-weight:600; color:#2d3841;">{r.rule}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section style="background:#f8faf7; padding:72px 0; border-top:1px solid #ebeced;">
+    <div style="max-width:900px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:32px;">
+        <div style="display:flex; justify-content:center; gap:3px; margin-bottom:8px;">
+          {[1,2,3,4,5].map(() => <svg width="20" height="20" fill="#f59e0b" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>)}
+        </div>
+        <p style="font-size:13px; color:#888; margin:0;">5.0 · 39 Google Reviews</p>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        <blockquote style="background:#fff; border-radius:16px; padding:28px; border:1px solid #ebeced; margin:0;">
+          <p style="font-size:14.5px; color:#444; line-height:1.8; margin:0 0 16px; font-style:italic;">"James and his team built the most incredible large garden room with large cedar cladding and LED strip lighting — I love having somewhere to keep all my exercise equipment and to relax. The quality and finish are second to none."</p>
+          <footer style="font-size:13px; font-weight:700; color:#2d3841;">Katherine Lowe <span style="font-weight:400; color:#888;">· July 2024</span></footer>
+        </blockquote>
+        <blockquote style="background:#fff; border-radius:16px; padding:28px; border:1px solid #ebeced; margin:0;">
+          <p style="font-size:14.5px; color:#444; line-height:1.8; margin:0 0 16px; font-style:italic;">"Incredible attention to detail, customer service, materials and quality of craftsmanship. Could not be happier with what James and his team built for us and perfectly on schedule too!"</p>
+          <footer style="font-size:13px; font-weight:700; color:#2d3841;">Nick <span style="font-weight:400; color:#888;">· July 2023</span></footer>
+        </blockquote>
+      </div>
+      <p style="text-align:center; margin:20px 0 0;"><a href="/testimonials" style="color:#34a02e; font-size:13.5px; font-weight:600; text-decoration:none;">Read all 39 reviews →</a></p>
     </div>
   </section>
 
@@ -92,3 +226,15 @@ const related = [
   </section>
 
 </ServiceLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 32px !important; }
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+    div[style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
+  }
+  @media (max-width: 600px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"],
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  }
+</style>

@@ -1,0 +1,258 @@
+---
+import InfoLayout from '../../layouts/InfoLayout.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can a garden room be used in winter?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — but only if it's built properly. Garden rooms using SIPs (Structural Insulated Panels) construction achieve wall U-values of around 0.18 W/m²K, which is better than many modern houses. Combined with a good panel heater or air conditioning unit, a well-built garden room stays comfortable in sub-zero temperatures. Poorly insulated timber-frame garden rooms will be cold and damp in winter, which is why construction method matters." }
+    },
+    {
+      "@type": "Question",
+      "name": "What heating is best for a garden room?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For most garden rooms, a wall-mounted electric panel heater is the most practical solution — it's cheap to install, easy to control via app, and combined with good SIPs insulation, heats a room quickly and holds temperature well. Air conditioning units with heat pump functionality are increasingly popular for year-round comfort — they heat in winter and cool in summer with high efficiency. Underfloor heating is possible but adds cost and complexity." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a garden room get too hot in summer?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A well-designed garden room should not overheat. Key factors include: roof design (a well-insulated roof reduces radiant heat gain), window orientation and glazing spec, opening doors and ventilation, and the option to add an air conditioning unit. Our SIPs roofs have excellent insulation properties that reduce summer heat build-up compared to timber-frame alternatives. For hot south-facing rooms, we recommend discussing air conditioning during the design stage." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is condensation a problem in garden rooms?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In poorly insulated garden rooms, yes. Condensation forms when warm moist air hits a cold surface. SIPs construction eliminates most of the thermal bridging that causes this — the insulation is continuous through the panels, so there are no cold spots where condensation can form. Adequate ventilation also helps, which we factor into every build." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do garden rooms need a boiler or central heating?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No — garden rooms don't connect to the central heating system. They have their own independent electrical supply and use electric heating (panel heaters, air conditioning heat pumps, or infrared panels). This is simpler, cheaper to install, and easier to control — you only heat the space when you're using it." }
+    }
+  ]
+};
+
+const months = [
+  {
+    season: 'Winter',
+    months: 'December – February',
+    bg: '#e8f0f8',
+    border: 'rgba(66,133,244,0.2)',
+    heading: 'Cold but Comfortable',
+    desc: 'A SIPs-built garden room handles Surrey winters without issue. Panel heaters or air source heat pumps bring the room to temperature quickly — typically 15–20 minutes for a 5×3m space from cold. The key is locking in heat once there: SIPs walls achieve U-values around 0.18 W/m²K, which is better than most new-build walls.',
+    tips: ['Set heating on a timer so the room is warm before you arrive', 'Air conditioning heat pumps are 3–4× more efficient than panel heaters', 'LED lighting provides working light through the dark months', 'Roller blinds help retain heat overnight'],
+  },
+  {
+    season: 'Spring',
+    months: 'March – May',
+    bg: '#e7f1e3',
+    border: 'rgba(52,160,46,0.2)',
+    heading: 'The Best Time to Be Out There',
+    desc: 'Spring is when most people fall in love with their garden room. Mild temperatures, plenty of natural light, and bifold doors open to the garden. No heating required on most days. If you have a gym or yoga studio, this is when it earns its keep.',
+    tips: ['Open bifold or French doors on sunny days', 'Natural ventilation handles the mild temperatures', 'Garden rooms with canopies let you sit outside even in light rain', 'Ideal for getting the garden sorted — storage access right there'],
+  },
+  {
+    season: 'Summer',
+    months: 'June – August',
+    bg: '#fef9e7',
+    border: 'rgba(249,188,2,0.3)',
+    heading: 'Manage the Heat',
+    desc: 'Surrey summers can push temperatures into the high 20s and beyond. A well-oriented, well-insulated room stays cooler than a glass-heavy conservatory — but if you\'re working all day in direct sun, air conditioning transforms the experience. Our SIPs roof insulation significantly reduces radiant heat gain compared to timber frames.',
+    tips: ['South-facing rooms benefit most from air conditioning', 'Position a desk near a window that opens for natural airflow', 'External blinds or overhangs reduce solar gain on glazing', 'A 9000 BTU air conditioning unit handles a 5×3m room easily'],
+  },
+  {
+    season: 'Autumn',
+    months: 'September – November',
+    bg: '#fdf3ee',
+    border: 'rgba(230,126,34,0.2)',
+    heading: 'Settle In for the Long Haul',
+    desc: 'Autumn is the real test for a garden room. Temperatures drop, daylight shortens, and the question of whether it\'s actually usable gets answered. A quality SIPs build with good heating passes this test comfortably. Our customer Matt Grenyer waited 6 months before writing his review specifically to confirm: "The panel heater giving more than enough heat on the rare occasion it was needed."',
+    tips: ['A smart panel heater with app control lets you pre-heat remotely', 'Good LED task lighting is worth specifying before the build', 'Insulated floor (included as standard) makes a significant difference to comfort', 'Draught-proof doors and windows come as standard'],
+  },
+];
+---
+
+<InfoLayout
+  title="Garden Rooms for All Year Round Use | Year-Round Guide | The Green Rooms"
+  description="Can a garden room be used all year round in the UK? Yes — if it's built right. Our SIPs-insulated rooms are designed for year-round comfort across Surrey and the South East."
+  canonical="/garden-rooms/all-year-use"
+  pageTitle="Using Your Garden Room All Year Round"
+  pageSubtitle="A well-built garden room is a proper room — not just a fair-weather space. Here's what makes the difference."
+  heroImg="/images/Classic%20GR%20in%20Garden.webp"
+  heroAlt="Garden room in winter, Surrey"
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Garden Rooms', href: '/garden-rooms/garden-rooms' }, { label: 'All-Year Use' }]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Quick answer box -->
+  <section style="background:#e7f1e3; padding:48px 24px;">
+    <div style="max-width:860px; margin:0 auto;">
+      <div style="background:#fff; border-radius:20px; padding:32px 36px; border:1px solid rgba(52,160,46,0.2);">
+        <h2 style="font-size:1.1rem; font-weight:700; color:#2d3841; margin:0 0 12px;">The Short Answer</h2>
+        <p style="font-size:15px; color:#444; line-height:1.8; margin:0 0 12px;">Yes — our garden rooms are designed and built for year-round use. The key is construction method. SIPs (Structural Insulated Panels) deliver continuous insulation with no thermal bridging, achieving U-values around 0.18 W/m²K through the walls and roof. Pair that with an air conditioning heat pump or smart panel heater, and the room is as comfortable in January as it is in June.</p>
+        <p style="font-size:15px; color:#444; line-height:1.8; margin:0;">Thin timber-frame garden rooms — the type you'll find from budget suppliers — are not suitable for year-round use. They're cold in winter, overheat in summer, and suffer condensation issues. That's why we use SIPs, and why our customers actually use their rooms every day.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What makes a garden room all-year usable -->
+  <section style="background:#fff; padding:80px 0;">
+    <div style="max-width:1000px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin:0 0 36px; text-align:center;">What Makes the Difference</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px;">
+        {[
+          {
+            title: 'SIPs Construction',
+            icon: '🏗️',
+            desc: 'Structural Insulated Panels give continuous insulation through walls, floor and roof — no cold spots, no thermal bridging. U-value ~0.18 W/m²K, which exceeds modern building regulations.',
+          },
+          {
+            title: 'Independent Heating',
+            icon: '🌡️',
+            desc: 'Electric panel heaters or air conditioning heat pumps provide fast, controllable heat. Heat pumps run at 300–400% efficiency, so they\'re significantly cheaper to run than direct electric heaters.',
+          },
+          {
+            title: 'Proper Glazing',
+            icon: '🪟',
+            desc: 'Double-glazed doors and windows are standard. We specify thermally broken aluminium frames that eliminate the cold spots common in cheaper aluminium or UPVC systems.',
+          },
+          {
+            title: 'Insulated Floor',
+            icon: '🟫',
+            desc: 'Cold floors make rooms feel cold even when the air temperature is comfortable. Our SIPs floor system is insulated as part of the panel — no additional floor insulation required.',
+          },
+          {
+            title: 'Vapour Control',
+            icon: '💧',
+            desc: 'SIPs construction is inherently airtight and controls vapour movement, which is why condensation isn\'t an issue. Adequate ventilation via trickle vents is specified as standard.',
+          },
+          {
+            title: 'Summer Cooling',
+            icon: '❄️',
+            desc: 'An air conditioning unit handles both heating and cooling — critical for south-facing rooms in summer. A 9000 BTU unit manages a 5×3m room easily and can be added at any point.',
+          },
+        ].map(item => (
+          <div style="background:#f8faf7; border-radius:16px; padding:24px; border:1px solid #ebeced;">
+            <div style="font-size:2rem; margin-bottom:12px;">{item.icon}</div>
+            <h3 style="font-size:1rem; font-weight:700; color:#2d3841; margin:0 0 10px;">{item.title}</h3>
+            <p style="font-size:13.5px; color:#555; line-height:1.7; margin:0;">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Season-by-season guide -->
+  <section style="background:#f8faf7; padding:72px 0; border-top:1px solid #ebeced;">
+    <div style="max-width:1000px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin:0 0 36px; text-align:center;">Season by Season</h2>
+      <div style="display:flex; flex-direction:column; gap:20px;">
+        {months.map(m => (
+          <div style={`background:${m.bg}; border-radius:20px; padding:32px; border:1px solid ${m.border};`}>
+            <div style="display:flex; align-items:flex-start; gap:32px; flex-wrap:wrap;">
+              <div style="flex-shrink:0; min-width:140px;">
+                <p style="font-family:'Poppins',sans-serif; font-size:1.1rem; font-weight:700; color:#2d3841; margin:0 0 2px;">{m.season}</p>
+                <p style="font-size:12px; color:#888; margin:0;">{m.months}</p>
+              </div>
+              <div style="flex:1; min-width:280px;">
+                <h3 style="font-size:1rem; font-weight:700; color:#2d3841; margin:0 0 10px;">{m.heading}</h3>
+                <p style="font-size:14px; color:#555; line-height:1.75; margin:0 0 16px;">{m.desc}</p>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+                  {m.tips.map(tip => (
+                    <div style="display:flex; align-items:flex-start; gap:7px;">
+                      <svg width="12" height="12" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:2px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                      <span style="font-size:12.5px; color:#2d3841; line-height:1.45;">{tip}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SIPs vs timber frame -->
+  <section style="background:#2d3841; padding:72px 24px;">
+    <div style="max-width:860px; margin:0 auto;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.3rem,2.5vw,1.8rem); font-weight:700; color:#fff; margin:0 0 28px; text-align:center;">SIPs vs Timber Frame — Thermal Performance Compared</h2>
+      <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; font-size:14px;">
+          <thead>
+            <tr>
+              <th style="padding:14px 20px; text-align:left; color:rgba(255,255,255,0.6); font-size:12px; font-weight:600; border-bottom:1px solid rgba(255,255,255,0.1);"> </th>
+              <th style="padding:14px 20px; text-align:center; color:#34a02e; font-size:12px; font-weight:700; border-bottom:1px solid rgba(255,255,255,0.1);">SIPs (The Green Rooms)</th>
+              <th style="padding:14px 20px; text-align:center; color:rgba(255,255,255,0.6); font-size:12px; font-weight:600; border-bottom:1px solid rgba(255,255,255,0.1);">Typical Timber Frame</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Wall U-value', '~0.18 W/m²K', '0.3–0.5+ W/m²K'],
+              ['Thermal bridging', 'None — continuous insulation', 'Yes — at every stud'],
+              ['Condensation risk', 'Very low', 'Higher — cold spots at studs'],
+              ['Winter heat retention', 'Excellent', 'Poor to moderate'],
+              ['Summer overheating', 'Low', 'Higher — thin roofs absorb heat'],
+              ['Airtightness', 'High — panel joints taped and sealed', 'Variable — depends on build quality'],
+              ['Year-round rating', '✓ All seasons', '✗ Fair weather only'],
+            ].map(([factor, sips, timber], i) => (
+              <tr style={`border-bottom:1px solid rgba(255,255,255,0.06); background:${i % 2 === 0 ? 'rgba(255,255,255,0.02)' : 'transparent'};`}>
+                <td style="padding:13px 20px; color:rgba(255,255,255,0.7); font-size:13px;">{factor}</td>
+                <td style="padding:13px 20px; text-align:center; color:#34a02e; font-weight:600; font-size:13px;">{sips}</td>
+                <td style="padding:13px 20px; text-align:center; color:rgba(255,255,255,0.5); font-size:13px;">{timber}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section style="background:#f8faf7; padding:72px 0;">
+    <div style="max-width:860px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.3rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin:0 0 28px;">Common Questions</h2>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        {[
+          { q: 'What heating is best for a garden room?', a: 'For most rooms, we recommend either smart electric panel heaters (easy, cheap to install, controllable by app) or an air conditioning heat pump (efficient, heats and cools, increasingly popular). Heat pumps run at 300–400% efficiency, making them significantly cheaper to run over time. Underfloor heating is possible but adds cost and complicates the floor build-up.' },
+          { q: 'Does condensation form on the windows?', a: 'Some condensation on external glazing is normal in cold weather — it means the glass is well insulated and the warm air from inside isn\'t reaching the outer pane. Internal condensation (on the room-facing side of the glass) should not occur with properly specified double glazing and adequate ventilation.' },
+          { q: 'How much does it cost to heat a garden room in winter?', a: 'Running costs depend on insulation quality, room size, and how you heat it. A 5×3m SIPs room with a panel heater used 8 hours a day through winter typically adds £30–£70/month to electricity bills. An air conditioning heat pump running on the same pattern would cost £10–£30/month given its higher efficiency. Good insulation is the biggest factor in keeping running costs low.' },
+          { q: 'Can I have air conditioning installed after the garden room is built?', a: 'Yes — air conditioning can be retrofitted. The unit mounts on an external wall, with a refrigerant pipe running through to an internal head unit. We\'d ideally position the penetration point during the build to keep it clean and weatherproof, but it can be done later. Cost is typically £800–£1,500 installed.' },
+        ].map(item => (
+          <details style="background:#fff; border:1px solid #ebeced; border-radius:12px; padding:20px 24px;">
+            <summary style="font-size:15px; font-weight:700; color:#2d3841; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+              {item.q}
+              <svg width="16" height="16" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-left:12px;"><path d="M7 10l5 5 5-5z"/></svg>
+            </summary>
+            <p style="font-size:14px; color:#555; line-height:1.8; margin:14px 0 0;">{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#34a02e; padding:72px 24px; text-align:center;">
+    <div style="max-width:520px; margin:0 auto;">
+      <h2 style="font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700; color:#fff; margin-bottom:14px;">Want to See Our Rooms in Person?</h2>
+      <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:28px;">We have a showroom at our base in Lyne, Surrey — come and see the quality of the build, the cladding options, and ask us anything about year-round performance.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+        <a href="/contact-us" class="btn-white" style="font-size:15px; padding:14px 32px;">Book a Site Visit</a>
+        <a href="/garden-room-price-calculator" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.5); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none;">Get a Guide Price</a>
+      </div>
+    </div>
+  </section>
+
+</InfoLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:1fr 1fr 1fr"] { grid-template-columns: 1fr 1fr !important; }
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 24px !important; }
+  }
+  @media (max-width: 600px) {
+    div[style*="grid-template-columns:1fr 1fr 1fr"],
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  }
+</style>

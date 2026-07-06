@@ -9,7 +9,7 @@ If you have ever taken a video call from the kitchen table while the washing mac
 
 The honest answer is yes, often they are. But not always for the reasons people expect.
 
-A well-designed garden office is not just a desk at the bottom of the garden. Done properly, it becomes a separate, usable room with real comfort, proper insulation, reliable electrics, strong acoustics and a finish that feels like part of your home rather than an afterthought. That difference matters, because the value of a garden office is rarely just about square footage. It is about how you use your home, how you work, and whether you want more space without the mess and upheaval of a full extension.
+A well-designed [garden office](https://www.thegreenrooms.com/garden-rooms/garden-offices) is not just a desk at the bottom of the garden. Done properly, it becomes a separate, usable room with real comfort, proper insulation, reliable electrics, strong acoustics and a finish that feels like part of your home rather than an afterthought. That difference matters, because the value of a garden office is rarely just about square footage. It is about how you use your home, how you work, and whether you want more space without the mess and upheaval of a full extension.
 
 ## Are garden offices worth it for everyday life?
 

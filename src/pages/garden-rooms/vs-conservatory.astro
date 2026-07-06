@@ -1,0 +1,279 @@
+---
+import InfoLayout from '../../layouts/InfoLayout.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is a garden room better than a conservatory?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For year-round use, yes — almost always. A conservatory with a polycarbonate or glass roof is notoriously uncomfortable in temperature extremes: too hot in summer, too cold in winter. A garden room built with SIPs construction and a properly insulated roof maintains a comfortable temperature throughout the year without constant heating or cooling. The trade-off is that a conservatory connects internally to your house, while a garden room is a separate structure in the garden." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a conservatory cheaper than a garden room?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Entry-level polycarbonate conservatories can start around £10,000–£15,000, but a quality full-glass conservatory or orangery runs £25,000–£60,000. When you compare like for like — a well-insulated, year-round room with quality glazing — garden rooms from The Green Rooms start from £15,450 fully installed. The more meaningful comparison is usable space per pound: a poorly insulated conservatory may cost less upfront but delivers far less value in use." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need planning permission for a conservatory?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Conservatories attached to the house are treated as extensions under planning rules, and most fall under Permitted Development if they're under a certain size and don't exceed the limits on the original footprint. However, attached conservatories often require compliance with building regulations — unless they are separated from the house by external-quality doors and windows, and below 30m². A garden room in the garden is a separate outbuilding with its own permitted development rules, and for most properties falls comfortably within these limits without any applications needed." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a conservatory be used as a home office?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Technically yes, but in practice many people find conservatories poorly suited to daily office use. Screen glare from glass roofs and walls, overheating in summer (often reaching 35°C+ with a polycarbonate roof), and drafts in winter make concentration difficult without significant additional heating and shading. A dedicated garden office is purpose-built to work all year: insulated SIPs panels, controlled glazing, and proper electrical fit-out as standard." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a conservatory or garden room add more value?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Both can add value, but quality and usability matter more than type. A well-built garden room typically adds 5–15% to property value and has strong appeal to buyers looking for flexible home-working or leisure space. Basic conservatories — particularly those with polycarbonate roofs — are increasingly viewed as liabilities by buyers, who factor in the cost of replacement or heating. A quality orangery or full-glass extension adds value but at significantly higher cost. A premium garden room from The Green Rooms tends to offer better return on investment." }
+    }
+  ]
+};
+---
+
+<InfoLayout
+  title="Garden Room vs Conservatory | Year-Round Comfort Compared | The Green Rooms"
+  description="Garden room vs conservatory — insulation, cost, year-round usability, planning and value compared. Which is the smarter choice for your Surrey home?"
+  canonical="/garden-rooms/vs-conservatory"
+  pageTitle="Garden Room vs Conservatory"
+  pageSubtitle="Both add space to your home — but only one is genuinely comfortable in January. A straight comparison of cost, comfort, planning and value."
+  heroImg="/images/classic%20end%20of%20garden%20portrait.webp"
+  heroAlt="Bespoke garden room in a Surrey garden"
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Garden Rooms', href: '/garden-rooms/garden-rooms' }, { label: 'Garden Room vs Conservatory' }]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Quick summary -->
+  <section style="background:#e7f1e3; padding:48px 24px;">
+    <div style="max-width:860px; margin:0 auto;">
+      <div style="background:#fff; border-radius:20px; padding:32px 36px; border:1px solid rgba(52,160,46,0.2);">
+        <h2 style="font-size:1.1rem; font-weight:700; color:#2d3841; margin:0 0 16px;">The Short Answer</h2>
+        <p style="font-size:15px; color:#444; line-height:1.8; margin:0 0 12px;">A conservatory connects to your house and looks good in a brochure — but most are unusable for several months of the year without serious climate control. A garden room is a separate, properly insulated structure that stays comfortable year-round with standard heating. For anyone who wants to genuinely use the space every week, not just in May and September, a garden room is almost always the better choice.</p>
+        <p style="font-size:15px; color:#444; line-height:1.8; margin:0;">The only advantage a conservatory holds is internal connection to the house. If that matters to you specifically, it's worth weighing. But for home offices, studios, gyms and everyday living space, the performance difference is significant.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Head-to-head comparison table -->
+  <section style="background:#fff; padding:80px 0;">
+    <div style="max-width:1000px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin:0 0 36px; text-align:center;">Head-to-Head Comparison</h2>
+      <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; font-size:14px;">
+          <thead>
+            <tr>
+              <th style="padding:14px 20px; text-align:left; background:#2d3841; color:#fff; font-family:'Poppins',sans-serif; font-size:13px; border-radius:12px 0 0 0;"> </th>
+              <th style="padding:14px 20px; text-align:center; background:#34a02e; color:#fff; font-family:'Poppins',sans-serif; font-size:13px;">Garden Room</th>
+              <th style="padding:14px 20px; text-align:center; background:#2d3841; color:#fff; font-family:'Poppins',sans-serif; font-size:13px; border-radius:0 12px 0 0;">Conservatory</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Year-round comfort', 'Yes — SIPs insulation, stable temp', 'Often not — hot in summer, cold in winter'],
+              ['Roof construction', 'Insulated SIPs — same spec as walls', 'Glass or polycarbonate — poor thermal performance'],
+              ['Typical summer temperature', 'Controlled — same as any room', 'Can exceed 35°C with polycarbonate roof'],
+              ['Winter warmth', 'Retains heat with minimal input', 'Requires constant heating — high running costs'],
+              ['Cost (5×3m equivalent)', 'From £25,460 inc VAT', '£20,000 – £60,000+ (quality glass / orangery)'],
+              ['Planning permission', 'Usually not required', 'Often PD if within limits — but attached to house'],
+              ['Building regulations', 'Electrical cert only', 'Exempt only if separated by external doors and under 30m²'],
+              ['Connected to main house', 'No — separate structure in garden', 'Yes — internal connection'],
+              ['Build time on site', '3–5 days', '4–8 weeks typically'],
+              ['Disruption to home', 'None — built entirely in garden', 'Some — wall opened, temporary access compromised'],
+              ['Insulation quality', 'SIPs — U-value 0.18 or better', 'Varies — often below modern standards'],
+              ['Property value impact', '5–15% for quality build', 'Varies — polycarbonate versions often viewed negatively'],
+              ['Lifespan', '30–50 years typical', 'Polycarbonate: 15–20 yrs; glass/orangery: 25–40 yrs'],
+            ].map(([factor, garden, conserv], i) => (
+              <tr style={`border-top:1px solid #ebeced; background:${i % 2 === 0 ? '#fff' : '#fafafa'};`}>
+                <td style="padding:14px 20px; font-weight:600; color:#2d3841; font-size:13.5px;">{factor}</td>
+                <td style="padding:14px 20px; text-align:center; color:#34a02e; font-weight:600; font-size:13.5px;">{garden}</td>
+                <td style="padding:14px 20px; text-align:center; color:#555; font-size:13.5px;">{conserv}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- The temperature problem -->
+  <section style="background:#f8faf7; padding:72px 0; border-top:1px solid #ebeced;">
+    <div style="max-width:1000px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.3rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin:0 0 16px;">The Temperature Problem Nobody Warns You About</h2>
+      <p style="font-size:15px; color:#555; line-height:1.8; margin:0 0 32px;">The most common complaint about conservatories is one that rarely appears in the sales pitch: they become unusable for large parts of the year. A polycarbonate roof traps heat so effectively in summer that interior temperatures regularly exceed 35°C. In winter, the same roof radiates heat away so fast that the room is cold within an hour of turning the heating off.</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+        <div style="background:#fff3e0; border-radius:20px; padding:28px; border:1px solid #ffe0b2;">
+          <h3 style="font-size:1rem; font-weight:700; color:#e65100; margin:0 0 16px;">Conservatory — the real-world experience</h3>
+          {[
+            'Polycarbonate roof reaches 35°C+ in direct summer sun',
+            'Single-glazed frames lose heat rapidly in winter',
+            'Condensation problems on cold nights',
+            'Screen glare from overhead glass — impractical for office work',
+            'Constant heating required to maintain working temperature in winter',
+            'Often ends up as a dumping ground by year 3',
+          ].map(item => (
+            <div style="display:flex; align-items:flex-start; gap:10px; padding:7px 0; border-bottom:1px solid rgba(230,81,0,0.1);">
+              <div style="width:4px; height:4px; background:#e65100; border-radius:50%; flex-shrink:0; margin-top:8px;"></div>
+              <span style="font-size:13.5px; color:#555; line-height:1.5;">{item}</span>
+            </div>
+          ))}
+        </div>
+        <div style="background:#e7f1e3; border-radius:20px; padding:28px; border:1px solid rgba(52,160,46,0.2);">
+          <h3 style="font-size:1rem; font-weight:700; color:#2d3841; margin:0 0 16px;">Garden Room — what SIPs construction delivers</h3>
+          {[
+            'Insulated SIPs roof — same thermal performance as walls',
+            'U-value of 0.18 or better across floor, walls and ceiling',
+            'Comfortable year-round with a standard panel heater or air con',
+            'No condensation — airtight, thermally broken construction',
+            'Controlled glazing placement — no overhead glass to cause glare or heat gain',
+            'Designed to be used every day in every season',
+          ].map(item => (
+            <div style="display:flex; align-items:flex-start; gap:10px; padding:7px 0; border-bottom:1px solid rgba(52,160,46,0.1);">
+              <svg width="14" height="14" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:2px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span style="font-size:13.5px; color:#2d3841; line-height:1.5;">{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cost comparison -->
+  <section style="background:#fff; padding:72px 0; border-top:1px solid #ebeced;">
+    <div style="max-width:1000px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.3rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin:0 0 16px;">What Does Each Actually Cost?</h2>
+      <p style="font-size:15px; color:#555; line-height:1.8; margin:0 0 32px;">The entry-level conservatory price looks attractive until you realise what it delivers. A polycarbonate-roofed conservatory at £12,000–£18,000 will be hot, cold and uncomfortable for much of the year. A quality full-glass conservatory or orangery that genuinely competes on comfort is £30,000–£60,000 and still requires building regulation compliance.</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px;">
+        <div>
+          <div style="background:#e7f1e3; border-radius:16px; padding:28px; border:1px solid rgba(52,160,46,0.2); margin-bottom:16px;">
+            <h3 style="font-size:1rem; font-weight:700; color:#2d3841; margin:0 0 16px;">Garden Room — what's included</h3>
+            {[
+              'Ground screw foundations — no concrete',
+              'SIPs structure (walls, floor, insulated roof)',
+              'Choice of cladding — cedar, larch, composite',
+              'Aluminium doors and A-rated glazing',
+              'Full electrical installation + EIC certificate',
+              'Plastered and painted interior + flooring',
+              'LED lighting throughout',
+              '10-year structural guarantee',
+              '20-year EPDM roof guarantee',
+            ].map(item => (
+              <div style="display:flex; align-items:center; gap:8px; padding:6px 0; border-bottom:1px solid rgba(52,160,46,0.1);">
+                <svg width="12" height="12" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span style="font-size:13px; color:#2d3841;">{item}</span>
+              </div>
+            ))}
+          </div>
+          <p style="font-size:1.4rem; font-weight:700; color:#34a02e; margin:0; font-family:'Poppins',sans-serif;">From £25,460 inc VAT</p>
+          <p style="font-size:12px; color:#888; margin:2px 0 0;">5×3m Garden Room, fully installed</p>
+        </div>
+        <div>
+          <div style="background:#fff; border-radius:16px; padding:28px; border:1px solid #ebeced; margin-bottom:16px;">
+            <h3 style="font-size:1rem; font-weight:700; color:#2d3841; margin:0 0 16px;">Conservatory — what to factor in</h3>
+            {[
+              'Basic polycarbonate: £10,000–£20,000 (poor thermal performance)',
+              'Full-glass / lantern roof: £25,000–£45,000',
+              'Orangery (solid roof section): £35,000–£60,000+',
+              'Building regs compliance (if connected, over 30m²)',
+              'Annual heating costs: higher than a well-insulated garden room',
+              'Potential polycarbonate replacement at 15–20 years',
+              'Shading / blinds to manage summer overheating: £1,000–£5,000 extra',
+            ].map(item => (
+              <div style="display:flex; align-items:flex-start; gap:8px; padding:6px 0; border-bottom:1px solid #ebeced;">
+                <div style="width:4px; height:4px; background:#ccc; border-radius:50%; flex-shrink:0; margin-top:8px;"></div>
+                <span style="font-size:13px; color:#555; line-height:1.45;">{item}</span>
+              </div>
+            ))}
+          </div>
+          <p style="font-size:1.4rem; font-weight:700; color:#2d3841; margin:0; font-family:'Poppins',sans-serif;">£10,000 – £60,000+</p>
+          <p style="font-size:12px; color:#888; margin:2px 0 0;">Depending on specification and roof type</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- When each is better -->
+  <section style="background:#f8faf7; padding:72px 0; border-top:1px solid #ebeced;">
+    <div style="max-width:1000px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.3rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin:0 0 32px;">When to Choose Each</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+        <div style="background:#e7f1e3; border-radius:20px; padding:28px; border:1px solid rgba(52,160,46,0.2);">
+          <h3 style="font-size:1rem; font-weight:700; color:#2d3841; margin:0 0 16px;">Choose a Garden Room if…</h3>
+          {[
+            'You want a space you\'ll actually use in January and July',
+            'You need a dedicated home office, gym, studio or hobby room',
+            'Year-round thermal comfort is a priority',
+            'You want minimal disruption during the build',
+            'You don\'t want to open up the back of your house',
+            'You want strong property value addition',
+            'You want a separate, quiet space away from the house',
+          ].map(item => (
+            <div style="display:flex; align-items:flex-start; gap:10px; padding:7px 0; border-bottom:1px solid rgba(52,160,46,0.1);">
+              <svg width="14" height="14" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:2px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span style="font-size:13.5px; color:#2d3841; line-height:1.5;">{item}</span>
+            </div>
+          ))}
+        </div>
+        <div style="background:#fff; border-radius:20px; padding:28px; border:1px solid #ebeced;">
+          <h3 style="font-size:1rem; font-weight:700; color:#2d3841; margin:0 0 16px;">Consider a Conservatory if…</h3>
+          {[
+            'You specifically need the space internally connected to the house',
+            'You want to create a light, open feel at the back of the property',
+            'Occasional seasonal use is sufficient (spring, summer, autumn)',
+            'You\'re considering a high-quality orangery with solid roof sections',
+            'Your garden can\'t accommodate a separate structure',
+          ].map(item => (
+            <div style="display:flex; align-items:flex-start; gap:10px; padding:7px 0; border-bottom:1px solid #ebeced;">
+              <div style="width:4px; height:4px; background:#999; border-radius:50%; flex-shrink:0; margin-top:8px;"></div>
+              <span style="font-size:13.5px; color:#555; line-height:1.5;">{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section style="background:#fff; padding:72px 0; border-top:1px solid #ebeced;">
+    <div style="max-width:860px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.3rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin:0 0 28px;">Common Questions</h2>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        {[
+          { q: 'Can a conservatory be used as a home office all year?', a: 'In practice, most conservatories are difficult to use as offices for much of the year. Screen glare from overhead glass, overheating in summer (often 30–35°C with polycarbonate roofs), and drafts in winter make sustained focus difficult. A dedicated garden office is designed around daily use: controlled glazing, proper insulation, and climate control as standard.' },
+          { q: 'Does a conservatory add value to a house?', a: 'It depends heavily on quality. A well-built full-glass conservatory or orangery can add value — buyers see it as extra space. A basic polycarbonate conservatory, particularly one that\'s visibly old or underperforming, is often viewed negatively by buyers and surveyors because of energy performance and the cost of eventual replacement. A premium garden room from The Green Rooms typically adds 5–15% to property value and is increasingly sought after by buyers looking for home office space.' },
+          { q: 'Is a garden room classed as an extension?', a: 'No. A garden room is an outbuilding — a separate, detached structure in the garden. This puts it under different planning rules (Permitted Development rights for outbuildings, not for extensions). It also means it doesn\'t need to comply with building regulations in most cases, unlike an attached extension or conservatory over 30m².' },
+          { q: 'Can I replace my conservatory with a garden room?', a: 'You can absolutely remove an underperforming conservatory and invest in a garden room instead, though they\'re not direct replacements — one is attached to the house, the other is in the garden. Some clients who are frustrated with their conservatory choose to restore it and use it as a garden-facing room while adding a separate garden office or studio at the end of the garden. We\'re happy to talk through what would work best at a free site visit.' },
+        ].map(item => (
+          <details style="background:#f8faf7; border:1px solid #ebeced; border-radius:12px; padding:20px 24px;">
+            <summary style="font-size:15px; font-weight:700; color:#2d3841; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+              {item.q}
+              <svg width="16" height="16" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-left:12px;"><path d="M7 10l5 5 5-5z"/></svg>
+            </summary>
+            <p style="font-size:14px; color:#555; line-height:1.8; margin:14px 0 0;">{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#2d3841; padding:72px 24px; text-align:center;">
+    <div style="max-width:520px; margin:0 auto;">
+      <h2 style="font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700; color:#fff; margin-bottom:14px;">See What a Garden Room Would Cost</h2>
+      <p style="color:rgba(255,255,255,0.8); font-size:1rem; margin-bottom:28px;">Get an instant guide price for your size and spec — or book a free site visit and we'll show you exactly what's possible in your garden.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+        <a href="/garden-room-price-calculator" class="btn-primary" style="font-size:15px; padding:14px 32px;">Get an Instant Price</a>
+        <a href="/contact-us" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.4); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none;">Book a Free Site Visit</a>
+      </div>
+    </div>
+  </section>
+
+</InfoLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 24px !important; }
+  }
+</style>

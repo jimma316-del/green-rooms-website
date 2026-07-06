@@ -1,0 +1,102 @@
+---
+import { yourBuildPages } from '../data/your-build-pages';
+
+interface Props {
+  currentSlug: string;
+}
+const { currentSlug } = Astro.props;
+const idx = yourBuildPages.findIndex(p => p.slug === currentSlug);
+const prev = idx > 0 ? yourBuildPages[idx - 1] : null;
+const next = idx < yourBuildPages.length - 1 ? yourBuildPages[idx + 1] : null;
+---
+
+<nav class="ybp-nav">
+  <div class="ybp-inner">
+    <div class="ybp-prev">
+      {prev && (
+        <a href={prev.href} class="ybp-link">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/></svg>
+          <span>
+            <span class="ybp-label">Previous</span>
+            {prev.shortTitle}
+          </span>
+        </a>
+      )}
+    </div>
+    <a href="/your-build" class="ybp-hub">
+      <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Your Build Guide
+    </a>
+    <div class="ybp-next">
+      {next && (
+        <a href={next.href} class="ybp-link ybp-link--right">
+          <span>
+            <span class="ybp-label ybp-label--right">Next</span>
+            {next.shortTitle}
+          </span>
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+        </a>
+      )}
+    </div>
+  </div>
+</nav>
+
+<style>
+  .ybp-nav {
+    background: #f8faf7;
+    border-top: 1px solid #ebeced;
+    border-bottom: 1px solid #ebeced;
+    padding: 20px 0;
+  }
+  .ybp-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 16px;
+    align-items: center;
+  }
+  .ybp-prev { display: flex; }
+  .ybp-next { display: flex; justify-content: flex-end; }
+  .ybp-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #2d3841;
+    font-size: 13.5px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    transition: color 0.2s;
+  }
+  .ybp-link:hover { color: #34a02e; }
+  .ybp-link--right { justify-content: flex-end; text-align: right; }
+  .ybp-label {
+    display: block;
+    font-size: 10px;
+    font-weight: 500;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-bottom: 1px;
+  }
+  .ybp-label--right { text-align: right; }
+  .ybp-hub {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: #34a02e;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    white-space: nowrap;
+    transition: opacity 0.2s;
+  }
+  .ybp-hub:hover { opacity: 0.75; }
+  @media (max-width: 600px) {
+    .ybp-inner { grid-template-columns: 1fr 1fr; }
+    .ybp-hub { display: none; }
+  }
+</style>

@@ -87,10 +87,29 @@ import InfoLayout from '../layouts/InfoLayout.astro';
             <button type="submit" id="site-visit-btn" class="btn-primary" style="font-size:15px; padding:14px; justify-content:center; margin-top:4px; width:100%;">Book My Free Site Visit</button>
             <p style="font-size:11px; color:rgba(255,255,255,0.45); text-align:center; margin:0;">We'll be in touch within 1 working day to arrange a convenient time.</p>
           </form>
-          <div id="site-visit-success" style="display:none; padding:24px; text-align:center;">
-            <div style="width:48px; height:48px; background:#34a02e; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px;"><svg width="24" height="24" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <p style="font-size:1.1rem; font-weight:700; color:#fff; margin:0 0 8px;">Request Received</p>
-            <p style="font-size:13.5px; color:rgba(255,255,255,0.7); margin:0; line-height:1.65;">We'll be in touch within one working day to arrange a convenient time for your free site visit.</p>
+          <div id="site-visit-success" style="display:none; padding:24px;">
+            <div style="text-align:center; margin-bottom:24px;">
+              <div style="width:48px; height:48px; background:#34a02e; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px;"><svg width="24" height="24" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <p style="font-size:1.1rem; font-weight:700; color:#fff; margin:0 0 8px;">Request Received</p>
+              <p style="font-size:13.5px; color:rgba(255,255,255,0.7); margin:0; line-height:1.65;">We'll call you within one working day to arrange a convenient time.</p>
+            </div>
+            <div style="background:rgba(255,255,255,0.07); border-radius:14px; padding:20px;">
+              <p style="font-size:11px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 14px;">What happens next</p>
+              <div style="display:flex; flex-direction:column; gap:12px;">
+                <div style="display:flex; gap:12px; align-items:flex-start;">
+                  <div style="width:22px; height:22px; background:#34a02e; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px;"><span style="font-size:11px; font-weight:700; color:#fff;">1</span></div>
+                  <p style="font-size:13px; color:rgba(255,255,255,0.75); margin:0; line-height:1.6;">We'll call to confirm a date and time for your site visit — usually within the next few days.</p>
+                </div>
+                <div style="display:flex; gap:12px; align-items:flex-start;">
+                  <div style="width:22px; height:22px; background:#34a02e; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px;"><span style="font-size:11px; font-weight:700; color:#fff;">2</span></div>
+                  <p style="font-size:13px; color:rgba(255,255,255,0.75); margin:0; line-height:1.6;">One of our team will visit your garden, assess the space, and walk through the options with you — typically around 45 minutes.</p>
+                </div>
+                <div style="display:flex; gap:12px; align-items:flex-start;">
+                  <div style="width:22px; height:22px; background:#34a02e; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px;"><span style="font-size:11px; font-weight:700; color:#fff;">3</span></div>
+                  <p style="font-size:13px; color:rgba(255,255,255,0.75); margin:0; line-height:1.6;">You'll receive a full written quote within a few days. No obligation to proceed.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -146,7 +165,8 @@ import InfoLayout from '../layouts/InfoLayout.astro';
           <div id="showroom-success" style="display:none; padding:20px; text-align:center;">
             <div style="width:48px; height:48px; background:#34a02e; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 14px;"><svg width="24" height="24" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
             <p style="font-size:1rem; font-weight:700; color:#2d3841; margin:0 0 8px;">Appointment Request Received</p>
-            <p style="font-size:13px; color:#555; margin:0; line-height:1.65;">We'll confirm a time with you within one working day.</p>
+            <p style="font-size:13px; color:#555; margin:0 0 16px; line-height:1.65;">We'll call to confirm your appointment within one working day.</p>
+            <p style="font-size:12.5px; color:#777; margin:0; line-height:1.7;">The showroom is at The Farm Shop, Lyne Lane, Surrey KT16 0AN. Our team will be there to walk you through our build options and materials in person — allow around 45 minutes.</p>
           </div>
         </div>
 

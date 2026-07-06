@@ -1,5 +1,6 @@
 ---
 import InfoLayout from '../../layouts/InfoLayout.astro';
+import YourBuildNav from '../../components/YourBuildNav.astro';
 import Icon from '../../components/Icon.astro';
 
 const claddings = [
@@ -67,7 +68,7 @@ const claddings = [
   pageSubtitle="Cladding is the most visible design decision in your garden room. Here's an honest comparison of every option we offer."
   heroImg="/images/classic%20canopy%20in%20cedar.webp"
   heroAlt="Garden room with classic cedar canopy, Surrey"
-  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build', href: '/your-build/build-process' }, { label: 'Cladding Options' }]}
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build', href: '/your-build' }, { label: 'Cladding Options' }]}
 >
   <section style="background:#fff; padding:72px 0;">
     <div style="max-width:1000px; margin:0 auto; padding:0 24px;">
@@ -99,6 +100,21 @@ const claddings = [
         ))}
       </div>
 
+      <!-- See it in a completed project -->
+      <div style="background:#f8faf7; border-radius:16px; padding:28px; margin-top:32px; border:1px solid #ebeced;">
+        <p style="font-size:12px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 12px;">See Cladding in Completed Projects</p>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+          <a href="/our-work/bespoke-garden-office-in-east-molesey" style="display:flex; gap:12px; text-decoration:none; align-items:center; padding:10px; background:#fff; border-radius:10px; border:1px solid #ebeced; transition:border-color 0.2s;" class="proj-chip">
+            <img src="/images/GR%20at%20night%20charred%20spruce%20crittal%20french%20doors.webp" alt="Charred Spruce garden office" style="width:60px; height:60px; object-fit:cover; border-radius:8px; flex-shrink:0;" loading="lazy" />
+            <div><p style="font-size:13px; font-weight:700; color:#2d3841; margin:0 0 2px;">East Molesey Office</p><p style="font-size:11.5px; color:#666; margin:0;">Charred Spruce (Shou Sugi Ban)</p></div>
+          </a>
+          <a href="/our-work/golf-simulator-garden-room" style="display:flex; gap:12px; text-decoration:none; align-items:center; padding:10px; background:#fff; border-radius:10px; border:1px solid #ebeced; transition:border-color 0.2s;" class="proj-chip">
+            <img src="/images/HERO%20extended%20height%20golf%20sim%20millboard%20board%20and%20batten%20in%20anthracite.webp" alt="Golf Simulator with Millboard cladding" style="width:60px; height:60px; object-fit:cover; border-radius:8px; flex-shrink:0;" loading="lazy" />
+            <div><p style="font-size:13px; font-weight:700; color:#2d3841; margin:0 0 2px;">Golf Simulator Studio</p><p style="font-size:11.5px; color:#666; margin:0;">Millboard board & batten, anthracite</p></div>
+          </a>
+        </div>
+      </div>
+
       <div style="background:#34a02e; border-radius:20px; padding:32px; margin-top:32px; text-align:center;">
         <h3 style="font-size:1.1rem; font-weight:700; color:#fff; margin:0 0 10px;">See All Cladding Options at Our Showroom</h3>
         <p style="font-size:13.5px; color:rgba(255,255,255,0.85); margin:0 0 20px;">Touch and compare every cladding side by side on our display wall in Lyne. The difference in texture and look is much clearer in person than in photos.</p>
@@ -107,8 +123,10 @@ const claddings = [
       </div>
     </div>
   </section>
+  <YourBuildNav currentSlug="cladding-options" />
 </InfoLayout>
 <style>
+  .proj-chip:hover { border-color: #34a02e !important; }
   @media (max-width: 900px) {
     div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
   }

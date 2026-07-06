@@ -5,7 +5,7 @@ const features = [
   { icon: 'soundwave', title: 'SIPs Soundproofing', desc: 'Structural Insulated Panels provide excellent acoustic insulation — no road noise, no distractions.' },
   { icon: 'thermometer', title: 'Year-Round Climate', desc: 'A-rated glazing and full SIPs insulation keep you comfortable all year. Add air conditioning or a smart panel heater.' },
   { icon: 'bulb', title: 'Natural Light Design', desc: 'Windows and doors positioned to maximise daylight and minimise screen glare — thought through from the start.' },
-  { icon: 'wifi', title: 'Wired for Work', desc: 'Cat 6a internet cable, dedicated sockets and USB ports included. No relying on a weak WiFi signal.' },
+  { icon: 'wifi', title: 'Wired for Work', desc: 'Cat 6a internet cable run in armoured conduit underground from your router to the office. Gigabit connection, no WiFi drop-outs.' },
   { icon: 'lightning', title: 'Full Electrical Sign-Off', desc: 'Separate consumer unit, full testing and a signed electrical certificate on every build.' },
   { icon: 'key', title: 'Turnkey Installation', desc: 'Foundations, structure, cladding, glazing, plastering, flooring and site clean-up. Move in from day one.' },
   { icon: 'ruler', title: 'From 2.5m × 2m', desc: 'Compact enough for a small garden, large enough for a full dual-monitor setup. Every size built to order.' },
@@ -16,6 +16,33 @@ const related = [
   { label: 'Garden Pods', href: '/garden-rooms/garden-pods', img: '/images/Classic%20GP%20larch%20front%20on.webp' },
   { label: 'Garden Rooms', href: '/garden-rooms/garden-rooms', img: '/images/classic%20GR%20front%20on%20thermo%20ayous%20cladding.webp' },
   { label: 'Bespoke Garden Rooms', href: '/garden-rooms/bespoke', img: '/images/Hero%20Bespoke%20build.webp' },
+];
+
+const faqs = [
+  {
+    q: "Can I claim a garden office as a business expense?",
+    a: "This is a question for your accountant, but many self-employed people and sole traders do offset some or all of the running costs of a dedicated home office — including electricity — as a business expense. The structure itself may also qualify for capital allowances. Because every situation is different, we always recommend speaking to your accountant before buying. What we can confirm: a dedicated, signed-off building with its own electrical certificate is a much stronger claim than a corner of a spare bedroom."
+  },
+  {
+    q: "Does a garden office need planning permission?",
+    a: "Most garden offices fall under Permitted Development — no planning permission required. The key rules: single storey, not covering more than 50% of the garden, and no taller than 2.5m within 2m of a boundary. Listed buildings, conservation areas and national parks may require consent. We confirm your permitted development position at the free site visit. See our <a href='/your-build/first-steps' style='color:#34a02e;font-weight:600;'>getting started guide</a> for more detail."
+  },
+  {
+    q: "How do I get a reliable internet connection in a garden office?",
+    a: "The best solution is a Cat 6a cable run in armoured conduit underground from your router to the garden office. We can include this in the build — it's far more reliable than a WiFi extender or powerline adapter, and gives you a full gigabit connection for video calls, large file transfers, and multi-monitor setups. We handle the trench, conduit and termination at both ends as part of the electrics scope."
+  },
+  {
+    q: "What size garden office do I need?",
+    a: "For a solo desk setup with a monitor, printer and storage, 3×2.5m is our most popular size — plenty of room to work comfortably. If you want space for two desks, a sofa, or a meeting area for clients, 4×3m gives you real flexibility. We'll recommend the right size for your garden and your plans at the free site visit, based on how you actually work."
+  },
+  {
+    q: "Will a garden office add value to my property?",
+    a: "A well-built, certified garden office typically adds 5–15% to property value — often significantly more than the cost of construction. Estate agents increasingly list garden offices as a headline feature, and buyer demand for home working space remains strong. A building with a signed electrical certificate and proper foundations adds more value than an uncertified flat-pack alternative."
+  },
+  {
+    q: "Can clients visit my garden office?",
+    a: "Absolutely. A finished, plastered and decorated garden office is a professional space you'll be proud to use for client meetings. It's separated from your home, free of domestic noise and distractions, and — with a level deck or path — fully accessible. Many of our customers choose to add a small seating area and external feature lighting specifically to create a client-ready impression."
+  },
 ];
 ---
 
@@ -32,6 +59,11 @@ const related = [
   intro="A garden office gives you something no spare bedroom or kitchen table ever can — a space that is genuinely separate from home life, designed from the ground up for focus and productivity. Ours are SIPs-insulated for year-round comfort, wired for modern work, and finished to a standard you'll be proud to have clients visit."
   features={features}
   relatedPages={related}
+  faqs={faqs}
+  projects={[
+    { slug: 'l-shaped-garden-office', label: 'L-Shaped Garden Office', tagline: 'Surrey · Bespoke L-shaped footprint · Millboard · Engineered oak · Glass corner', img: '/images/GR%20bespoke%20glass%20corner%20millboard.webp' },
+    { slug: 'bespoke-garden-office-in-east-molesey', label: 'Bespoke Garden Office — East Molesey', tagline: 'East Molesey, Surrey · Charred Spruce · Crittall doors · Plastered interior · Cat 6a', img: '/images/GR%20at%20night%20charred%20spruce%20crittal%20french%20doors.webp' },
+  ]}
 >
 
   <section slot="intro-extra" style="margin-bottom:20px;">
@@ -82,7 +114,7 @@ const related = [
           <div style="display:flex; flex-direction:column; gap:14px;">
             {[
               ['No commute, no compromises', 'Walk 30 seconds from your back door to a dedicated workspace. No noise, no interruptions — just you and your work.'],
-              ['Better than a spare room', 'A proper, insulated, electrically certified structure is a business asset. It\'s also taxable as a home office expense — check with your accountant.'],
+              ['Better than a spare room', 'A proper, insulated, electrically certified structure can be offset as a business expense. Speak to your accountant — a signed-off dedicated office is a much stronger claim than a bedroom desk.'],
               ['Adds value to your property', 'A well-built garden office typically adds 5–15% to property value — significantly more than its construction cost.'],
               ['Clients can visit', 'A professional, finished space means you can invite clients without the awkwardness of working from your kitchen table.'],
             ].map(([title, desc]) => (
@@ -102,10 +134,112 @@ const related = [
     </div>
   </section>
 
+  <!-- Sizing guide -->
+  <section class="section" style="background:#f8faf7;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:36px;">
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:10px;">What Size Garden Office Do I Need?</h2>
+        <p style="color:#666; max-width:520px; margin:0 auto;">The right size depends on how you work. Here are our most common configurations and what they comfortably fit.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:900px; margin:0 auto 32px;">
+        {[
+          {
+            size: '3 × 2.5m',
+            label: 'Solo Office',
+            uses: ['Single desk setup', 'Dual monitors', 'Printer + filing', 'Dedicated video call space'],
+            note: '7.5m² — ideal for focused individual work',
+          },
+          {
+            size: '4 × 3m',
+            label: 'Two-Person / Client-Ready',
+            uses: ['Two desk positions', 'Meeting area or sofa', 'Clients can visit', 'Storage and shelving'],
+            note: '12m² — the most popular office size',
+            highlight: true,
+          },
+          {
+            size: '5 × 3.5m',
+            label: 'Studio / Team Space',
+            uses: ['Small team of 2–3', 'Dedicated meeting area', 'Large L-shaped desk run', 'Full home studio'],
+            note: '17.5m² — space for the full setup',
+          },
+        ].map(s => (
+          <div style={`background:#fff; border-radius:16px; padding:24px; border:${s.highlight ? '2px solid #34a02e' : '1px solid #ebeced'}; position:relative;`}>
+            {s.highlight && <div style="position:absolute; top:-11px; left:50%; transform:translateX(-50%); background:#34a02e; color:#fff; font-size:11px; font-weight:700; padding:3px 12px; border-radius:50px; white-space:nowrap;">Most Popular</div>}
+            <p style="font-size:1.5rem; font-weight:700; color:#2d3841; margin:0 0 2px; font-family:'Poppins',sans-serif;">{s.size}</p>
+            <p style="font-size:11px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.07em; margin:0 0 12px;">{s.label}</p>
+            <ul style="list-style:none; padding:0; margin:0 0 12px; display:flex; flex-direction:column; gap:6px;">
+              {s.uses.map(u => (
+                <li style="display:flex; align-items:center; gap:7px; font-size:13px; color:#555;">
+                  <svg width="11" height="11" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  {u}
+                </li>
+              ))}
+            </ul>
+            <p style="font-size:11.5px; color:#999; margin:0; border-top:1px solid #f0f0f0; padding-top:10px;">{s.note}</p>
+          </div>
+        ))}
+      </div>
+      <p style="text-align:center; font-size:13.5px; color:#666;">Not sure what size works for your garden? We'll advise at the <a href="/contact-us" style="color:#34a02e;font-weight:600;">free site visit</a>. We bring a measuring tape, you bring the coffee.</p>
+    </div>
+  </section>
+
+  <!-- Planning permission -->
+  <section class="section" style="background:#fff;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;">
+        <div>
+          <div style="display:inline-block; background:#e7f1e3; color:#257a21; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:5px 14px; border-radius:50px; margin-bottom:14px;">Good News</div>
+          <h2 style="font-size:clamp(1.3rem,2.5vw,1.75rem); font-weight:700; color:#2d3841; margin-bottom:16px;">Most Garden Offices Don't Need Planning Permission</h2>
+          <p style="font-size:15px; color:#555; line-height:1.8; margin-bottom:14px;">Under Permitted Development rights, most garden offices can be built without needing planning permission. The rules cover height, footprint and position relative to boundaries — and the majority of standard-sized offices fall within them comfortably.</p>
+          <p style="font-size:15px; color:#555; line-height:1.8; margin-bottom:20px;">We confirm your permitted development position as part of the free site visit. If anything's borderline, we'll tell you honestly what the options are — including applying for a Certificate of Lawful Development for additional peace of mind.</p>
+          <a href="/your-build/first-steps" style="color:#34a02e; font-weight:600; font-size:14px; text-decoration:none;">Read our getting started guide →</a>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          {[
+            { rule: 'Single storey only', ok: true },
+            { rule: 'No more than 50% of garden covered', ok: true },
+            { rule: 'Max 2.5m height within 2m of boundary', ok: true },
+            { rule: 'Not forward of the principal elevation', ok: true },
+            { rule: 'Listed buildings — check with us', ok: false },
+            { rule: 'Conservation areas — check with us', ok: false },
+          ].map(r => (
+            <div style={`display:flex; align-items:center; gap:12px; padding:12px 16px; background:${r.ok ? '#f8faf7' : '#fff8f8'}; border-radius:10px; border:1px solid ${r.ok ? '#ebeced' : '#f5e0e0'};`}>
+              <svg width="16" height="16" fill={r.ok ? '#34a02e' : '#cc4444'} viewBox="0 0 24 24">{r.ok ? <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/> : <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>}</svg>
+              <span style="font-size:13.5px; font-weight:600; color:#2d3841;">{r.rule}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section style="background:#f8faf7; padding:72px 0; border-top:1px solid #ebeced;">
+    <div style="max-width:900px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:32px;">
+        <div style="display:flex; justify-content:center; gap:3px; margin-bottom:8px;">
+          {[1,2,3,4,5].map(() => <svg width="20" height="20" fill="#f59e0b" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>)}
+        </div>
+        <p style="font-size:13px; color:#888; margin:0;">5.0 · 39 Google Reviews</p>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        <blockquote style="background:#fff; border-radius:16px; padding:28px; border:1px solid #ebeced; margin:0;">
+          <p style="font-size:14.5px; color:#444; line-height:1.8; margin:0 0 16px; font-style:italic;">"We had our garden office built last summer and we can not fault it. The quality is exceptional. It is warm all winter and is everything we hoped it would be. Highly recommend The Green Rooms."</p>
+          <footer style="font-size:13px; font-weight:700; color:#2d3841;">Harvey Hood <span style="font-weight:400; color:#888;">· October 2024</span></footer>
+        </blockquote>
+        <blockquote style="background:#fff; border-radius:16px; padding:28px; border:1px solid #ebeced; margin:0;">
+          <p style="font-size:14.5px; color:#444; line-height:1.8; margin:0 0 16px; font-style:italic;">"James and the team built a superb garden office for me. The build quality is excellent and it is well designed for winter use — I have been using it since last autumn. The build team were excellent. Very professional service from start to finish."</p>
+          <footer style="font-size:13px; font-weight:700; color:#2d3841;">Matt Grenyer <span style="font-weight:400; color:#888;">· January 2024</span></footer>
+        </blockquote>
+      </div>
+      <p style="text-align:center; margin:20px 0 0;"><a href="/testimonials" style="color:#34a02e; font-size:13.5px; font-weight:600; text-decoration:none;">Read all 39 reviews →</a></p>
+    </div>
+  </section>
+
   <section style="background:#34a02e; padding:72px 24px; text-align:center;">
     <div style="max-width:520px; margin:0 auto;">
       <h2 style="font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700; color:#fff; margin-bottom:14px;">Price Up Your Garden Office</h2>
-      <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:28px;">Get an instant guide price based on your size, spec and extras. No email needed to see the estimate — we confirm it all after a free site visit.</p>
+      <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:28px;">Get an instant guide price based on your size, spec and extras. We confirm everything after a free site visit.</p>
       <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
         <a href="/garden-room-price-calculator" class="btn-white" style="font-size:15px; padding:14px 32px;">Get an Instant Quote</a>
         <a href="/contact-us" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.5); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none;">Book a Free Site Visit</a>
@@ -114,3 +248,15 @@ const related = [
   </section>
 
 </ServiceLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 32px !important; }
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+  }
+  @media (max-width: 600px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"],
+    div[style*="grid-template-columns:1fr 1fr 1fr 1fr"],
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  }
+</style>

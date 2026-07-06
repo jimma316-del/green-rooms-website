@@ -1,0 +1,170 @@
+---
+import ServiceLayout from '../../components/ServiceLayout.astro';
+
+const features = [
+  { icon: 'layers', title: 'SIPs Acoustic Insulation', desc: 'SIPs panels provide far better acoustic isolation than timber frame as standard — keeping cinema sound in and garden noise out without specialist treatment.' },
+  { icon: 'ruler', title: 'Blackout Blinds Throughout', desc: 'Integral blinds factory-fitted into aluminium frames — no gaps around the edge, no light leak, no afterthought. Essential for daytime viewing.' },
+  { icon: 'leaf', title: 'Projector-Ready Ceiling', desc: 'We can integrate a projector mount point and cable route into the ceiling void during the build — no surface-mounted conduit, no drilling afterwards.' },
+  { icon: 'key', title: 'Dedicated AV Electrical Circuit', desc: 'Separate circuit for the projector or TV, surround sound wiring routes, HDMI conduits through walls — designed around your setup before we start.' },
+  { icon: 'tools', title: 'Climate Control as Standard', desc: 'A cinema with 6 people and a projector gets hot. We include air conditioning as standard in every cinema build — heating in winter, cooling in summer.' },
+  { icon: 'certificate', title: 'Ambient LED Lighting', desc: 'Feature LED strip lighting behind the screen, smart dimmers throughout, and a dedicated circuit for any mood lighting you want to add.' },
+];
+
+const related = [
+  { label: 'Man Cave', href: '/garden-rooms/man-cave', img: '/images/games%20room%20internal%20view.webp' },
+  { label: 'Garden Rooms', href: '/garden-rooms/garden-rooms', img: '/images/Hero%20GR.webp' },
+  { label: 'Bespoke Builds', href: '/garden-rooms/bespoke', img: '/images/HERO%20Bespoke%20build.webp' },
+];
+
+const faqs = [
+  {
+    q: "What size do I need for a garden cinema?",
+    a: "For a comfortable cinema experience with proper seating rows, 4×4m is the practical minimum — giving you enough throw distance for a large projected image and two rows of seating. 5×4m is better, and 6×4m lets you go fully immersive with a wide screen and three rows. We'll work out the screen size and throw distance at the site visit based on the projector you plan to use."
+  },
+  {
+    q: "Do I need to supply the projector and screen?",
+    a: "We build the room and wire it for your setup — the AV equipment (projector, screen, amplifier, speakers) is sourced and supplied by you. We can recommend local AV installers who work alongside us on cinema builds, who will advise on the right equipment for the room dimensions."
+  },
+  {
+    q: "How effective is the acoustic insulation?",
+    a: "<a href='/your-build/structure' style='color:#34a02e;font-weight:600;'>SIPs construction</a> provides significantly better acoustic isolation than a timber frame build as standard — the solid foam core has no air gaps for sound to pass through. For most residential cinema use, the standard SIPs build is more than adequate. If you want additional acoustic treatment (absorber panels, bass traps), these can be added after the build."
+  },
+  {
+    q: "Do I need planning permission?",
+    a: "No more than any other garden room. Permitted Development covers a single-storey outbuilding within garden footprint limits — a cinema room is treated exactly the same. We confirm your position at the free site visit. See our <a href='/your-build/first-steps' style='color:#34a02e;font-weight:600;'>getting started guide</a> for full details."
+  },
+  {
+    q: "What about ventilation for the projector?",
+    a: "Projectors generate heat and need adequate air circulation. We include a dedicated fresh air ventilation route in every cinema build, sized for the room and the expected heat load. The air conditioning unit also handles this in part — the combination ensures the room stays comfortable and the equipment runs reliably."
+  },
+  {
+    q: "Can I use the room for other things?",
+    a: "Of course. Many of our cinema builds double up as games rooms, music rooms or general evening lounges. With bifold doors and the right lighting design, the same space works as an entertaining room by day and a cinema at night. We design around multiple uses — just tell us what you have in mind."
+  },
+];
+---
+
+<ServiceLayout
+  title="Garden Cinema Room Surrey | Bespoke Home Cinema Buildings | The Green Rooms"
+  description="Bespoke garden cinema rooms built across Surrey. Blackout blinds, projector-ready ceiling, acoustic SIPs insulation, dedicated AV wiring — a proper home cinema at the bottom of your garden."
+  canonical="/garden-rooms/garden-cinema"
+  heroImg="/images/internal%20view%20typical%20set%20up%20sofa%20tv.webp"
+  heroAlt="Garden cinema room with lounge seating, Surrey"
+  price="From £21,000 inc VAT"
+  h1="Garden Cinema Rooms Surrey"
+  tagline="Bespoke Garden Home Cinema Buildings — Surrey & South East"
+  intro="A garden cinema room is a dedicated space that no room in the house can match — away from noise, distractions and the rest of the family. We build properly insulated, acoustically capable buildings with blackout blinds, projector-ready ceilings, dedicated AV wiring and climate control — ready for your screen and sound system the day we hand over the keys."
+  features={features}
+  relatedPages={related}
+  faqs={faqs}
+  projects={[
+    { slug: 'garden-hobby-room', label: 'Garden Hobby Room', tagline: 'Media and hobby room · Cedar cladding · Cedar canopy · Bifold doors', img: '/images/classic%20canopy%20in%20cedar.webp' },
+  ]}
+>
+
+  <!-- Gallery -->
+  <section style="background:#f8faf7; padding:72px 0 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.4rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin:0 0 24px;">Garden Cinema Builds</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:12px;">
+        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/internal%20view%20typical%20set%20up%20sofa%20tv.webp" alt="Garden cinema interior with lounge seating" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/games%20room%20internal%20view.webp" alt="Garden room interior configured as games and media room" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/GR%20internal%20with%20bifolds%20and%20decorated.webp" alt="Garden cinema room interior with bifolds" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:72px;">
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/GR%20charred%20spruce%20in%20garden.webp" alt="Garden cinema room exterior with charred spruce" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/night%20lighting.webp" alt="Garden cinema room at night" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/GR%20bespoke%20glass%20corner%20millboard.webp" alt="Garden cinema room with glass corner" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's included -->
+  <section class="section" style="background:#fff;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:40px;">
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:10px;">What's Included in Every Garden Cinema Build</h2>
+        <p style="color:#666; max-width:520px; margin:0 auto;">Every cinema build is fully wired and ready for your AV equipment — we hand over the keys and you plug in.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:20px; max-width:860px; margin:0 auto;">
+        {[
+          { item: 'Ground screw foundations', note: 'No concrete, installed in hours' },
+          { item: 'SIPs structural insulated panels', note: 'Acoustic and thermal insulation in one' },
+          { item: 'Blackout blinds', note: 'Integral to aluminium frames — no gaps' },
+          { item: 'Projector mount and cable route', note: 'Integrated into ceiling void during build' },
+          { item: 'Dedicated AV electrical circuit', note: 'Separate from lighting — no interference' },
+          { item: 'Air conditioning', note: 'Essential for cinema use — cooling + heating' },
+          { item: 'Ambient LED lighting on dimmer', note: 'Strip behind screen, overhead on separate circuit' },
+          { item: 'Surround sound cable routes', note: 'In-wall conduits for clean speaker runs' },
+        ].map(r => (
+          <div style="display:flex; gap:14px; padding:16px; background:#f8faf7; border-radius:12px; border:1px solid #ebeced; align-items:start;">
+            <div style="width:20px; height:20px; background:#34a02e; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;">
+              <svg width="10" height="10" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <p style="font-size:13.5px; font-weight:700; color:#2d3841; margin:0 0 2px;">{r.item}</p>
+              <p style="font-size:12px; color:#888; margin:0;">{r.note}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Size guide -->
+  <section class="section" style="background:#f8faf7;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:36px;">
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:10px;">What Size Cinema Room Do I Need?</h2>
+        <p style="color:#666; max-width:520px; margin:0 auto;">Screen size and viewing distance are the critical dimensions. Here's how they translate to room size.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:900px; margin:0 auto 32px;">
+        {[
+          { size: '4 × 3m', label: 'Compact Cinema', uses: ['100" projected image', '2–3 rows of seating', 'Comfortable for 4–6', 'Full surround sound'], note: '12m² — capable cinema in a compact footprint' },
+          { size: '5 × 4m', label: 'Full Cinema Room', uses: ['120–130" screen', '3+ rows of seating', 'Comfortable for 8+', 'Dedicated bar area'], note: '20m² — proper cinema experience', highlight: true },
+          { size: '6 × 4m+', label: 'Cinema + Lounge', uses: ['Up to 150" screen', 'Full lounge seating', 'Bar + snack area', 'Games or pool table'], note: '24m²+ — cinema and entertainment room combined' },
+        ].map(s => (
+          <div style={`background:#fff; border-radius:16px; padding:24px; border:${s.highlight ? '2px solid #34a02e' : '1px solid #ebeced'}; position:relative;`}>
+            {s.highlight && <div style="position:absolute; top:-11px; left:50%; transform:translateX(-50%); background:#34a02e; color:#fff; font-size:11px; font-weight:700; padding:3px 12px; border-radius:50px; white-space:nowrap;">Most Popular</div>}
+            <p style="font-size:1.5rem; font-weight:700; color:#2d3841; margin:0 0 2px; font-family:'Poppins',sans-serif;">{s.size}</p>
+            <p style="font-size:11px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.07em; margin:0 0 12px;">{s.label}</p>
+            <ul style="list-style:none; padding:0; margin:0 0 12px; display:flex; flex-direction:column; gap:6px;">
+              {s.uses.map(u => (
+                <li style="display:flex; align-items:center; gap:7px; font-size:13px; color:#555;">
+                  <svg width="11" height="11" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  {u}
+                </li>
+              ))}
+            </ul>
+            <p style="font-size:11.5px; color:#999; margin:0; border-top:1px solid #f0f0f0; padding-top:10px;">{s.note}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background:#34a02e; text-align:center;">
+    <div style="max-width:520px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#fff; margin-bottom:14px;">Plan Your Garden Cinema</h2>
+      <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:28px; line-height:1.7;">Get an instant guide price, or book a free site visit and we'll plan the layout around your setup.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+        <a href="/garden-room-price-calculator" class="btn-white" style="font-size:15px; padding:14px 32px;">Get an Instant Price</a>
+        <a href="/contact-us" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.5); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none;">Book a Free Site Visit</a>
+      </div>
+    </div>
+  </section>
+
+</ServiceLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 32px !important; }
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+    div[style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
+  }
+  @media (max-width: 600px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"],
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  }
+</style>

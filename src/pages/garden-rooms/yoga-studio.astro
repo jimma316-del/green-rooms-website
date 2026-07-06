@@ -1,0 +1,170 @@
+---
+import ServiceLayout from '../../components/ServiceLayout.astro';
+
+const features = [
+  { icon: 'layers', title: 'SIPs — Warm in Winter', desc: 'Your yoga studio stays at a comfortable practice temperature year-round. SIPs insulation means the room heats quickly and holds the warmth — important for cold mornings.' },
+  { icon: 'ruler', title: 'Full-Length Mirror Wall', desc: 'We fix full-length mirrored panels properly — framed and flush to the wall, not DIY clip-on mirrors. Essential for alignment, Pilates reformer and barre work.' },
+  { icon: 'leaf', title: 'Natural Light Throughout', desc: 'Bifold doors or large French doors flood the room with natural light. Skylights available as an upgrade — ideal for overhead natural light during floor work.' },
+  { icon: 'key', title: 'Clean, Simple Interior', desc: 'Plastered and painted walls, smooth level floor — no unnecessary ledges, radiators or clutter. The space works for yoga because it\'s designed to.' },
+  { icon: 'tools', title: 'Mat Storage Options', desc: 'We can integrate storage into the build for mats, blocks, straps and props — keeping the practice space clear without needing a separate cupboard.' },
+  { icon: 'certificate', title: 'Climate Control', desc: 'A 2.5kW AC unit keeps the studio comfortable in hot summers and supplements the SIPs insulation in winter. Quiet unit — no distracting noise during practice.' },
+];
+
+const related = [
+  { label: 'Garden Gym', href: '/garden-rooms/garden-gym', img: '/images/garden%20gym%2C%20dual%20canopy%20view%20from%20outside.webp' },
+  { label: 'Garden Rooms', href: '/garden-rooms/garden-rooms', img: '/images/Hero%20GR.webp' },
+  { label: 'Bespoke Builds', href: '/garden-rooms/bespoke', img: '/images/HERO%20Bespoke%20build.webp' },
+];
+
+const faqs = [
+  {
+    q: "What size do I need for a garden yoga studio?",
+    a: "For solo practice: 3×3m (9m²) gives enough space for a full mat with room to move around it. 4×3m is more comfortable for solo practice and lets you keep props accessible at the side. For small group classes (3–4 people): 5×4m is the practical minimum. For larger groups of 6+, 6×4m or above. We'll lay out the mat positions at the site visit so you know exactly what the space can accommodate."
+  },
+  {
+    q: "What flooring works best for yoga?",
+    a: "For yoga and Pilates: a hardwood or engineered hardwood floor gives the ideal surface — enough grip without being too rough, and looks beautiful. For more multi-use spaces (yoga plus gym equipment): rubber tile flooring is more practical. We build the subfloor and lay the base — the floor finish is either installed by us or by your choice of flooring supplier. We'll advise on what works for your specific practice at the site visit."
+  },
+  {
+    q: "Can I teach classes from a garden yoga studio?",
+    a: "Yes — small group classes are one of the most popular uses for garden yoga studios. You'll need to check whether running a business from your home requires any notification to your local authority, but the building itself doesn't need planning permission. Check our <a href='/your-build/first-steps' style='color:#34a02e;font-weight:600;'>planning guide</a> for the basics, and we'll discuss your specific situation at the site visit."
+  },
+  {
+    q: "Do I need planning permission?",
+    a: "Almost certainly not. A garden yoga studio is an outbuilding like any other — Permitted Development covers single-storey structures within garden footprint limits. We confirm your exact position at the free site visit. Listed buildings and conservation areas may have different requirements."
+  },
+  {
+    q: "Can I do hot yoga in a garden studio?",
+    a: "Yes. Hot yoga (Bikram or Baptiste-style, typically 35–40°C) needs a reliable heating system and humidity management. We'd spec a 5kW AC unit (which both heats and provides dehumidification) and ensure adequate fresh air ventilation. The SIPs construction holds heat well — which is an advantage for hot yoga. We'll design the spec around your practice."
+  },
+  {
+    q: "What about connecting to the house for music and power?",
+    a: "We run a dedicated armoured cable from your consumer unit — enough for a quality sound system, the AC unit, lighting and any other equipment. Bluetooth speakers work well in garden studios; we can also run data cable for a hardwired connection to your home Wi-Fi for streaming. We plan the electrical spec around what you need before we start."
+  },
+];
+---
+
+<ServiceLayout
+  title="Garden Yoga Studio Surrey | Bespoke Yoga & Pilates Studios | The Green Rooms"
+  description="Bespoke garden yoga studios and Pilates rooms built across Surrey. Mirror walls, natural light, SIPs insulation — a dedicated practice space at the bottom of your garden."
+  canonical="/garden-rooms/yoga-studio"
+  heroImg="/images/GP%203.6m%20Bifolds%20open.webp"
+  heroAlt="Garden yoga studio with wide bifold doors open to the garden, Surrey"
+  price="From £19,000 inc VAT"
+  h1="Garden Yoga Studios Surrey"
+  tagline="Bespoke Garden Yoga & Pilates Studios — Surrey & South East"
+  intro="A garden yoga studio is the space that transforms a practice — no commute, no shared equipment, no adjusting your schedule around a class timetable. We build clean, light-filled garden studios with mirror walls, natural light and SIPs insulation that keeps them warm for early morning sessions. Designed around your practice, not a generic gym."
+  features={features}
+  relatedPages={related}
+  faqs={faqs}
+  projects={[
+    { slug: 'garden-gym-with-hidden-storage', label: 'Garden Gym with Hidden Storage', tagline: 'Chobham, Surrey · Rubber flooring · Mirror walls · Dual canopy', img: '/images/garden%20gym%2C%20dual%20canopy%20view%20from%20outside.webp' },
+  ]}
+>
+
+  <!-- Gallery -->
+  <section style="background:#f8faf7; padding:72px 0 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.4rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin:0 0 24px;">Yoga Studio Builds</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:12px;">
+        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/GP%203.6m%20Bifolds%20open.webp" alt="Garden yoga studio with bifold doors open" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/GR%20internal%20with%20bifolds%20and%20decorated.webp" alt="Garden studio interior" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/Ali%20french%20doors%20with%20blinds%20internal%20view.webp" alt="Garden yoga studio interior view from inside" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:72px;">
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/Skylight.webp" alt="Skylight in garden yoga studio" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/garden%20gym%20internal%201.webp" alt="Garden studio interior with rubber flooring" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/Classic%20GR%20in%20Garden.webp" alt="Garden yoga studio exterior" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Size guide -->
+  <section class="section" style="background:#fff;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:36px;">
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:10px;">What Size Yoga Studio Do I Need?</h2>
+        <p style="color:#666; max-width:520px; margin:0 auto;">Mat size, practice style and whether you're teaching all affect the right dimensions. Here's a practical guide.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:900px; margin:0 auto 32px;">
+        {[
+          { size: '3 × 3m', label: 'Solo Practice', uses: ['Full mat with clearance', 'Pilates reformer (2.5m units)', 'Dedicated meditation corner', 'Props storage along one wall'], note: '9m² — perfect solo studio' },
+          { size: '4 × 3m', label: 'Solo + Small Classes', uses: ['2 mats side by side', 'Space for one-to-one teaching', 'Reformer + mat space', 'Good prop storage'], note: '12m² — the most versatile size', highlight: true },
+          { size: '5 × 4m+', label: 'Group Classes', uses: ['4–6 mats with clearance', 'Small group teaching', 'Barre along one wall', 'Storage room alongside'], note: '20m²+ — studio-level capacity' },
+        ].map(s => (
+          <div style={`background:#f8faf7; border-radius:16px; padding:24px; border:${s.highlight ? '2px solid #34a02e' : '1px solid #ebeced'}; position:relative;`}>
+            {s.highlight && <div style="position:absolute; top:-11px; left:50%; transform:translateX(-50%); background:#34a02e; color:#fff; font-size:11px; font-weight:700; padding:3px 12px; border-radius:50px; white-space:nowrap;">Most Popular</div>}
+            <p style="font-size:1.5rem; font-weight:700; color:#2d3841; margin:0 0 2px; font-family:'Poppins',sans-serif;">{s.size}</p>
+            <p style="font-size:11px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.07em; margin:0 0 12px;">{s.label}</p>
+            <ul style="list-style:none; padding:0; margin:0 0 12px; display:flex; flex-direction:column; gap:6px;">
+              {s.uses.map(u => (
+                <li style="display:flex; align-items:center; gap:7px; font-size:13px; color:#555;">
+                  <svg width="11" height="11" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  {u}
+                </li>
+              ))}
+            </ul>
+            <p style="font-size:11.5px; color:#999; margin:0; border-top:1px solid #f0f0f0; padding-top:10px;">{s.note}</p>
+          </div>
+        ))}
+      </div>
+      <p style="text-align:center; font-size:13.5px; color:#666;">Have a Pilates reformer? Bring the model dimensions to the site visit and we'll lay out the room around it.</p>
+    </div>
+  </section>
+
+  <!-- What's included -->
+  <section class="section" style="background:#f8faf7;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:40px;">
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:10px;">What's Included in Every Yoga Studio Build</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:20px; max-width:860px; margin:0 auto;">
+        {[
+          { item: 'Ground screw foundations', note: 'No concrete — no excavation, installed in hours' },
+          { item: 'SIPs structural insulated panels', note: 'Warm floor, walls and roof from day one' },
+          { item: 'Plastered and painted walls', note: 'Ready for a mirror wall or left as a clean finish' },
+          { item: 'Aluminium doors and windows', note: 'A-rated glazing, wide bifold options available' },
+          { item: 'Consumer unit and full electrics', note: 'Lighting, AC circuit, sound system circuit' },
+          { item: 'Smart LED lighting on dimmer', note: 'Adjustable for different practice moods' },
+          { item: 'Smooth level subfloor', note: 'Ready for hardwood, bamboo or rubber flooring' },
+          { item: 'Climate control option', note: '2.5kW AC — quiet, efficient, year-round comfort' },
+        ].map(r => (
+          <div style="display:flex; gap:14px; padding:16px; background:#fff; border-radius:12px; border:1px solid #ebeced; align-items:start;">
+            <div style="width:20px; height:20px; background:#34a02e; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;">
+              <svg width="10" height="10" fill="none" stroke="#fff" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <p style="font-size:13.5px; font-weight:700; color:#2d3841; margin:0 0 2px;">{r.item}</p>
+              <p style="font-size:12px; color:#888; margin:0;">{r.note}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background:#34a02e; text-align:center;">
+    <div style="max-width:520px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#fff; margin-bottom:14px;">Create Your Garden Yoga Studio</h2>
+      <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:28px; line-height:1.7;">Get a guide price in 60 seconds, or book a free site visit and we'll plan the studio layout with you.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+        <a href="/garden-room-price-calculator" class="btn-white" style="font-size:15px; padding:14px 32px;">Get an Instant Price</a>
+        <a href="/contact-us" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.5); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none;">Book a Free Site Visit</a>
+      </div>
+    </div>
+  </section>
+
+</ServiceLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 32px !important; }
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+    div[style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
+  }
+  @media (max-width: 600px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"],
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  }
+</style>

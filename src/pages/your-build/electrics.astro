@@ -1,5 +1,6 @@
 ---
 import InfoLayout from '../../layouts/InfoLayout.astro';
+import YourBuildNav from '../../components/YourBuildNav.astro';
 ---
 <InfoLayout
   title="Garden Room Electrics | What's Included | The Green Rooms Surrey"
@@ -9,7 +10,7 @@ import InfoLayout from '../../layouts/InfoLayout.astro';
   pageSubtitle="Every build includes a full, certified electrical installation — not a basic spur from the house. Here's what that means."
   heroImg="/images/golf%20sim%20night.webp"
   heroAlt="Garden room golf simulator with evening lighting, Surrey"
-  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build', href: '/your-build/build-process' }, { label: 'Electrics' }]}
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build', href: '/your-build' }, { label: 'Electrics' }]}
 >
   <section style="background:#fff; padding:72px 0;">
     <div style="max-width:1000px; margin:0 auto; padding:0 24px;">
@@ -83,6 +84,7 @@ import InfoLayout from '../../layouts/InfoLayout.astro';
       </div>
     </div>
   </section>
+  <YourBuildNav currentSlug="electrics" />
 </InfoLayout>
 <style>
   @media (max-width: 900px) {

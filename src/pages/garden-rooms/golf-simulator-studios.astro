@@ -36,6 +36,29 @@ const related = [
   { label: 'Garden Rooms', href: '/garden-rooms/garden-rooms', img: '/images/classic%20GR%20front%20on%20thermo%20ayous%20cladding.webp' },
   { label: 'Garden Offices', href: '/garden-rooms/garden-offices', img: '/images/GP%20office%20internal.webp' },
 ];
+
+const faqs = [
+  {
+    q: "Does a golf simulator room need planning permission?",
+    a: "An extended-height golf simulator studio usually falls under Permitted Development — the same rules as any outbuilding. The structure must not exceed 4m in height with a dual-pitched roof (or 3m elsewhere), must not cover more than 50% of the garden, and must be single storey. Because our simulator studios often use a dual-pitched roof to achieve 3m+ internal height, this typically keeps the eave height within Permitted Development rules. We confirm your position at the free consultation — listed buildings and conservation areas are assessed separately."
+  },
+  {
+    q: "What are the minimum room dimensions for a golf simulator?",
+    a: "For a comfortable full-swing setup, we recommend a minimum of 5m wide × 6m deep, with a minimum 3m internal height. Width is the most critical dimension — you need clearance on both sides of the hitting position. Longer rooms allow you to step back from the screen further, which improves the visual experience. We'll advise on the ideal dimensions based on your swing characteristics and the simulator package you choose."
+  },
+  {
+    q: "What is the total budget for a golf simulator garden room?",
+    a: "Most clients invest between £38,000 and £55,000 in total — this covers the garden room structure (priced using our <a href='/garden-room-price-calculator' style='color:#34a02e;font-weight:600;'>calculator</a>) plus the simulator technology package. The structure typically runs from £18,000–£25,000 for an extended-height build with appropriate electrics, and the simulator package adds £15,000–£37,500 depending on the technology tier. We'll give you a combined quote at the free consultation."
+  },
+  {
+    q: "Can the room be used for anything other than golf?",
+    a: "Yes — many of our simulator studio customers use the space in multiple ways. The extended height and large floor area make it ideal for other sports simulation (cricket, football), as a home cinema when the simulator isn't in use, or as a general entertainment or games room. The rubber flooring can also support gym equipment. We'll design the room around your full list of uses."
+  },
+  {
+    q: "How accurate are home golf simulators?",
+    a: "Modern launch monitors are highly accurate — mid-range and premium systems track spin rate, launch angle, ball speed and club path to within a few percent of what you'd see with professional equipment on a real course. Our technology partner Golf Swing Systems has over 20 years of experience and will spec the right system for your game and your expectations. Entry-level systems are excellent for practice; premium systems are used by touring professionals."
+  },
+];
 ---
 
 <ServiceLayout
@@ -49,6 +72,10 @@ const related = [
   intro="Practice your game in a purpose-built, extended-height garden studio — any time, in any weather, without leaving home. We design and build the structure; our partners Golf Swing Systems specify and install the technology. Together, we deliver a complete, ready-to-play golf simulator room from a single point of contact."
   features={features}
   relatedPages={related}
+  faqs={faqs}
+  projects={[
+    { slug: 'golf-simulator-garden-room', label: 'Golf Simulator Garden Room', tagline: 'Surrey · Extended height · Millboard board & batten · Golf Swing Systems installation', img: '/images/HERO%20Golf%20sim.webp' },
+  ]}
 >
 
   <!-- Photo gallery -->
@@ -67,12 +94,53 @@ const related = [
     </div>
   </section>
 
-  <!-- Simulator packages -->
+  <!-- Room dimensions -->
   <section class="section" style="background:#fff;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:36px;">
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:10px;">Room Dimensions That Matter</h2>
+        <p style="color:#666; max-width:520px; margin:0 auto;">A golf simulator studio is one structure where dimensions are non-negotiable. Here's what you need to know before design.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:860px; margin:0 auto 32px;">
+        {[
+          {
+            label: 'Minimum Width',
+            value: '5m',
+            detail: 'You need clearance on both sides of the hitting position. Narrower than 5m and club swing is compromised.',
+          },
+          {
+            label: 'Minimum Depth',
+            value: '6m',
+            detail: 'Stepping back from the screen improves the visual experience. 6m is the minimum we recommend for a realistic feel.',
+          },
+          {
+            label: 'Internal Height',
+            value: '3m+',
+            detail: 'This is the critical one. A standard garden room (2.4m) is not suitable. We build extended-height structures specifically for this use.',
+          },
+        ].map(d => (
+          <div style="background:#f8faf7; border-radius:16px; padding:28px; border:1px solid #ebeced; text-align:center;">
+            <p style="font-size:12px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 8px;">{d.label}</p>
+            <p style="font-size:2.5rem; font-weight:800; color:#2d3841; margin:0 0 12px; font-family:'Poppins',sans-serif; line-height:1;">{d.value}</p>
+            <p style="font-size:13px; color:#666; line-height:1.65; margin:0;">{d.detail}</p>
+          </div>
+        ))}
+      </div>
+      <div style="max-width:860px; margin:0 auto;">
+        <div style="background:#e7f1e3; border-radius:14px; padding:20px 24px; display:flex; align-items:flex-start; gap:14px;">
+          <svg width="20" height="20" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:1px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          <p style="font-size:13.5px; color:#257a21; margin:0; line-height:1.7;"><strong>Typical footprint:</strong> 5×6m = 30m² of garden, all under Permitted Development rules. Our simulator studios are designed to maximise internal height while keeping the external profile within standard Permitted Development height limits.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simulator packages -->
+  <section class="section" style="background:#f8faf7;">
     <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
       <div style="text-align:center; margin-bottom:40px;">
         <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:10px;">Simulator Packages</h2>
-        <p style="color:#666; max-width:520px; margin:0 auto;">Prices shown are for the simulator technology only. The garden room structure is priced separately based on your specifications.</p>
+        <p style="color:#666; max-width:580px; margin:0 auto 16px;">Prices below are for the simulator technology only. The garden room structure is quoted separately — most clients invest <strong style="color:#2d3841;">£38,000–£55,000 in total</strong> (structure plus technology). Use our <a href="/garden-room-price-calculator" style="color:#34a02e; font-weight:600;">price calculator</a> for a structure estimate, then choose your package below.</p>
       </div>
       <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
         {packages.map((pkg, i) => (
@@ -100,7 +168,7 @@ const related = [
   </section>
 
   <!-- Golf Swing Systems partnership -->
-  <section class="section" style="background:#f8faf7;">
+  <section class="section" style="background:#fff;">
     <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
         <div>
@@ -119,4 +187,29 @@ const related = [
     </div>
   </section>
 
+  <!-- Testimonial -->
+  <section style="background:#f8faf7; padding:72px 0; border-top:1px solid #ebeced;">
+    <div style="max-width:760px; margin:0 auto; padding:0 24px; text-align:center;">
+      <div style="display:flex; justify-content:center; gap:3px; margin-bottom:16px;">
+        {[1,2,3,4,5].map(() => <svg width="20" height="20" fill="#f59e0b" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>)}
+      </div>
+      <blockquote style="margin:0 0 20px;">
+        <p style="font-size:16px; color:#444; line-height:1.85; margin:0 0 16px; font-style:italic;">"Excellent experience from start to finish. The golf simulator room is exceptional — James and the team designed the perfect extended-height structure and the Golf Swing Systems installation is incredible. I use it every day, rain or shine. Can't recommend highly enough."</p>
+        <footer style="font-size:13.5px; font-weight:700; color:#2d3841;">Stephen Rodgers <span style="font-weight:400; color:#888;">· March 2024</span></footer>
+      </blockquote>
+      <a href="/testimonials" style="color:#34a02e; font-size:13.5px; font-weight:600; text-decoration:none;">Read all 39 reviews →</a>
+    </div>
+  </section>
+
 </ServiceLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 32px !important; }
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+  }
+  @media (max-width: 600px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"],
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  }
+</style>

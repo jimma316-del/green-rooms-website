@@ -1,5 +1,6 @@
 ---
 import InfoLayout from '../../layouts/InfoLayout.astro';
+import YourBuildNav from '../../components/YourBuildNav.astro';
 
 const doors = [
   { name: 'Aluminium Bifold Doors', desc: 'Our most popular choice for Garden Rooms. Full-width aluminium frames that fold and stack to one side, opening the room completely to the garden. Available in any RAL colour. A-rated glazing as standard.', best: 'Garden Rooms, entertainment spaces, maximum indoor-outdoor connection', img: '/images/classic%20GR%20thermo%20ayous%20and%20step.webp' },
@@ -24,7 +25,7 @@ const windows = [
   pageSubtitle="Doors and glazing make the biggest visible difference to your garden room. Here's what we offer and how to choose."
   heroImg="/images/HERO%20GR%204m%20bifolds.webp"
   heroAlt="4m crittal bifold doors on a garden room, Surrey"
-  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build', href: '/your-build/build-process' }, { label: 'Windows & Doors' }]}
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build', href: '/your-build' }, { label: 'Windows & Doors' }]}
 >
   <section style="background:#fff; padding:72px 0;">
     <div style="max-width:900px; margin:0 auto; padding:0 24px;">
@@ -126,6 +127,7 @@ const windows = [
       </div>
     </div>
   </section>
+  <YourBuildNav currentSlug="windows-and-doors" />
 </InfoLayout>
 <style>
   @media (max-width: 640px) {

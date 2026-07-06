@@ -22,6 +22,33 @@ const related = [
   { label: 'Golf Simulator Studios', href: '/garden-rooms/golf-simulator-studios', img: '/images/HERO%20Golf%20sim.webp' },
   { label: 'Garden Rooms with Storage', href: '/garden-rooms/garden-rooms-with-storage', img: '/images/GR%20with%20storage%20cedar%20and%20step.webp' },
 ];
+
+const faqs = [
+  {
+    q: "How much does a bespoke garden room cost?",
+    a: "Bespoke builds start from around £20,000 inc VAT and typically run from £25,000–£60,000+ depending on size, complexity, materials and specification. Because every project starts from scratch, we price each one individually after the design consultation. There are no vague estimates — you receive an itemised, fixed-price quote before you commit to anything."
+  },
+  {
+    q: "How long does a bespoke build take?",
+    a: "From first contact to handover, allow 10–16 weeks. The design and quotation phase typically takes 2–4 weeks, materials lead time is around 4–6 weeks, and the build itself takes 2–4 weeks depending on size and complexity. We'll give you a clear timeline at the quotation stage with a fixed installation date."
+  },
+  {
+    q: "Does a bespoke garden room need planning permission?",
+    a: "Most bespoke builds fall under Permitted Development — the same rules as our standard range. However, unusual footprints (L-shapes, large footprints), non-standard heights, or locations on listed properties or in conservation areas may require planning permission. We assess every project at the design consultation and will tell you clearly what's needed before you proceed. See our <a href='/your-build/first-steps' style='color:#34a02e;font-weight:600;'>getting started guide</a> for the full Permitted Development criteria."
+  },
+  {
+    q: "What does the design process look like?",
+    a: "It starts with a free site visit and design consultation. We come to you, assess the garden and the access, listen to your requirements, and discuss what's possible. We then produce a design proposal with elevation drawings and a detailed specification. If you're happy to proceed, we produce a fixed-price itemised quote. No vague estimates, no surprises."
+  },
+  {
+    q: "What's the difference between bespoke and your standard range?",
+    a: "Our <a href='/our-prices' style='color:#34a02e;font-weight:600;'>standard range</a> (Pod, Office, Room, Room with Storage) uses fixed proportions and a curated set of options — faster to design and quote, and excellent for most requirements. Bespoke starts with a blank page: any shape, any footprint, any combination of materials. It costs more and takes longer to design, but for unusual plots, specialist uses, or a genuinely no-compromise specification, it's the right choice."
+  },
+  {
+    q: "Can you build non-garden-room structures?",
+    a: "Yes. Our bespoke capability extends beyond garden rooms — we've built garden salons, hot tub shelters, covered outdoor dining areas, music studios, and hybrid structures that don't fit any standard category. If you can describe what you need, we can usually design and build it. Bring your ideas to the free site visit."
+  },
+];
 ---
 
 <ServiceLayout
@@ -35,6 +62,12 @@ const related = [
   intro="When your garden, your vision, or your requirements don't fit a standard product — bespoke is the answer. We design and build completely custom garden structures from scratch: any shape, any footprint, any combination of materials. Whether it's an L-shaped office, a soundproofed music studio, a garden gym, or something entirely unique, we start with a blank page and build around you."
   features={features}
   relatedPages={related}
+  faqs={faqs}
+  projects={[
+    { slug: 'music-studio', label: 'Garden Music Studio', tagline: 'Surrey · Acoustic panels · Floating isolation floor · Filtered studio circuits · Cedar cladding', img: '/images/internal%20shot%20of%20music%20room.webp' },
+    { slug: 'l-shaped-garden-office', label: 'L-Shaped Garden Office', tagline: 'Surrey · Bespoke L-shaped footprint wrapping a mature tree · Millboard · Glass corner', img: '/images/GR%20bespoke%20glass%20corner%20millboard.webp' },
+    { slug: 'outdoor-living-space', label: 'Outdoor Living Space', tagline: 'Surrey · Open-sided shelter · Hot tub area · LED lighting · Composite decking floor', img: '/images/bespoke%20shelter%20hot%20tub.webp' },
+  ]}
 >
 
   <!-- Photo gallery -->
@@ -80,22 +113,98 @@ const related = [
     </div>
   </section>
 
-  <!-- Process -->
+  <!-- Bespoke vs Standard comparison -->
+  <section class="section" style="background:#fff; border-top:1px solid #ebeced;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:40px;">
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:10px;">Standard Range vs Bespoke</h2>
+        <p style="color:#666; max-width:520px; margin:0 auto;">Not sure which is right for your project? Here's an honest comparison — and when each makes sense.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:0; border-radius:20px; overflow:hidden; border:2px solid #ebeced;">
+
+        {/* Headers */}
+        <div style="background:#f8faf7; padding:20px 28px; border-right:1px solid #ebeced; border-bottom:2px solid #ebeced;">
+          <p style="font-size:12px; font-weight:700; color:#888; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 4px;">Option 1</p>
+          <h3 style="font-size:1.1rem; font-weight:700; color:#2d3841; margin:0;">Standard Range</h3>
+          <p style="font-size:12.5px; color:#666; margin:4px 0 0;">Pod · Office · Room · Room with Storage</p>
+        </div>
+        <div style="background:#2d3841; padding:20px 28px; border-bottom:2px solid #2d3841;">
+          <p style="font-size:12px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 4px;">Option 2</p>
+          <h3 style="font-size:1.1rem; font-weight:700; color:#fff; margin:0;">Bespoke Build</h3>
+          <p style="font-size:12.5px; color:rgba(255,255,255,0.6); margin:4px 0 0;">Fully custom — anything goes</p>
+        </div>
+
+        {/* Rows */}
+        {[
+          {
+            label: 'Shape & footprint',
+            standard: 'Rectangular only — standard proportions',
+            bespoke: 'Any shape: L, T, angled, curved roofline, any plot',
+          },
+          {
+            label: 'Dimensions',
+            standard: 'Fixed width options from 2.4m to 7m wide',
+            bespoke: 'Any width, depth, internal height — you decide',
+          },
+          {
+            label: 'Specification',
+            standard: 'Choose from curated options at each stage',
+            bespoke: 'Every single detail chosen from scratch',
+          },
+          {
+            label: 'Design process',
+            standard: 'Online calculator + free site visit + quote',
+            bespoke: 'Site visit → design proposal with elevations → build',
+          },
+          {
+            label: 'Starting price',
+            standard: 'From £12,750 inc VAT',
+            bespoke: 'From £20,000+ — quoted precisely per project',
+          },
+          {
+            label: 'Best for',
+            standard: 'Most gardens, most requirements, faster process',
+            bespoke: 'Unusual plots, specialist uses, no-compromise vision',
+          },
+        ].map((row, i) => (
+          <>
+            <div style={`padding:16px 28px; border-right:1px solid #ebeced; ${i < 5 ? 'border-bottom:1px solid #ebeced;' : ''} background:#fff;`}>
+              <p style="font-size:11px; font-weight:700; color:#aaa; text-transform:uppercase; letter-spacing:0.07em; margin:0 0 4px;">{row.label}</p>
+              <p style="font-size:13.5px; color:#444; margin:0; line-height:1.5;">{row.standard}</p>
+            </div>
+            <div style={`padding:16px 28px; ${i < 5 ? 'border-bottom:1px solid rgba(255,255,255,0.1);' : ''} background:#2d3841;`}>
+              <p style="font-size:11px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.07em; margin:0 0 4px;">{row.label}</p>
+              <p style="font-size:13.5px; color:rgba(255,255,255,0.85); margin:0; line-height:1.5;">{row.bespoke}</p>
+            </div>
+          </>
+        ))}
+
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px;">
+        <a href="/our-prices" class="btn-outline-dark" style="text-align:center; justify-content:center; font-size:14px; padding:12px 24px;">See Standard Range Prices →</a>
+        <a href="/contact-us" class="btn-primary" style="text-align:center; justify-content:center; font-size:14px; padding:12px 24px;">Book a Free Bespoke Consultation →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process + Timeline -->
   <section class="section" style="background:#f8faf7;">
     <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
       <div style="text-align:center; margin-bottom:40px;">
         <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:10px;">How the Bespoke Process Works</h2>
+        <p style="color:#666; max-width:480px; margin:0 auto;">From first conversation to keys in hand — a typical bespoke project takes 10–16 weeks.</p>
       </div>
       <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px;">
         {[
-          { step: '01', title: 'Free Site Visit', desc: 'We come to you, assess the garden, and listen to what you have in mind. No obligation.' },
-          { step: '02', title: 'Design Proposal', desc: 'We draw up a detailed design with elevation drawings and a full specification.' },
-          { step: '03', title: 'Quotation', desc: 'A precise, itemised quote — no vague estimates, no hidden extras.' },
-          { step: '04', title: 'Build & Handover', desc: 'Our team builds your garden room in 2–3 weeks. We hand over the keys when you\'re happy.' },
+          { step: '01', title: 'Free Site Visit', timeline: 'Week 1–2', desc: 'We come to you, assess the garden, and listen to what you have in mind. No obligation.' },
+          { step: '02', title: 'Design Proposal', timeline: 'Week 2–4', desc: 'We draw up a detailed design with elevation drawings and a full specification.' },
+          { step: '03', title: 'Quotation & Order', timeline: 'Week 4–6', desc: 'A precise, itemised quote — no vague estimates, no hidden extras. Materials ordered on signing.' },
+          { step: '04', title: 'Build & Handover', timeline: 'Week 10–16', desc: 'Our team builds your garden room in 2–4 weeks. We hand over the keys when you\'re happy.' },
         ].map(s => (
           <div style="background:#fff; border-radius:14px; padding:24px; border:1px solid #ebeced; text-align:center;">
-            <div style="font-size:2rem; font-weight:800; color:#e7f1e3; margin-bottom:8px; font-family:'Poppins',sans-serif;">{s.step}</div>
-            <p style="font-size:14px; font-weight:700; color:#2d3841; margin:0 0 6px;">{s.title}</p>
+            <div style="font-size:2rem; font-weight:800; color:#e7f1e3; margin-bottom:4px; font-family:'Poppins',sans-serif;">{s.step}</div>
+            <p style="font-size:14px; font-weight:700; color:#2d3841; margin:0 0 4px;">{s.title}</p>
+            <p style="font-size:11px; font-weight:600; color:#34a02e; margin:0 0 8px; text-transform:uppercase; letter-spacing:0.06em;">{s.timeline}</p>
             <p style="font-size:13px; color:#666; line-height:1.6; margin:0;">{s.desc}</p>
           </div>
         ))}
@@ -106,4 +215,30 @@ const related = [
     </div>
   </section>
 
+  <!-- Testimonial -->
+  <section style="background:#fff; padding:72px 0; border-top:1px solid #ebeced;">
+    <div style="max-width:760px; margin:0 auto; padding:0 24px; text-align:center;">
+      <div style="display:flex; justify-content:center; gap:3px; margin-bottom:16px;">
+        {[1,2,3,4,5].map(() => <svg width="20" height="20" fill="#f59e0b" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>)}
+      </div>
+      <blockquote style="margin:0 0 20px;">
+        <p style="font-size:16px; color:#444; line-height:1.85; margin:0 0 16px; font-style:italic;">"James built me my dream garden salon. I had a very specific idea of what I wanted and he delivered it perfectly — from the design through to the fit-out. The quality of the build and the finish is outstanding. I've had so many compliments from clients who use it every week."</p>
+        <footer style="font-size:13.5px; font-weight:700; color:#2d3841;">Linzi Ryan-Hillyer <span style="font-weight:400; color:#888;">· August 2023</span></footer>
+      </blockquote>
+      <a href="/testimonials" style="color:#34a02e; font-size:13.5px; font-weight:600; text-decoration:none;">Read all 39 reviews →</a>
+    </div>
+  </section>
+
 </ServiceLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 32px !important; }
+    div[style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
+    div[style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+  }
+  @media (max-width: 600px) {
+    div[style*="grid-template-columns:repeat(4,1fr)"],
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  }
+</style>

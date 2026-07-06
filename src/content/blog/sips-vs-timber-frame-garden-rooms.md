@@ -90,3 +90,5 @@ The best answer depends on how you plan to use the room, how often you will be i
 But for a premium garden room built to be comfortable through the seasons, energy efficient, and convincingly integrated into modern home life, SIPs usually come out ahead. They offer a more complete performance package, not just a different way of putting walls together.
 
 When you picture yourself taking video calls in February, watching a film in October, or escaping the household circus for an hour of peace, the structure beneath the surfaces matters. Choose the one that supports the way you actually want to live, not just the one that looks good on a quote.
+
+For more on what makes a garden room genuinely comfortable in every season, see our [all-year garden room guide](/garden-rooms/all-year-use) and the full detail on [SIPs construction](/your-build/structure).

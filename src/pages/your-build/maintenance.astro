@@ -1,0 +1,227 @@
+---
+import InfoLayout from '../../layouts/InfoLayout.astro';
+import YourBuildNav from '../../components/YourBuildNav.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much maintenance does a garden room need?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Very little, if it's built correctly. Our garden rooms use materials chosen specifically for low maintenance: EPDM rubber or metal roofing (30+ year lifespan), treated or naturally durable cladding, powder-coated aluminium doors and windows, and SIPs structural panels with no timber to rot. The main annual task is cleaning — gutters, glazing, and a wipe-down of external surfaces. There's no painting required on most cladding options." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a garden room last?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A well-built SIPs garden room should last 30–50+ years with normal maintenance. The structural elements — SIPs panels, ground screws, roof membrane — are built for decades. Cladding lifespan varies by material: composite and Kebony/Thermowood hardwood cladding lasts 25–30+ years with minimal maintenance, while untreated larch or cedar softens to a natural silver-grey and lasts 20–30+ years. Annual cleaning and occasional checks are all that's needed." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does cedar or larch cladding need treating?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Western red cedar and larch are naturally durable timbers that don't require treatment to remain structurally sound. Left untreated, they weather to a natural silver-grey over 12–18 months, which many customers prefer. If you want to maintain the original warm amber tone, an annual application of a UV-protective oil (such as Osmo) will slow the weathering process. We always advise on the specific care requirements for whichever cladding you choose." }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if the roof leaks?",
+      "acceptedAnswer": { "@type": "Answer", "text": "EPDM rubber roofing — which we use on all flat and low-pitch roofs — is an exceptionally reliable membrane with a 30+ year expected lifespan. It's a single sheet with no seams on the main field, welded at edges and penetrations, and will not crack or perish in normal UK conditions. In the very unlikely event of a leak, EPDM is straightforward to repair. All our roofs carry a guarantee and we're always available after handover if you have any concerns." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do the ground screws need any maintenance?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No — galvanised steel ground screws require no maintenance once installed. They don't rust in normal UK soil conditions, don't shift with ground movement, and don't require any inspection or treatment. They're specifically designed to be a maintenance-free foundation system." }
+    }
+  ]
+};
+
+const tasks = [
+  {
+    freq: 'Every 3 months',
+    items: [
+      { task: 'Clear gutters and downpipes', detail: 'Especially in autumn. Blocked gutters can overflow and cause water ingress around the fascia line.' },
+      { task: 'Check door and window seals', detail: 'Look for any movement or gaps in the gaskets around door and window frames. Address early to prevent draught or moisture issues.' },
+      { task: 'Wipe down aluminium frames', detail: 'Powder-coated aluminium is low maintenance but benefits from an occasional wipe with a damp cloth to remove salt, grime and pollution deposits.' },
+    ]
+  },
+  {
+    freq: 'Annually (spring)',
+    items: [
+      { task: 'Inspect the roof surface', detail: 'Walk the perimeter and visually check the EPDM membrane for any lifting at edges or around penetrations (roof lights, cable entry points). This is rare but worth checking.' },
+      { task: 'Check cladding condition', detail: 'Look for any splits, cracks or discolouration. Natural timber cladding will silver over time — this is normal and not a defect.' },
+      { task: 'Clean glazing inside and out', detail: 'Bifold and French doors accumulate dirt in the tracks. Clean tracks and lubricate with a silicone spray to keep operation smooth.' },
+      { task: 'Oil timber cladding (if desired)', detail: 'Cedar and larch don\'t need treatment to remain structurally sound — but if you want to retain the warm tone, apply a UV oil annually in spring. Osmo UV Protection Oil is our recommendation.' },
+      { task: 'Test electrical installation', detail: 'No specific action needed, but if you notice any RCD trips or flickering, call a qualified electrician. Our Part P electrical cert covers the installation — keep this in your documents.' },
+    ]
+  },
+  {
+    freq: 'Every 5 years',
+    items: [
+      { task: 'Redecorate interior if required', detail: 'Plastered walls hold paint well. Interior repainting is a cosmetic choice based on how the room is used — a home office will need it sooner than a gym.' },
+      { task: 'Check ground screw stability', detail: 'This should not be necessary but if you notice any movement or settlement, contact us — ground screws are designed to be permanent and adjustable if required.' },
+    ]
+  },
+];
+---
+
+<InfoLayout
+  title="Garden Room Maintenance Guide | Care & Upkeep | The Green Rooms"
+  description="How to maintain your garden room — what needs doing, how often, and what to look out for. Cladding, roofing, glazing and electrics covered."
+  canonical="/your-build/maintenance"
+  pageTitle="Garden Room Maintenance Guide"
+  pageSubtitle="Our rooms are built to be low-maintenance — here's what needs attention and when."
+  heroImg="/images/Classic%20GR%20in%20Garden.webp"
+  heroAlt="Garden room maintenance and care guide"
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build', href: '/your-build' }, { label: 'Maintenance' }]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Intro -->
+  <section style="background:#e7f1e3; padding:48px 24px;">
+    <div style="max-width:860px; margin:0 auto;">
+      <div style="background:#fff; border-radius:20px; padding:32px 36px; border:1px solid rgba(52,160,46,0.2);">
+        <h2 style="font-size:1.1rem; font-weight:700; color:#2d3841; margin:0 0 12px;">Built to Last, Designed to Be Easy</h2>
+        <p style="font-size:15px; color:#444; line-height:1.8; margin:0 0 12px;">We specify every material in our builds with longevity and low maintenance in mind. EPDM roofing that lasts 30+ years with no treatment. Powder-coated aluminium frames that need only an occasional wipe. Naturally durable or composite cladding that ages beautifully without painting.</p>
+        <p style="font-size:15px; color:#444; line-height:1.8; margin:0;">The result is a structure that looks after itself — requiring about 30 minutes of attention every few months. This guide covers what to do, when, and what to look out for.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Maintenance schedule -->
+  <section style="background:#fff; padding:80px 0;">
+    <div style="max-width:900px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin:0 0 40px; text-align:center;">Maintenance Schedule</h2>
+      <div style="display:flex; flex-direction:column; gap:32px;">
+        {tasks.map(group => (
+          <div>
+            <div style="display:inline-flex; align-items:center; gap:8px; background:#2d3841; color:#fff; font-family:'Poppins',sans-serif; font-size:12px; font-weight:700; padding:6px 16px; border-radius:50px; margin-bottom:16px;">{group.freq}</div>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              {group.items.map(item => (
+                <div style="background:#f8faf7; border-radius:14px; padding:20px 24px; border:1px solid #ebeced; display:flex; align-items:flex-start; gap:16px;">
+                  <div style="width:32px; height:32px; background:#e7f1e3; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                    <svg width="14" height="14" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  </div>
+                  <div>
+                    <p style="font-size:14px; font-weight:700; color:#2d3841; margin:0 0 4px;">{item.task}</p>
+                    <p style="font-size:13.5px; color:#555; line-height:1.65; margin:0;">{item.detail}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Cladding guide -->
+  <section style="background:#f8faf7; padding:72px 0; border-top:1px solid #ebeced;">
+    <div style="max-width:1000px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.3rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin:0 0 32px; text-align:center;">Cladding Care by Material</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        {[
+          {
+            name: 'Western Red Cedar',
+            lifespan: '25–30+ years',
+            maintain: 'None required to remain structurally sound. Apply UV oil annually to retain warm amber tone. Left untreated, weathers to a natural silver-grey in 12–18 months.',
+            notes: 'Our most popular cladding. The silver weathered look is increasingly desired and requires zero maintenance.',
+          },
+          {
+            name: 'Siberian Larch',
+            lifespan: '20–30+ years',
+            maintain: 'Same approach as cedar — leave to weather naturally or apply UV oil to slow the process. More resinous than cedar, so slightly more pronounced weathering.',
+            notes: 'Dense and durable. Common on contemporary-style builds. Ages to a consistent silver-grey.',
+          },
+          {
+            name: 'Thermowood / Kebony',
+            lifespan: '30+ years',
+            maintain: 'Minimal. Modified timber is highly stable — less movement than standard softwood. Oil occasionally if you want to maintain colour. Otherwise, leave it.',
+            notes: 'Our premium timber option. Thermally or chemically modified to be extremely durable and stable.',
+          },
+          {
+            name: 'Composite Cladding',
+            lifespan: '25+ years',
+            maintain: 'Annual wash with warm water and soft brush. No oiling, painting or treatment required. Colour-stable — won\'t fade or silver like natural timber.',
+            notes: 'Zero maintenance. Good option for customers who want consistent colour and no upkeep obligation.',
+          },
+        ].map(c => (
+          <div style="background:#fff; border-radius:16px; padding:24px; border:1px solid #ebeced;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;">
+              <h3 style="font-size:1rem; font-weight:700; color:#2d3841; margin:0;">{c.name}</h3>
+              <span style="font-size:11px; font-weight:700; color:#34a02e; background:#e7f1e3; padding:3px 10px; border-radius:50px; white-space:nowrap; flex-shrink:0; margin-left:8px;">{c.lifespan}</span>
+            </div>
+            <p style="font-size:13.5px; color:#555; line-height:1.7; margin:0 0 10px;">{c.maintain}</p>
+            <p style="font-size:12.5px; color:#888; margin:0; font-style:italic;">{c.notes}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What our 10-year guarantee covers -->
+  <section style="background:#2d3841; padding:72px 24px;">
+    <div style="max-width:860px; margin:0 auto;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.3rem,2.5vw,1.8rem); font-weight:700; color:#fff; margin:0 0 24px;">Our 10-Year Structural Guarantee</h2>
+      <p style="font-size:15px; color:rgba(255,255,255,0.8); line-height:1.8; margin:0 0 24px;">Every Green Rooms build comes with a 10-year structural guarantee covering the primary structure — SIPs panels, frame, roof system and ground screw foundations. If there's a structural defect, we'll fix it.</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+        {[
+          ['✓ Covered', 'Structural panel defects'],
+          ['✓ Covered', 'Roof membrane failure'],
+          ['✓ Covered', 'Ground screw settlement'],
+          ['✓ Covered', 'Frame movement'],
+          ['✓ Covered', 'Door and window seal failure'],
+          ['✓ Covered', 'Electrical installation (Part P cert)'],
+          ['— Not covered', 'General wear and cosmetic ageing'],
+          ['— Not covered', 'Damage from misuse or external events'],
+        ].map(([type, item]) => (
+          <div style={`display:flex; align-items:center; gap:10px; padding:12px 16px; border-radius:10px; background:${type.startsWith('✓') ? 'rgba(52,160,46,0.12)' : 'rgba(255,255,255,0.05)'};`}>
+            <span style={`font-size:12px; font-weight:700; ${type.startsWith('✓') ? 'color:#34a02e' : 'color:rgba(255,255,255,0.3)'};`}>{type}</span>
+            <span style="font-size:13px; color:rgba(255,255,255,0.75);">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section style="background:#f8faf7; padding:72px 0;">
+    <div style="max-width:860px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.3rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin:0 0 28px;">Maintenance Questions</h2>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        {[
+          { q: 'How long does a garden room last?', a: 'A well-built SIPs garden room should last 30–50+ years. The structural elements are designed for decades — ground screws don\'t rust, EPDM roofing doesn\'t perish, and SIPs panels don\'t rot. Cladding is the most variable element — natural timber softens and silvers with age, composite holds its colour. Our 10-year guarantee covers the primary structure.' },
+          { q: 'Does cedar cladding need painting?', a: 'No — and we\'d advise against painting it. Cedar is naturally durable and oils are far more suitable than paint, which can trap moisture and eventually peel. If you want to maintain the warm amber colour, apply a UV oil (like Osmo UV Protection Oil) once a year. Otherwise, simply leave it to weather to a natural silver-grey, which is low maintenance and looks excellent.' },
+          { q: 'What if I get a leak?', a: 'Contact us immediately — we\'ll assess it and respond quickly. Our EPDM roofing is extremely reliable (30+ year expected lifespan) and genuine leaks are rare. Water ingress sometimes occurs at junctions or around penetration points during the first year as materials settle, which is covered by our guarantee. Keep your guarantee documents safe and call us rather than attempting a DIY repair.' },
+          { q: 'Can I pressure wash my garden room?', a: 'Yes, with care. A pressure washer is fine on composite cladding and aluminium frames at low pressure. For natural timber, use a lower pressure setting and apply with the grain — high pressure across the grain can roughen the surface. Don\'t pressure wash EPDM roofing directly — a brush and warm water is sufficient.' },
+        ].map(item => (
+          <details style="background:#fff; border:1px solid #ebeced; border-radius:12px; padding:20px 24px;">
+            <summary style="font-size:15px; font-weight:700; color:#2d3841; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+              {item.q}
+              <svg width="16" height="16" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-left:12px;"><path d="M7 10l5 5 5-5z"/></svg>
+            </summary>
+            <p style="font-size:14px; color:#555; line-height:1.8; margin:14px 0 0;">{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#34a02e; padding:72px 24px; text-align:center;">
+    <div style="max-width:520px; margin:0 auto;">
+      <h2 style="font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700; color:#fff; margin-bottom:14px;">Questions About Your Build?</h2>
+      <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:28px;">We're always happy to help — whether you're an existing customer with a question or someone planning their first garden room.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+        <a href="/contact-us" class="btn-white" style="font-size:15px; padding:14px 32px;">Get in Touch</a>
+        <a href="/your-build/build-process" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.5); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none;">Our Build Process →</a>
+      </div>
+    </div>
+  </section>
+
+  <YourBuildNav currentSlug="maintenance" />
+</InfoLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 16px !important; }
+  }
+</style>

@@ -16,12 +16,14 @@ interface Props {
   price?: string;
   features: { icon: string; title: string; desc: string }[];
   relatedPages?: { label: string; href: string; img: string }[];
+  faqs?: { q: string; a: string }[];
+  projects?: { slug: string; label: string; tagline: string; img: string }[];
 }
 
 const {
   title, description, canonical,
   heroImg, heroSrcset: heroSrcsetProp, heroAlt, heroPos = 'center', h1, tagline, intro, price,
-  features, relatedPages = [],
+  features, relatedPages = [], faqs = [], projects = [],
 } = Astro.props;
 
 function smSrcset(img: string, existing?: string) {
@@ -35,6 +37,56 @@ function smSrcset(img: string, existing?: string) {
 }
 const heroSrcset = smSrcset(heroImg, heroSrcsetProp);
 
+const siteUrl = 'https://www.thegreenrooms.com';
+const priceNumeric = price ? price.replace(/[^0-9]/g, '') : null;
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": h1,
+  "description": description,
+  "brand": { "@type": "Organization", "name": "The Green Rooms", "url": siteUrl },
+  "url": `${siteUrl}${canonical}`,
+  ...(priceNumeric ? {
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "GBP",
+      "price": priceNumeric,
+      "priceSpecification": { "@type": "PriceSpecification", "price": priceNumeric, "priceCurrency": "GBP", "valueAddedTaxIncluded": true },
+      "availability": "https://schema.org/InStock",
+      "url": `${siteUrl}${canonical}`,
+      "seller": { "@type": "Organization", "name": "The Green Rooms" }
+    }
+  } : {
+    "offers": {
+      "@type": "Offer",
+      "availability": "https://schema.org/InStock",
+      "url": `${siteUrl}${canonical}`,
+      "priceCurrency": "GBP",
+      "seller": { "@type": "Organization", "name": "The Green Rooms" }
+    }
+  })
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
+    { "@type": "ListItem", "position": 2, "name": "Garden Rooms", "item": `${siteUrl}/garden-rooms/garden-rooms` },
+    { "@type": "ListItem", "position": 3, "name": h1, "item": `${siteUrl}${canonical}` }
+  ]
+};
+
+const faqSchema = faqs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+} : null;
+
 const whyUs = [
   { title: 'SIPs Construction', desc: 'Structural Insulated Panels — far superior insulation, strength and soundproofing compared to timber frame. Warm in winter, cool in summer.' },
   { title: '30+ Year Cladding', desc: 'Thermo Ayous, Cedar, Charred Spruce, Hardie Plank, Millboard or Thermo Ash. Every material chosen for longevity. No Redwood, ever.' },
@@ -46,6 +98,10 @@ const whyUs = [
 ---
 
 <Layout title={title} description={description} canonical={canonical} preloadImg={heroImg}>
+
+  <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  {faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
 
   <!-- HERO -->
   <section style="position:relative; height:65vh; min-height:440px; display:flex; align-items:flex-end; overflow:hidden; background:#1a2328;">
@@ -76,7 +132,7 @@ const whyUs = [
     <div style="max-width:1280px; margin:0 auto; display:flex; align-items:center; gap:8px; font-size:13px;">
       <a href="/" style="color:rgba(255,255,255,0.6); text-decoration:none; transition:color 0.2s;" class="bc-link">Home</a>
       <span style="color:rgba(255,255,255,0.3);">›</span>
-      <a href="/garden-rooms/garden-offices" style="color:rgba(255,255,255,0.6); text-decoration:none;" class="bc-link">Garden Rooms</a>
+      <span style="color:rgba(255,255,255,0.6);">Garden Rooms</span>
       <span style="color:rgba(255,255,255,0.3);">›</span>
       <span style="color:#34a02e; font-weight:600;">{h1}</span>
     </div>
@@ -144,8 +200,49 @@ const whyUs = [
     </div>
   </section>
 
+  <!-- MID-PAGE CTA -->
+  <section style="background:#fff; padding:48px 24px; border-bottom:1px solid #ebeced;">
+    <div style="max-width:1280px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:24px;">
+      <div>
+        <p style="font-size:1.1rem; font-weight:700; color:#2d3841; margin:0 0 4px;">Ready to see what we can build for you?</p>
+        <p style="font-size:14px; color:#666; margin:0;">Get a price in under 3 minutes, or book a free site visit — no obligation.</p>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:12px; flex-shrink:0;">
+        <a href="/garden-room-price-calculator" class="btn-primary" style="font-size:14px; padding:12px 28px;">Get an Instant Quote</a>
+        <a href="/contact-us" style="display:inline-flex; align-items:center; border:2px solid #2d3841; color:#2d3841; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:10px 26px; border-radius:50px; text-decoration:none; transition:all 0.2s;" class="btn-outline-dark">Book a Free Site Visit</a>
+      </div>
+    </div>
+  </section>
+
   <!-- EXTRA CONTENT SLOT -->
   <slot />
+
+  <!-- FAQ SECTION (rendered when faqs prop is passed) -->
+  {faqs.length > 0 && (
+    <section style="background:#f8faf7; padding:72px 0; border-top:1px solid #ebeced;">
+      <div style="max-width:840px; margin:0 auto; padding:0 24px;">
+        <div style="text-align:center; margin-bottom:36px;">
+          <h2 style="font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700; color:#2d3841; margin:0 0 10px;">Frequently Asked Questions</h2>
+          <p style="font-size:14.5px; color:#666; margin:0;">More questions? <a href="/faq" style="color:#34a02e; font-weight:600;">See our full FAQ →</a></p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:2px;">
+          {faqs.map((faq, i) => (
+            <details class="sl-faq" style={`border-bottom:1px solid #ebeced; ${i === 0 ? 'border-top:1px solid #ebeced;' : ''}`}>
+              <summary style="display:flex; justify-content:space-between; align-items:center; padding:20px 0; cursor:pointer; list-style:none; gap:16px;">
+                <span style="font-size:15px; font-weight:700; color:#2d3841; line-height:1.35;">{faq.q}</span>
+                <span class="sl-faq-icon" style="flex-shrink:0; width:24px; height:24px; background:#e7f1e3; border-radius:50%; display:flex; align-items:center; justify-content:center; transition:transform 0.2s;">
+                  <svg width="12" height="12" fill="#34a02e" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+                </span>
+              </summary>
+              <div style="padding:0 0 20px; padding-right:40px;">
+                <p style="font-size:14.5px; color:#555; line-height:1.8; margin:0;" set:html={faq.a} />
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- WHY US — dark with green accents -->
   <section style="background:#1a2328; padding:80px 0;">
@@ -184,6 +281,31 @@ const whyUs = [
     </div>
   </section>
 
+  <!-- SEE IT BUILT -->
+  {projects.length > 0 && (
+    <section style="background:#f8faf7; padding:72px 0; border-top:1px solid #ebeced;">
+      <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+        <p style="font-size:12px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 8px;">From Our Portfolio</p>
+        <h2 style="font-size:clamp(1.3rem,2.5vw,1.7rem); font-weight:700; color:#2d3841; margin:0 0 28px;">See It Built</h2>
+        <div style={`display:grid; grid-template-columns:${projects.length >= 3 ? 'repeat(3,1fr)' : '1fr 1fr'}; gap:20px;`}>
+          {projects.map((p: { slug: string; label: string; tagline: string; img: string }) => (
+            <a href={`/our-work/${p.slug}`} style="display:flex; flex-direction:column; text-decoration:none; border-radius:16px; overflow:hidden; border:1px solid #ebeced; background:#fff; transition:border-color 0.2s, box-shadow 0.2s;" class="proj-link">
+              <div style="height:200px; overflow:hidden;">
+                <img src={p.img} alt={p.label} style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s;" class="proj-link-img" loading="lazy" />
+              </div>
+              <div style="padding:18px;">
+                <p style="font-size:15px; font-weight:700; color:#2d3841; margin:0 0 4px; font-family:'Poppins',sans-serif;">{p.label}</p>
+                <p style="font-size:12.5px; color:#666; margin:0 0 10px; line-height:1.5;">{p.tagline}</p>
+                <span style="font-size:13px; font-weight:700; color:#34a02e;">View full project →</span>
+              </div>
+            </a>
+          ))}
+        </div>
+        <p style="text-align:center; margin:24px 0 0;"><a href="/our-work" style="font-size:13.5px; color:#34a02e; font-weight:600; text-decoration:none;">See all our work →</a></p>
+      </div>
+    </section>
+  )}
+
   <!-- RELATED -->
   {relatedPages.length > 0 && (
     <section style="background:#fff; padding:72px 0;">
@@ -205,14 +327,54 @@ const whyUs = [
     </section>
   )}
 
+  <!-- WHERE WE BUILD -->
+  <section style="background:#f8faf7; padding:48px 0; border-top:1px solid #ebeced;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <p style="font-size:12px; font-weight:700; color:#888; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 16px; text-align:center;">Where We Build — Surrey & South East</p>
+      <div style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center;">
+        {[
+          { label: 'Weybridge', href: '/locations/garden-rooms-weybridge' },
+          { label: 'Esher', href: '/locations/garden-rooms-esher' },
+          { label: 'Cobham', href: '/locations/garden-rooms-cobham' },
+          { label: 'Walton-on-Thames', href: '/locations/garden-rooms-walton-on-thames' },
+          { label: 'Guildford', href: '/locations/garden-rooms-guildford' },
+          { label: 'Leatherhead', href: '/locations/garden-rooms-leatherhead' },
+          { label: 'Woking', href: '/locations/garden-rooms-woking' },
+          { label: 'Epsom', href: '/locations/garden-rooms-epsom' },
+          { label: 'Staines', href: '/locations/garden-rooms-staines' },
+          { label: 'Chertsey', href: '/locations/garden-rooms-chertsey' },
+          { label: 'Virginia Water', href: '/locations/garden-rooms-virginia-water' },
+          { label: 'Oxshott', href: '/locations/garden-rooms-oxshott' },
+          { label: 'Claygate', href: '/locations/garden-rooms-claygate' },
+          { label: 'East Molesey', href: '/locations/garden-rooms-east-molesey' },
+          { label: 'Godalming', href: '/locations/garden-rooms-godalming' },
+          { label: 'Reigate', href: '/locations/garden-rooms-reigate' },
+          { label: 'Dorking', href: '/locations/garden-rooms-dorking' },
+          { label: 'Farnham', href: '/locations/garden-rooms-farnham' },
+          { label: 'Sunbury-on-Thames', href: '/locations/garden-rooms-sunbury' },
+        ].map(t => (
+          <a href={t.href} style="display:inline-flex; align-items:center; padding:7px 16px; border:1px solid #dce0dc; border-radius:50px; font-size:13px; font-weight:600; color:#2d3841; text-decoration:none; background:#fff; transition:all 0.15s;" class="town-chip">{t.label}</a>
+        ))}
+      </div>
+    </div>
+  </section>
+
 </Layout>
 
 <style>
   .bc-link:hover { color: #fff !important; }
+  .sl-faq summary::-webkit-details-marker { display: none; }
+  .sl-faq[open] .sl-faq-icon { transform: rotate(180deg); background: #34a02e; }
+  .sl-faq[open] .sl-faq-icon svg { fill: #fff; }
+  .sl-faq summary:hover span:first-child { color: #34a02e; }
   .feat-card:hover { background: rgba(255,255,255,0.1) !important; }
+  .btn-outline-dark:hover { background: #2d3841 !important; color: #fff !important; }
   .btn-ghost:hover { background: rgba(255,255,255,0.1) !important; border-color: rgba(255,255,255,0.5) !important; }
   .btn-ghost-light:hover { background: rgba(255,255,255,0.15) !important; }
   .related-card:hover .related-img { transform: scale(1.05); }
+  .proj-link:hover { border-color: #34a02e !important; box-shadow: 0 4px 20px rgba(52,160,46,0.12); }
+  .proj-link:hover .proj-link-img { transform: scale(1.04); }
+  .town-chip:hover { border-color: #34a02e !important; color: #34a02e !important; background: #f8faf7 !important; }
 
   @media (max-width: 900px) {
     div[style*="grid-template-columns:1.1fr 1fr"],

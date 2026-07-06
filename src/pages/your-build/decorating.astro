@@ -1,5 +1,6 @@
 ---
 import InfoLayout from '../../layouts/InfoLayout.astro';
+import YourBuildNav from '../../components/YourBuildNav.astro';
 ---
 <InfoLayout
   title="Garden Room Interior Decorating | Plastering & Finishing | The Green Rooms"
@@ -9,7 +10,7 @@ import InfoLayout from '../../layouts/InfoLayout.astro';
   pageSubtitle="We hand over the keys with plastered walls, fitted flooring and skirting boards — ready to paint and furnish."
   heroImg="/images/decorating.webp"
   heroAlt="Decorated interior of a completed garden room with bifold doors"
-  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build', href: '/your-build/build-process' }, { label: 'Decorating' }]}
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build', href: '/your-build' }, { label: 'Decorating' }]}
 >
   <section style="background:#fff; padding:72px 0;">
     <div style="max-width:840px; margin:0 auto; padding:0 24px;">
@@ -68,4 +69,5 @@ import InfoLayout from '../../layouts/InfoLayout.astro';
       </div>
     </div>
   </section>
+  <YourBuildNav currentSlug="decorating" />
 </InfoLayout>

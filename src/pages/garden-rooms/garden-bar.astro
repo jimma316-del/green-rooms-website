@@ -1,0 +1,225 @@
+---
+import ServiceLayout from '../../components/ServiceLayout.astro';
+
+const features = [
+  { icon: 'layers', title: 'SIPs Construction Throughout', desc: 'Your garden bar stays comfortable in November and cool in July — without anyone having to think about it. Properly insulated, all year round.' },
+  { icon: 'ruler', title: 'Full-Width Bifold Doors', desc: 'Open the whole front of the room to the garden in summer. Close it up in winter and keep the warmth in. Wide bifold sets make the transition seamless.' },
+  { icon: 'leaf', title: 'Atmospheric LED Lighting', desc: 'Strip lighting under the canopy, downlights inside, smart dimmers throughout. We design the lighting layout with you — not a generic afterthought.' },
+  { icon: 'key', title: 'Dedicated Electrical Supply', desc: 'Multiple circuits for a bar fridge, sound system, feature lighting and everything else. Wired by a Part P certified electrician, properly specified before we start.' },
+  { icon: 'tools', title: 'Canopy Extension', desc: 'Add a canopy to create covered outdoor space that\'s usable even when it\'s raining. LED strip lighting under the soffit turns it into the best seat in the garden.' },
+  { icon: 'certificate', title: 'Premium Cladding Options', desc: 'Cedar, charred spruce or Hardie Plank — every option looks great by day and even better at night with downlights cutting across the grain.' },
+];
+
+const related = [
+  { label: 'Garden Rooms', href: '/garden-rooms/garden-rooms', img: '/images/Hero%20GR.webp' },
+  { label: 'Bespoke Builds', href: '/garden-rooms/bespoke', img: '/images/HERO%20Bespoke%20build.webp' },
+  { label: 'With Storage', href: '/garden-rooms/garden-rooms-with-storage', img: '/images/GR%20with%20storage%20cedar%20and%20step.webp' },
+];
+
+const faqs = [
+  {
+    q: "Do I need planning permission for a garden bar?",
+    a: "Usually no. A garden bar is treated the same as any garden outbuilding under Permitted Development — single storey, within the garden footprint limits, no taller than 2.5m within 2m of a boundary. We confirm your exact position at the free site visit. See our <a href='/your-build/first-steps' style='color:#34a02e;font-weight:600;'>getting started guide</a> for a full rundown."
+  },
+  {
+    q: "What size do I need for a garden bar?",
+    a: "A 3×3m room works for a compact bar with a few stools — enough for the bar itself and 4–6 people. 4×3m gives you proper lounge seating alongside the bar. If you want a pool table, darts board or TV area combined with a bar, 5×4m or above is worth considering. We'll advise at the site visit based on how you plan to use it."
+  },
+  {
+    q: "Can I include a sink and plumbing in my garden bar?",
+    a: "Yes. We can accommodate plumbing runs for a sink — you'll need a water supply from the house and a drainage route, which we plan during the site visit. The plumbing work is done by your plumber working alongside our installation. It's a popular addition that takes the space from a drinks fridge and bottles to a proper bar setup."
+  },
+  {
+    q: "What's the best cladding for a garden bar?",
+    a: "Charred spruce (Shou Sugi Ban) is the most popular choice — the near-black finish looks dramatic at night with lighting behind it, and it's very low maintenance. Cedar is a warm alternative that silvers beautifully if left untreated. Hardie Plank in anthracite or black is a strong choice for a contemporary look with zero maintenance. We'll show you all options at our showroom in Lyne, Surrey."
+  },
+  {
+    q: "Can I add air conditioning?",
+    a: "Yes — and it's worth considering. A packed garden bar with friends generates more heat than a home office. A 2.5kW AC unit keeps the room comfortable year-round and handles dehumidification too. See our <a href='/your-build/climate-control' style='color:#34a02e;font-weight:600;'>climate control guide</a> for full options and pricing."
+  },
+  {
+    q: "What electrical specification do I need?",
+    a: "We design the electrical layout around your setup. A typical garden bar might include: a circuit for a bar fridge, a circuit for sound system or TV, feature and task lighting on smart dimmers, external LED strip lighting under the canopy, and a 32A consumer unit fed from the house. We agree the specification before we build — nothing is retrofitted as an extra."
+  },
+];
+---
+
+<ServiceLayout
+  title="Garden Bar Buildings Surrey | Bespoke Garden Bar Rooms | The Green Rooms"
+  description="Bespoke garden bar buildings designed and built across Surrey. Full-width bifolds, LED lighting, dedicated electrics — a proper entertaining space at the bottom of your garden."
+  canonical="/garden-rooms/garden-bar"
+  heroImg="/images/Dual%20Canopy%20Lighting.webp"
+  heroAlt="Garden bar building with LED canopy lighting, Surrey"
+  price="From £20,000 inc VAT"
+  h1="Garden Bar Buildings Surrey"
+  tagline="Bespoke Garden Bars — Surrey & South East"
+  intro="A proper garden bar changes how you use your home. No more squeezing into the kitchen, no noise carrying through the house, no weather ending the evening early. We build fully insulated, properly finished garden bar buildings with full-width bifold doors, LED lighting and everything wired correctly — designed around exactly how you want to use the space."
+  features={features}
+  relatedPages={related}
+  faqs={faqs}
+  projects={[
+    { slug: 'outdoor-living-space', label: 'Outdoor Living Space', tagline: 'Open-sided shelter · LED canopy lighting · Hot tub position · Ground screws', img: '/images/bespoke%20shelter%20hot%20tub.webp' },
+    { slug: 'garden-hobby-room', label: 'Garden Hobby Room', tagline: 'Lounge and hobby space · Cedar cladding · Cedar canopy · Bifold doors', img: '/images/classic%20canopy%20in%20cedar.webp' },
+  ]}
+>
+
+  <!-- Gallery -->
+  <section style="background:#f8faf7; padding:72px 0 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.4rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin:0 0 24px;">Garden Bar Builds</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:12px;">
+        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/Dual%20Canopy%20Lighting.webp" alt="Garden bar with LED canopy lighting" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/GR%20internal%20with%20bifolds%20and%20decorated.webp" alt="Garden bar interior with lounge seating" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/GP%203.6m%20Bifolds%20open.webp" alt="Garden room with wide bifold doors open" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:72px;">
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/night%20lighting.webp" alt="Garden bar exterior at night with lighting" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/GR%20decking.webp" alt="Garden bar with decking" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/GR%20with%20cedar%20cladding%20Nordlux%20kyclop%20ripple%20wall%20light.webp" alt="Garden bar with cedar cladding and wall lighting" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's possible inside -->
+  <section class="section" style="background:#fff;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:36px;">
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:10px;">What Goes Inside a Garden Bar</h2>
+        <p style="color:#666; max-width:520px; margin:0 auto;">Every build is bespoke — here's what our customers typically include.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:960px; margin:0 auto;">
+        {[
+          { title: 'The Bar Area', items: ['Under-counter bar fridge', 'Sink with plumbing run from house', 'Bottle storage and shelving', 'Bar counter — timber, stone or composite', 'Stools and standing space'] },
+          { title: 'The Seating Area', items: ['Lounge seating or built-in bench', 'TV or projector on feature wall', 'Coffee table or side tables', 'Sound system wall mounts', 'Games: dart board, pool table space'] },
+          { title: 'The Details', items: ['LED strip lighting on smart dimmers', 'Canopy with downlights outside', 'Decking and step integration', 'Premium cladding: cedar or charred spruce', 'Keypad or coded door entry'] },
+        ].map(col => (
+          <div style="background:#f8faf7; border-radius:16px; padding:24px; border:1px solid #ebeced;">
+            <p style="font-size:14px; font-weight:700; color:#2d3841; margin:0 0 14px;">{col.title}</p>
+            <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px;">
+              {col.items.map(item => (
+                <li style="display:flex; align-items:flex-start; gap:8px; font-size:13px; color:#555;">
+                  <svg width="11" height="11" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:2px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Size guide -->
+  <section class="section" style="background:#f8faf7;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:36px;">
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:10px;">What Size Garden Bar Do I Need?</h2>
+        <p style="color:#666; max-width:520px; margin:0 auto;">Depends what you're putting in it. Here's how common layouts map to room dimensions.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:900px; margin:0 auto 32px;">
+        {[
+          { size: '3 × 3m', label: 'Compact Bar', uses: ['Bar counter + 4 stools', 'Under-counter fridge', 'Standing room for 6', 'TV on the wall'], note: '9m² — tight but doable for a dedicated bar' },
+          { size: '4 × 3m', label: 'Bar + Lounge', uses: ['Full bar counter', 'Sofa and seating area', 'TV or projector', 'Darts board on one wall'], note: '12m² — the most popular bar size', highlight: true },
+          { size: '5 × 4m+', label: 'Full Entertainment', uses: ['Bar + lounge + games area', 'Pool table clearance', 'Large screen projection', 'Space for parties'], note: '20m²+ — if you\'re serious about entertaining' },
+        ].map(s => (
+          <div style={`background:#fff; border-radius:16px; padding:24px; border:${s.highlight ? '2px solid #34a02e' : '1px solid #ebeced'}; position:relative;`}>
+            {s.highlight && <div style="position:absolute; top:-11px; left:50%; transform:translateX(-50%); background:#34a02e; color:#fff; font-size:11px; font-weight:700; padding:3px 12px; border-radius:50px; white-space:nowrap;">Most Popular</div>}
+            <p style="font-size:1.5rem; font-weight:700; color:#2d3841; margin:0 0 2px; font-family:'Poppins',sans-serif;">{s.size}</p>
+            <p style="font-size:11px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.07em; margin:0 0 12px;">{s.label}</p>
+            <ul style="list-style:none; padding:0; margin:0 0 12px; display:flex; flex-direction:column; gap:6px;">
+              {s.uses.map(u => (
+                <li style="display:flex; align-items:center; gap:7px; font-size:13px; color:#555;">
+                  <svg width="11" height="11" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  {u}
+                </li>
+              ))}
+            </ul>
+            <p style="font-size:11.5px; color:#999; margin:0; border-top:1px solid #f0f0f0; padding-top:10px;">{s.note}</p>
+          </div>
+        ))}
+      </div>
+      <p style="text-align:center; font-size:13.5px; color:#666;">Want a pool table? Bring the dimensions to the site visit and we'll plan the layout around it.</p>
+    </div>
+  </section>
+
+  <!-- Planning permission -->
+  <section class="section" style="background:#fff;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;">
+        <div>
+          <div style="display:inline-block; background:#e7f1e3; color:#257a21; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:5px 14px; border-radius:50px; margin-bottom:14px;">Good News</div>
+          <h2 style="font-size:clamp(1.3rem,2.5vw,1.75rem); font-weight:700; color:#2d3841; margin-bottom:16px;">Most Garden Bars Don't Need Planning Permission</h2>
+          <p style="font-size:15px; color:#555; line-height:1.8; margin-bottom:14px;">A garden bar is an outbuilding like any other — the same Permitted Development rules apply. Single storey, within the garden footprint limits, and no taller than 2.5m within 2m of the boundary.</p>
+          <p style="font-size:15px; color:#555; line-height:1.8; margin-bottom:20px;">We confirm your exact position at the free site visit. Listed buildings and conservation areas may have different requirements — we'll tell you exactly what applies to your property before you commit to anything.</p>
+          <a href="/your-build/first-steps" style="color:#34a02e; font-weight:600; font-size:14px; text-decoration:none;">Read our planning guide →</a>
+        </div>
+        <div style="background:#f8faf7; border-radius:20px; padding:32px; border:1px solid #ebeced;">
+          <p style="font-size:14px; font-weight:700; color:#2d3841; margin:0 0 16px;">The standard Permitted Development rules:</p>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            {[
+              { rule: 'Single storey — no upper floor', ok: true },
+              { rule: 'Not covering more than 50% of the garden', ok: true },
+              { rule: 'Max 2.5m height within 2m of boundary', ok: true },
+              { rule: 'Not forward of the principal elevation', ok: true },
+              { rule: 'Listed buildings — always check with us first', ok: false },
+              { rule: 'Conservation areas — check with us first', ok: false },
+            ].map(r => (
+              <div style={`display:flex; align-items:center; gap:12px; padding:10px 14px; background:#fff; border-radius:8px; border:1px solid ${r.ok ? '#ebeced' : '#f5e0e0'};`}>
+                <svg width="14" height="14" fill={r.ok ? '#34a02e' : '#cc4444'} viewBox="0 0 24 24">{r.ok ? <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/> : <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>}</svg>
+                <span style="font-size:13px; font-weight:500; color:#2d3841;">{r.rule}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section style="background:#f8faf7; padding:72px 0; border-top:1px solid #ebeced;">
+    <div style="max-width:900px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:32px;">
+        <div style="display:flex; justify-content:center; gap:3px; margin-bottom:8px;">
+          {[1,2,3,4,5].map(() => <svg width="20" height="20" fill="#f59e0b" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>)}
+        </div>
+        <p style="font-size:13px; color:#888; margin:0;">5.0 · 39 Google Reviews</p>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        <blockquote style="background:#fff; border-radius:16px; padding:28px; border:1px solid #ebeced; margin:0;">
+          <p style="font-size:14.5px; color:#444; line-height:1.8; margin:0 0 16px; font-style:italic;">"James and his team built the most incredible large garden room with large cedar cladding and LED strip lighting — I love having somewhere to keep all my exercise equipment and to relax. The quality and finish are second to none."</p>
+          <footer style="font-size:13px; font-weight:700; color:#2d3841;">Katherine Lowe <span style="font-weight:400; color:#888;">· July 2024</span></footer>
+        </blockquote>
+        <blockquote style="background:#fff; border-radius:16px; padding:28px; border:1px solid #ebeced; margin:0;">
+          <p style="font-size:14.5px; color:#444; line-height:1.8; margin:0 0 16px; font-style:italic;">"Incredible attention to detail, customer service, materials and quality of craftsmanship. Could not be happier with what James and his team built for us and perfectly on schedule too!"</p>
+          <footer style="font-size:13px; font-weight:700; color:#2d3841;">Nick <span style="font-weight:400; color:#888;">· July 2023</span></footer>
+        </blockquote>
+      </div>
+      <p style="text-align:center; margin:20px 0 0;"><a href="/testimonials" style="color:#34a02e; font-size:13.5px; font-weight:600; text-decoration:none;">Read all 39 reviews →</a></p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background:#34a02e; text-align:center;">
+    <div style="max-width:520px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#fff; margin-bottom:14px;">Start Planning Your Garden Bar</h2>
+      <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:28px; line-height:1.7;">Get an instant guide price, or book a free site visit and we'll come out and plan the layout with you.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+        <a href="/garden-room-price-calculator" class="btn-white" style="font-size:15px; padding:14px 32px;">Get an Instant Price</a>
+        <a href="/contact-us" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.5); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none;">Book a Free Site Visit</a>
+      </div>
+    </div>
+  </section>
+
+</ServiceLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 32px !important; }
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+    div[style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
+  }
+  @media (max-width: 600px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"],
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  }
+</style>

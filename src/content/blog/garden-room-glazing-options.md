@@ -15,7 +15,7 @@ In a premium garden room, glazing does two jobs at once. It gives you natural li
 
 A south-facing garden room with full-height glazing may look brilliant in a brochure, but if it is used as a [home office](https://www.thegreenrooms.com/garden-rooms/garden-offices) with screens and video calls, you need to think about glare, heat build-up and where your desk will sit. Equally, a gym or entertainment room might benefit from a more enclosed feel with carefully placed windows rather than a fully glazed front.
 
-This is where bespoke design comes into its own. Good glazing choices are not only about appearance. They are about matching the room to the way you actually live.
+This is where bespoke design comes into its own. Good glazing choices are not only about appearance. They are about matching the room to the way you actually live. We go into more depth on [windows and doors](https://www.thegreenrooms.com/your-build/windows-and-doors) — including skylights, integral blinds and different frame materials — on our build guide.
 
 ## The main garden room glazing options
 

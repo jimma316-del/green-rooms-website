@@ -1,0 +1,198 @@
+---
+import InfoLayout from '../../layouts/InfoLayout.astro';
+---
+<InfoLayout
+  title="Garden Room Comparison | How The Green Rooms Compares | Surrey"
+  description="Comparing garden room companies on price, construction, what's included and local service. How The Green Rooms stacks up against the national brands — at 5×3m."
+  canonical="/garden-rooms/compare"
+  pageTitle="How The Green Rooms Compares"
+  pageSubtitle="Same 5×3m size. Different companies. Very different prices — and very different specs. Here's a straight comparison."
+  heroImg="/images/HERO%20GR%204m%20bifolds.webp"
+  heroAlt="The Green Rooms garden room 5 metre bifold doors, Surrey"
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Garden Rooms', href: '/garden-rooms/garden-rooms' }, { label: 'How We Compare' }]}
+>
+
+  <section style="background:#fff; padding:72px 0;">
+    <div style="max-width:1060px; margin:0 auto; padding:0 24px;">
+
+      <!-- Intro -->
+      <div style="max-width:720px; margin:0 auto 56px; text-align:center;">
+        <p style="font-size:1rem; color:#555; line-height:1.85; margin:0 0 16px;">Garden room prices look wildly different across companies — and it's not always obvious why. Some of the gap is genuine quality. Some is brand premium. Some is what's included versus what's extra.</p>
+        <p style="font-size:1rem; color:#555; line-height:1.85; margin:0;">This page compares The Green Rooms against the best-known names in the UK bespoke garden room market on a like-for-like basis: same 5×3m building, at listed price, broken down by what you're actually getting. Prices are based on research conducted in 2025–2026 and are subject to change — we'd always recommend getting a current quote from any company you're comparing.</p>
+      </div>
+
+      <!-- Price comparison -->
+      <div style="background:#f8faf7; border-radius:20px; padding:40px; margin-bottom:56px; border:1px solid #ebeced;">
+        <h2 style="font-size:1.3rem; font-weight:700; color:#2d3841; margin:0 0 8px;">Price Comparison at 5×3m</h2>
+        <p style="font-size:13.5px; color:#888; margin:0 0 28px;">Standard specification — comparable glazing, insulation and foundation included. Entry-level listed price.</p>
+
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          {[
+            { company: 'The Green Rooms', price: '£25,460', note: 'SIPs throughout · EPDM/metal roof · Ground screws · Plastered interior · Full electrics', highlight: true, diff: '' },
+            { company: 'Crown Pavilions', price: 'From £26,000', note: 'Entry level 5×3m — rises significantly with upgrades (to £43,000+)', highlight: false, diff: 'Similar entry price; lower for pods' },
+            { company: 'Green Retreats', price: 'From £36,450', note: 'Factory product lines — fixed spec at this price point', highlight: false, diff: '+£11,000 vs The Green Rooms' },
+            { company: 'Crane Garden Buildings', price: 'From £53,355', note: 'Premium crafted timber buildings — different market positioning', highlight: false, diff: '+£27,895 vs The Green Rooms' },
+          ].map(row => (
+            <div style={`display:grid; grid-template-columns:180px 1fr auto; gap:16px; align-items:center; padding:18px 20px; border-radius:12px; border:${row.highlight ? '2px solid #34a02e' : '1px solid #ebeced'}; background:${row.highlight ? '#f0faf0' : '#fff'};`}>
+              <div>
+                <p style={`font-size:14px; font-weight:700; margin:0; color:${row.highlight ? '#34a02e' : '#2d3841'};`}>{row.company}</p>
+                {row.highlight && <p style="font-size:11px; font-weight:700; color:#34a02e; margin:2px 0 0; text-transform:uppercase; letter-spacing:0.06em;">That's us</p>}
+              </div>
+              <p style="font-size:12.5px; color:#555; margin:0; line-height:1.6;">{row.note}</p>
+              <div style="text-align:right; flex-shrink:0;">
+                <p style={`font-family:'Poppins',sans-serif; font-size:18px; font-weight:800; margin:0; color:${row.highlight ? '#34a02e' : '#2d3841'};`}>{row.price}</p>
+                {row.diff && <p style="font-size:11px; color:#888; margin:2px 0 0;">{row.diff}</p>}
+              </div>
+            </div>
+          ))}
+        </div>
+        <p style="font-size:12px; color:#888; margin:20px 0 0; font-style:italic;">Prices researched 2025–2026. Verify current prices with each company before making a decision.</p>
+      </div>
+
+      <!-- Spec comparison -->
+      <h2 style="font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700; color:#2d3841; margin:0 0 8px;">Specification Comparison</h2>
+      <p style="font-size:14px; color:#666; margin:0 0 28px;">What's included as standard across different company types — at the same price point.</p>
+
+      <div style="overflow-x:auto; margin-bottom:56px;">
+        <table style="width:100%; border-collapse:collapse; min-width:620px;">
+          <thead>
+            <tr style="background:#2d3841;">
+              <th style="text-align:left; padding:14px 16px; font-size:12px; font-weight:700; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.05em; width:32%;">Feature</th>
+              <th style="text-align:center; padding:14px 16px; font-size:12px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.05em; width:23%;">The Green Rooms</th>
+              <th style="text-align:center; padding:14px 16px; font-size:12px; font-weight:700; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:0.05em; width:22%;">National Brands (factory)</th>
+              <th style="text-align:center; padding:14px 16px; font-size:12px; font-weight:700; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:0.05em; width:23%;">Timber Frame Suppliers</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              { feature: 'Construction type', us: 'SIPs throughout', national: 'Varies by brand', timber: 'Timber frame + insulation' },
+              { feature: 'Floor insulation', us: 'Integral SIPs', national: 'SIPs or foam board', timber: 'Fitted separately (gaps possible)' },
+              { feature: 'Wall insulation', us: 'Integral SIPs core', national: 'SIPs or Rockwool', timber: 'Rockwool in stud — thermal bridges at every stud' },
+              { feature: 'Roof insulation', us: '5"+ SIPs — 20yr guarantee', national: 'Varies — check specs', timber: 'Often minimal — felt common' },
+              { feature: 'Roof covering', us: 'EPDM rubber or metal panel', national: 'EPDM or metal panel', timber: 'Felt standard — cracks within years' },
+              { feature: 'Foundations', us: 'Ground screws (standard)', national: 'Ground screws or concrete', timber: 'Often DIY / not included' },
+              { feature: 'Interior finish', us: 'Plastered and painted', national: 'Plasterboard or OSB', timber: 'OSB or plasterboard (often DIY)' },
+              { feature: 'Electrical installation', us: 'Part P certified, full spec', national: 'Included as standard', timber: 'Often extra / not included' },
+              { feature: 'Cladding options', us: '6 options — cedar to composite', national: 'Fixed product ranges', timber: 'Limited options' },
+              { feature: 'Bespoke sizing', us: 'Any dimension', national: 'Fixed product sizes', timber: 'Fixed sizes' },
+              { feature: 'Local site visit', us: 'Free — James visits personally', national: 'Sales rep or virtual', timber: 'Varies' },
+              { feature: 'Build time on site', us: '5–10 days typical', national: '3–7 days (factory built)', timber: '2–4 weeks' },
+            ].map((row, i) => (
+              <tr style={`background:${i % 2 === 0 ? '#f8faf7' : '#fff'}; border-bottom:1px solid #ebeced;`}>
+                <td style="padding:13px 16px; font-size:13.5px; font-weight:600; color:#2d3841;">{row.feature}</td>
+                <td style="padding:13px 16px; text-align:center; font-size:13px; font-weight:700; color:#34a02e;">{row.us}</td>
+                <td style="padding:13px 16px; text-align:center; font-size:13px; color:#555;">{row.national}</td>
+                <td style="padding:13px 16px; text-align:center; font-size:13px; color:#555;">{row.timber}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <!-- The bespoke advantage -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-bottom:56px; align-items:start;">
+        <div>
+          <h2 style="font-size:clamp(1.3rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin:0 0 16px;">Why Bespoke Matters</h2>
+          <p style="font-size:14.5px; color:#555; line-height:1.85; margin:0 0 14px;">The national factory brands — Green Retreats, Crown Pavilions, and others — sell from a product catalogue. You choose a model, choose a size from their available dimensions, and they build you that product. It's a reliable, well-tested approach that works well for straightforward plots.</p>
+          <p style="font-size:14.5px; color:#555; line-height:1.85; margin:0 0 14px;">The limitation is when your garden doesn't fit a standard footprint, when you have a specific use case that doesn't map to a product range, or when you want a design that isn't on their list. At that point, you're paying for customisation on top of a catalogue product — which adds quickly.</p>
+          <p style="font-size:14.5px; color:#555; line-height:1.85; margin:0;">We build bespoke from the start. Your 4.2×3.8m is the same complexity as a 4×4 to us — we're not fitting your garden around our dimensions. And because we don't have a catalogue to protect, we'll build you the golf simulator at 4m internal height, the L-shaped office or the music studio with acoustic isolation — as a standard project, not a special.</p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          {[
+            { title: 'Any dimension', desc: 'We build to your exact measurements — not the nearest standard size from a product catalogue.' },
+            { title: 'Any use case', desc: 'Golf simulator, music studio, cinema room, garden bar — we\'ve built them all. Nothing is treated as a special project.' },
+            { title: 'Any cladding combination', desc: 'Mix and match materials, colours and finishes. Cedar canopy, charred spruce walls, millboard decking — your design.' },
+            { title: 'L-shapes and complex footprints', desc: 'Our completed L-shaped garden office is a standard example of what we do. Not an exceptional case.' },
+          ].map(item => (
+            <div style="background:#f8faf7; border-radius:14px; padding:18px; border:1px solid #ebeced;">
+              <p style="font-size:14px; font-weight:700; color:#2d3841; margin:0 0 6px;">{item.title}</p>
+              <p style="font-size:13px; color:#555; margin:0; line-height:1.65;">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Why local -->
+      <div style="background:#2d3841; border-radius:20px; padding:40px; margin-bottom:56px;">
+        <h2 style="font-size:1.3rem; font-weight:700; color:#fff; margin:0 0 16px;">Why a Local Surrey Specialist?</h2>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+          {[
+            { title: 'James visits your garden', desc: 'We do our own site visits — not a sales rep reading off a form. The same person who quotes the job is the person who designs it and manages the build.' },
+            { title: 'No sales pipeline pressure', desc: 'We\'re not running a lead conversion funnel. You talk to James, he gives you an honest price and an honest opinion on what will and won\'t work.' },
+            { title: 'We know Surrey gardens', desc: 'Chalk soil in Epsom. Clay in Guildford. Sloped plots in the North Downs. We know the ground conditions, the planning authorities and the local planning history across every town we work in.' },
+            { title: 'Accountable after the build', desc: 'We\'re a small team based in Surrey — you can reach us after completion. We\'re not a national company where your post-build point of contact changes quarterly.' },
+          ].map(item => (
+            <div>
+              <p style="font-size:14px; font-weight:700; color:#fff; margin:0 0 8px;">{item.title}</p>
+              <p style="font-size:13px; color:rgba(255,255,255,0.7); line-height:1.7; margin:0;">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- What we're not the right choice for -->
+      <div style="background:#f8faf7; border-radius:20px; padding:36px; margin-bottom:56px; border:1px solid #ebeced;">
+        <h2 style="font-size:1.2rem; font-weight:700; color:#2d3841; margin:0 0 14px;">When a National Brand Might Suit You Better</h2>
+        <p style="font-size:13.5px; color:#555; line-height:1.8; margin:0 0 16px;">We're not the right choice for everyone, and we'd rather tell you that clearly than waste your time.</p>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          {[
+            'You want to browse a fixed product catalogue and pick from a range — a catalogue purchase is faster and more straightforward',
+            'Your budget is under £18,000 — our quality of build and finish isn\'t achievable below this price point',
+            'You need the building delivered and installed in under 4 weeks from today — lead times are real and we won\'t rush a build',
+            'You\'re outside Surrey and the immediate South East — we work within the region we know',
+          ].map(pt => (
+            <div style="display:flex; align-items:flex-start; gap:10px;">
+              <svg width="14" height="14" fill="#888" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:2px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+              <span style="font-size:13.5px; color:#555; line-height:1.65;">{pt}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Questions to ask any company -->
+      <div style="margin-bottom:40px;">
+        <h2 style="font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700; color:#2d3841; margin:0 0 20px;">Questions to Ask Any Garden Room Company</h2>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          {[
+            { q: 'Is the insulation integral to the panels or fitted separately?', why: 'Separate insulation means gaps and thermal bridges. Integral SIPs means none.' },
+            { q: 'What\'s the roof covering — EPDM, metal, or felt?', why: 'Felt is the most common failure point in cheap builds. It cracks within years.' },
+            { q: 'What are the foundations?', why: 'Ground screws = clean, permanent, adjustable. "Placed on paving" = not permanent.' },
+            { q: 'What\'s the interior finish?', why: 'Plastered = a proper room. OSB = a hut. They\'re not the same product.' },
+            { q: 'Is the electrical installation Part P certified?', why: 'Required by law. Ask for the certificate. Some companies skip this.' },
+            { q: 'What\'s the roof guarantee?', why: 'EPDM and metal carry 20+ year guarantees. Felt doesn\'t.' },
+            { q: 'Is the size truly bespoke or a fixed product?', why: 'Important if your garden doesn\'t fit their standard dimensions.' },
+            { q: 'Who does the site visit — a salesperson or the builder?', why: 'A salesperson\'s survey is not the same as a builder\'s site assessment.' },
+          ].map(item => (
+            <div style="background:#f8faf7; border-radius:14px; padding:18px; border:1px solid #ebeced;">
+              <p style="font-size:13.5px; font-weight:700; color:#2d3841; margin:0 0 8px;">"{item.q}"</p>
+              <p style="font-size:12.5px; color:#666; margin:0; line-height:1.6;"><strong style="color:#34a02e;">Why it matters:</strong> {item.why}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#34a02e; padding:72px 24px; text-align:center;">
+    <div style="max-width:540px; margin:0 auto;">
+      <h2 style="font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700; color:#fff; margin-bottom:14px;">Ready to Get a Price?</h2>
+      <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:28px;">Our 5×3m garden room starts at £25,460 fully finished — ground screws, SIPs, plastered interior, full electrics. Use the calculator for an instant guide price or book a free site visit.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+        <a href="/garden-room-price-calculator" class="btn-white" style="font-size:15px; padding:14px 32px;">Get an Instant Price</a>
+        <a href="/contact-us" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.5); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none;">Book a Free Site Visit</a>
+      </div>
+    </div>
+  </section>
+
+</InfoLayout>
+
+<style>
+  @media (max-width: 800px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 20px !important; }
+    table { font-size:12px !important; }
+    th, td { padding:10px 10px !important; }
+    div[style*="grid-template-columns:180px 1fr auto"] { grid-template-columns: 1fr !important; }
+  }
+</style>

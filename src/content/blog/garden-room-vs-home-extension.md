@@ -85,6 +85,8 @@ It also makes sense when garden space is underused and the house itself already 
 
 For many of our customers at The Green Rooms, that is the turning point. They realise they do not need to reinvent the whole house. They just need one beautifully made space that works harder.
 
+For a detailed side-by-side breakdown of costs, planning, timelines and what each option delivers, see our [garden room vs extension comparison](/garden-rooms/vs-extension).
+
 ## When an extension is the better choice
 
 An extension is usually the right answer when you need more integrated living space and want to alter the core layout of your home. If your ground floor does not function, if family life is bottlenecked around a cramped kitchen, or if the new room must connect directly to existing spaces every day, an extension is hard to beat.

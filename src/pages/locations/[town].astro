@@ -1,0 +1,339 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
+import { towns } from '../../data/towns';
+
+export function getStaticPaths() {
+  return towns.map(t => ({ params: { town: t.slug }, props: { town: t } }));
+}
+
+const { town } = Astro.props;
+const siteUrl = 'https://www.thegreenrooms.com';
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "The Green Rooms",
+  "url": siteUrl,
+  "telephone": "+441932640242",
+  "areaServed": { "@type": "City", "name": town.name, "containedInPlace": { "@type": "AdministrativeArea", "name": "Surrey" } },
+  "address": { "@type": "PostalAddress", "addressLocality": "Lyne", "addressRegion": "Surrey", "postalCode": "KT16 0AN", "addressCountry": "GB" },
+  "priceRange": "£££",
+};
+
+const services = [
+  { title: 'Garden Offices', href: '/garden-rooms/garden-offices', price: 'From £15,450', desc: 'Fully insulated, year-round home offices with Cat 6a internet, climate control, and a dedicated electrical circuit.', img: '/images/GP%20office%20internal.webp' },
+  { title: 'Garden Rooms', href: '/garden-rooms/garden-rooms', price: 'From £16,950', desc: 'Multi-purpose bespoke rooms — entertainment spaces, studios, hobby rooms — built to the same premium specification.', img: '/images/classic%20GR%20front%20on%20thermo%20ayous%20cladding.webp' },
+  { title: 'Garden Pods', href: '/garden-rooms/garden-pods', price: 'From £12,750', desc: 'A compact, fully turnkey garden space — our most accessible route to a proper, insulated room in your garden.', img: '/images/Classic%20GP%20larch%20front%20on.webp' },
+  { title: 'Garden Gyms', href: '/garden-rooms/garden-gym', price: 'From £20,000', desc: 'Dedicated gym spaces built with rubber flooring, mirrors, climate control, and high-spec electrics as standard.', img: '/images/garden%20gym%2C%20dual%20canopy%20view%20from%20outside.webp' },
+  { title: 'Golf Simulator Studios', href: '/garden-rooms/golf-simulator-studios', price: 'From £15,000 + structure', desc: 'Extended-height SIPs studios built in partnership with Golf Swing Systems — fully specified and ready to play.', img: '/images/HERO%20Golf%20sim.webp' },
+  { title: 'Bespoke Garden Rooms', href: '/garden-rooms/bespoke', price: 'Price on enquiry', desc: 'Fully custom builds — unusual footprints, complex sites, multi-room layouts, or any spec that doesn\'t fit a standard product.', img: '/images/Hero%20Bespoke%20build.webp' },
+];
+
+const features = [
+  { icon: 'shield', title: '10-Year Structural Guarantee', desc: 'Every build carries a full 10-year structural guarantee from handover.' },
+  { icon: 'layers', title: 'SIPs Construction', desc: 'Structural Insulated Panels throughout — far superior to timber frame for insulation and strength.' },
+  { icon: 'award', title: '20-Year Roof Guarantee', desc: 'EPDM or metal panel roof on every build, never felt — 20-year guarantee as standard.' },
+  { icon: 'tools', title: 'Fully Turnkey', desc: 'Foundations, structure, cladding, glazing, electrics, flooring, plastering — all included.' },
+  { icon: 'lightning', title: 'Electrical Sign-Off', desc: 'Mains-connected consumer unit, full testing, and a signed EIC certificate on every build.' },
+  { icon: 'clock', title: 'Built in 2–3 Weeks', desc: 'Our experienced team of carpenters complete most builds within 2–3 weeks from start to handover.' },
+];
+
+// Nearby town cross-links — defined here so towns.ts stays clean
+const nearbyMap: Record<string, { slug: string; name: string }[]> = {
+  'garden-rooms-weybridge':        [{ slug: 'garden-rooms-esher', name: 'Esher' }, { slug: 'garden-rooms-cobham', name: 'Cobham' }, { slug: 'garden-rooms-walton-on-thames', name: 'Walton-on-Thames' }, { slug: 'garden-rooms-virginia-water', name: 'Virginia Water' }],
+  'garden-rooms-woking':           [{ slug: 'garden-rooms-guildford', name: 'Guildford' }, { slug: 'garden-rooms-chertsey', name: 'Chertsey' }, { slug: 'garden-rooms-staines', name: 'Staines' }],
+  'garden-rooms-guildford':        [{ slug: 'garden-rooms-woking', name: 'Woking' }, { slug: 'garden-rooms-godalming', name: 'Godalming' }, { slug: 'garden-rooms-farnham', name: 'Farnham' }, { slug: 'garden-rooms-dorking', name: 'Dorking' }],
+  'garden-rooms-esher':            [{ slug: 'garden-rooms-weybridge', name: 'Weybridge' }, { slug: 'garden-rooms-cobham', name: 'Cobham' }, { slug: 'garden-rooms-claygate', name: 'Claygate' }, { slug: 'garden-rooms-east-molesey', name: 'East Molesey' }],
+  'garden-rooms-cobham':           [{ slug: 'garden-rooms-weybridge', name: 'Weybridge' }, { slug: 'garden-rooms-esher', name: 'Esher' }, { slug: 'garden-rooms-leatherhead', name: 'Leatherhead' }, { slug: 'garden-rooms-oxshott', name: 'Oxshott' }],
+  'garden-rooms-virginia-water':   [{ slug: 'garden-rooms-weybridge', name: 'Weybridge' }, { slug: 'garden-rooms-staines', name: 'Staines' }, { slug: 'garden-rooms-chertsey', name: 'Chertsey' }],
+  'garden-rooms-leatherhead':      [{ slug: 'garden-rooms-cobham', name: 'Cobham' }, { slug: 'garden-rooms-epsom', name: 'Epsom' }, { slug: 'garden-rooms-dorking', name: 'Dorking' }, { slug: 'garden-rooms-oxshott', name: 'Oxshott' }],
+  'garden-rooms-epsom':            [{ slug: 'garden-rooms-leatherhead', name: 'Leatherhead' }, { slug: 'garden-rooms-reigate', name: 'Reigate' }, { slug: 'garden-rooms-guildford', name: 'Guildford' }],
+  'garden-rooms-walton-on-thames': [{ slug: 'garden-rooms-weybridge', name: 'Weybridge' }, { slug: 'garden-rooms-esher', name: 'Esher' }, { slug: 'garden-rooms-east-molesey', name: 'East Molesey' }, { slug: 'garden-rooms-staines', name: 'Staines' }],
+  'garden-rooms-staines':          [{ slug: 'garden-rooms-virginia-water', name: 'Virginia Water' }, { slug: 'garden-rooms-chertsey', name: 'Chertsey' }, { slug: 'garden-rooms-sunbury', name: 'Sunbury-on-Thames' }, { slug: 'garden-rooms-walton-on-thames', name: 'Walton-on-Thames' }],
+  'garden-rooms-sunbury':          [{ slug: 'garden-rooms-staines', name: 'Staines' }, { slug: 'garden-rooms-chertsey', name: 'Chertsey' }, { slug: 'garden-rooms-walton-on-thames', name: 'Walton-on-Thames' }],
+  'garden-rooms-chertsey':         [{ slug: 'garden-rooms-staines', name: 'Staines' }, { slug: 'garden-rooms-sunbury', name: 'Sunbury-on-Thames' }, { slug: 'garden-rooms-woking', name: 'Woking' }, { slug: 'garden-rooms-virginia-water', name: 'Virginia Water' }],
+  'garden-rooms-reigate':          [{ slug: 'garden-rooms-epsom', name: 'Epsom' }, { slug: 'garden-rooms-dorking', name: 'Dorking' }, { slug: 'garden-rooms-guildford', name: 'Guildford' }],
+  'garden-rooms-dorking':          [{ slug: 'garden-rooms-reigate', name: 'Reigate' }, { slug: 'garden-rooms-leatherhead', name: 'Leatherhead' }, { slug: 'garden-rooms-guildford', name: 'Guildford' }, { slug: 'garden-rooms-godalming', name: 'Godalming' }],
+  'garden-rooms-farnham':          [{ slug: 'garden-rooms-guildford', name: 'Guildford' }, { slug: 'garden-rooms-godalming', name: 'Godalming' }],
+  'garden-rooms-oxshott':          [{ slug: 'garden-rooms-cobham', name: 'Cobham' }, { slug: 'garden-rooms-leatherhead', name: 'Leatherhead' }, { slug: 'garden-rooms-esher', name: 'Esher' }, { slug: 'garden-rooms-claygate', name: 'Claygate' }],
+  'garden-rooms-claygate':         [{ slug: 'garden-rooms-esher', name: 'Esher' }, { slug: 'garden-rooms-cobham', name: 'Cobham' }, { slug: 'garden-rooms-oxshott', name: 'Oxshott' }, { slug: 'garden-rooms-east-molesey', name: 'East Molesey' }],
+  'garden-rooms-godalming':        [{ slug: 'garden-rooms-guildford', name: 'Guildford' }, { slug: 'garden-rooms-farnham', name: 'Farnham' }, { slug: 'garden-rooms-dorking', name: 'Dorking' }],
+  'garden-rooms-east-molesey':     [{ slug: 'garden-rooms-walton-on-thames', name: 'Walton-on-Thames' }, { slug: 'garden-rooms-esher', name: 'Esher' }, { slug: 'garden-rooms-claygate', name: 'Claygate' }],
+};
+const nearbyTowns = nearbyMap[town.slug] || [];
+
+// Notes to render in the local knowledge panel — only include non-empty ones
+const localNotes = [
+  town.estateNote ? { label: 'Private Estate / Covenants', icon: 'key', text: town.estateNote, color: '#fff8e7', border: '#f5e0a0', labelColor: '#8a6800' } : null,
+  town.floodNote ? { label: 'Thames / Flood Zone', icon: 'layers', text: town.floodNote, color: '#e7f3ff', border: '#b3d4f5', labelColor: '#1a5a8a' } : null,
+  town.aonbNote ? { label: 'AONB / National Park', icon: 'leaf', text: town.aonbNote, color: '#e7f1e3', border: '#a8d5a2', labelColor: '#257a21' } : null,
+  town.showroomNote ? { label: 'Showroom Visit', icon: 'star', text: town.showroomNote, color: '#f3f0ff', border: '#c8b8f5', labelColor: '#5a3a9a' } : null,
+].filter(Boolean);
+---
+
+<Layout
+  title={`Garden Rooms ${town.name} | Bespoke Garden Rooms ${town.county} | The Green Rooms`}
+  description={`Bespoke garden rooms, garden offices and garden pods built in ${town.name}, ${town.county}. SIPs construction, 10-year guarantee, fully turnkey from foundations to electrical sign-off. Free site visit included.`}
+  canonical={`/locations/${town.slug}`}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+
+  <!-- Hero -->
+  <section style="background:#2d3841; padding:80px 24px 72px; position:relative; overflow:hidden;">
+    <div style="position:absolute; inset:0; background:linear-gradient(135deg, #1a2328 0%, #2d3841 60%, #34a02e22 100%); pointer-events:none;"></div>
+    <div style="position:relative; max-width:1280px; margin:0 auto;">
+      <div style="display:flex; align-items:center; gap:8px; font-size:13px; margin-bottom:20px;">
+        <a href="/" style="color:rgba(255,255,255,0.55); text-decoration:none;">Home</a>
+        <span style="color:rgba(255,255,255,0.3);">›</span>
+        <span style="color:#34a02e; font-weight:600;">Garden Rooms {town.name}</span>
+      </div>
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(52,160,46,0.2); color:#6fcf6b; font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:5px 14px; border-radius:50px; margin-bottom:20px;">
+        <span style="width:6px; height:6px; background:#34a02e; border-radius:50%;"></span>
+        Serving {town.area}
+      </div>
+      <h1 style="font-family:'Poppins',sans-serif; font-size:clamp(2rem,5vw,3.5rem); font-weight:700; color:#fff; line-height:1.1; margin:0 0 20px; max-width:800px;">
+        Garden Rooms {town.name}
+      </h1>
+      <p style="font-size:1.1rem; color:rgba(255,255,255,0.8); line-height:1.8; margin:0 0 12px; max-width:620px;">
+        {town.intro}
+      </p>
+      <p style="font-size:1rem; color:rgba(255,255,255,0.65); line-height:1.8; margin:0 0 36px; max-width:620px;">
+        We design and build 100% bespoke garden rooms, offices, gyms, and golf simulator studios — using SIPs construction, premium materials, and a fully turnkey service from foundations to electrical sign-off. Every build comes with a 10-year structural guarantee and a signed electrical certificate.
+      </p>
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+        <div style="display:flex; gap:2px;">
+          {[1,2,3,4,5].map(() => <svg width="16" height="16" fill="#f5a623" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>)}
+        </div>
+        <span style="font-size:13px; font-weight:700; color:#fff;">5.0 · 39 Google Reviews</span>
+        <span style="color:rgba(255,255,255,0.35);">·</span>
+        <span style="font-size:13px; color:rgba(255,255,255,0.65);">150+ builds across Surrey</span>
+      </div>
+      <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); padding:4px 12px; border-radius:50px; margin-bottom:28px;">
+        <svg width="12" height="12" fill="rgba(255,255,255,0.5)" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        <span style="font-size:11.5px; color:rgba(255,255,255,0.6); font-weight:600;">Planning: {town.planningAuthority}</span>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:12px;">
+        <a href="/garden-room-price-calculator" class="btn-primary" style="font-size:15px; padding:14px 32px;">Get an Instant Quote</a>
+        <a href="/contact-us" style="display:inline-flex; align-items:center; gap:8px; border:2px solid rgba(255,255,255,0.3); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none; transition:all 0.2s;" class="btn-ghost">Book a Free Site Visit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services grid -->
+  <section style="background:#fff; padding:80px 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:48px;">
+        <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin:0 0 12px;">What We Build in {town.name}</h2>
+        <p style="color:#666; font-size:1rem; max-width:520px; margin:0 auto;">Every garden room is designed around your space and your needs. All types are available in {town.name} — fully turnkey, with a free site visit included.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+        {services.map(s => (
+          <a href={s.href} style="display:flex; flex-direction:column; text-decoration:none; background:#fff; border-radius:16px; overflow:hidden; border:1px solid #ebeced; transition:border-color 0.2s, box-shadow 0.2s;" class="service-card">
+            <div style="height:180px; overflow:hidden;">
+              <img src={s.img} alt={`${s.title} in ${town.name}, Surrey`} loading="lazy" style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s;" class="svc-img" />
+            </div>
+            <div style="padding:20px; flex:1; display:flex; flex-direction:column; gap:8px;">
+              <p style="font-size:11px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.06em; margin:0;">{s.price}</p>
+              <h3 style="font-size:1rem; font-weight:700; color:#2d3841; margin:0;">{s.title}</h3>
+              <p style="font-size:13px; color:#666; line-height:1.6; margin:0; flex:1;">{s.desc}</p>
+              <span style="font-size:13px; font-weight:700; color:#34a02e; margin-top:4px;">Find out more →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Knowledge -->
+  <section style="background:#f8faf7; padding:80px 0; border-top:1px solid #ebeced;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;">
+
+        <!-- Left: context + landmarks -->
+        <div>
+          <div style="display:inline-block; background:rgba(52,160,46,0.12); color:#257a21; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:5px 14px; border-radius:50px; margin-bottom:14px;">Local Knowledge</div>
+          <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.3rem,2.5vw,1.75rem); font-weight:700; color:#2d3841; margin:0 0 16px;">Building in {town.name}</h2>
+          <p style="font-size:15px; color:#555; line-height:1.85; margin:0 0 24px;">{town.localContext}</p>
+
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:28px;">
+            {town.landmarks.map(lm => (
+              <div style="display:inline-flex; align-items:center; gap:6px; background:#fff; border:1px solid #ebeced; padding:6px 12px; border-radius:50px; font-size:12px; font-weight:600; color:#2d3841;">
+                <svg width="10" height="10" fill="#34a02e" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                {lm}
+              </div>
+            ))}
+          </div>
+
+          {town.portfolioLinks.length > 0 && (
+            <div>
+              <p style="font-size:12px; font-weight:700; color:#888; text-transform:uppercase; letter-spacing:0.07em; margin:0 0 10px;">Nearby Project</p>
+              <div style="display:flex; flex-direction:column; gap:8px;">
+                {town.portfolioLinks.map(link => (
+                  <a href={link.href} style="display:inline-flex; align-items:center; gap:8px; background:#fff; border:1px solid #ebeced; border-radius:10px; padding:12px 16px; text-decoration:none; transition:border-color 0.2s, box-shadow 0.2s;" class="portfolio-link">
+                    <svg width="14" height="14" fill="#34a02e" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                    <span style="font-size:13px; font-weight:600; color:#2d3841;">{link.label}</span>
+                    <span style="font-size:12px; color:#34a02e; margin-left:auto;">View project →</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        <!-- Right: planning authority + notes -->
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <!-- Planning authority — always shown -->
+          <div style="background:#fff; border-radius:14px; padding:20px; border:1px solid #ebeced;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+              <div style="width:28px; height:28px; background:#2d3841; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <svg width="13" height="13" fill="#fff" viewBox="0 0 24 24"><path d="M4 10v7h3v-7H4zm6 0v7h3v-7h-3zM2 22h19v-3H2v3zm14-12v7h3v-7h-3zM11.5 1L2 6v2h19V6l-9.5-5z"/></svg>
+              </div>
+              <p style="font-size:11px; font-weight:700; color:#888; text-transform:uppercase; letter-spacing:0.07em; margin:0;">Planning Authority</p>
+            </div>
+            <p style="font-size:15px; font-weight:700; color:#2d3841; margin:0 0 4px;">{town.planningAuthority}</p>
+            <p style="font-size:12.5px; color:#666; margin:0; line-height:1.6;">Covers the {town.postcode} postcode area. Standard Surrey Permitted Development rules apply — most garden rooms don't need a planning application.</p>
+          </div>
+
+          <!-- Dynamic notes -->
+          {localNotes.map((note: any) => (
+            <div style={`background:${note.color}; border-radius:14px; padding:20px; border:1px solid ${note.border};`}>
+              <p style={`font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; margin:0 0 8px; color:${note.labelColor};`}>{note.label}</p>
+              <p style="font-size:13px; color:#444; line-height:1.75; margin:0;">{note.text}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Why us features -->
+  <section style="background:#2d3841; padding:80px 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:48px;">
+        <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#fff; margin:0 0 12px;">Why {town.name} Homeowners Choose Us</h2>
+        <p style="color:rgba(255,255,255,0.65); font-size:1rem; max-width:520px; margin:0 auto;">Every Green Rooms build — in {town.name} or anywhere else across Surrey — uses the same premium specification and fully turnkey service.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+        {features.map(f => (
+          <div style="background:rgba(255,255,255,0.06); border-radius:16px; padding:24px; border:1px solid rgba(255,255,255,0.1);">
+            <div style="width:36px; height:36px; background:#34a02e; border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:14px;">
+              <Icon name={f.icon} size={18} color="#fff" />
+            </div>
+            <p style="font-size:14px; font-weight:700; color:#fff; margin:0 0 6px;">{f.title}</p>
+            <p style="font-size:13px; color:rgba(255,255,255,0.6); line-height:1.65; margin:0;">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section style="background:#f8faf7; padding:80px 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
+      <div>
+        <div style="display:inline-block; background:rgba(52,160,46,0.15); color:#257a21; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:5px 14px; border-radius:50px; margin-bottom:16px;">Pricing</div>
+        <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.5rem,2.5vw,2rem); font-weight:700; color:#2d3841; margin:0 0 16px;">What Does a Garden Room Cost in {town.name}?</h2>
+        <p style="font-size:1rem; color:#555; line-height:1.8; margin:0 0 16px;">Prices for our garden rooms in {town.name} start from <strong style="color:#2d3841;">£12,750 for a garden pod</strong> and <strong style="color:#2d3841;">£15,450 for a garden office</strong>. Most of our builds land between £18,000 and £30,000 depending on size, cladding, glazing, and extras.</p>
+        <p style="font-size:1rem; color:#555; line-height:1.8; margin:0 0 28px;">All prices include foundations, structure, cladding, doors and windows, full mains electrics, flooring, plastering, and site clean-up. There are no hidden extras. We give you a full written quote after your free site visit.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:12px;">
+          <a href="/garden-room-price-calculator" class="btn-primary">Get an Instant Price Estimate</a>
+          <a href="/our-prices" style="display:inline-flex; align-items:center; border:2px solid #2d3841; color:#2d3841; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:10px 24px; border-radius:50px; text-decoration:none; transition:all 0.2s;" class="btn-outline-dk">See Our Prices</a>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        {[
+          { label: 'Garden Pod', price: 'From £12,750 inc VAT', note: 'Compact, fully turnkey' },
+          { label: 'Garden Office', price: 'From £15,450 inc VAT', note: 'Year-round workspace' },
+          { label: 'Garden Room', price: 'From £16,950 inc VAT', note: 'Multi-purpose space' },
+          { label: 'Garden Room with Storage', price: 'From £18,900 inc VAT', note: 'Room + integrated storage' },
+          { label: 'Bespoke / Custom', price: 'Price on enquiry', note: 'Any size, any spec' },
+        ].map(p => (
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; background:#fff; border-radius:12px; padding:16px 20px; border:1px solid #ebeced;">
+            <div>
+              <p style="font-size:14px; font-weight:700; color:#2d3841; margin:0;">{p.label}</p>
+              <p style="font-size:12px; color:#888; margin:0;">{p.note}</p>
+            </div>
+            <p style="font-size:14px; font-weight:700; color:#34a02e; margin:0; white-space:nowrap;">{p.price}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ — 2 generic + 2 local -->
+  <section style="background:#fff; padding:80px 0;">
+    <div style="max-width:860px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin:0 0 40px; text-align:center;">Common Questions About Garden Rooms in {town.name}</h2>
+      <div style="display:flex; flex-direction:column; gap:0;">
+        {[
+          {
+            q: `Do I need planning permission for a garden room in ${town.name}?`,
+            a: `Most garden rooms in ${town.name} fall under Permitted Development rights and don't require a planning application — as long as the structure is single storey, no taller than 2.5m within 2m of the boundary, covers less than half the original garden, and is not forward of the principal elevation. Your local planning authority is ${town.planningAuthority}. We assess your exact position at the free site visit — for the large majority of our ${town.name} builds, no planning application is needed.`,
+          },
+          town.localFaqs[0],
+          town.localFaqs[1],
+          {
+            q: `Will a garden room add value to my home in ${town.name}?`,
+            a: `Yes. A well-built garden room in ${town.name} typically adds between 5% and 15% to a property's value — and for premium builds in this market, the return can be greater still. Estate agents actively use garden offices and garden rooms as a headline selling feature. Beyond the financial return, a properly insulated, electrically certified structure transforms how you use your home all year round. See our <a href="/testimonials" style="color:#34a02e;font-weight:600;">reviews</a> from customers across Surrey.`,
+          },
+        ].map((item, i) => (
+          <div style={`padding:24px 0; border-bottom:1px solid #ebeced; ${i === 0 ? 'border-top:1px solid #ebeced;' : ''}`}>
+            <p style="font-size:15px; font-weight:700; color:#2d3841; margin:0 0 10px;">{item.q}</p>
+            <p style="font-size:14px; color:#555; line-height:1.8; margin:0;" set:html={item.a} />
+          </div>
+        ))}
+      </div>
+      <p style="text-align:center; margin:24px 0 0; font-size:13.5px; color:#666;">More questions? <a href="/faq" style="color:#34a02e; font-weight:600;">See our full FAQ →</a></p>
+    </div>
+  </section>
+
+  <!-- Nearby areas -->
+  {nearbyTowns.length > 0 && (
+    <section style="background:#f8faf7; padding:40px 0; border-top:1px solid #ebeced;">
+      <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+        <p style="font-size:12px; font-weight:700; color:#888; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 14px; text-align:center;">We Also Build Nearby</p>
+        <div style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center;">
+          {nearbyTowns.map(t => (
+            <a href={`/locations/${t.slug}`} style="display:inline-flex; align-items:center; padding:8px 18px; border:1px solid #dce0dc; border-radius:50px; font-size:13px; font-weight:600; color:#2d3841; text-decoration:none; background:#fff; transition:all 0.15s;" class="nearby-chip">
+              Garden Rooms in {t.name}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- CTA -->
+  <section style="background:#34a02e; padding:72px 24px; text-align:center;">
+    <div style="max-width:600px; margin:0 auto;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#fff; margin:0 0 14px;">Ready to Start Your {town.name} Garden Room?</h2>
+      <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin:0 0 28px; line-height:1.8;">Book a free, no-obligation site visit and our team will come to your {town.name} property, assess the space, and give you honest advice on what's possible — and what it will cost.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+        <a href="/contact-us" class="btn-white" style="font-size:15px; padding:14px 32px;">Book a Free Site Visit</a>
+        <a href="/garden-room-price-calculator" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.5); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none; transition:all 0.2s;" class="btn-ghost-light">Get an Instant Quote</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .btn-ghost:hover { background: rgba(255,255,255,0.1) !important; }
+  .btn-ghost-light:hover { background: rgba(255,255,255,0.15) !important; }
+  .btn-outline-dk:hover { background: #2d3841 !important; color: #fff !important; }
+  .service-card:hover { border-color: #34a02e !important; box-shadow: 0 4px 20px rgba(52,160,46,0.12); }
+  .service-card:hover .svc-img { transform: scale(1.04); }
+  .portfolio-link:hover { border-color: #34a02e !important; box-shadow: 0 2px 12px rgba(52,160,46,0.1); }
+  .nearby-chip:hover { border-color: #34a02e !important; color: #34a02e !important; background: #f8faf7 !important; }
+
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 40px !important; }
+  }
+  @media (max-width: 600px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"],
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  }
+</style>

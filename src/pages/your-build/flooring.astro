@@ -1,5 +1,6 @@
 ---
 import InfoLayout from '../../layouts/InfoLayout.astro';
+import YourBuildNav from '../../components/YourBuildNav.astro';
 ---
 <InfoLayout
   title="Garden Room Flooring | Flooring Options | The Green Rooms Surrey"
@@ -10,7 +11,7 @@ import InfoLayout from '../../layouts/InfoLayout.astro';
   heroImg="/images/garden%20gym%20internal%201.webp"
   heroAlt="Garden gym interior with flooring by The Green Rooms, Surrey"
   heroPos="center 70%"
-  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build', href: '/your-build/build-process' }, { label: 'Flooring' }]}
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build', href: '/your-build' }, { label: 'Flooring' }]}
 >
   <section style="background:#fff; padding:72px 0;">
     <div style="max-width:840px; margin:0 auto; padding:0 24px;">
@@ -74,4 +75,5 @@ import InfoLayout from '../../layouts/InfoLayout.astro';
       </div>
     </div>
   </section>
+  <YourBuildNav currentSlug="flooring" />
 </InfoLayout>

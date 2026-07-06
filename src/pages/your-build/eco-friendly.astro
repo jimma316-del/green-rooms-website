@@ -1,5 +1,6 @@
 ---
 import InfoLayout from '../../layouts/InfoLayout.astro';
+import YourBuildNav from '../../components/YourBuildNav.astro';
 import Icon from '../../components/Icon.astro';
 ---
 <InfoLayout
@@ -10,7 +11,7 @@ import Icon from '../../components/Icon.astro';
   pageSubtitle="Sustainability built into every project — not as a marketing claim, but as a practical specification choice."
   heroImg="/images/GR%20charred%20spruce%20in%20garden.webp"
   heroAlt="Charred spruce clad garden room in a Surrey garden"
-  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build', href: '/your-build/build-process' }, { label: 'Eco Friendly' }]}
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build', href: '/your-build' }, { label: 'Eco Friendly' }]}
 >
   <section style="background:#fff; padding:72px 0;">
     <div style="max-width:840px; margin:0 auto; padding:0 24px;">
@@ -52,6 +53,7 @@ import Icon from '../../components/Icon.astro';
       </div>
     </div>
   </section>
+  <YourBuildNav currentSlug="eco-friendly" />
 </InfoLayout>
 <style>
   @media (max-width: 700px) {

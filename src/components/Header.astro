@@ -3,6 +3,7 @@ const navServices = [
   { label: 'Garden Pods', href: '/garden-rooms/garden-pods', img: '/images/Classic%20GP%20larch%20front%20on.webp' },
   { label: 'Garden Rooms', href: '/garden-rooms/garden-rooms', img: '/images/Hero%20GR.webp' },
   { label: 'Garden Offices', href: '/garden-rooms/garden-offices', img: '/images/WIFI.webp' },
+  { label: 'Garden Gyms', href: '/garden-rooms/garden-gym', img: '/images/garden%20gym%2C%20dual%20canopy%20view%20from%20outside.webp' },
   { label: 'Garden Rooms with Storage', href: '/garden-rooms/garden-rooms-with-storage', img: '/images/classic%20GR%20with%20storage%20and%20decking.webp' },
   { label: 'Golf Simulator Studios', href: '/garden-rooms/golf-simulator-studios', img: '/images/HERO%20Golf%20sim.webp' },
   { label: 'Bespoke', href: '/garden-rooms/bespoke', img: '/images/bespoke%20build%20with%203.6m%20sliding%20doors.webp' },
@@ -10,6 +11,7 @@ const navServices = [
 
 const navBuild = [
   { label: 'Getting Started', href: '/your-build/first-steps' },
+  { label: 'Build Process', href: '/your-build/build-process' },
   { label: 'Foundations', href: '/your-build/foundations' },
   { label: 'Structure', href: '/your-build/structure' },
   { label: 'Electrics', href: '/your-build/electrics' },
@@ -25,6 +27,12 @@ const navBuild = [
 const navInfo = [
   { label: 'News', href: '/news' },
   { label: 'Our Pricing', href: '/our-prices' },
+  { label: 'Does a Garden Room Add Value?', href: '/garden-rooms/add-value' },
+  { label: 'How We Compare', href: '/garden-rooms/compare' },
+  { label: 'Garden Room vs Extension', href: '/garden-rooms/vs-extension' },
+  { label: 'Garden Room vs Conservatory', href: '/garden-rooms/vs-conservatory' },
+  { label: 'All-Year Use Guide', href: '/garden-rooms/all-year-use' },
+  { label: 'Maintenance Guide', href: '/your-build/maintenance' },
   { label: 'Guarantee', href: '/guarantee' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Planning', href: '/planning' },
@@ -70,6 +78,7 @@ const navInfo = [
       <a href="/" style="flex-shrink:0;">
         <img src="https://cdn.prod.website-files.com/65fa73870456aaad8a954b46/661cf61b0d2c970adddf26ad_the-green-rooms%20White.webp"
              alt="The Green Rooms logo"
+             width="450" height="225"
              style="height:44px; width:auto;"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
         <span style="display:none; font-family:'Poppins',sans-serif; font-weight:700; color:#34a02e; font-size:18px;">The Green Rooms</span>
@@ -130,7 +139,7 @@ const navInfo = [
 
     <!-- Full-width Garden Rooms mega menu — direct child of nav so left:0/right:0 spans full viewport width -->
     <div id="gr-mega" style="display:none; position:absolute; left:0; right:0; top:100%; background:#1a2328; z-index:200; padding:20px 24px 24px; border-top:3px solid #34a02e;">
-      <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(6,1fr); gap:12px;">
+      <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(7,1fr); gap:12px;">
         {navServices.map(item => (
           <a href={item.href} class="mega-card" style="display:block; text-decoration:none; border-radius:12px; overflow:hidden; position:relative;">
             <img src={item.img} alt={item.label}

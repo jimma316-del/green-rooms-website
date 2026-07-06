@@ -26,8 +26,9 @@ const siteUrl = 'https://www.thegreenrooms.com';
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
+  "@type": ["HomeAndConstructionBusiness", "LocalBusiness"],
   "name": "The Green Rooms",
+  "description": "Bespoke garden rooms, offices, gyms and golf simulator studios hand-built across Surrey and the South East using SIPs construction. Founded in 2019, fully turnkey from ground screws to final handover. 150+ builds completed. 5-star rated.",
   "url": "https://www.thegreenrooms.com",
   "logo": "https://cdn.prod.website-files.com/65fa73870456aaad8a954b46/661cf61b0d2c970adddf26ad_the-green-rooms%20White.webp",
   "image": `${siteUrl}/images/Hero%20GR.webp`,
@@ -48,8 +49,32 @@ const localBusinessSchema = {
     { "@type": "AdministrativeArea", "name": "West London" },
     { "@type": "AdministrativeArea", "name": "South East England" }
   ],
+  "knowsAbout": [
+    "SIPs construction",
+    "structural insulated panels",
+    "bespoke garden rooms",
+    "garden offices",
+    "garden gyms",
+    "golf simulator studios",
+    "Permitted Development rights",
+    "ground screw foundations",
+    "EPDM roofing",
+    "garden room planning permission",
+    "garden room insulation",
+    "bespoke garden buildings Surrey"
+  ],
   "priceRange": "£££",
   "foundingDate": "2019",
+  "leiCode": "14041171",
+  "vatID": "GB412772509",
+  "numberOfEmployees": { "@type": "QuantitativeValue", "minValue": 8, "maxValue": 12 },
+  "founder": {
+    "@type": "Person",
+    "name": "James",
+    "jobTitle": "Owner & Principal Designer",
+    "worksFor": { "@type": "Organization", "name": "The Green Rooms", "url": "https://www.thegreenrooms.com" },
+    "knowsAbout": ["SIPs construction", "bespoke garden rooms", "carpentry", "garden room design", "Surrey garden rooms"]
+  },
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5.0",
@@ -58,14 +83,21 @@ const localBusinessSchema = {
     "worstRating": "1"
   },
   "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "09:00", "closes": "17:30" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "16:00" }
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "17:00" }
   ],
   "sameAs": [
     "https://www.facebook.com/thegreenroomsltd",
     "https://www.instagram.com/thegreenroomsltd/",
     "https://www.linkedin.com/company/the-green-rooms-surrey/"
   ]
+};
+
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https://www.thegreenrooms.com",
+  "name": "The Green Rooms",
+  "description": "Bespoke garden rooms, offices, gyms and golf simulator studios built across Surrey and the South East"
 };
 
 const breadcrumbSchema = breadcrumbItems && breadcrumbItems.length > 1 ? {
@@ -127,8 +159,9 @@ const canonicalUrl = canonical ? `${siteUrl}${canonical}` : `${siteUrl}${Astro.u
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap" /></noscript>
 
-  <!-- Structured data -->
-  {isHome && <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />}
+  <!-- Structured data — LocalBusiness and WebSite fire on every page -->
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(webSiteSchema)} />
   {breadcrumbSchema && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />}
 
   <!-- Google Analytics -->

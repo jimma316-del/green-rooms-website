@@ -1,0 +1,77 @@
+---
+import InfoLayout from '../../layouts/InfoLayout.astro';
+import { yourBuildPages } from '../../data/your-build-pages';
+---
+
+<InfoLayout
+  title="Your Build Guide | Garden Room Construction Explained | The Green Rooms Surrey"
+  description="Everything you need to know about how we build garden rooms — structure, cladding, foundations, electrics, flooring, climate control and more. From The Green Rooms, Surrey."
+  canonical="/your-build"
+  pageTitle="Your Build Guide"
+  pageSubtitle="12 topics covering everything about how a Green Rooms garden room is designed, built and finished — so you know exactly what you're buying."
+  heroImg="/images/classic%20GR%20front%20on%20thermo%20ayous%20cladding.webp"
+  heroAlt="Classic garden room by The Green Rooms, Surrey"
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Your Build' }]}
+>
+
+  <section style="background:#fff; padding:72px 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:48px;">
+        <p style="font-size:15px; color:#555; max-width:640px; margin:0 auto; line-height:1.8;">This guide walks you through every aspect of a Green Rooms build — from the first conversation to finishing touches. Use it to understand how we build, what to expect, and how each choice affects your finished room.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+        {yourBuildPages.map((page, i) => (
+          <a href={page.href} class="ybp-card">
+            <div style="position:relative; height:180px; overflow:hidden;">
+              <img src={page.img} alt={page.shortTitle} style="width:100%; height:100%; object-fit:cover; transition:transform 0.4s;" class="ybp-card-img" loading="lazy" />
+              <div style="position:absolute; top:12px; left:12px; background:rgba(45,56,65,0.75); color:#fff; font-size:11px; font-weight:700; padding:3px 10px; border-radius:50px; backdrop-filter:blur(4px);">
+                {String(i + 1).padStart(2, '0')}
+              </div>
+            </div>
+            <div style="padding:20px;">
+              <h3 style="font-size:15px; font-weight:700; color:#2d3841; margin:0 0 6px; font-family:'Poppins',sans-serif;">{page.shortTitle}</h3>
+              <p style="font-size:13px; color:#666; margin:0; line-height:1.55;">{page.desc}</p>
+              <p style="font-size:12.5px; color:#34a02e; font-weight:600; margin:10px 0 0; font-family:'Poppins',sans-serif;">Read more →</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#34a02e; padding:72px 24px; text-align:center;">
+    <div style="max-width:520px; margin:0 auto;">
+      <h2 style="font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700; color:#fff; margin-bottom:14px;">Ready to Talk About Your Garden?</h2>
+      <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:28px;">Get a guide price in minutes with our calculator, or book a free site visit and we'll come to you.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+        <a href="/garden-room-price-calculator" class="btn-white" style="font-size:15px; padding:14px 32px;">Get an Instant Quote</a>
+        <a href="/contact-us" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.5); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none;">Book a Free Site Visit</a>
+      </div>
+    </div>
+  </section>
+
+</InfoLayout>
+
+<style>
+  .ybp-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #ebeced;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .ybp-card:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+  }
+  .ybp-card:hover .ybp-card-img { transform: scale(1.04); }
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+  }
+  @media (max-width: 560px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"],
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  }
+</style>

@@ -15,6 +15,33 @@ const related = [
   { label: 'Garden Rooms', href: '/garden-rooms/garden-rooms', img: '/images/classic%20GR%20front%20on%20thermo%20ayous%20cladding.webp' },
   { label: 'Garden Rooms with Storage', href: '/garden-rooms/garden-rooms-with-storage', img: '/images/GR%20with%20storage%20cedar%20and%20step.webp' },
 ];
+
+const faqs = [
+  {
+    q: "What's the difference between a garden pod and a garden room?",
+    a: "A garden pod is our most compact, budget-friendly structure — designed for solo use in smaller gardens. A <a href='/garden-rooms/garden-rooms' style='color:#34a02e;font-weight:600;'>garden room</a> is larger, comes with full-width aluminium bifold doors and a canopy with LED lighting as standard, and is suited to multiple uses or entertaining. Both use identical <a href='/your-build/structure' style='color:#34a02e;font-weight:600;'>SIPs construction</a> and a full electrical installation."
+  },
+  {
+    q: "Does a garden pod need planning permission?",
+    a: "Most garden pods fall under Permitted Development — no planning permission required. The key rules are: the structure must not cover more than 50% of your garden, must be single storey, and must not exceed 2.5m in height within 2m of the boundary. Listed buildings, conservation areas and national parks are exceptions. We'll confirm your permitted development rights during the free site visit."
+  },
+  {
+    q: "Can a garden pod be used as a home office?",
+    a: "Absolutely — it's the most popular use. Every pod includes a full mains electrical installation with dedicated sockets and LED lighting. We can add Cat 6a internet cabling at the build stage for a hard-wired gigabit connection — far more reliable than a WiFi extender. See our <a href='/garden-rooms/garden-offices' style='color:#34a02e;font-weight:600;'>Garden Office</a> if you need an office-optimised spec."
+  },
+  {
+    q: "Can I use a garden pod all year round?",
+    a: "<a href='/your-build/structure' style='color:#34a02e;font-weight:600;'>SIPs construction</a> gives you genuine year-round insulation — warm in winter and cool in summer. Combined with a smart electric panel heater (included or easily added), a garden pod is comfortable in every season. See our <a href='/your-build/climate-control' style='color:#34a02e;font-weight:600;'>climate control options</a> for heating and cooling choices."
+  },
+  {
+    q: "How big can a garden pod be?",
+    a: "Pods are typically built from 2.4m wide up to around 5m wide, and 2.5m–3.5m deep. Common sizes are 3×2.5m, 3.5×3m and 4×3m. We'll advise on the right size for your garden and how you plan to use it during the free site visit."
+  },
+  {
+    q: "Can I upgrade a pod to have bifold doors?",
+    a: "Yes — aluminium bifold or French doors can be specified instead of the standard UPVC sliding doors. This typically brings the pod closer to our <a href='/garden-rooms/garden-offices' style='color:#34a02e;font-weight:600;'>Garden Office</a> specification. We'll quote both options at the design stage."
+  },
+];
 ---
 
 <ServiceLayout
@@ -29,6 +56,10 @@ const related = [
   intro="Our Garden Pods are the ideal starting point — compact, well-built, and properly insulated garden buildings that deliver far more than the flat-pack alternatives. They strip away the non-essentials and focus on what matters: a quality structure, a proper electrical installation, and a space you'll actually want to spend time in."
   features={features}
   relatedPages={related}
+  faqs={faqs}
+  projects={[
+    { slug: 'garden-hobby-room', label: 'Garden Hobby Room', tagline: 'Surrey · Compact personal studio · Thermo Ayous · LVT flooring · Plastered interior', img: '/images/bespoke%20shape%20GP.webp' },
+  ]}
 >
 
   <!-- Photo gallery -->
@@ -54,12 +85,46 @@ const related = [
     </div>
   </section>
 
+  <!-- Sizing guide -->
   <section class="section" style="background:#fff;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:36px;">
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:10px;">What Size Do I Need?</h2>
+        <p style="color:#666; max-width:520px; margin:0 auto;">Will it fit in your garden? Here are the most common sizes and what they're suited to.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:900px; margin:0 auto 32px;">
+        {[
+          { size: '3 × 2.5m', label: 'Compact', uses: ['Solo home office', 'Yoga or meditation', 'Reading room', 'Children\'s playroom'], note: '7.5m² internal floor area' },
+          { size: '3.6 × 3m', label: 'Popular', uses: ['Home office with storage', 'Creative studio', 'Small hobby room', 'Teenage den'], note: '10.8m² — the most popular pod size' },
+          { size: '4.5 × 3m', label: 'Spacious', uses: ['Dual-desk office', 'Garden gym / yoga', 'Art or craft studio', 'Multi-use space'], note: '13.5m² — more versatile footprint', highlight: true },
+        ].map(s => (
+          <div style={`background:#fff; border-radius:16px; padding:24px; border:${s.highlight ? '2px solid #34a02e' : '1px solid #ebeced'}; position:relative;`}>
+            {s.highlight && <div style="position:absolute; top:-11px; left:50%; transform:translateX(-50%); background:#34a02e; color:#fff; font-size:11px; font-weight:700; padding:3px 12px; border-radius:50px; white-space:nowrap;">Most Popular</div>}
+            <p style="font-size:1.5rem; font-weight:700; color:#2d3841; margin:0 0 2px; font-family:'Poppins',sans-serif;">{s.size}</p>
+            <p style="font-size:11px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.07em; margin:0 0 12px;">{s.label}</p>
+            <ul style="list-style:none; padding:0; margin:0 0 12px; display:flex; flex-direction:column; gap:6px;">
+              {s.uses.map(u => (
+                <li style="display:flex; align-items:center; gap:7px; font-size:13px; color:#555;">
+                  <svg width="11" height="11" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  {u}
+                </li>
+              ))}
+            </ul>
+            <p style="font-size:11.5px; color:#999; margin:0; border-top:1px solid #f0f0f0; padding-top:10px;">{s.note}</p>
+          </div>
+        ))}
+      </div>
+      <p style="text-align:center; font-size:13.5px; color:#666;">Not sure what size fits your garden? We measure and advise at the <a href="/contact-us" style="color:#34a02e;font-weight:600;">free site visit</a> — no obligation.</p>
+    </div>
+  </section>
+
+  <!-- Perfect For -->
+  <section class="section" style="background:#f8faf7;">
     <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
         <div>
           <h2 style="font-size:clamp(1.5rem,2.5vw,2rem); font-weight:700; color:#2d3841; margin-bottom:16px;">Perfect For</h2>
-          <div style="display:flex; flex-direction:column; gap:12px;">
+          <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:24px;">
             {[
               'A quiet home office for one person',
               'A creative studio or hobby room',
@@ -68,11 +133,15 @@ const related = [
               'A children\'s playroom or teenage den',
               'Additional storage with style',
             ].map(use => (
-              <div style="display:flex; align-items:center; gap:12px; padding:12px 16px; background:#f8faf7; border-radius:10px; border:1px solid #ebeced;">
+              <div style="display:flex; align-items:center; gap:12px; padding:12px 16px; background:#fff; border-radius:10px; border:1px solid #ebeced;">
                 <svg width="16" height="16" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
                 <span style="font-size:14px; font-weight:600; color:#2d3841;">{use}</span>
               </div>
             ))}
+          </div>
+          <div style="display:flex; flex-wrap:wrap; gap:10px;">
+            <a href="/garden-room-price-calculator" class="btn-primary" style="font-size:14px; padding:11px 24px;">Get an Instant Quote</a>
+            <a href="/contact-us" class="btn-outline-dark" style="font-size:14px; padding:11px 24px;">Book a Free Site Visit</a>
           </div>
         </div>
         <div>
@@ -84,6 +153,59 @@ const related = [
           />
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Planning permission -->
+  <section class="section" style="background:#fff;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;">
+        <div>
+          <div style="display:inline-block; background:#e7f1e3; color:#257a21; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; padding:5px 14px; border-radius:50px; margin-bottom:14px;">Good News</div>
+          <h2 style="font-size:clamp(1.3rem,2.5vw,1.75rem); font-weight:700; color:#2d3841; margin-bottom:16px;">Most Garden Pods Don't Need Planning Permission</h2>
+          <p style="font-size:15px; color:#555; line-height:1.8; margin-bottom:14px;">Under Permitted Development rights, most garden pods can be built without planning permission. The main rules: the structure must be single storey, must not cover more than 50% of your garden, and must not exceed 2.5m in height within 2m of a boundary.</p>
+          <p style="font-size:15px; color:#555; line-height:1.8; margin-bottom:20px;">Exceptions apply to listed buildings, conservation areas and national parks. We'll confirm your permitted development position during the free site visit — if there's any uncertainty, we'll tell you clearly what applies.</p>
+          <a href="/your-build/first-steps" style="color:#34a02e; font-weight:600; font-size:14px; text-decoration:none;">Read our full guide to getting started →</a>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          {[
+            { rule: 'Single storey only', ok: true },
+            { rule: 'No more than 50% of garden covered', ok: true },
+            { rule: 'Max 2.5m height within 2m of boundary', ok: true },
+            { rule: 'Not forward of the principal elevation', ok: true },
+            { rule: 'Listed buildings — check with us', ok: false },
+            { rule: 'Conservation areas — check with us', ok: false },
+          ].map(r => (
+            <div style={`display:flex; align-items:center; gap:12px; padding:12px 16px; background:${r.ok ? '#f8faf7' : '#fff8f8'}; border-radius:10px; border:1px solid ${r.ok ? '#ebeced' : '#f5e0e0'};`}>
+              <svg width="16" height="16" fill={r.ok ? '#34a02e' : '#cc4444'} viewBox="0 0 24 24">{r.ok ? <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/> : <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>}</svg>
+              <span style="font-size:13.5px; font-weight:600; color:#2d3841;">{r.rule}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section style="background:#f8faf7; padding:72px 0; border-top:1px solid #ebeced;">
+    <div style="max-width:900px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:32px;">
+        <div style="display:flex; justify-content:center; gap:3px; margin-bottom:8px;">
+          {[1,2,3,4,5].map(() => <svg width="20" height="20" fill="#f59e0b" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>)}
+        </div>
+        <p style="font-size:13px; color:#888; margin:0;">5.0 · 39 Google Reviews</p>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        <blockquote style="background:#fff; border-radius:16px; padding:28px; border:1px solid #ebeced; margin:0;">
+          <p style="font-size:14.5px; color:#444; line-height:1.8; margin:0 0 16px; font-style:italic;">"Incredible attention to detail, customer service, materials and quality of craftsmanship. Could not be happier with what James and his team built for us and perfectly on schedule too!"</p>
+          <footer style="font-size:13px; font-weight:700; color:#2d3841;">Nick <span style="font-weight:400; color:#888;">· July 2023</span></footer>
+        </blockquote>
+        <blockquote style="background:#fff; border-radius:16px; padding:28px; border:1px solid #ebeced; margin:0;">
+          <p style="font-size:14.5px; color:#444; line-height:1.8; margin:0 0 16px; font-style:italic;">"James and his team did an excellent job, they listened to what we needed and delivered it on time, on budget and in an extremely professional way. I can't recommend enough."</p>
+          <footer style="font-size:13px; font-weight:700; color:#2d3841;">Ian Evans <span style="font-weight:400; color:#888;">· June 2025</span></footer>
+        </blockquote>
+      </div>
+      <p style="text-align:center; margin:20px 0 0;"><a href="/testimonials" style="color:#34a02e; font-size:13.5px; font-weight:600; text-decoration:none;">Read all 39 reviews →</a></p>
     </div>
   </section>
 
@@ -99,3 +221,15 @@ const related = [
   </section>
 
 </ServiceLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 32px !important; }
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+  }
+  @media (max-width: 600px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"],
+    div[style*="grid-template-columns:1fr 1fr 1fr 1fr"],
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+  }
+</style>

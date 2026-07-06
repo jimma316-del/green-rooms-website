@@ -1,0 +1,181 @@
+---
+import ServiceLayout from '../../components/ServiceLayout.astro';
+
+const features = [
+  { icon: 'layers', title: 'SIPs Acoustic Performance', desc: 'SIPs panels have no air gaps in the core — the solid foam construction provides significantly better sound isolation than a timber frame shed as a starting point.' },
+  { icon: 'ruler', title: 'Dedicated Amp Circuits', desc: 'Properly earthed, dedicated circuits for amplifiers and recording equipment — no shared ring mains that introduce hum or interference.' },
+  { icon: 'leaf', title: 'Quiet Ventilation', desc: 'Practice rooms get hot with amplifiers running. We include a low-noise ventilation system that brings in fresh air without the rumble of a standard HVAC unit.' },
+  { icon: 'key', title: 'Cable Management Throughout', desc: 'In-wall conduits for signal cables, power runs and data — routed cleanly during the build, not surface-mounted afterwards.' },
+  { icon: 'tools', title: 'Acoustic Panel Mounting', desc: 'We fix dedicated mounting points into the walls for acoustic panels during the build — ready for you to hang treatment without drilling into the finish.' },
+  { icon: 'certificate', title: 'Climate Control Option', desc: 'A 5kW AC unit keeps the room comfortable during long practice sessions. Important for both comfort and equipment longevity.' },
+];
+
+const related = [
+  { label: 'Man Cave', href: '/garden-rooms/man-cave', img: '/images/games%20room%20internal%20view.webp' },
+  { label: 'Bespoke Builds', href: '/garden-rooms/bespoke', img: '/images/HERO%20Bespoke%20build.webp' },
+  { label: 'Structure & SIPs', href: '/your-build/structure', img: '/images/SIPS.webp' },
+];
+
+const faqs = [
+  {
+    q: "Will my neighbours hear me practising?",
+    a: "<a href='/your-build/structure' style='color:#34a02e;font-weight:600;'>SIPs construction</a> provides far better acoustic isolation than a timber frame shed — the solid foam core has no air gaps for sound to pass through. For most garden music room uses — electric guitar at moderate volume, acoustic instruments, home recording, band rehearsal at controlled levels — the standard SIPs build provides significant attenuation. Complete soundproofing to professional recording studio standard (full silence outside) requires specialist decoupled construction. We're honest about this distinction: if your goal is practice and home recording, SIPs will deliver. If your goal is professional recording with zero sound bleed, we'll tell you clearly at the site visit."
+  },
+  {
+    q: "What size do I need for a music studio?",
+    a: "For a solo instrument or singer-songwriter home studio: 3×3m (9m²) is workable. For an amplified electric setup with a pedalboard and mixing desk: 4×3m gives you comfortable space. For a full band rehearsal room (drums, bass, two guitars, vocals): 5×4m minimum — and bigger is better. We'll assess suitability at the site visit."
+  },
+  {
+    q: "Can I fit a drum kit in a garden music studio?",
+    a: "Yes. A standard acoustic drum kit needs roughly 2.5×2m of floor space to play comfortably, plus clearance around you. A 4×4m room handles drums plus a second musician. Drums are one of the more challenging instruments acoustically — SIPs will attenuate significantly but won't give you complete silence outside. We'll discuss realistic expectations at the site visit."
+  },
+  {
+    q: "What electrical specification do I need?",
+    a: "A dedicated 32A consumer unit fed from the house is standard. We'll include: separate circuits for amps and recording equipment (properly earthed to avoid ground loops), a circuit for monitoring speakers, a lighting circuit with dimmable LEDs, and data conduits for internet and audio cable runs. We agree the spec with you before we build."
+  },
+  {
+    q: "Do I need planning permission for a music studio?",
+    a: "A garden music studio is treated the same as any garden outbuilding under Permitted Development. Single storey, within the garden footprint limits, no taller than 2.5m within 2m of a boundary — no planning application needed. We confirm your exact position at the free site visit. See our <a href='/your-build/first-steps' style='color:#34a02e;font-weight:600;'>planning guide</a> for details."
+  },
+  {
+    q: "Can I see a completed music studio build?",
+    a: "Yes — we built a garden music studio in Surrey that demonstrates the SIPs acoustic performance and the finished build quality. <a href='/our-work/music-studio' style='color:#34a02e;font-weight:600;'>See the full project →</a>"
+  },
+];
+---
+
+<ServiceLayout
+  title="Garden Music Studio Surrey | Bespoke Music Practice Rooms | The Green Rooms"
+  description="Bespoke garden music studios built across Surrey. SIPs acoustic insulation, dedicated amp circuits, quiet ventilation — a proper practice space at the bottom of your garden."
+  canonical="/garden-rooms/music-studio"
+  heroImg="/images/internal%20shot%20of%20music%20room.webp"
+  heroAlt="Garden music studio interior, Surrey"
+  price="From £21,000 inc VAT"
+  h1="Garden Music Studios Surrey"
+  tagline="Bespoke Garden Music Practice Rooms — Surrey & South East"
+  intro="A garden music studio gives you a dedicated space to play without restrictions — no noise complaints, no awkward apologies to the family, no time limits. We build properly insulated, acoustically capable garden rooms with dedicated electrical circuits, quiet ventilation and cable management designed for musicians. We're honest about what SIPs delivers acoustically, and we'll tell you clearly what to expect before you commit."
+  features={features}
+  relatedPages={related}
+  faqs={faqs}
+  projects={[
+    { slug: 'music-studio', label: 'Garden Music Studio', tagline: 'Weybridge, Surrey · Cedar cladding · Acoustic isolation · SIPs construction', img: '/images/internal%20shot%20of%20music%20room.webp' },
+  ]}
+>
+
+  <!-- Gallery -->
+  <section style="background:#f8faf7; padding:72px 0 0;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.4rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin:0 0 24px;">Music Studio Builds</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
+        <div style="border-radius:14px; overflow:hidden; height:360px;"><img src="/images/internal%20shot%20of%20music%20room.webp" alt="Garden music studio interior" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:360px;"><img src="/images/internal%20shot%20of%20music%20room%20close%20up.webp" alt="Garden music studio interior close up" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:72px;">
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/GR%20charred%20spruce%20in%20garden.webp" alt="Garden music studio exterior" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/GR%20end%20of%20garden%201.webp" alt="Garden music studio end of garden" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:240px;"><img src="/images/SIPS.webp" alt="SIPs panels used in music studio construction" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Honest acoustic section -->
+  <section class="section" style="background:#fff;">
+    <div style="max-width:860px; margin:0 auto; padding:0 24px;">
+      <div style="background:#2d3841; border-radius:20px; padding:40px; margin-bottom:40px;">
+        <h2 style="font-size:1.3rem; font-weight:700; color:#fff; margin:0 0 16px;">What SIPs Actually Delivers Acoustically</h2>
+        <p style="font-size:14px; color:rgba(255,255,255,0.8); line-height:1.85; margin:0 0 14px;">We're straight with our customers: SIPs construction delivers significantly better acoustic performance than a timber frame shed. The solid foam core eliminates the air gaps that timber frame buildings rely on for structure — those gaps are where sound passes through.</p>
+        <p style="font-size:14px; color:rgba(255,255,255,0.8); line-height:1.85; margin:0 0 14px;">For most garden music studio uses — electric guitar at moderate volumes, acoustic instruments, recording, band rehearsal with controlled levels — the standard SIPs build provides meaningful isolation and a space your neighbours won't object to.</p>
+        <p style="font-size:14px; color:rgba(255,255,255,0.8); line-height:1.85; margin:0;">What SIPs won't give you: complete professional silence outside. That requires specialist decoupled construction (room within a room) and is a different scale of project. We'll be honest about what's realistic for your specific situation at the free site visit.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+        <div style="background:#e7f1e3; border-radius:16px; padding:24px; border:1px solid #c8e0c4;">
+          <p style="font-size:13px; font-weight:700; color:#257a21; margin:0 0 12px; text-transform:uppercase; letter-spacing:0.05em;">SIPs is suitable for</p>
+          {[
+            'Electric guitar and bass at moderate levels',
+            'Acoustic instruments — guitar, piano, strings',
+            'Home recording and podcasting',
+            'Band rehearsal at controlled volumes',
+            'Electronic music production',
+            'Drum practice (with realistic expectations)',
+          ].map(item => (
+            <div style="display:flex; align-items:flex-start; gap:8px; margin-bottom:8px;">
+              <svg width="12" height="12" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:2px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span style="font-size:12.5px; color:#2d3841;">{item}</span>
+            </div>
+          ))}
+        </div>
+        <div style="background:#f8faf7; border-radius:16px; padding:24px; border:1px solid #ebeced;">
+          <p style="font-size:13px; font-weight:700; color:#666; margin:0 0 12px; text-transform:uppercase; letter-spacing:0.05em;">May need additional treatment</p>
+          {[
+            'Full drum kit at full volume in urban gardens',
+            'Professional recording — zero sound bleed',
+            'Very close neighbours on all sides',
+            'Listed or conservation area properties',
+          ].map(item => (
+            <div style="display:flex; align-items:flex-start; gap:8px; margin-bottom:8px;">
+              <svg width="12" height="12" fill="#888" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:2px;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+              <span style="font-size:12.5px; color:#555;">{item}</span>
+            </div>
+          ))}
+          <p style="font-size:12px; color:#888; margin:8px 0 0; font-style:italic;">We'll tell you exactly where you sit at the site visit.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Size guide -->
+  <section class="section" style="background:#f8faf7;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:36px;">
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:10px;">What Size Music Studio Do I Need?</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:900px; margin:0 auto;">
+        {[
+          { size: '3 × 3m', label: 'Solo Setup', uses: ['Acoustic guitar / piano', 'Home recording desk', 'One musician', 'Podcasting or voiceover'], note: '9m² — compact but comfortable for one' },
+          { size: '4 × 3m', label: 'Electric Setup', uses: ['Amp + pedalboard', 'Mixing desk and monitors', 'Vocal booth corner', 'One or two musicians'], note: '12m² — the most popular music room size', highlight: true },
+          { size: '5 × 4m+', label: 'Band Room', uses: ['Full drum kit + clearance', 'Bass + two guitars', 'Vocal monitors', 'Band practice for 4–5'], note: '20m²+ — space for a proper rehearsal' },
+        ].map(s => (
+          <div style={`background:#fff; border-radius:16px; padding:24px; border:${s.highlight ? '2px solid #34a02e' : '1px solid #ebeced'}; position:relative;`}>
+            {s.highlight && <div style="position:absolute; top:-11px; left:50%; transform:translateX(-50%); background:#34a02e; color:#fff; font-size:11px; font-weight:700; padding:3px 12px; border-radius:50px; white-space:nowrap;">Most Popular</div>}
+            <p style="font-size:1.5rem; font-weight:700; color:#2d3841; margin:0 0 2px; font-family:'Poppins',sans-serif;">{s.size}</p>
+            <p style="font-size:11px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.07em; margin:0 0 12px;">{s.label}</p>
+            <ul style="list-style:none; padding:0; margin:0 0 12px; display:flex; flex-direction:column; gap:6px;">
+              {s.uses.map(u => (
+                <li style="display:flex; align-items:center; gap:7px; font-size:13px; color:#555;">
+                  <svg width="11" height="11" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  {u}
+                </li>
+              ))}
+            </ul>
+            <p style="font-size:11.5px; color:#999; margin:0; border-top:1px solid #f0f0f0; padding-top:10px;">{s.note}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section" style="background:#34a02e; text-align:center;">
+    <div style="max-width:520px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#fff; margin-bottom:14px;">Plan Your Garden Music Studio</h2>
+      <p style="color:rgba(255,255,255,0.85); font-size:1rem; margin-bottom:28px; line-height:1.7;">Tell us what you're playing and we'll be straight with you about what to expect. Get a guide price or book a free site visit.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+        <a href="/garden-room-price-calculator" class="btn-white" style="font-size:15px; padding:14px 32px;">Get an Instant Price</a>
+        <a href="/contact-us" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.5); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none;">Book a Free Site Visit</a>
+      </div>
+    </div>
+  </section>
+
+</ServiceLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 32px !important; }
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+    div[style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
+  }
+  @media (max-width: 600px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
+  }
+</style>

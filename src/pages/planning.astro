@@ -1,5 +1,47 @@
 ---
 import InfoLayout from '../layouts/InfoLayout.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do I need planning permission for a garden room?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most garden rooms don't need planning permission. Under Schedule 2, Part 1, Class E of the General Permitted Development Order (GPDO), homeowners can add outbuildings without planning permission provided they meet certain conditions — the building must be single storey, not forward of the principal elevation, not cover more than 50% of the garden, and if within 2m of a boundary, not exceed 2.5m in height. The vast majority of garden rooms we build fall comfortably within these rules." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the 2m boundary rule for garden rooms?",
+      "acceptedAnswer": { "@type": "Answer", "text": "If any part of your garden room is within 2 metres of your property boundary, the maximum height of the building (to the eaves and to the highest point for a flat or mono-pitch roof) is 2.5m. Further than 2m from the boundary, the maximum is 3m for a flat or mono-pitch roof, or 4m for a dual-pitch roof. This rule affects roof style but not necessarily the footprint or internal space — we regularly design compliant buildings close to boundaries." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a Lawful Development Certificate and do I need one?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A Lawful Development Certificate (LDC) is written confirmation from your local planning authority that a building complies with Permitted Development rules. It's not legally required to build under Permitted Development, but it's worth having — particularly if you sell your home, as buyers' solicitors sometimes ask for proof. We can advise you on whether an LDC is worth obtaining for your specific project." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is an Article 4 Direction?",
+      "acceptedAnswer": { "@type": "Answer", "text": "An Article 4 Direction is a measure applied by a local planning authority to remove or restrict Permitted Development rights in a particular area, typically conservation areas or areas of special character. If your property is subject to an Article 4 Direction, you may need full planning permission for work that would otherwise be permitted development. Check with your local planning authority or we can advise during the site visit." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a garden room be used as a bedroom or sleeping accommodation?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No — under Permitted Development rules, garden rooms cannot be used as self-contained living accommodation or for sleeping. They must remain as ancillary outbuildings serving the main house. A garden room used as a home office, gym, cinema room, hobby space or studio is perfectly acceptable. If you want a structure that can be slept in, you would need full planning permission and would be entering annexe territory, which has different requirements." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a garden room need building regulations approval?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Generally no — garden rooms that fall within Permitted Development rules and are under 15 square metres (or up to 30 sqm if more than 1m from any boundary and not used for sleeping) are exempt from building regulations. However, if the room includes a permanent fixed electrical installation, our electrician issues a Part P electrical sign-off certificate, which is a form of building regulations compliance specifically for electrical work." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I know if my garden room needs planning permission?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The main factors that require planning permission are: listed building status, location in a Conservation Area or AONB, the building covering more than 50% of the garden, being positioned in front of the main house, or if your Permitted Development rights have been removed by a planning condition. We assess all of this during the free site visit and will tell you clearly whether your project needs planning consent." }
+    }
+  ]
+};
 ---
 
 <InfoLayout
@@ -12,6 +54,7 @@ import InfoLayout from '../layouts/InfoLayout.astro';
   heroAlt="Garden room in garden setting, Surrey"
   breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Planning' }]}
 >
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <!-- PD rules -->
   <section style="background:#fff; padding:80px 0;">
@@ -108,6 +151,56 @@ import InfoLayout from '../layouts/InfoLayout.astro';
             </div>
           ))}
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LDC and GPDO section -->
+  <section style="background:#f8faf7; padding:72px 0; border-top:1px solid #ebeced;">
+    <div style="max-width:1000px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.3rem,2.5vw,1.7rem); font-weight:700; color:#2d3841; margin:0 0 32px;">Lawful Development Certificates & Article 4 Directions</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:40px;">
+        <div style="background:#fff; border-radius:16px; padding:28px; border:1px solid #ebeced;">
+          <h3 style="font-size:1rem; font-weight:700; color:#2d3841; margin:0 0 12px;">What is a Lawful Development Certificate?</h3>
+          <p style="font-size:14px; color:#555; line-height:1.8; margin:0 0 14px;">An LDC is written confirmation from your local planning authority that a structure complies with Permitted Development rules. You don't legally need one to build — but it proves compliance on paper, which can be useful when you sell the property.</p>
+          <p style="font-size:14px; color:#555; line-height:1.8; margin:0;">Buyers' solicitors sometimes ask for evidence that outbuildings were built lawfully. An LDC removes that question entirely. We can advise on whether it's worth obtaining for your project after the site visit.</p>
+        </div>
+        <div style="background:#fff; border-radius:16px; padding:28px; border:1px solid #ebeced;">
+          <h3 style="font-size:1rem; font-weight:700; color:#2d3841; margin:0 0 12px;">What is an Article 4 Direction?</h3>
+          <p style="font-size:14px; color:#555; line-height:1.8; margin:0 0 14px;">An Article 4 Direction is a planning measure that removes Permitted Development rights in a specific area — typically conservation areas or areas of special architectural interest. If your property is subject to one, work that would normally be permitted may need full planning permission.</p>
+          <p style="font-size:14px; color:#555; line-height:1.8; margin:0;">You can check whether your property is in an area with an Article 4 Direction via the <a href="https://www.gov.uk/apply-for-planning-permission" target="_blank" rel="noopener" style="color:#34a02e; font-weight:600;">Planning Portal</a>, or ask us during the free site visit — we're familiar with the local planning landscape across Surrey.</p>
+        </div>
+      </div>
+
+      <!-- Planning FAQs -->
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.3rem,2.5vw,1.7rem); font-weight:700; color:#2d3841; margin:0 0 24px;">Planning Permission — Common Questions</h2>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        {[
+          {
+            q: 'Does a garden room need building regulations approval?',
+            a: 'Generally no. Garden rooms that fall within Permitted Development and are under 15m² (or up to 30m² if more than 1m from any boundary and not used for sleeping) are exempt from building regulations. The one exception is electrical work — our electrician issues a Part P sign-off certificate for all electrical installations, which is a specific form of building regulations compliance.'
+          },
+          {
+            q: 'Can a garden room be used as a bedroom or for sleeping?',
+            a: 'No — under Permitted Development, outbuildings cannot be used as self-contained living accommodation. A garden room used as a home office, gym, cinema room, hobby space or studio is perfectly fine. Sleeping accommodation requires full planning permission and takes the project into annexe territory, with different requirements.'
+          },
+          {
+            q: 'What is the GPDO and how does it apply to garden rooms?',
+            a: 'The General Permitted Development Order (GPDO) is the legislation that grants householders automatic planning permission for certain types of development without needing a full application. Garden rooms, outbuildings and similar structures fall under Schedule 2, Part 1, Class E of the GPDO. The conditions in that class are what define whether your garden room qualifies as permitted development.'
+          },
+          {
+            q: 'How do I know if my property has had its PD rights removed?',
+            a: 'PD rights can be removed by a planning condition attached to the original property planning permission, or by an Article 4 Direction in your area. You can check via the Planning Portal or your local authority\'s planning search tool. If you\'re unsure, we can check during the site visit — it\'s something we look into as standard practice.'
+          },
+        ].map(item => (
+          <details style="background:#fff; border:1px solid #ebeced; border-radius:12px; padding:20px 24px;">
+            <summary style="font-size:15px; font-weight:700; color:#2d3841; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+              {item.q}
+              <svg width="16" height="16" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-left:12px;"><path d="M7 10l5 5 5-5z"/></svg>
+            </summary>
+            <p style="font-size:14px; color:#555; line-height:1.8; margin:14px 0 0;">{item.a}</p>
+          </details>
+        ))}
       </div>
     </div>
   </section>

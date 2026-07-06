@@ -1,0 +1,218 @@
+---
+import InfoLayout from '../../layouts/InfoLayout.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is a garden room cheaper than a house extension?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, significantly. A 5×3m garden room from The Green Rooms costs from £25,460 fully installed. An equivalent house extension typically costs £50,000–£90,000+ once you factor in planning, structural work, utilities, plastering, and decoration. Garden rooms also don't require planning permission in most cases, avoiding a 2–6 month delay." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a garden room add as much value as an extension?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Extensions typically add more absolute value — but the return on investment from a garden room is often better. A quality garden room can add 5–15% to property value at a fraction of the cost and disruption of an extension. Many buyers actively look for a dedicated home office or studio space in the garden." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need planning permission for a garden room vs an extension?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most garden rooms fall under Permitted Development and don't need planning permission. Extensions often do, particularly for anything over a certain size or in a Conservation Area. The planning process for extensions typically takes 2–6 months and can be refused. Garden rooms are built to a point where planning is almost never a concern." }
+    },
+    {
+      "@type": "Question",
+      "name": "How disruptive is building a garden room compared to an extension?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A garden room is built entirely outside the existing house — our team typically completes the full build in 3–5 days with minimal noise and disruption. Extensions require opening up walls, scaffolding, weeks of trades in and out of your home, and significant mess. There's simply no comparison in terms of daily disruption." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a garden room be used as a permanent office or studio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — our garden rooms are fully insulated with SIPs construction, have independent electrical systems, and include heating, flooring and plastering as standard. They're designed for year-round use and function as a proper room in every sense, just separate from the house." }
+    }
+  ]
+};
+---
+
+<InfoLayout
+  title="Garden Room vs House Extension | Cost & Value Comparison | The Green Rooms"
+  description="Garden room vs house extension — cost, planning, disruption, value and ROI compared side by side. Which is right for your Surrey home?"
+  canonical="/garden-rooms/vs-extension"
+  pageTitle="Garden Room vs House Extension"
+  pageSubtitle="Which is right for your property? A straight comparison of cost, planning, disruption, and long-term value."
+  heroImg="/images/classic%20end%20of%20garden%20portrait.webp"
+  heroAlt="Bespoke garden room in Surrey garden"
+  breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Garden Rooms', href: '/garden-rooms/garden-rooms' }, { label: 'Garden Room vs Extension' }]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Quick summary -->
+  <section style="background:#e7f1e3; padding:48px 24px;">
+    <div style="max-width:860px; margin:0 auto;">
+      <div style="background:#fff; border-radius:20px; padding:32px 36px; border:1px solid rgba(52,160,46,0.2);">
+        <h2 style="font-size:1.1rem; font-weight:700; color:#2d3841; margin:0 0 16px;">The Short Answer</h2>
+        <p style="font-size:15px; color:#444; line-height:1.8; margin:0 0 12px;">A garden room costs 40–60% less than an equivalent extension, doesn't require planning permission in most cases, is built in days rather than months, and causes almost no disruption to your home. A house extension gives you internal connected space — but at significantly higher cost, complexity and disruption.</p>
+        <p style="font-size:15px; color:#444; line-height:1.8; margin:0;">If you need a dedicated home office, studio, gym or relaxation space — a garden room will almost always be the better choice. If you need a new bedroom, kitchen extension or permanently connected living space, an extension may be necessary.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Head-to-head comparison table -->
+  <section style="background:#fff; padding:80px 0;">
+    <div style="max-width:1000px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin:0 0 36px; text-align:center;">Head-to-Head Comparison</h2>
+      <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; font-size:14px;">
+          <thead>
+            <tr>
+              <th style="padding:14px 20px; text-align:left; background:#2d3841; color:#fff; font-family:'Poppins',sans-serif; font-size:13px; border-radius:12px 0 0 0;"> </th>
+              <th style="padding:14px 20px; text-align:center; background:#34a02e; color:#fff; font-family:'Poppins',sans-serif; font-size:13px;">Garden Room</th>
+              <th style="padding:14px 20px; text-align:center; background:#2d3841; color:#fff; font-family:'Poppins',sans-serif; font-size:13px; border-radius:0 12px 0 0;">House Extension</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ['Cost (5×3m equivalent)', 'From £25,460 inc VAT', '£50,000 – £90,000+'],
+              ['Planning permission', 'Usually not required', 'Often required (8–13 weeks)'],
+              ['Build time on site', '3–5 days', '6–16 weeks'],
+              ['Disruption to home', 'Minimal — built entirely outside', 'Significant — walls opened, trades inside'],
+              ['Structural foundations', 'Ground screws — no concrete, no dig', 'Concrete strip or raft foundations'],
+              ['Building regulations', 'Electrical cert only (Part P)', 'Full building control sign-off required'],
+              ['Insulation quality', 'SIPs — U-value 0.18 or better', 'Varies — often standard cavity wall'],
+              ['Year-round usability', 'Yes — designed for all seasons', 'Yes'],
+              ['Adds property value', '5–15% typically', '10–20% typically (higher cost, lower ROI)'],
+              ['Reversible / relocatable', 'Ground screws can be removed', 'Permanent'],
+              ['VAT', 'Standard rate (20%) — included in price', 'Standard rate on labour and materials'],
+              ['Typical timeline start to finish', '6–12 weeks', '6–18 months'],
+            ].map(([factor, garden, extension], i) => (
+              <tr style={`border-top:1px solid #ebeced; background:${i % 2 === 0 ? '#fff' : '#fafafa'};`}>
+                <td style="padding:14px 20px; font-weight:600; color:#2d3841; font-size:13.5px;">{factor}</td>
+                <td style="padding:14px 20px; text-align:center; color:#34a02e; font-weight:600; font-size:13.5px;">{garden}</td>
+                <td style="padding:14px 20px; text-align:center; color:#555; font-size:13.5px;">{extension}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cost breakdown -->
+  <section style="background:#f8faf7; padding:72px 0; border-top:1px solid #ebeced;">
+    <div style="max-width:1000px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.3rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin:0 0 32px;">Why Extensions Cost So Much More</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:32px;">
+        <div>
+          <div style="background:#e7f1e3; border-radius:16px; padding:28px; border:1px solid rgba(52,160,46,0.2); margin-bottom:16px;">
+            <h3 style="font-size:1rem; font-weight:700; color:#2d3841; margin:0 0 16px; display:flex; align-items:center; gap:8px;"><span style="width:28px; height:28px; background:#34a02e; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; color:#fff; font-size:12px; font-weight:700; flex-shrink:0;">✓</span> Garden Room — what's included</h3>
+            {['Ground screw foundations', 'SIPs structure (walls, floor, roof)', 'Cladding and external finishes', 'Doors and windows', 'Full electrical installation + cert', 'Plastered interior + flooring', 'LED lighting', 'Full site clean', '10-year structural guarantee'].map(item => (
+              <div style="display:flex; align-items:center; gap:8px; padding:6px 0; border-bottom:1px solid rgba(52,160,46,0.1);">
+                <svg width="12" height="12" fill="#34a02e" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span style="font-size:13px; color:#2d3841;">{item}</span>
+              </div>
+            ))}
+          </div>
+          <p style="font-size:1.4rem; font-weight:700; color:#34a02e; margin:0; font-family:'Poppins',sans-serif;">From £25,460 inc VAT</p>
+          <p style="font-size:12px; color:#888; margin:2px 0 0;">5×3m Garden Room, fully installed</p>
+        </div>
+        <div>
+          <div style="background:#fff; border-radius:16px; padding:28px; border:1px solid #ebeced; margin-bottom:16px;">
+            <h3 style="font-size:1rem; font-weight:700; color:#2d3841; margin:0 0 16px; display:flex; align-items:center; gap:8px;"><span style="width:28px; height:28px; background:#ddd; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; color:#fff; font-size:12px; font-weight:700; flex-shrink:0;">£</span> Extension — typical additional costs</h3>
+            {['Architect / structural drawings: £3,000–£6,000', 'Planning application fees: £206+', 'Building control application: £800–£1,500', 'Scaffolding: £2,000–£5,000', 'Underpinning / concrete foundations: £5,000–£15,000', 'Party wall agreements (if applicable): £1,000–£3,000', 'Temporary accommodation (if needed)', 'Interior decoration after build'].map(item => (
+              <div style="display:flex; align-items:flex-start; gap:8px; padding:6px 0; border-bottom:1px solid #ebeced;">
+                <div style="width:4px; height:4px; background:#ccc; border-radius:50%; flex-shrink:0; margin-top:8px;"></div>
+                <span style="font-size:13px; color:#555; line-height:1.45;">{item}</span>
+              </div>
+            ))}
+          </div>
+          <p style="font-size:1.4rem; font-weight:700; color:#2d3841; margin:0; font-family:'Poppins',sans-serif;">£50,000 – £90,000+ typically</p>
+          <p style="font-size:12px; color:#888; margin:2px 0 0;">Equivalent footprint, Surrey, 2024 prices</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- When each is better -->
+  <section style="background:#fff; padding:72px 0; border-top:1px solid #ebeced;">
+    <div style="max-width:1000px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.3rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin:0 0 32px;">When to Choose Each</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+        <div style="background:#e7f1e3; border-radius:20px; padding:28px; border:1px solid rgba(52,160,46,0.2);">
+          <h3 style="font-size:1rem; font-weight:700; color:#2d3841; margin:0 0 16px;">Choose a Garden Room if…</h3>
+          {[
+            'You need a home office, studio, gym or hobby space',
+            'You want the work done quickly with minimal disruption',
+            'Budget is a consideration',
+            'You want year-round usable space without extending the footprint of the house',
+            'You\'re in a Conservation Area and want to avoid planning risk',
+            'You want a separate, quiet space away from the house',
+            'You\'re likely to sell in the next 5–10 years and want strong ROI',
+          ].map(item => (
+            <div style="display:flex; align-items:flex-start; gap:10px; padding:7px 0; border-bottom:1px solid rgba(52,160,46,0.1);">
+              <svg width="14" height="14" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:2px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <span style="font-size:13.5px; color:#2d3841; line-height:1.5;">{item}</span>
+            </div>
+          ))}
+        </div>
+        <div style="background:#f8faf7; border-radius:20px; padding:28px; border:1px solid #ebeced;">
+          <h3 style="font-size:1rem; font-weight:700; color:#2d3841; margin:0 0 16px;">Consider an Extension if…</h3>
+          {[
+            'You need an additional bedroom',
+            'You want the space internally connected to the house',
+            'You need to extend the kitchen or living area',
+            'Your garden is too small to accommodate a separate structure',
+            'Internal floor space is the primary requirement',
+            'You have no time pressure and can manage a long build programme',
+          ].map(item => (
+            <div style="display:flex; align-items:flex-start; gap:10px; padding:7px 0; border-bottom:1px solid #ebeced;">
+              <div style="width:4px; height:4px; background:#999; border-radius:50%; flex-shrink:0; margin-top:8px;"></div>
+              <span style="font-size:13.5px; color:#555; line-height:1.5;">{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section style="background:#f8faf7; padding:72px 0; border-top:1px solid #ebeced;">
+    <div style="max-width:860px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.3rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin:0 0 28px;">Common Questions</h2>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        {[
+          { q: 'Does a garden room add as much value as an extension?', a: 'The absolute value added by an extension is typically higher, but the return on investment from a garden room is often better — you\'re spending significantly less to achieve a meaningful uplift. A quality garden room from The Green Rooms typically adds 5–15% to property value. Many buyers now specifically look for a garden office or studio as part of the purchase.' },
+          { q: 'Can a garden room replace a home office extension?', a: 'For most people, yes — and often better. A garden room gives you complete separation from the house, which many people find improves focus and work-life balance. Our rooms include Cat 6a internet cabling, dedicated electrical circuits, year-round heating and insulation, and can be fitted out exactly to your specification.' },
+          { q: 'Will a garden room affect my council tax?', a: 'A garden room used as a private space ancillary to the house doesn\'t affect council tax. Only structures that could be used as self-contained dwellings would be assessed separately, which doesn\'t apply to garden rooms.' },
+          { q: 'Is a garden room permanent?', a: 'Our ground screw foundations are permanent but removable — unlike concrete, the screws can be extracted with no damage to the garden. The structure itself is permanent, but it\'s not the same kind of irreversible commitment as knocking down a wall for an extension.' },
+        ].map(item => (
+          <details style="background:#fff; border:1px solid #ebeced; border-radius:12px; padding:20px 24px;">
+            <summary style="font-size:15px; font-weight:700; color:#2d3841; cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center;">
+              {item.q}
+              <svg width="16" height="16" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-left:12px;"><path d="M7 10l5 5 5-5z"/></svg>
+            </summary>
+            <p style="font-size:14px; color:#555; line-height:1.8; margin:14px 0 0;">{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#2d3841; padding:72px 24px; text-align:center;">
+    <div style="max-width:520px; margin:0 auto;">
+      <h2 style="font-size:clamp(1.4rem,3vw,1.9rem); font-weight:700; color:#fff; margin-bottom:14px;">See What a Garden Room Would Cost</h2>
+      <p style="color:rgba(255,255,255,0.8); font-size:1rem; margin-bottom:28px;">Get an instant guide price for your size and specification — or book a free site visit and we'll talk through what's possible in your garden.</p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:12px;">
+        <a href="/garden-room-price-calculator" class="btn-primary" style="font-size:15px; padding:14px 32px;">Get an Instant Price</a>
+        <a href="/contact-us" style="display:inline-flex; align-items:center; border:2px solid rgba(255,255,255,0.4); color:#fff; font-family:'Poppins',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; text-decoration:none;">Book a Free Site Visit</a>
+      </div>
+    </div>
+  </section>
+
+</InfoLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 24px !important; }
+  }
+</style>

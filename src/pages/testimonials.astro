@@ -2,17 +2,7 @@
 import InfoLayout from '../layouts/InfoLayout.astro';
 import Icon from '../components/Icon.astro';
 
-const reviewSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "The Green Rooms",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "39",
-    "bestRating": "5"
-  }
-};
+const monthToNum: { [key: string]: string } = { January:'01', February:'02', March:'03', April:'04', May:'05', June:'06', July:'07', August:'08', September:'09', October:'10', November:'11', December:'12' };
 
 const reviews = [
   {
@@ -126,6 +116,30 @@ const reviews = [
     text: `James and his professional, friendly team have just completed a garden room for us. We are so pleased with the result. James took us from our initial idea and thoughts right through to the finished product with care, guidance and professionalism. He listened, checked back and made sure we were happy throughout. Highly recommended.`,
   },
 ];
+
+const reviewSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "The Green Rooms",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "39",
+    "bestRating": "5"
+  },
+  "review": reviews.map(r => {
+    const parts = r.date.split(' ');
+    const month = parts[0];
+    const year = parts[1];
+    return {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": r.name },
+      "datePublished": `${year}-${monthToNum[month]}`,
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": r.text.replace(/\n/g, ' ')
+    };
+  })
+};
 ---
 
 <InfoLayout
