@@ -52,7 +52,7 @@ export const yourBuildPages: YourBuildPage[] = [
   {
     slug: 'flooring',
     shortTitle: 'Flooring',
-    desc: 'Engineered wood, LVT, rubber flooring, carpet tile and more.',
+    desc: 'Laminate as standard, rubber gym flooring available — fitted and included in every build.',
     img: '/images/garden%20gym%20internal%201.webp',
     href: '/your-build/flooring',
   },

@@ -23,7 +23,7 @@ Cold rises in a garden room more than people expect, especially if the building 
 
 Rigid insulation boards are commonly used within the floor structure because they provide good thermal performance without requiring excessive depth. The key is continuity. If insulation is squeezed in unevenly or broken up by gaps around the perimeter, you create cold spots that make the whole room feel less comfortable.
 
-Floor finish matters too. Engineered wood, laminate and luxury vinyl all behave a little differently. A softer finish can feel warmer, but the biggest factor is still what sits beneath it. If you plan to include electric underfloor heating, the insulation below becomes even more important. Without it, a fair amount of that warmth will head in the wrong direction.
+Floor finish matters too. Laminate and rubber gym flooring behave a little differently underfoot, but the biggest factor is still what sits beneath it. If you plan to include electric underfloor heating, the insulation below becomes even more important. Without it, a fair amount of that warmth will head in the wrong direction.
 
 ## Wall insulation is where comfort really shows
 
