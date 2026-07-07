@@ -5,364 +5,124 @@ export function getStaticPaths() {
 
   // Minimal preview data used to resolve related project cards
   const previews: Record<string, { h1: string; tagline: string; heroImg: string }> = {
-    'golf-simulator-garden-room':          { h1: 'Golf Simulator Garden Room',          tagline: 'Extended height studio with full simulator installation',    heroImg: '/images/HERO%20Golf%20sim.webp' },
-    'garden-gym-with-hidden-storage':      { h1: 'Garden Gym with Hidden Storage',      tagline: 'Dual-purpose build — gym and concealed storage in one',       heroImg: '/images/garden%20gym%2C%20dual%20canopy%20view%20from%20outside.webp' },
-    'music-studio':                        { h1: 'Garden Music Studio',                 tagline: 'Acoustic fit-out — cedar cladding, SIPs construction',        heroImg: '/images/internal%20shot%20of%20music%20room.webp' },
-    'l-shaped-garden-office':              { h1: 'L-Shaped Garden Office',              tagline: 'Bespoke footprint — corner plot, mature tree retained',       heroImg: '/images/GR%20bespoke%20glass%20corner%20millboard.webp' },
-    'garden-room-with-decking-lean-to-shed': { h1: 'Garden Room with Decking & Storage', tagline: 'Cedar garden room, composite decking, integrated lean-to',  heroImg: '/images/classic%20GR%20with%20storage%20and%20decking.webp' },
-    'bespoke-garden-office-in-east-molesey': { h1: 'Bespoke Garden Office',             tagline: 'Charred spruce + Crittall doors — East Molesey, Surrey',    heroImg: '/images/GR%20at%20night%20charred%20spruce%20crittal%20french%20doors.webp' },
-    'oak-garden-room':                     { h1: 'Oak Garden Room',                     tagline: 'Natural timber exterior — bifold doors, full interior spec', heroImg: '/images/GR%20clean%20pic%20portrait.webp' },
-    'outdoor-living-space':                { h1: 'Outdoor Living Space',                tagline: 'Open garden shelter — hot tub, LED lighting, ground screws', heroImg: '/images/bespoke%20shelter%20hot%20tub.webp' },
-    'garden-hobby-room':                   { h1: 'Garden Hobby Room',                   tagline: 'Compact personal studio — Thermo Ayous, LVT flooring',       heroImg: '/images/bespoke%20shape%20GP.webp' },
+    'garden-gym-with-hidden-storage':         { h1: 'Garden Gym with Hidden Storage',         tagline: 'Cedar cladding, dual canopy, glass corner — Chobham, Surrey',      heroImg: '/images/garden%20gym%2C%20dual%20canopy%20view%20from%20outside.webp' },
+    'garden-entertainment-room-godalming':    { h1: 'Garden Room, Storage & Shelter',         tagline: 'Charred spruce and cedar, 80sqm porcelain patio — Godalming',      heroImg: '/images/GR%20at%20night%20charred%20spruce%20crittal%20french%20doors.webp' },
+    'garden-gym-and-sauna':                   { h1: 'Garden Gym & Sauna',                     tagline: 'Extended height, Thermo Ayous, Millboard decking — Surrey',         heroImg: '/images/GR%20extended%20height%20with%20thermo%20ayous%20cladding%20and%20millboard%20decking.webp' },
   };
 
   const projects = {
-    'golf-simulator-garden-room': {
-      title: 'Golf Simulator Garden Room — Surrey',
-      metaDesc: 'Extended height golf simulator studio built in Surrey by The Green Rooms. Millboard board and batten cladding, 4m internal height, 6-circuit electrical fit-out and Golf Swing Systems installation.',
-      h1: 'Golf Simulator Garden Room',
-      tagline: 'Extended height build with full simulator installation — Surrey',
-      location: 'Surrey',
-      completedDate: 'Spring 2024',
-      buildTime: '14 days',
-      challenge: "This client wanted a proper, year-round golf practice space — but standard garden room height (typically 2.4m) won't allow a full backswing with a driver. The brief was: build the structure around the swing, not the other way around.",
-      intro: 'The structure is built to 4m internal height to accommodate a full simulator screen and tracking system, with a dedicated electrical supply running six independent circuits for the projector, simulator unit, lighting, heating, and cooling.',
-      detail: 'The exterior is clad in Millboard board and batten in anthracite — a composite cladding that holds its appearance without any treatment across decades. Internally: acoustic panels on the screen wall to improve ball-flight simulation accuracy, LED strip lighting on a dimmer, and a 5kW air conditioning unit. The simulator hardware was installed by Golf Swing Systems after the structure was complete and signed off.',
-      specs: [
-        { label: 'Structure', value: 'Extended height (4m internal)', href: '/your-build/structure' },
-        { label: 'Cladding', value: 'Millboard board & batten, anthracite', href: '/your-build/cladding-options' },
-        { label: 'Doors', value: 'Aluminium bifold doors', href: '/your-build/windows-and-doors' },
-        { label: 'Electrics', value: 'Dedicated consumer unit, 6 circuits', href: '/your-build/electrics' },
-        { label: 'Climate', value: '5kW air conditioning', href: '/your-build/climate-control' },
-        { label: 'Simulator', value: 'Golf Swing Systems' },
-        { label: 'Foundations', value: 'Ground screws', href: '/your-build/foundations' },
-      ],
-      testimonial: {
-        quote: "Excellent experience from start to finish. The golf simulator room is exceptional — James and the team designed the perfect extended-height structure and the Golf Swing Systems installation is incredible. I use it every day, rain or shine.",
-        name: 'Stephen Rodgers',
-        date: 'March 2024',
-      },
-      pricingNote: 'Golf simulator studios typically cost £18,000–£25,000 for the structure, plus the simulator technology package from £15,000. Most clients invest £38,000–£55,000 in total.',
-      ctaHeadline: 'Want Your Own Golf Simulator Room?',
-      heroImg: '/images/HERO%20Golf%20sim.webp',
-      gallery: [
-        { src: '/images/HERO%20extended%20height%20golf%20sim%20millboard%20board%20and%20batten%20in%20anthracite.webp', alt: 'Extended height golf simulator studio exterior, anthracite Millboard cladding' },
-        { src: '/images/golf%20sim%20internal%20action%20shot.webp', alt: 'Golf simulator in use inside the garden room studio' },
-        { src: '/images/golf%20sim%20hero%20portrait.webp', alt: 'Golf simulator garden room at dusk — extended height structure' },
-        { src: '/images/Golf%20sim%20setup%20hero.webp', alt: 'Golf simulator screen and projector setup' },
-        { src: '/images/night%20lighting%20extended%20height%20golf%20sim%20millboard%20board%20and%20batten%20in%20anthracite.webp', alt: 'Golf simulator studio at night with exterior lighting' },
-        { src: '/images/extended%20height%20golf%20sim%20close%20up%20millboard%20board%20and%20batten%20in%20anthracite.webp', alt: 'Close up of Millboard board and batten cladding detail' },
-      ],
-      related: '/garden-rooms/golf-simulator-studios',
-      relatedLabel: 'Golf Simulator Studios',
-      relatedProjects: ['l-shaped-garden-office', 'garden-gym-with-hidden-storage'],
-    },
-
     'garden-gym-with-hidden-storage': {
-      title: 'Garden Gym with Hidden Storage — Surrey',
-      metaDesc: 'Bespoke garden gym with integrated hidden storage room built in Surrey by The Green Rooms. Rubber tile flooring, LED strip lighting on smart dimmer, 5kW air conditioning, dual canopy.',
+      title: 'Garden Gym with Hidden Storage — Chobham, Surrey',
+      metaDesc: 'Bespoke garden gym built in Chobham, Surrey by The Green Rooms. Built on a slope with the ground dug down for extra internal height, cedar cladding, dual canopy, glass corner detail, 3m aluminium bifold doors, skylight and concealed storage room.',
       h1: 'Garden Gym with Hidden Storage',
-      tagline: 'Dual-purpose build — gym and concealed storage in one footprint — Surrey',
-      location: 'Surrey',
-      completedDate: 'Autumn 2023',
-      buildTime: '10 days',
-      challenge: "The client wanted a dedicated gym and a place to store garden equipment — but two separate structures would take up too much garden. The brief was to solve both problems in a single footprint, with the storage completely invisible from inside the gym.",
-      intro: "This project combines a fully kitted-out fitness space with a concealed storage room — all within a single structure that looks from the outside like a standard garden room. The storage room is accessed through a flush door that sits invisibly within the exterior cladding.",
-      detail: "The gym is fitted with rubber tile flooring, wall-mounted mirrors, LED strip lighting on a smart dimmer, and a 5kW air conditioning unit for year-round training. A dual canopy runs the full width of the front elevation, creating a sheltered outdoor warm-up space. The hidden storage room — reached through the clad secret door — gives the owners a place to store garden tools and seasonal items without compromising the gym's clean interior.",
-      specs: [
-        { label: 'Structure', value: 'Standard height with dual canopy', href: '/your-build/structure' },
-        { label: 'Cladding', value: 'Thermo Ayous', href: '/your-build/cladding-options' },
-        { label: 'Doors', value: 'Aluminium bifold doors', href: '/your-build/windows-and-doors' },
-        { label: 'Flooring', value: 'Rubber gym tiles throughout', href: '/your-build/flooring' },
-        { label: 'Electrics', value: 'LED strip lighting, smart switches', href: '/your-build/electrics' },
-        { label: 'Climate', value: '5kW air conditioning', href: '/your-build/climate-control' },
-        { label: 'Storage', value: 'Integrated hidden storage room' },
-        { label: 'Foundations', value: 'Ground screws', href: '/your-build/foundations' },
-      ],
-      testimonial: {
-        quote: "James and his team built the most incredible large garden room with LED strip lighting — I love having somewhere to keep all my exercise equipment. The quality and finish are second to none.",
-        name: 'Katherine Lowe',
-        date: 'July 2024',
-      },
-      pricingNote: 'Garden gyms with integrated storage start from around £22,000 depending on size and gym fit-out spec. Use our price calculator to configure the structure and size.',
-      ctaHeadline: 'Build Your Own Garden Gym?',
-      heroImg: '/images/garden%20gym%2C%20dual%20canopy%20view%20from%20outside.webp',
-      gallery: [
-        { src: '/images/garden%20gym%20internal%201.webp', alt: 'Garden gym interior with rubber tile flooring and mirrors' },
-        { src: '/images/garden%20gym%20internal%202.webp', alt: 'Garden gym interior — full space view with bifold doors' },
-        { src: '/images/garden%20gym%20internal%203.webp', alt: 'Garden gym with LED strip lighting on dimmer' },
-        { src: '/images/garden%20gym%20internal%204.webp', alt: 'Garden gym equipment space and storage integration' },
-        { src: '/images/LED%20strip%20lighting%20gym.webp', alt: 'LED strip lighting in garden gym ceiling' },
-        { src: '/images/gym%20flooring%20extended%20height%20internal%20view.webp', alt: 'Rubber gym tile flooring detail' },
-      ],
-      related: '/garden-rooms/garden-gym',
-      relatedLabel: 'Garden Gyms',
-      relatedProjects: ['golf-simulator-garden-room', 'garden-room-with-decking-lean-to-shed'],
-    },
-
-    'music-studio': {
-      title: 'Garden Music Studio — Surrey',
-      metaDesc: 'Bespoke garden music studio built in Surrey by The Green Rooms. Acoustic absorption and diffuser panels, floating isolation floor, filtered studio electrical circuits, Western Red Cedar exterior.',
-      h1: 'Garden Music Studio',
-      tagline: 'Acoustic wall panelling and specialist fit-out — Surrey',
-      location: 'Surrey',
+      tagline: 'Cedar cladding, dual canopy and concealed storage — Chobham, Surrey',
+      location: 'Chobham, Surrey',
       completedDate: 'Summer 2023',
-      buildTime: '12 days',
-      challenge: "The client needed a studio for recording and practice that wouldn't leak sound into adjacent properties — without the exterior looking like anything other than a standard garden room. The acoustic treatment had to be entirely internal.",
-      intro: "This bespoke music studio was designed around specific acoustic requirements. The SIPs structure gives a strong baseline — far better acoustic performance than a timber-frame shed — with a specialist internal fit-out added on top.",
-      detail: "Internally, the walls are lined with acoustic absorption panels alternating with diffuser panels, tuned to the mid and high frequency range most critical for vocal and instrument recording. The floor is floated on acoustic isolation mounts to reduce impact transmission. Electrically, the room has a dedicated studio circuit with all outlets on filtered power to eliminate interference with sensitive recording equipment. From the outside: a clean cedar-clad garden room. The acoustic treatment is invisible.",
+      buildTime: '',
+      challenge: "The garden sloped — and standard ground-level construction would have left the finished room with insufficient headroom for gym equipment and a full range of movement. The brief was: use the slope rather than fight it, and fit a hidden storage room in the same footprint.",
+      intro: "This garden gym in Chobham is built on sloping ground, with the floor level dug down to gain additional internal height — enough for a full workout without compromise. At the rear, behind the gym space, a concealed storage room is accessed through a flush-clad door that disappears into the cedar exterior.",
+      detail: "The exterior is Western Red Cedar with a dual canopy running the full width of the front elevation, creating a covered outdoor zone. The front elevation is glazed with 3m aluminium bifold doors and a signature glass corner detail — the glazing wraps around to the side wall, bringing light into the room from two directions. A rooflight overhead adds further daylight. Inside: light grey LVT flooring, white plastered walls ready to decorate, full electrical fit-out with recessed downlights, and a 5kW air conditioning unit. Composite decking outside the bifolds completes the space.",
       specs: [
-        { label: 'Structure', value: 'Standard height flat roof', href: '/your-build/structure' },
+        { label: 'Foundation', value: 'Dug down on slope for extra height', href: '/your-build/foundations' },
         { label: 'Cladding', value: 'Western Red Cedar', href: '/your-build/cladding-options' },
-        { label: 'Doors', value: 'Aluminium French doors', href: '/your-build/windows-and-doors' },
-        { label: 'Acoustic fit-out', value: 'Absorption and diffuser panels' },
-        { label: 'Flooring', value: 'Floating acoustic isolation floor', href: '/your-build/flooring' },
-        { label: 'Electrics', value: 'Filtered studio circuits', href: '/your-build/electrics' },
-        { label: 'Foundations', value: 'Ground screws', href: '/your-build/foundations' },
+        { label: 'Canopy', value: 'Dual canopy — full width' },
+        { label: 'Doors', value: '3m aluminium bifold doors', href: '/your-build/windows-and-doors' },
+        { label: 'Glazing', value: 'Glass corner detail + rooflight', href: '/your-build/windows-and-doors' },
+        { label: 'Flooring', value: 'Light grey LVT', href: '/your-build/flooring' },
+        { label: 'Decking', value: 'Composite decking' },
+        { label: 'Climate', value: '5kW air conditioning', href: '/your-build/climate-control' },
+        { label: 'Storage', value: 'Concealed storage room at rear' },
       ],
       testimonial: {
-        quote: "Incredible attention to detail, customer service, materials and quality of craftsmanship. Could not be happier with what James and his team built for us and perfectly on schedule too.",
+        quote: "Incredible attention to detail, customer service, materials and quality of craftsmanship. Could not be happier with what James and his team built for us and perfectly on schedule too!",
         name: 'Nick',
         date: 'July 2023',
       },
-      pricingNote: "Bespoke acoustic studio builds start from £20,000 for the structure. The acoustic fit-out is specified separately depending on your requirements — contact us to discuss.",
-      ctaHeadline: 'Need a Soundproofed Studio or Practice Room?',
-      heroImg: '/images/internal%20shot%20of%20music%20room.webp',
+      pricingNote: 'Garden gyms with integrated storage are priced individually based on size, slope complexity and specification. Contact us for a detailed quote after a free site visit.',
+      ctaHeadline: 'Want a Garden Gym Built Around Your Space?',
+      heroImg: '/images/garden%20gym%2C%20dual%20canopy%20view%20from%20outside.webp',
       gallery: [
-        { src: '/images/internal%20shot%20of%20music%20room%20close%20up.webp', alt: 'Close up of acoustic absorption and diffuser panels in garden music studio' },
+        { src: '/images/GR%20glass%20corner%20dual%20canopy.webp', alt: 'Garden gym — glass corner detail and dual canopy viewed from outside' },
+        { src: '/images/garden%20gym%20internal%201.webp', alt: 'Garden gym interior with light grey LVT flooring and bifold doors open' },
+        { src: '/images/garden%20gym%20internal%202.webp', alt: 'Garden gym interior — full width view showing light and space' },
+        { src: '/images/garden%20gym%20internal%203.webp', alt: 'Garden gym interior with recessed downlights and plastered walls' },
       ],
-      related: '/garden-rooms/bespoke',
-      relatedLabel: 'Bespoke Garden Rooms',
-      relatedProjects: ['bespoke-garden-office-in-east-molesey', 'garden-hobby-room'],
+      related: '/garden-rooms/garden-gym',
+      relatedLabel: 'Garden Gyms',
+      relatedProjects: ['garden-entertainment-room-godalming', 'garden-gym-and-sauna'],
     },
 
-    'l-shaped-garden-office': {
-      title: 'L-Shaped Garden Office — Surrey',
-      metaDesc: 'Bespoke L-shaped garden office built in Surrey by The Green Rooms. Custom footprint wrapping a mature tree, full-height glazing in both wings, engineered oak flooring and full home office specification.',
-      h1: 'L-Shaped Garden Office',
-      tagline: 'Custom footprint maximising a corner plot — Surrey',
-      location: 'Surrey',
-      completedDate: 'Winter 2023',
-      buildTime: '16 days',
-      challenge: "The garden had a large mature tree in a corner position that the client refused to lose. A standard rectangular footprint would either waste the corner space entirely or require removing the tree. The L-shape solves both problems.",
-      intro: "This L-shaped garden office was designed to make the most of an awkward corner plot. The L-shape wraps around the mature tree, retaining it as a landscape feature while maximising the internal floor area — something no rectangular build could have achieved.",
-      detail: "The structure uses a bespoke ground screw foundation layout following the L-shaped footprint exactly. Both wings have full-height glazing at their ends, flooding the interior with natural light from two directions. The interior divides naturally into two zones: a primary desk area in the larger wing and a quieter reading and meeting area in the secondary wing. Plastered walls, engineered oak flooring, and a full electrical fit-out including Cat 6a broadband cable.",
+    'garden-entertainment-room-godalming': {
+      title: 'Garden Room, Storage & Shelter — Godalming, Surrey',
+      metaDesc: 'Three-structure garden entertainment transformation in Godalming, Surrey by The Green Rooms. Pitched-roof garden room with glazed gable end, charred spruce and cedar cladding, bifold and French doors, separate storage room, open shelter and 80sqm porcelain patio.',
+      h1: 'Garden Room, Storage & Shelter — Godalming',
+      tagline: 'Charred spruce and cedar, pitched glazed gable, 80sqm porcelain patio',
+      location: 'Godalming, Surrey',
+      completedDate: 'Winter 2024',
+      buildTime: '',
+      challenge: "Chris and Claire wanted a complete garden transformation — not just a single room, but an entire outdoor entertainment zone. Three separate structures were needed: a main garden room, a storage room, and an open shelter. The challenge was designing everything as a coherent whole, not a collection of separate buildings.",
+      intro: "This project is a complete garden entertainment transformation. We built three structures in one project: a pitched-roof garden room with a full-height glazed gable end, a separate storage room, and an open shelter — all in the same material palette. Our trusted landscaping partner simultaneously laid 80sqm of porcelain paving to tie the whole space together.",
+      detail: "The garden room is clad in charred spruce with a signature pitched roof — the front gable is entirely glazed, floor to ceiling, flooding the interior with natural light. Aluminium bifold doors open to the front onto the porcelain patio; French doors at the rear open into a private outdoor entertaining space. The storage room uses cedar cladding and the open shelter combines both materials. Inside the garden room: plastered walls ready to decorate, LVT flooring, full electrical fit-out with recessed downlights and exterior soffit lighting. At night, the charred spruce, glazed gable and patio lighting make the space feel like a genuinely different place to be.",
       specs: [
-        { label: 'Structure', value: 'L-shaped bespoke footprint', href: '/your-build/structure' },
-        { label: 'Cladding', value: 'Millboard composite', href: '/your-build/cladding-options' },
-        { label: 'Doors', value: 'Aluminium bifold doors', href: '/your-build/windows-and-doors' },
-        { label: 'Flooring', value: 'Engineered oak', href: '/your-build/flooring' },
-        { label: 'Finish', value: 'Plastered and painted', href: '/your-build/decorating' },
-        { label: 'Electrics', value: 'Full home office spec + Cat 6a', href: '/your-build/electrics' },
-        { label: 'Foundations', value: 'Bespoke ground screw layout', href: '/your-build/foundations' },
-      ],
-      testimonial: {
-        quote: "James and the team built a superb garden office for me. The build quality is excellent and it is well designed for winter use — I've been using it since last autumn. Very professional service from start to finish.",
-        name: 'Matt Grenyer',
-        date: 'January 2024',
-      },
-      pricingNote: "Bespoke L-shaped and non-rectangular builds are priced individually — typically from £22,000. Contact us after a free design consultation for a precise, itemised quote.",
-      ctaHeadline: 'Have an Awkward Plot We Can Work With?',
-      heroImg: '/images/GR%20bespoke%20glass%20corner%20millboard.webp',
-      gallery: [
-        { src: '/images/GP%20office%20internal.webp', alt: 'Garden office interior — plastered walls, engineered oak flooring' },
-        { src: '/images/bespoke%20build%20close%20up%20hero.webp', alt: 'Close up of Millboard composite cladding detail on L-shaped office' },
-        { src: '/images/desk%20window%20top%20hung%20internal%20view.webp', alt: 'Desk position by top-hung window inside garden office' },
-      ],
-      related: '/garden-rooms/garden-offices',
-      relatedLabel: 'Garden Offices',
-      relatedProjects: ['bespoke-garden-office-in-east-molesey', 'golf-simulator-garden-room'],
-    },
-
-    'garden-room-with-decking-lean-to-shed': {
-      title: 'Garden Room with Decking & Lean-To Shed — Surrey',
-      metaDesc: 'Cedar garden room with full-width composite decking and integrated lean-to storage shed built in Surrey by The Green Rooms. Millboard burnt cedar decking, aluminium bifold doors, canopy with external lighting.',
-      h1: 'Garden Room with Decking & Lean-To Shed',
-      tagline: 'Living space, outdoor entertaining and storage — one cohesive build',
-      location: 'Surrey',
-      completedDate: 'Summer 2023',
-      buildTime: '11 days',
-      challenge: "The client wanted a garden room, a proper outdoor entertaining area, and somewhere to store garden tools — but three separate structures would have dominated the garden. The brief was to integrate all three into a single build that reads as one from any angle.",
-      intro: "This project combines a cedar-clad garden room with a full-width composite decking platform and an integrated lean-to storage shed along the side elevation. Living space, outdoor space, and storage — all tied together with one consistent design.",
-      detail: "The garden room is clad in Western Red Cedar with a full-width front canopy and aluminium bifold doors opening directly onto the decking. The decking is Millboard composite in burnt cedar — no maintenance, no oiling, no warping. The lean-to shed shares the same roofline as the main structure, accessed via a flush-fit timber door. From the garden, the whole structure reads as one coherent build. External up/down wall lights on the canopy and path lighting round off the install.",
-      specs: [
-        { label: 'Structure', value: 'Standard height with full canopy', href: '/your-build/structure' },
-        { label: 'Cladding', value: 'Western Red Cedar', href: '/your-build/cladding-options' },
-        { label: 'Doors', value: 'Aluminium bifold doors', href: '/your-build/windows-and-doors' },
-        { label: 'Decking', value: 'Millboard composite, burnt cedar', href: '/your-build/landscaping' },
-        { label: 'Storage', value: 'Integrated lean-to shed' },
-        { label: 'Electrics', value: 'Lighting, sockets, external up/down lights', href: '/your-build/electrics' },
+        { label: 'Garden room roof', value: 'Pitched with full-height glazed gable end' },
+        { label: 'Cladding', value: 'Charred spruce (garden room) + cedar (storage & shelter)', href: '/your-build/cladding-options' },
+        { label: 'Front doors', value: 'Aluminium bifold doors', href: '/your-build/windows-and-doors' },
+        { label: 'Rear doors', value: 'Aluminium French doors', href: '/your-build/windows-and-doors' },
+        { label: 'Storage', value: 'Separate storage room — cedar clad' },
+        { label: 'Shelter', value: 'Open shelter — cedar and charred spruce' },
+        { label: 'Patio', value: '80sqm porcelain — via landscaping partner', href: '/your-build/landscaping' },
+        { label: 'Flooring', value: 'LVT', href: '/your-build/flooring' },
         { label: 'Foundations', value: 'Ground screws', href: '/your-build/foundations' },
       ],
-      testimonial: {
-        quote: "Brilliant space that now serves as both a garden office and a storage room. Very efficiently designed and excellent quality materials throughout. I would recommend The Green Rooms to anyone.",
-        name: 'Philip McDowell',
-        date: 'February 2024',
-      },
-      pricingNote: "A garden room with integrated decking and lean-to storage typically costs £20,000–£28,000 depending on size. Use our price calculator to configure the garden room, then contact us to add the decking and storage scope.",
-      ctaHeadline: 'Want Living Space, Outdoor Space and Storage in One?',
-      heroImg: '/images/classic%20GR%20with%20storage%20and%20decking.webp',
-      gallery: [
-        { src: '/images/GR%20decking.webp', alt: 'Millboard composite decking platform in burnt cedar outside garden room' },
-        { src: '/images/bespoke%20shed%20addition.webp', alt: 'Integrated lean-to shed alongside garden room — flush roofline' },
-        { src: '/images/millboard%20step%20in%20burnt%20cedar.webp', alt: 'Millboard composite step detail in burnt cedar finish' },
-        { src: '/images/GR%20with%20cedar%20cladding%20Nordlux%20kyclop%20ripple%20wall%20light.webp', alt: 'Cedar cladding detail with Nordlux wall lighting' },
-      ],
-      related: '/garden-rooms/garden-rooms-with-storage',
-      relatedLabel: 'Garden Rooms with Storage',
-      relatedProjects: ['garden-gym-with-hidden-storage', 'outdoor-living-space'],
-    },
-
-    'bespoke-garden-office-in-east-molesey': {
-      title: 'Bespoke Garden Office — East Molesey, Surrey',
-      metaDesc: 'Bespoke garden office built in East Molesey, Surrey by The Green Rooms. Charred Spruce (Shou Sugi Ban) cladding, aluminium Crittall-style doors, plaster skim walls, Cat 6a broadband.',
-      h1: 'Bespoke Garden Office — East Molesey',
-      tagline: 'Charred spruce cladding and Crittall doors — East Molesey, Surrey',
-      location: 'East Molesey, Surrey',
-      completedDate: 'Summer 2023',
-      buildTime: '12 days',
-      challenge: "The client wanted a building that made a statement — something that stood apart from every other garden room in the street. Adjacent to a Victorian terrace, the brief was for an industrial-modern aesthetic that felt deliberately designed, not just built.",
-      intro: "This bespoke garden office in East Molesey is clad in Charred Spruce (Shou Sugi Ban) — a traditional Japanese technique that creates a deep black finish and dramatically increases the timber's resistance to moisture, insects and UV. Zero ongoing maintenance. The aluminium Crittall-style doors complete the industrial-modern look.",
-      detail: "Inside, the contrast is intentional: dark exterior, bright and airy interior. Plaster skim walls and engineered flooring give a quality finish that feels like any other room in the house. A full electrical fit-out includes a dedicated Cat 6a broadband cable — hard-wired gigabit internet, not a Wi-Fi extender. The Crittall doors flood the space with light while keeping the interior temperature stable thanks to the SIPs insulation beneath the cladding.",
-      specs: [
-        { label: 'Structure', value: 'Bespoke flat roof', href: '/your-build/structure' },
-        { label: 'Cladding', value: 'Charred Spruce (Shou Sugi Ban)', href: '/your-build/cladding-options' },
-        { label: 'Doors', value: 'Aluminium Crittall-style doors', href: '/your-build/windows-and-doors' },
-        { label: 'Flooring', value: 'Engineered flooring', href: '/your-build/flooring' },
-        { label: 'Finish', value: 'Plaster skim walls and painted', href: '/your-build/decorating' },
-        { label: 'Electrics', value: 'Full office spec + Cat 6a broadband', href: '/your-build/electrics' },
-        { label: 'Location', value: 'East Molesey, Surrey' },
-        { label: 'Foundations', value: 'Ground screws', href: '/your-build/foundations' },
-      ],
-      testimonial: {
-        quote: "We had our garden office built last summer and we cannot fault it. The quality is exceptional — it is warm all winter and is everything we hoped it would be. Highly recommend The Green Rooms.",
-        name: 'Harvey Hood',
-        date: 'October 2024',
-      },
-      pricingNote: "Bespoke garden offices like this typically cost £22,000–£32,000 depending on size and specification. Use our price calculator to get a starting estimate, then contact us to discuss the bespoke elements.",
-      ctaHeadline: 'Want a Garden Office That Makes a Statement?',
+      testimonial: null,
+      pricingNote: 'Multi-structure projects like this are individually designed and quoted. Landscaping is coordinated with our trusted partner. Contact us to discuss what you have in mind.',
+      ctaHeadline: 'Thinking About a Full Garden Transformation?',
       heroImg: '/images/GR%20at%20night%20charred%20spruce%20crittal%20french%20doors.webp',
       gallery: [
-        { src: '/images/GR%20charred%20spruce.webp', alt: 'Charred spruce cladding — close up of surface texture and finish' },
-        { src: '/images/GR%20charred%20spruce%20in%20garden.webp', alt: 'Charred spruce garden office in garden setting, East Molesey' },
-        { src: '/images/crittal%20bifold%20doors%20viewed%20from%20inside.webp', alt: 'Crittall-style aluminium bifold doors viewed from inside the office' },
+        { src: '/images/GR%20charred%20spruce%20in%20garden.webp', alt: 'Charred spruce garden room in garden setting — Godalming, Surrey' },
+        { src: '/images/bespoke%20shelter%20hot%20tub.webp', alt: 'Open shelter structure alongside garden room' },
+        { src: '/images/GR%205m%20crittal%20bifolds.webp', alt: 'Bifold doors open onto porcelain patio — garden entertainment space' },
       ],
       related: '/garden-rooms/bespoke',
       relatedLabel: 'Bespoke Garden Rooms',
-      relatedProjects: ['l-shaped-garden-office', 'music-studio'],
+      relatedProjects: ['garden-gym-with-hidden-storage', 'garden-gym-and-sauna'],
     },
 
-    'oak-garden-room': {
-      title: 'Oak Garden Room — Surrey',
-      metaDesc: 'Bespoke oak garden room built in Surrey by The Green Rooms. Natural oak exterior that silvers with age, aluminium bifold doors, engineered oak flooring, plastered walls and air conditioning.',
-      h1: 'Oak Garden Room',
-      tagline: 'Natural timber exterior — bifold doors, full interior specification — Surrey',
+    'garden-gym-and-sauna': {
+      title: 'Garden Gym & Sauna — Surrey',
+      metaDesc: 'Extended height garden gym and sauna built in Surrey by The Green Rooms. 3m front height, Thermo Ayous cladding, large bifold doors, Millboard Ebony Grey Enhanced Grain decking, heavy duty rubber gym tile flooring, bike store, no planning permission required.',
+      h1: 'Garden Gym & Sauna',
+      tagline: 'Extended height, Thermo Ayous, Millboard Ebony Grey decking — Surrey',
       location: 'Surrey',
-      completedDate: 'Autumn 2022',
-      buildTime: '10 days',
-      challenge: "The client had a traditional house set in a mature garden and wanted a structure that would complement the setting rather than contrast with it. The brief was for a building that would blend in and age gracefully — not a contemporary statement piece.",
-      intro: "This oak garden room uses natural oak cladding that will silver gracefully over time — deepening in tone as it weathers, blending into the garden setting rather than standing apart from it. The aesthetic is entirely in the finish; the structure beneath is the same high-performance SIPs build as every other project we complete.",
-      detail: "The SIPs panel system gives the same insulation and structural performance regardless of what cladding goes on top — the oak is a finishing choice, not a structural compromise. Inside: plastered walls, engineered oak flooring that echoes the exterior material, full electrics, and a wall-mounted air conditioning unit for year-round use. Bifold doors across the full front elevation maximise the connection to the garden — and in summer, when the bifolds are open and the cladding has begun to silver, the building simply disappears into the landscape.",
+      completedDate: 'Winter 2024',
+      buildTime: '',
+      challenge: "Kate wanted a serious gym space with enough height to work out properly — and a sauna. The garden sits close to a boundary, which rules out extended height at the boundary line. The solution was to use a mono-pitch roof that gives full height at the front while keeping within Permitted Development at the rear.",
+      intro: "This extended height gym is built to 3m at the front, tapering to 2.5m at the rear — a mono-pitch roof form that stays within Permitted Development by keeping the reduced height where it matters, within 2m of the boundary. No planning application required. The bike store room to the side adds practical storage without a separate structure.",
+      detail: "The exterior is Thermo Ayous on the feature elevations — a heat-treated hardwood with a warm, close-grained finish — with metal cladding on the utility faces. Cedar soffit under the canopy adds warmth to the ceiling. The front elevation has large aluminium bifold doors opening fully onto Millboard Ebony Grey Enhanced Grain composite decking, with a fixed glazed panel alongside for additional light. Inside: heavy duty rubber gym tile flooring, plastered walls, full electrical fit-out with downlights and smart heating, and an air conditioning unit for year-round training comfort. The sauna was a client-supplied unit, installed into the space.",
       specs: [
-        { label: 'Structure', value: 'Standard height flat roof', href: '/your-build/structure' },
-        { label: 'Cladding', value: 'Natural oak', href: '/your-build/cladding-options' },
-        { label: 'Doors', value: 'Aluminium bifold doors', href: '/your-build/windows-and-doors' },
-        { label: 'Flooring', value: 'Engineered oak', href: '/your-build/flooring' },
-        { label: 'Finish', value: 'Plastered and painted', href: '/your-build/decorating' },
+        { label: 'Height', value: '3m (front) / 2.5m (rear) — mono-pitch', href: '/your-build/structure' },
+        { label: 'Planning', value: 'No planning required — 2m from boundary' },
+        { label: 'Cladding', value: 'Thermo Ayous + metal cladding', href: '/your-build/cladding-options' },
+        { label: 'Soffit', value: 'Cedar soffit' },
+        { label: 'Doors', value: 'Large aluminium bifold doors + fixed glazed panel', href: '/your-build/windows-and-doors' },
+        { label: 'Side store', value: 'Bike store room' },
+        { label: 'Decking', value: 'Millboard Ebony Grey Enhanced Grain', href: '/your-build/landscaping' },
+        { label: 'Flooring', value: 'Heavy duty rubber gym tiles', href: '/your-build/flooring' },
         { label: 'Climate', value: 'Air conditioning', href: '/your-build/climate-control' },
         { label: 'Foundations', value: 'Ground screws', href: '/your-build/foundations' },
       ],
-      testimonial: {
-        quote: "We had a cinema room and home office designed and built. We have been using it for over a year now and still love it. The quality is exceptional and the workmanship is stunning.",
-        name: 'Kate Hardesty',
-        date: 'April 2024',
-      },
-      pricingNote: "Standard garden rooms start from £16,950 inc VAT. Configure your size and spec using our price calculator — or call us to discuss natural timber cladding options.",
-      ctaHeadline: 'Considering a Natural Timber Garden Room?',
-      heroImg: '/images/GR%20clean%20pic%20portrait.webp',
+      testimonial: null,
+      pricingNote: 'Extended height gym builds are priced individually. This type of project typically ranges from £35,000–£55,000 depending on size and internal fit-out. Contact us for a site visit and detailed quote.',
+      ctaHeadline: 'Want a Serious Gym Space at the End of Your Garden?',
+      heroImg: '/images/GR%20extended%20height%20with%20thermo%20ayous%20cladding%20and%20millboard%20decking.webp',
       gallery: [
-        { src: '/images/internal%20view%20typical%20set%20up%20sofa%20tv.webp', alt: 'Garden room interior — sofa, TV and full entertainment setup' },
-        { src: '/images/GR%20end%20of%20garden%201.webp', alt: 'Oak garden room at end of garden — natural setting' },
-        { src: '/images/classic%20end%20of%20garden%20portrait.webp', alt: 'Garden room portrait view at end of garden' },
+        { src: '/images/classic%20GR%20front%20on%20thermo%20ayous%20cladding.webp', alt: 'Extended height garden room with Thermo Ayous cladding — front elevation' },
+        { src: '/images/GR%20with%20storage%20with%204m%20sliding%20doors%20millboard%20cladding%20in%20ebony%20grey.webp', alt: 'Millboard Ebony Grey decking and cladding detail' },
+        { src: '/images/garden%20gym%20internal%201.webp', alt: 'Garden gym interior — rubber tile flooring and bifold doors open' },
       ],
-      related: '/garden-rooms/garden-rooms',
-      relatedLabel: 'Garden Rooms',
-      relatedProjects: ['garden-room-with-decking-lean-to-shed', 'garden-hobby-room'],
-    },
-
-    'outdoor-living-space': {
-      title: 'Outdoor Living Space — Surrey',
-      metaDesc: 'Bespoke open garden shelter with hot tub space built in Surrey by The Green Rooms. LED strip lighting, Thermo Ayous back wall, composite decking floor, dedicated hot tub electrical supply.',
-      h1: 'Outdoor Living Space',
-      tagline: 'Open garden shelter — hot tub, LED lighting, ground screws — Surrey',
-      location: 'Surrey',
-      completedDate: 'Spring 2023',
-      buildTime: '8 days',
-      challenge: "The client had a generous garden and wanted year-round outdoor entertaining — but a fully enclosed garden room felt too heavy. They wanted shelter, lighting and power without losing the open feel of the space.",
-      intro: "This outdoor living space is an open-sided structure: a full roof and back wall providing weather protection and privacy, with three sides open to the garden. A destination space that gets used in every season — sheltered from rain and wind, lit from dusk, with power for a hot tub and sound system.",
-      detail: "LED strip lighting runs around the full ceiling perimeter, with external up/down wall lights on the back wall for evening use. The floor is composite decking laid flush with the surrounding garden level, making the structure feel like part of the garden rather than an addition to it. A dedicated electrical supply powers the hot tub, the lighting circuits, and an outdoor speaker system. The whole structure sits on ground screws — no concrete, no mess, and fully reversible if requirements change.",
-      specs: [
-        { label: 'Structure', value: 'Open-sided garden shelter' },
-        { label: 'Cladding', value: 'Thermo Ayous back wall', href: '/your-build/cladding-options' },
-        { label: 'Flooring', value: 'Composite decking', href: '/your-build/landscaping' },
-        { label: 'Lighting', value: 'LED strip + up/down wall lights', href: '/your-build/electrics' },
-        { label: 'Electrics', value: 'Hot tub supply + outdoor circuits', href: '/your-build/electrics' },
-        { label: 'Foundations', value: 'Ground screws', href: '/your-build/foundations' },
-      ],
-      testimonial: {
-        quote: "James and his team did an excellent job — they listened to what we needed and delivered on time, on budget and in an extremely professional way. I cannot recommend them enough.",
-        name: 'Ian Evans',
-        date: 'June 2025',
-      },
-      pricingNote: "Bespoke outdoor shelters and open structures are priced individually — most start from £12,000–£18,000 depending on size and specification. Contact us to discuss your project.",
-      ctaHeadline: 'Want a Year-Round Outdoor Entertaining Space?',
-      heroImg: '/images/bespoke%20shelter%20hot%20tub.webp',
-      gallery: [
-        { src: '/images/bespoke%20shelter%20square%20on.webp', alt: 'Garden shelter square-on view — open-sided structure with back wall' },
-        { src: '/images/bespoke%20shelter.webp', alt: 'Bespoke garden shelter exterior — Thermo Ayous cladding' },
-        { src: '/images/GR%20decking.webp', alt: 'Composite decking inside outdoor living space' },
-      ],
-      related: '/garden-rooms/bespoke',
-      relatedLabel: 'Bespoke Garden Rooms',
-      relatedProjects: ['garden-room-with-decking-lean-to-shed', 'oak-garden-room'],
-    },
-
-    'garden-hobby-room': {
-      title: 'Garden Hobby Room — Surrey',
-      metaDesc: 'Bespoke garden hobby room built in Surrey by The Green Rooms. Thermo Ayous cladding, aluminium sliding doors, LVT flooring, plastered walls, full electrics — a dedicated personal space separate from the house.',
-      h1: 'Garden Hobby Room',
-      tagline: 'A dedicated personal space — Thermo Ayous, LVT flooring — Surrey',
-      location: 'Surrey',
-      completedDate: 'Winter 2022',
-      buildTime: '9 days',
-      challenge: "The client wanted somewhere separate from the house to pursue crafts and creative projects — without the cost and complexity of a bespoke build. The brief was simple: a comfortable, well-lit, warm room that felt like a proper space, not a shed.",
-      intro: "This garden hobby room is a straightforward build executed well. Thermo Ayous cladding, a sliding door, and a large fixed window provide a clean exterior. The quality is in what you don't see: SIPs insulation, a properly tested electrical installation, and a finish level that makes it feel like a room in the house.",
-      detail: "Inside: plastered and painted walls, LVT flooring, multiple double sockets, USB outlets, overhead LED lighting on a dimmer, and a wall-mounted electric panel heater. No air conditioning — the SIPs insulation keeps the room comfortable without it for nine months of the year. The client uses this room every single day.",
-      specs: [
-        { label: 'Structure', value: 'Standard height flat roof', href: '/your-build/structure' },
-        { label: 'Cladding', value: 'Thermo Ayous', href: '/your-build/cladding-options' },
-        { label: 'Doors', value: 'Aluminium sliding doors', href: '/your-build/windows-and-doors' },
-        { label: 'Flooring', value: 'LVT', href: '/your-build/flooring' },
-        { label: 'Finish', value: 'Plastered and painted', href: '/your-build/decorating' },
-        { label: 'Climate', value: 'Electric panel heater', href: '/your-build/climate-control' },
-        { label: 'Foundations', value: 'Ground screws', href: '/your-build/foundations' },
-      ],
-      testimonial: {
-        quote: "The garden room was exceptional during the hot summer months — it remained cool and comfortable without any air conditioning, which was a pleasant surprise. James is a true professional and craftsman.",
-        name: 'V Barman',
-        date: 'June 2023',
-      },
-      pricingNote: "Garden hobby rooms and standard garden rooms start from £15,000 depending on size. Use our price calculator to configure your build and get an instant guide price.",
-      ctaHeadline: 'Want a Dedicated Space of Your Own?',
-      heroImg: '/images/bespoke%20shape%20GP.webp',
-      gallery: [
-        { src: '/images/internal%20room.webp', alt: 'Garden hobby room interior — plastered walls, LVT flooring' },
-        { src: '/images/bespoke%20shape%20window.webp', alt: 'Garden hobby room window detail — natural light' },
-        { src: '/images/classic%20GR%20no%20step%20front%20on.webp', alt: 'Garden hobby room exterior front-on view' },
-      ],
-      related: '/garden-rooms/garden-rooms',
-      relatedLabel: 'Garden Rooms',
-      relatedProjects: ['oak-garden-room', 'outdoor-living-space'],
+      related: '/garden-rooms/garden-gym',
+      relatedLabel: 'Garden Gyms',
+      relatedProjects: ['garden-gym-with-hidden-storage', 'garden-entertainment-room-godalming'],
     },
   };
 
@@ -452,18 +212,23 @@ if (testimonial?.quote) {
         <p style="font-size:1rem; color:#555; line-height:1.85; margin:0 0 32px;">{detail}</p>
 
         <!-- Project metadata strip -->
-        <div style="display:flex; flex-wrap:wrap; gap:0; margin-bottom:32px; border:1px solid #ebeced; border-radius:12px; overflow:hidden;">
-          {[
+        {(() => {
+          const meta = [
             { label: 'Location', value: location },
             { label: 'Completed', value: completedDate },
             { label: 'Build time', value: buildTime },
-          ].map((m, i) => (
-            <div style={`flex:1; min-width:120px; padding:14px 16px; text-align:center; ${i < 2 ? 'border-right:1px solid #ebeced;' : ''}`}>
-              <p style="font-size:10px; font-weight:700; color:#aaa; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 3px;">{m.label}</p>
-              <p style="font-size:13.5px; font-weight:700; color:#2d3841; margin:0;">{m.value}</p>
+          ].filter(m => m.value);
+          return meta.length > 0 && (
+            <div style="display:flex; flex-wrap:wrap; gap:0; margin-bottom:32px; border:1px solid #ebeced; border-radius:12px; overflow:hidden;">
+              {meta.map((m, i) => (
+                <div style={`flex:1; min-width:120px; padding:14px 16px; text-align:center; ${i < meta.length - 1 ? 'border-right:1px solid #ebeced;' : ''}`}>
+                  <p style="font-size:10px; font-weight:700; color:#aaa; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 3px;">{m.label}</p>
+                  <p style="font-size:13.5px; font-weight:700; color:#2d3841; margin:0;">{m.value}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          );
+        })()}
 
         <a href="/contact-us" class="btn-primary">Book a Free Site Visit</a>
       </div>
@@ -510,18 +275,20 @@ if (testimonial?.quote) {
   )}
 
   <!-- Client testimonial -->
-  <section style="background:#fff; padding:72px 0; border-top:1px solid #ebeced;">
-    <div style="max-width:760px; margin:0 auto; padding:0 24px; text-align:center;">
-      <div style="display:flex; justify-content:center; gap:3px; margin-bottom:16px;">
-        {[1,2,3,4,5].map(() => <svg width="18" height="18" fill="#f59e0b" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>)}
+  {testimonial && (
+    <section style="background:#fff; padding:72px 0; border-top:1px solid #ebeced;">
+      <div style="max-width:760px; margin:0 auto; padding:0 24px; text-align:center;">
+        <div style="display:flex; justify-content:center; gap:3px; margin-bottom:16px;">
+          {[1,2,3,4,5].map(() => <svg width="18" height="18" fill="#f59e0b" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>)}
+        </div>
+        <blockquote style="margin:0 0 16px;">
+          <p style="font-size:1.05rem; color:#444; line-height:1.85; margin:0; font-style:italic;">"{testimonial.quote}"</p>
+        </blockquote>
+        <p style="font-size:13px; font-weight:700; color:#2d3841; margin:0;">{testimonial.name} <span style="font-weight:400; color:#888;">· {testimonial.date}</span></p>
+        <p style="margin:16px 0 0;"><a href="/testimonials" style="font-size:13px; color:#34a02e; font-weight:600; text-decoration:none;">Read all 39 Google reviews →</a></p>
       </div>
-      <blockquote style="margin:0 0 16px;">
-        <p style="font-size:1.05rem; color:#444; line-height:1.85; margin:0; font-style:italic;">"{testimonial.quote}"</p>
-      </blockquote>
-      <p style="font-size:13px; font-weight:700; color:#2d3841; margin:0;">{testimonial.name} <span style="font-weight:400; color:#888;">· {testimonial.date}</span></p>
-      <p style="margin:16px 0 0;"><a href="/testimonials" style="font-size:13px; color:#34a02e; font-weight:600; text-decoration:none;">Read all 39 Google reviews →</a></p>
-    </div>
-  </section>
+    </section>
+  )}
 
   <!-- Pricing callout -->
   <section style="background:#f8faf7; padding:64px 0; border-top:1px solid #ebeced;">
