@@ -124,24 +124,48 @@ const faqs = [
   features={features}
   relatedPages={related}
   faqs={faqs}
+  showIncludes={false}
   projects={[
     { slug: 'golf-simulator-woking', label: 'Golf Simulator Studio — Woking', tagline: 'Woking · Full planning permission · 3.7m height · Millboard board & batten · Foresight Sports', img: '/images/jc-golf-sim-night.webp' },
   ]}
 >
 
-  <!-- Photo gallery -->
-  <section style="background:#f8faf7; padding:72px 0 0;">
+  <!-- Simulator packages -->
+  <section class="section" style="background:#f8faf7;">
     <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
-      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.4rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin:0 0 24px;">Golf Simulator Studios We've Built</h2>
-      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:12px;">
-        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/Golf%20sim%20setup%20hero.webp" alt="Golf simulator studio setup" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
-        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/golf%20sim%20internal%20action%20shot.webp" alt="Golf simulator in action inside garden room" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
-        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/HERO%20extended%20height%20golf%20sim%20millboard%20board%20and%20batten%20in%20anthracite.webp" alt="Extended height golf simulator garden room" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      <div style="text-align:center; margin-bottom:40px;">
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:10px;">Simulator Packages</h2>
+        <p style="color:#666; max-width:580px; margin:0 auto 16px;">Prices below are for the simulator technology only, supplied and installed by our partner Golf Swing Systems. The garden room structure is quoted separately — most clients invest <strong style="color:#2d3841;">£28,000–£60,000+ in total</strong> depending on the technology tier. Use our <a href="/garden-room-price-calculator" style="color:#34a02e; font-weight:600;">price calculator</a> for a structure estimate, then choose your package below.</p>
       </div>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:72px;">
-        <div style="border-radius:14px; overflow:hidden; height:260px;"><img src="/images/night%20lighting%20extended%20height%20golf%20sim%20millboard%20board%20and%20batten%20in%20anthracite.webp" alt="Golf simulator garden room at night with lighting" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
-        <div style="border-radius:14px; overflow:hidden; height:260px;"><img src="/images/extended%20height%20golf%20sim%20close%20up%20millboard%20board%20and%20batten%20in%20anthracite.webp" alt="Close up of extended height golf simulator garden room" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:24px;">
+        {packages.map((pkg) => (
+          <div style={`background:#fff; border-radius:16px; overflow:hidden; border:2px solid ${pkg.popular ? '#34a02e' : '#ebeced'}; position:relative; display:flex; flex-direction:column;`}>
+            {pkg.popular && <div style="position:absolute; top:12px; right:12px; background:#34a02e; color:#fff; font-size:11px; font-weight:700; padding:4px 12px; border-radius:50px; z-index:1;">Most Popular</div>}
+            <div style="height:200px; overflow:hidden; flex-shrink:0;">
+              <img src={pkg.img} alt={pkg.name + ' golf simulator'} style="width:100%; height:100%; object-fit:cover;" loading="lazy" />
+            </div>
+            <div style="padding:24px; flex:1; display:flex; flex-direction:column;">
+              <p style="font-size:11px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 6px;">{pkg.tag}</p>
+              <p style="font-size:1.1rem; font-weight:700; color:#2d3841; margin:0 0 4px;">{pkg.name}</p>
+              <p style="font-size:1.5rem; font-weight:700; color:#2d3841; margin:0 0 12px;">{pkg.price} <span style="font-size:13px; font-weight:400; color:#888;">inc VAT</span></p>
+              <p style="font-size:13.5px; color:#666; line-height:1.65; margin:0 0 20px;">{pkg.desc}</p>
+              <div style="border-top:1px solid #f0f0f0; padding-top:16px; margin-top:auto;">
+                <p style="font-size:11px; font-weight:700; color:#2d3841; text-transform:uppercase; letter-spacing:0.07em; margin:0 0 10px;">What's included</p>
+                <ul style="list-style:none; padding:0; margin:0 0 16px; display:flex; flex-direction:column; gap:6px;">
+                  {pkg.includes.map(item => (
+                    <li style="display:flex; align-items:flex-start; gap:8px; font-size:12.5px; color:#555;">
+                      <svg width="12" height="12" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:2px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <a href={pkg.gssUrl} target="_blank" rel="noopener" style="font-size:12.5px; font-weight:700; color:#34a02e; text-decoration:none;">View on Golf Swing Systems →</a>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
+      <p style="text-align:center; font-size:13px; color:#999; margin-top:20px;">Simulator prices inc VAT, supplied and installed by Golf Swing Systems. Garden room structure quoted separately. Contact us for a full combined quote.</p>
     </div>
   </section>
 
@@ -186,42 +210,19 @@ const faqs = [
     </div>
   </section>
 
-  <!-- Simulator packages -->
-  <section class="section" style="background:#f8faf7;">
+  <!-- Photo gallery -->
+  <section style="background:#f8faf7; padding:72px 0 0;">
     <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
-      <div style="text-align:center; margin-bottom:40px;">
-        <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:10px;">Simulator Packages</h2>
-        <p style="color:#666; max-width:580px; margin:0 auto 16px;">Prices below are for the simulator technology only, supplied and installed by our partner Golf Swing Systems. The garden room structure is quoted separately — most clients invest <strong style="color:#2d3841;">£28,000–£60,000+ in total</strong> depending on the technology tier. Use our <a href="/garden-room-price-calculator" style="color:#34a02e; font-weight:600;">price calculator</a> for a structure estimate, then choose your package below.</p>
+      <h2 style="font-family:'Poppins',sans-serif; font-size:clamp(1.4rem,2.5vw,1.8rem); font-weight:700; color:#2d3841; margin:0 0 24px;">Golf Simulator Studios We've Built</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:12px;">
+        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/Golf%20sim%20setup%20hero.webp" alt="Golf simulator studio setup" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/golf%20sim%20internal%20action%20shot.webp" alt="Golf simulator in action inside garden room" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:280px;"><img src="/images/HERO%20extended%20height%20golf%20sim%20millboard%20board%20and%20batten%20in%20anthracite.webp" alt="Extended height golf simulator garden room" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
       </div>
-      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:24px;">
-        {packages.map((pkg) => (
-          <div style={`background:#fff; border-radius:16px; overflow:hidden; border:2px solid ${pkg.popular ? '#34a02e' : '#ebeced'}; position:relative; display:flex; flex-direction:column;`}>
-            {pkg.popular && <div style="position:absolute; top:12px; right:12px; background:#34a02e; color:#fff; font-size:11px; font-weight:700; padding:4px 12px; border-radius:50px; z-index:1;">Most Popular</div>}
-            <div style="height:200px; overflow:hidden; flex-shrink:0;">
-              <img src={pkg.img} alt={pkg.name + ' golf simulator'} style="width:100%; height:100%; object-fit:cover;" loading="lazy" />
-            </div>
-            <div style="padding:24px; flex:1; display:flex; flex-direction:column;">
-              <p style="font-size:11px; font-weight:700; color:#34a02e; text-transform:uppercase; letter-spacing:0.08em; margin:0 0 6px;">{pkg.tag}</p>
-              <p style="font-size:1.1rem; font-weight:700; color:#2d3841; margin:0 0 4px;">{pkg.name}</p>
-              <p style="font-size:1.5rem; font-weight:700; color:#2d3841; margin:0 0 12px;">{pkg.price} <span style="font-size:13px; font-weight:400; color:#888;">inc VAT</span></p>
-              <p style="font-size:13.5px; color:#666; line-height:1.65; margin:0 0 20px;">{pkg.desc}</p>
-              <div style="border-top:1px solid #f0f0f0; padding-top:16px; margin-top:auto;">
-                <p style="font-size:11px; font-weight:700; color:#2d3841; text-transform:uppercase; letter-spacing:0.07em; margin:0 0 10px;">What's included</p>
-                <ul style="list-style:none; padding:0; margin:0 0 16px; display:flex; flex-direction:column; gap:6px;">
-                  {pkg.includes.map(item => (
-                    <li style="display:flex; align-items:flex-start; gap:8px; font-size:12.5px; color:#555;">
-                      <svg width="12" height="12" fill="#34a02e" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:2px;"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <a href={pkg.gssUrl} target="_blank" rel="noopener" style="font-size:12.5px; font-weight:700; color:#34a02e; text-decoration:none;">View on Golf Swing Systems →</a>
-              </div>
-            </div>
-          </div>
-        ))}
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:72px;">
+        <div style="border-radius:14px; overflow:hidden; height:260px;"><img src="/images/night%20lighting%20extended%20height%20golf%20sim%20millboard%20board%20and%20batten%20in%20anthracite.webp" alt="Golf simulator garden room at night with lighting" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
+        <div style="border-radius:14px; overflow:hidden; height:260px;"><img src="/images/extended%20height%20golf%20sim%20close%20up%20millboard%20board%20and%20batten%20in%20anthracite.webp" alt="Close up of extended height golf simulator garden room" style="width:100%;height:100%;object-fit:cover;" loading="lazy" /></div>
       </div>
-      <p style="text-align:center; font-size:13px; color:#999; margin-top:20px;">Simulator prices inc VAT, supplied and installed by Golf Swing Systems. Garden room structure quoted separately. Contact us for a full combined quote.</p>
     </div>
   </section>
 

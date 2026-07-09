@@ -18,12 +18,13 @@ interface Props {
   relatedPages?: { label: string; href: string; img: string }[];
   faqs?: { q: string; a: string }[];
   projects?: { slug: string; label: string; tagline: string; img: string }[];
+  showIncludes?: boolean;
 }
 
 const {
   title, description, canonical,
   heroImg, heroSrcset: heroSrcsetProp, heroAlt, heroPos = 'center', h1, tagline, intro, price,
-  features, relatedPages = [], faqs = [], projects = [],
+  features, relatedPages = [], faqs = [], projects = [], showIncludes = true,
 } = Astro.props;
 
 function smSrcset(img: string, existing?: string) {
@@ -164,7 +165,7 @@ const whyUs = [
   </section>
 
   <!-- WHAT'S INCLUDED — fixed comprehensive list -->
-  <section style="background:#e7f1e3; padding:72px 0;">
+  {showIncludes && <section style="background:#e7f1e3; padding:72px 0;">
     <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
       <div style="text-align:center; margin-bottom:40px;">
         <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:8px;">What's Included in Every Build</h2>
@@ -198,7 +199,7 @@ const whyUs = [
       </div>
       <p style="text-align:center; font-size:12.5px; color:#888; margin:0;">Interior decorating (painting / wallpaper after plastering) is not included but can be arranged through our trusted decorator — just ask.</p>
     </div>
-  </section>
+  </section>}
 
   <!-- MID-PAGE CTA -->
   <section style="background:#fff; padding:48px 24px; border-bottom:1px solid #ebeced;">
