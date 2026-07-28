@@ -164,6 +164,7 @@ export default async (request) => {
         name: fullName,
         email,
         phone,
+        address: address || null,
         postcode,
         message: message || roomType || null,
         source_referrer: source || null,
