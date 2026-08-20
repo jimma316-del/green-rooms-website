@@ -881,34 +881,8 @@ const steps = ['Size','Structure','Cladding','Walls','Features','Decking','Doors
       .catch(()=>revealPrice());
   });
 
-  // localStorage persistence — save state on any change, restore on load
-  function saveState(){ try{localStorage.setItem('tgr-calc',JSON.stringify(st));}catch{} }
-  function restoreState(){
-    try{
-      const raw=localStorage.getItem('tgr-calc');
-      if(!raw) return;
-      const saved=JSON.parse(raw);
-      Object.assign(st, saved);
-    }catch{}
-  }
+  // Clear any previously saved state to avoid stale choices bleeding into new quotes
+  try{ localStorage.removeItem('tgr-calc'); }catch{}
 
-  // Patch renderPrice to also save
-  const _rp=renderPrice;
-  // @ts-ignore
-  (window as any).__calcSave=saveState;
-
-  // Save on every goTo
-  const _goTo=goTo;
-  // Wrap existing change handlers to save after each change
-  document.querySelectorAll<HTMLInputElement>('input[name="roof"],input[name="cladding-material"],input[name="cladding-walls"],input[name="door"],input[name="climate"]').forEach(r=>{
-    r.addEventListener('change',saveState);
-  });
-  document.querySelectorAll<HTMLInputElement>('input[name="elec"],input[name="window-1"],input[name="window-2"],input[name="window-3"],input[name="feature"]').forEach(cb=>{
-    cb.addEventListener('change',saveState);
-  });
-  document.getElementById('inp-width')?.addEventListener('input',saveState);
-  document.getElementById('inp-depth')?.addEventListener('input',saveState);
-
-  restoreState();
   goTo(1);
 </script>
