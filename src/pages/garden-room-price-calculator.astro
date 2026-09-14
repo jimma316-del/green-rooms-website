@@ -651,8 +651,9 @@ const steps = ['Size','Structure','Cladding','Walls','Features','Decking','Doors
 
   function calc(){
     const sqm=st.width*st.depth, r=cv();
-    const structure=BASE+sqm*SQM;
-    const roof=sqm*(ROOF_R[st.roofType]??0);
+    const billableSqm=Math.max(sqm,6.25); // SIPs panels are 2.5m — minimum effective size is 2.5×2.5
+    const structure=BASE+billableSqm*SQM;
+    const roof=billableSqm*(ROOF_R[st.roofType]??0);
     const cladding=claddingCost();
     const canopy=st.canopy?1000+st.width*r/2:0;
     const sideCanopy=st.side_canopy?700+2*r:0;
