@@ -45,7 +45,8 @@ const productSchema = {
   "@type": "Product",
   "name": h1,
   "description": description,
-  "brand": { "@type": "Organization", "name": "The Green Rooms", "url": siteUrl },
+  "image": `${siteUrl}${heroImg}`,
+  "brand": { "@type": "Brand", "name": "The Green Rooms" },
   "url": `${siteUrl}${canonical}`,
   ...(priceNumeric ? {
     "offers": {
