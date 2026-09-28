@@ -58,15 +58,7 @@ const productSchema = {
       "url": `${siteUrl}${canonical}`,
       "seller": { "@type": "Organization", "name": "The Green Rooms" }
     }
-  } : {
-    "offers": {
-      "@type": "Offer",
-      "availability": "https://schema.org/InStock",
-      "url": `${siteUrl}${canonical}`,
-      "priceCurrency": "GBP",
-      "seller": { "@type": "Organization", "name": "The Green Rooms" }
-    }
-  })
+  } : {})
 };
 
 const breadcrumbSchema = {
