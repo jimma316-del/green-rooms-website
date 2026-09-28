@@ -13,7 +13,7 @@ This is not really a question of good versus bad. It is a question of fit. The r
 
 A prefab garden room is usually based on a pre-designed model with fixed dimensions, standard layouts and a set range of finishes. That does not always mean cheap or basic. Many are well made, well insulated and smart enough to lift the look of a garden. The appeal is simplicity. You choose a model, pick from a menu of options and move forward quickly.
 
-A bespoke garden room starts with your space, your brief and your priorities. Rather than making your garden adapt to the building, the building is designed around the garden. That could mean awkward corners, sight lines from the house, extra storage, higher ceilings, a room shaped around gym kit, or glazing positioned to catch the evening light rather than your neighbour's fence.
+A [bespoke garden room](/garden-rooms/bespoke) starts with your space, your brief and your priorities. Rather than making your garden adapt to the building, the building is designed around the garden. That could mean awkward corners, sight lines from the house, extra storage, higher ceilings, a room shaped around gym kit, or glazing positioned to catch the evening light rather than your neighbour's fence.
 
 For some homeowners, that level of tailoring is a luxury. For others, it is the reason the project works at all.
 

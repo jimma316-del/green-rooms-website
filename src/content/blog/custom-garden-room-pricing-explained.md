@@ -11,7 +11,7 @@ If you are planning a garden office, entertaining room, hobby space or something
 
 ## What custom garden room pricing really includes
 
-A bespoke garden room is a designed space, not a flat-pack purchase. Pricing normally reflects far more than the structure itself. It may include design work, groundwork, manufacturing, delivery, installation, internal finishes, electrics and the details that make the room feel like a natural extension of your home rather than an upgraded shed.
+A [bespoke garden room](/garden-rooms/bespoke) is a designed space, not a flat-pack purchase. Pricing normally reflects far more than the structure itself. It may include design work, groundwork, manufacturing, delivery, installation, internal finishes, electrics and the details that make the room feel like a natural extension of your home rather than an upgraded shed.
 
 This is where some early comparisons go wrong. One quote may appear lower, but only cover the shell. Another may include plastered interiors, climate control, premium cladding and full installation. They are not the same product, even if they share similar dimensions on paper.
 

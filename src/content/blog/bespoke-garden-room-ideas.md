@@ -11,7 +11,7 @@ That is where bespoke design starts to pull away from the standard off-the-shelf
 
 ## What makes bespoke garden room ideas worth it?
 
-A bespoke garden room is not simply a prettier shed with bi-fold doors. Done properly, it becomes usable space in every season, with insulation, glazing, heating and ventilation working together so the room feels comfortable in January as well as July.
+A [bespoke garden room](/garden-rooms/bespoke) is not simply a prettier shed with bi-fold doors. Done properly, it becomes usable space in every season, with insulation, glazing, heating and ventilation working together so the room feels comfortable in January as well as July.
 
 The real value is in the detail. Ceiling height affects how spacious the room feels. Door position changes how you move through it. Integrated storage can save you from needing another outbuilding later. External finishes matter too, especially if you want the building to sit comfortably against a period property, a crisp contemporary extension, or a carefully landscaped garden.
 

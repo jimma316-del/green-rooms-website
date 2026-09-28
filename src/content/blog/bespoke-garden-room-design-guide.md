@@ -11,7 +11,7 @@ That is the difference between a basic outbuilding and a room you will use every
 
 ## What makes a bespoke garden room worth it?
 
-Bespoke does not simply mean picking a different paint colour or swapping one door for another. It means the building is designed around your priorities, your plot and your routine. For some homeowners, that is all about creating a professional garden office with enough glazing for daylight but not so much that afternoon sun turns it into a greenhouse. For others, it is a social room with a bar, media wall and space to hide away from the house when it is full of guests, children or in-laws.
+Bespoke does not simply mean picking a different paint colour or swapping one door for another. It means the building is designed around your priorities, your plot and your routine. If you are considering this route, our [bespoke garden rooms](/garden-rooms/bespoke) page covers the full process, pricing and what to expect. For some homeowners, that is all about creating a professional garden office with enough glazing for daylight but not so much that afternoon sun turns it into a greenhouse. For others, it is a social room with a bar, media wall and space to hide away from the house when it is full of guests, children or in-laws.
 
 The appeal is obvious. You gain additional living space without the upheaval of a full extension, and you keep that all-important sense of separation. A garden room should feel connected to the house in quality and style, but distinct enough to offer a proper change of scene. That is often why people use them more than expected.
 

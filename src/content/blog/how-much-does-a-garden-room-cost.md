@@ -11,7 +11,7 @@ A simple garden room designed for occasional use will sit at a very different pr
 
 ## How much does a garden room cost in the UK?
 
-For a high-quality garden room in the UK, most homeowners should expect starting prices from around £15,000 to £20,000 for a compact, well-finished space, rising to £25,000 to £40,000 for a larger or more design-led room. Fully bespoke builds with premium finishes, specialist layouts or purpose-specific features can go higher again.
+For a high-quality garden room in the UK, most homeowners should expect starting prices from around £15,000 to £20,000 for a compact, well-finished space, rising to £25,000 to £40,000 for a larger or more design-led room. Fully [bespoke builds](/garden-rooms/bespoke) with premium finishes, specialist layouts or purpose-specific features can go higher again.
 
 That range is broad because a garden room is not one product. It might be a neat office pod at the end of the lawn, a family snug with hidden storage, a gym, a hobby room or a golf simulator space that needs careful dimensions and internal detailing. The more tailored the design, the more the cost reflects that.
 
