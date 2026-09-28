@@ -1,0 +1,183 @@
+---
+import ServiceLayout from '../../components/ServiceLayout.astro';
+
+const features = [
+  { icon: 'wifi', title: 'Wired for Productivity', desc: 'Cat6 data cabling, dedicated consumer unit, USB sockets, USB-C charging points — designed around how you actually work.' },
+  { icon: 'volume-x', title: 'Acoustic Performance', desc: 'SIPs construction delivers natural sound attenuation. Add acoustic wall panels and specialist insulation for call-centre quiet.' },
+  { icon: 'thermometer', title: 'Year-Round Comfort', desc: 'SIPs insulation keeps the room warm in winter and cool in summer. Add air conditioning or a smart panel heater for precise climate control.' },
+  { icon: 'eye', title: 'Natural Light by Design', desc: 'Floor-to-ceiling glazing, roof lights, glass corners — we design the window and door layout around your orientation and working preference.' },
+  { icon: 'shield', title: 'Secure and Private', desc: 'Multipoint locks, toughened glass, and solid SIPs walls. Your business equipment and client conversations stay private.' },
+  { icon: 'key', title: 'Fully Turnkey', desc: 'Foundations, structure, cladding, glazing, electrics, flooring, plastering, and site clean-up — all included. Walk in on day one and get to work.' },
+];
+
+const useCases = [
+  { title: 'Home Office', desc: 'A quiet, professional space away from the house — purpose-built for focused work, video calls, and client meetings.', img: '/images/GP%20office%20internal.webp' },
+  { title: 'L-Shaped Office', desc: 'Maximise an awkward corner plot with a custom L-shaped footprint that uses space a standard build simply cannot.', img: '/images/GR%20bespoke%20glass%20corner%20millboard.webp' },
+  { title: 'Creative Studio', desc: 'Design studios, photography studios, architects\' offices — specialist dimensions and lighting designed around your workflow.', img: '/images/bespoke%20build%20close%20up%20hero.webp' },
+  { title: 'Client-Facing Space', desc: 'A garden salon, therapy room, or meeting room with separate entrance, soundproofing, and a finish that impresses on day one.', img: '/images/HERO%20Bespoke%20garden%20room%20end%20of%20garden.webp' },
+];
+
+const related = [
+  { label: 'Bespoke Garden Rooms', href: '/garden-rooms/bespoke', img: '/images/Hero%20Bespoke%20build.webp' },
+  { label: 'Garden Offices', href: '/garden-rooms/garden-offices', img: '/images/GP%20office%20internal.webp' },
+  { label: 'Price Calculator', href: '/garden-room-price-calculator', img: '/images/GR%20bespoke%20glass%20corner%20millboard.webp' },
+];
+
+const faqs = [
+  {
+    q: "How much does a bespoke garden office cost?",
+    a: "Bespoke garden offices start from around £20,000 inc VAT. Most custom home office builds sit between £22,000 and £45,000 depending on size, glazing specification, cladding choice and internal finish. Because every project is designed from scratch, we quote each one individually after the free site visit — you receive a precise, itemised quote before committing to anything."
+  },
+  {
+    q: "Do I need planning permission for a bespoke garden office?",
+    a: "Most garden offices fall under Permitted Development, including most bespoke builds. The key rules are: single storey, maximum eaves height of 2.5m, no closer than 2m to the boundary if over 2.5m tall, and the footprint must not cover more than 50% of the garden. L-shaped or larger footprints may require a formal application. We assess every project at the design consultation and advise you clearly before you proceed. See our <a href='/your-build/first-steps' style='color:#34a02e;font-weight:600;'>planning guide</a> for the full criteria."
+  },
+  {
+    q: "What makes a bespoke garden office different from a standard one?",
+    a: "Our <a href='/garden-rooms/garden-offices' style='color:#34a02e;font-weight:600;'>standard garden offices</a> use fixed proportions with a curated set of options — ideal for most plots and most requirements. A bespoke garden office starts from a blank page: any shape, any footprint, any combination of glazing and materials. If your garden has an unusual shape, a level change, a planning constraint, or you want a very specific layout — bespoke is the right choice."
+  },
+  {
+    q: "Can you run mains power to a bespoke garden office?",
+    a: "Yes — and it's included as standard. Every build comes with a mains-connected consumer unit, full electrical installation, and a signed electrical certificate. We include double sockets throughout, USB charging points, and external lighting. If you need something specific — a dedicated circuit for equipment, Cat6 data cabling, a server cabinet, or additional data points — tell us at the design stage."
+  },
+  {
+    q: "How long does it take to build a bespoke garden office?",
+    a: "From first contact to handover, allow 10–16 weeks. The design and quotation phase typically takes 2–4 weeks, materials lead time is 4–6 weeks, and the on-site build takes 2–3 weeks. We'll give you a clear timeline at the quotation stage with a fixed installation date."
+  },
+  {
+    q: "Can the garden office double as a meeting room or client space?",
+    a: "Absolutely — and this is one of the most common requests for bespoke builds. We can design the layout around a meeting table, add acoustic wall treatment for call quality, include a kitchenette or refreshment area, and choose a cladding and glazing specification that creates the right first impression. Many of our bespoke office customers use their build for client meetings as much as solo work."
+  },
+];
+---
+
+<ServiceLayout
+  title="Bespoke Garden Offices Surrey | Custom Home Office Garden Rooms | The Green Rooms"
+  description="Custom-designed garden offices built across Surrey — any shape, any size, from £20,000 inc VAT. SIPs construction, mains electrics, fully turnkey. Free design consultation and site visit."
+  canonical="/garden-rooms/bespoke-garden-office"
+  heroImg="/images/fliss-luke-bespoke-6.webp"
+  heroAlt="Bespoke garden office designed and built by The Green Rooms, Surrey"
+  h1="Bespoke Garden Offices"
+  tagline="Fully Custom Home Office Garden Rooms — Surrey & South East"
+  intro="A standard garden office works well for most requirements — but when your plot, your brief, or your working life demands something different, bespoke is the only honest answer. We design and build fully custom garden offices across Surrey from scratch: any shape, any footprint, any combination of glazing and materials. Whether it's an L-shaped office to fill an awkward corner, a soundproofed therapy room, a client-facing studio, or a large home office with its own meeting space — we start with your requirements and build around them."
+  features={features}
+  relatedPages={related}
+  faqs={faqs}
+  projects={[
+    { slug: 'bespoke-garden-room-weybridge-fliss', label: 'Bespoke Garden Room — Weybridge', tagline: 'Weybridge · 3m triple-pane sliding doors · Glass corner · Separate storage with walkway', img: '/images/fliss-luke-bespoke-6.webp' },
+    { slug: 'garden-entertainment-room-godalming', label: 'Garden Room, Storage & Shelter — Godalming', tagline: 'Godalming · Charred spruce & cedar · Mono-pitch · Bifolds & French doors · Open shelter', img: '/images/night%20time%20arty%20glossy%20bespoke%20build%20with%20separate%20storage%20room%20close%20up.webp' },
+  ]}
+>
+
+  <!-- Use cases -->
+  <section class="section" style="background:#f8faf7;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:40px;">
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:10px;">Garden Office Types We Build</h2>
+        <p style="color:#666; max-width:480px; margin:0 auto;">Every project starts as a conversation about how you work and what your garden allows.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:24px;">
+        {useCases.map(u => (
+          <div style="background:#fff; border-radius:16px; overflow:hidden; border:1px solid #ebeced; display:flex; flex-direction:column;">
+            <img src={u.img} alt={u.title + ' by The Green Rooms'} style="width:100%; height:200px; object-fit:cover;" loading="lazy" />
+            <div style="padding:24px;">
+              <h3 style="font-size:1.05rem; font-weight:700; color:#2d3841; margin:0 0 8px;">{u.title}</h3>
+              <p style="font-size:13.5px; color:#666; line-height:1.65; margin:0;">{u.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Prose content -->
+  <section class="section" style="background:#fff; border-top:1px solid #ebeced;">
+    <div style="max-width:800px; margin:0 auto; padding:0 24px;">
+      <h2 style="font-size:clamp(1.4rem,2.5vw,1.75rem); font-weight:700; color:#2d3841; margin:0 0 20px;">Why Choose a Bespoke Garden Office?</h2>
+      <p style="font-size:15px; color:#444; line-height:1.85; margin:0 0 18px;">Working from home has changed what people expect from a home office. A spare bedroom or a corner of the kitchen table doesn't cut it when you're on client video calls, managing a team, or running a business. A bespoke garden office gives you a dedicated, professional workspace — separate from the house, designed around how you actually work, and built to last decades rather than years.</p>
+      <p style="font-size:15px; color:#444; line-height:1.85; margin:0 0 18px;">We've built bespoke garden offices across Surrey — in Weybridge, Cobham, Esher, Guildford, Epsom, Godalming, and beyond. Every project starts with a free site visit: we come to you, understand the plot constraints and your working requirements, and return with a detailed design proposal including elevation drawings. There are no vague estimates at any stage — you receive a fixed-price itemised quote before committing to anything.</p>
+      <p style="font-size:15px; color:#444; line-height:1.85; margin:0 0 18px;">The structural system is SIPs throughout — Structural Insulated Panels deliver far better thermal performance than timber frame, keeping your office warm in January and cool in July without over-relying on heating or air conditioning. Acoustic performance is a natural benefit too: SIPs walls attenuate sound significantly, which matters when you're spending the day on calls or working in a client-facing space.</p>
+      <p style="font-size:15px; color:#444; line-height:1.85; margin:0;">Bespoke garden offices start from £20,000 inc VAT. Unlike companies who quote per square metre with a long list of exclusions, our quotes are itemised line by line — structure, cladding, glazing, electrics, flooring, plastering, site preparation and clean-up all included. You know exactly what you're getting before you sign anything.</p>
+    </div>
+  </section>
+
+  <!-- What's included -->
+  <section class="section" style="background:#f8faf7; border-top:1px solid #ebeced;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:40px;">
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:10px;">Every Bespoke Garden Office Includes</h2>
+        <p style="color:#666; max-width:480px; margin:0 auto;">The same turnkey package across every build — no hidden extras, no surprises on handover day.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+        {[
+          { title: 'SIPs Structure', desc: 'High-performance insulated panels — not timber frame. Superior warmth, strength, and acoustic performance as standard.' },
+          { title: 'Mains Electrics', desc: 'Consumer unit, full circuit, double sockets, USB charging, data cabling, external lighting, and signed electrical certificate.' },
+          { title: 'Premium Cladding', desc: 'Cedar, Charred Spruce, Thermo Ayous, Hardie Plank or Millboard — minimum 30-year life expectancy, no Redwood.' },
+          { title: 'A-Rated Glazing', desc: 'Double or triple glazed doors and windows — chosen for the orientation and your natural light requirements.' },
+          { title: '20-Year Roof Guarantee', desc: 'EPDM or metal panel roof on every build. Never felt. Both carry a 20-year manufacturer guarantee.' },
+          { title: 'Full Interior Fit-Out', desc: 'Plasterboard lining, skimmed walls, painted finish, insulated flooring — ready to furnish and move into on day one.' },
+        ].map(item => (
+          <div style="background:#fff; border-radius:14px; padding:24px; border:1px solid #ebeced;">
+            <h3 style="font-size:0.95rem; font-weight:700; color:#2d3841; margin:0 0 8px;">{item.title}</h3>
+            <p style="font-size:13.5px; color:#666; line-height:1.65; margin:0;">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div style="text-align:center; margin-top:36px;">
+        <a href="/contact-us" class="btn-primary">Book a Free Design Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section" style="background:#fff; border-top:1px solid #ebeced;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 24px;">
+      <div style="text-align:center; margin-bottom:40px;">
+        <h2 style="font-size:clamp(1.5rem,3vw,2rem); font-weight:700; color:#2d3841; margin-bottom:10px;">How It Works</h2>
+        <p style="color:#666; max-width:480px; margin:0 auto;">From first conversation to keys in hand — a typical bespoke garden office takes 10–16 weeks.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px;">
+        {[
+          { step: '01', title: 'Free Site Visit', timeline: 'Week 1–2', desc: 'We come to you, assess the garden, and listen to how you work and what you need from the space.' },
+          { step: '02', title: 'Design Proposal', timeline: 'Week 2–4', desc: 'Elevation drawings, full specification, and honest advice on planning — before you commit to anything.' },
+          { step: '03', title: 'Fixed-Price Quote', timeline: 'Week 4–6', desc: 'Itemised line by line — no vague estimates, no hidden extras. Materials ordered on signing.' },
+          { step: '04', title: 'Build & Handover', timeline: 'Week 10–16', desc: 'Our team completes most office builds in 2–3 weeks. You walk into a finished, furnishing-ready room.' },
+        ].map(s => (
+          <div style="background:#f8faf7; border-radius:14px; padding:24px; border:1px solid #ebeced; text-align:center;">
+            <div style="font-size:2rem; font-weight:800; color:#e7f1e3; margin-bottom:4px; font-family:'Poppins',sans-serif;">{s.step}</div>
+            <p style="font-size:14px; font-weight:700; color:#2d3841; margin:0 0 4px;">{s.title}</p>
+            <p style="font-size:11px; font-weight:600; color:#34a02e; margin:0 0 8px; text-transform:uppercase; letter-spacing:0.06em;">{s.timeline}</p>
+            <p style="font-size:13px; color:#666; line-height:1.6; margin:0;">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section style="background:#f8faf7; padding:72px 0; border-top:1px solid #ebeced;">
+    <div style="max-width:760px; margin:0 auto; padding:0 24px; text-align:center;">
+      <div style="display:flex; justify-content:center; gap:3px; margin-bottom:16px;">
+        {[1,2,3,4,5].map(() => <svg width="20" height="20" fill="#f59e0b" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>)}
+      </div>
+      <blockquote style="margin:0 0 20px;">
+        <p style="font-size:16px; color:#444; line-height:1.85; margin:0 0 16px; font-style:italic;">"James built me my dream garden salon. I had a very specific idea of what I wanted and he delivered it perfectly — from the design through to the fit-out. The quality of the build and the finish is outstanding. I've had so many compliments from clients who use it every week."</p>
+        <footer style="font-size:13.5px; font-weight:700; color:#2d3841;">Linzi Ryan-Hillyer <span style="font-weight:400; color:#888;">· August 2023</span></footer>
+      </blockquote>
+      <a href="/testimonials" style="color:#34a02e; font-size:13.5px; font-weight:600; text-decoration:none;">Read all 40+ reviews →</a>
+    </div>
+  </section>
+
+</ServiceLayout>
+
+<style>
+  @media (max-width: 900px) {
+    div[style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+    div[style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: 1fr 1fr !important; }
+  }
+  @media (max-width: 600px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"],
+    div[style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: 1fr !important; }
+  }
+</style>
