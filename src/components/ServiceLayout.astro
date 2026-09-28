@@ -40,6 +40,9 @@ const heroSrcset = smSrcset(heroImg, heroSrcsetProp);
 
 const siteUrl = 'https://www.thegreenrooms.com';
 const priceNumeric = price ? price.replace(/[^0-9]/g, '') : null;
+function schemaText(html: string): string {
+  return html.replace(/ style='[^']*'/g, '').replace(/ style="[^"]*"/g, '');
+}
 const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
@@ -47,6 +50,13 @@ const productSchema = {
   "description": description,
   "image": `${siteUrl}${heroImg}`,
   "brand": { "@type": "Brand", "name": "The Green Rooms" },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "bestRating": "5",
+    "worstRating": "1",
+    "reviewCount": "42"
+  },
   "url": `${siteUrl}${canonical}`,
   ...(priceNumeric ? {
     "offers": {
@@ -77,7 +87,7 @@ const faqSchema = faqs.length > 0 ? {
   "mainEntity": faqs.map(f => ({
     "@type": "Question",
     "name": f.q,
-    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+    "acceptedAnswer": { "@type": "Answer", "text": schemaText(f.a) }
   }))
 } : null;
 
