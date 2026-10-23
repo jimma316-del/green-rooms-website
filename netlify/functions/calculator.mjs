@@ -44,8 +44,9 @@ const ELEC_LABELS = {
   smart_socket: 'External Smart Socket',
 }
 const CLIMATE_LABELS = {
-  ac_2_5kw: '2.5kw Air Conditioning (Heating & Cooling)',
-  ac_5kw: '5kw Air Conditioning (Heating & Cooling)',
+  ac_2_5kw: '2.5kW Air Conditioning (Heating & Cooling)',
+  ac_3_5kw: '3.5kW Air Conditioning (Heating & Cooling)',
+  ac_5kw: '5kW Air Conditioning (Heating & Cooling)',
   wall_heater: 'Electric Panel Heater',
 }
 
