@@ -32,7 +32,7 @@ const DOOR_LABELS = {
 const WIN_LABELS = {
   slot: 'Aluminium slot window (1m × 50cm)',
   square: 'Aluminium square window (1m × 1m)',
-  double: 'Aluminium double window (2m × 1m)',
+  double: 'Aluminium double window (1.4m × 1m)',
   bifold_win: 'Aluminium bifold window',
   full_height: 'Full height window',
 }
